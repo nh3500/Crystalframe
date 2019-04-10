@@ -8,9 +8,13 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+          <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet">
 
     <title>Crystalframe</title>
     <style>
+        body {
+	font-family: 'Noto Sans TC', sans-serif;
+}
         .jumbotron {
             /* The image used */
             background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(11).jpg");
@@ -40,10 +44,81 @@
             scroll-behavior: smooth;
         }
     </style>
-    <script src="https://www.w3schools.com/lib/w3data.js"></script>
 </head>
 <body>
-<div w3-include-html="nav.html"></div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <a class="navbar-brand" href="index.html"><img src="logo.png" class="mr-2" width="100px" height="100px"></a>
+    <a class="navbar-brand" href="index.html">Crystalframe</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <div class="nav-link dropdown-toggle" href="index.html" role="button" data-toggle="dropdown"
+                     aria-haspopup="true" aria-expanded="false">
+                    認識水晶框
+                </div>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="story.html#story">发明的故事</a>
+                    <a class="dropdown-item" href="story.html#advantage">產品優勢及應用</a>
+                    <a class="dropdown-item" href="story.html#difference">現代水晶框與傳統的差異</a>
+                    <a class="dropdown-item" href="story.html#certificate">產品證書</a>
+                    <a class="dropdown-item" href="story.html#patent">專利佈局</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <div class="nav-link dropdown-toggle" href="product.html" role="button" data-toggle="dropdown"
+                     aria-haspopup="true" aria-expanded="false">
+                    產品目錄及價格
+                </div>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="product.html#typeM">M量產型</a>
+                    <a class="dropdown-item" href="product.html#typeC">C客製型</a>
+                    <a class="dropdown-item" href="product.html#accessory">配件</a>
+                    <a class="dropdown-item" href="product.html#printing">輸圖服務</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <div class="nav-link dropdown-toggle" href="usage.html" role="button" data-toggle="dropdown"
+                     aria-haspopup="true" aria-expanded="false">
+                    水晶框使用說明
+                </div>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="usage.html#operation">水晶框操作影片</a>
+                    <a class="dropdown-item" href="usage.html#notice">水晶框注意事項</a>
+                    <a class="dropdown-item" href="usage.html#warranty">水晶框的保固</a>
+                    <a class="dropdown-item" href="usage.html#cases">水晶框實際展現</a>
+                    <a class="dropdown-item" href="usage.html#qa">客戶問答 Q&A</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <div class="nav-link dropdown-toggle" href="contact.html" role="button" data-toggle="dropdown"
+                     aria-haspopup="true" aria-expanded="false">
+                    聯絡我們
+                </div>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="contact.html#mainCompany">台灣總公司</a>
+                    <a class="dropdown-item" href="contact.html#taiwanPartner">台灣各區經銷商</a>
+                    <a class="dropdown-item" href="contact.html#internationalPartner">國際經銷商</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                    <div class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                         aria-haspopup="true" aria-expanded="false">
+                        語言
+                    </div>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">English</a>
+                        <a class="dropdown-item" href="#">日本語</a>
+                        <a class="dropdown-item" href="#">繁體中文</a>
+                        <a class="dropdown-item" href="#">簡體中文</a>
+                    </div>
+                </li>
+        </ul>
+    </div>
+</nav>
 <div>
     <div class="jumbotron" style="margin-top:126px">
         <h1 class="display-5 mt-3">Change your mood, blow your mind.</h1>
@@ -53,42 +128,54 @@
     <section>
         <div class="container">
             <div id="story" class="mt-5">
-                <h2 class="card-title">发明的故事</h2>
-                <p class="card-text">
-                    2015年,因為剛好藉由老婆出差的原因第一次到了美國.在拉斯維加斯無意間逛到了PETER
-                    LIK的藝廊,店內展示的大多為全幅大型風景圖照片,而其中最吸引我除了照片中風景的美麗之外,其中一種裱框方式為無框邊並浮出於牆面的俐落且立體的美感,相對於台灣或大陸,我從沒親眼見過這樣的風景裱框方式.不過,價格相當昂貴.起初只是因為其美感的視覺層面被吸引.回到台灣後的一個月便常常上網了解PETER
-                    LIK的作品,更發現他尤其最愛的裱框形式為”壓克力照片”(ACRYLIC
-                    PRINT)即所謂的無邊框/浮出牆面/立體感風格.突然我意識到這在台灣是不曾見過的產品風格,我家住在台中,有很多的壓克力製作店,我便開始發想是不是也能複製(我必須承認我一開始想山寨)一樣的東西,畢竟我也是很喜歡美術及視覺美感的人.在一開始的試驗,完全以山寨的方式進行.買材料切割,並自行輸圖並嘗試將壓克力與照片結合.然而,找了幾家上膠工廠,發現將壓克力及照片貼合除了有氣泡問題,製程更是小心且繁瑣,也需要買大型機器.,甚至是無塵室的要求.然而當我使用的膠水一直無法完美透明結合後,在幾乎放棄之際,心裡頭突然有個想法,就是與其將照片貼合,何不改為不貼合,且可以抽換.於是我開始設計將壓克力折彎變成一個可以置入相片的空間.當將照片放進去時,突然覺得與美國看到的壓克力照片很有相似度,從那一刻起便正式走向了研發之路.也許是出於對美感的追求,我便一個接著一個地設計,試驗.尤其接下來要克服在無膠的情況下如何整平圖紙.所以開始試驗使用各種軟墊墊在圖後,可是發現到壓力不均勻是圖紙不平的主要原因.而且硬塞軟墊不美觀也不時尚,而且物體笨重.即使如此,我隨即報名了2016年四月的NEW
-                    YORK
-                    ARTEXPO,當時的產品雖然笨重,不過仍引起少許人的興趣,認為一個透明框抽換照片的想法還不錯,我甚至先申請了專利.但框體笨重且圖紙不平是很大問題.爾後,在不斷試驗襯墊後我又有了新想法,就是利用空氣壓力是均壓的,來達到圖紙推平的效果,所以設計了氣囊袋,使其能進氣及放氣來達到抽換圖片的方便性.事實上很多人及家人認為這樣子已經很不錯了,似乎已經可以賣了,但由於框體包覆著氣囊包,為了框體不脹開像個氣球,必須採用較厚的板材做包覆設計.然而如此厚重的板材不僅仍然笨重,且加上氣囊的成本不低,造價成本高昂,市場乏人問津.縱使我已同時申請了氣囊專利,仍後見徒勞無功.在最後應該放棄之際,跟朋友在閒聊之間,我一直在想如何減輕重量,降低生產成本.最後才又多了一個全新想法,就是用吸盤來處理圖框的問題.也就是目前2018年的最新設計.前前後後研發了兩年半,途中連續新增了三個股東來幫助我在資金上的需求.2018年再次去美國推展NEW
-                    YORK ARTEXPO
-                    2018,此次終於得到非常多人的喜好認同.目前美國台灣日本已開始有銷路,也有多項專利及目前增加國際專利.設計重點主要是吸盤原理的一種框,可無膠抽換圖片並固定圖紙,藉由無邊框設計,可作併框展示,也可加上LED導光板,框體承襲壓克力照片(ACRYLIC
-                    PRINT)為浮出型 ,類似歐美的壓克力照片風格(再強調一次,原壓克力照片因貼合不能換照片,而此新穎水晶框卻可以),甚至美國人稱此為MODULAR
-                    ART.可運用在攝影照片,平面作品,書法等.而在研發的最後,我們聽到消費者的需求,如果膠貼不傷害牆壁就更好了.於是我們持續實驗研發並成功試驗出不傷牆面的貼壁方式,成功率9.5成以上.
+                <h2 class="card-title">發明的故事</h2>
+                <p class="lead">
+                    2015年, 第一次到了美國, 在拉斯維加斯逛到了PETER LIK的藝廊, 店內展示許多全幅大型風景圖照片，其中以壓克力照片(ACRYLIC PRINT)形式呈現的照片的美感，讓人印象深刻，從那一刻起正式走向了Crystalframe的研發之路。
                 </p>
+                <p class="lead">
+                   經歷了反覆的產品研發與迭代。2016年，我帶著初版產品參加了NEW YORK ARTEXPO, 當時的產品雖然不盡完美, 仍引起少許人的興趣, 證明了構想的可行性，有不錯的收穫。隨後經歷兩年不斷的改善產品，2018年帶著新版的Crystalframe，再次前往美國推展NEW YORK ARTEXPO, 此次獲得了更多人的讚賞與認同，目前產品已經在美國台灣日本銷售, 亦有多項國際專利。
+                </p>
+                <p class="lead">
+                    水晶框的精神乃結合現代歐美之高級裱框壓克力照片風格及簡易更換照片之專利設計.最適合布置於居家,辦公室,公共場所.無論是藝術圖片或廣告皆適用.
+                    水晶框講究要點:
+                </p>
+                    <blockquote class="blockquote">
+                        1. 透過高級塑料厚度使畫面增豔及更加立體.<br>
+                        2.迫緊設計使其圖紙畫面貼平於框體增加質感.<br>
+                    3.無框邊設計,讓畫面無限延伸,不被傳統之外框限制風格,更易於相容任何畫面的創作,畫風保留原汁原味.<br>
+                    4.水晶框掛牆型態,框體本身完全平行於牆面,高尚而穩重的質感.<br>
+                    </blockquote>
+                    <p class="lead">
+                    了解此框的人都知道這樣的框不僅僅是非常具有實用性,且環保,因為不需要一再裱框,更是相框界的一種革命產品.
+                </p>
+                    
             </div>
             <div id="advantage" class="mt-5">
                 <h2 class="card-title">產品優勢及應用</h2>
-                <p class="card-text">
-                    突破傳統的裱框形式,不受裱框受限於搭配框體本身的材質及顏色.一個看似無框邊,亦能永遠重複利用,更換圖紙,照片及書法,達到美化及變化環境,進而達到身心愉悅.作品透過3MM厚度的光學高級塑料,使得圖面呈現強烈之立體感.
-                    如今單眼相機及手機的像素都越來越高,但大家並沒有很多的機會去做輸出大圖像的表現,原因是因為要展示大圖像,並須負擔高額的裱框費用.而且一個框飾常常就是一擺就是一二十年.縱使居家空間再大,也沒有足夠空間追上作品的產生速度.
-                    水晶框亦設計透過LED的結合作作不同效果的展現.而且剛好迎合了現代人的科技現實.舉例來說,
-                    水晶框除了依舊能靠打釘子或線吊,更使用了velcro魔術氈扣去達到任意布置及承重的妙用.再加上不傷牆面的技術更大大方便使用感受.
-
-                    水晶框的精神乃結合現代歐美之高級裱框壓克力照片風格及簡易更換照片之專利設計.最適合布置於居家,辦公室,公共場所.無論是藝術圖片或廣告皆適用.
-                    水晶框講究要點:
-                    1.透過高級塑料厚度使畫面增豔及更加立體.
-                    2.迫緊設計使其圖紙畫面貼平於框體增加質感.
-                    3.無框邊設計,讓畫面無限延伸,不被傳統之外框限制風格,更易於相容任何畫面的創作,畫風保留原汁原味.
-                    4.水晶框掛牆型態,框體本身完全平行於牆面,高尚而穩重的質感.
-
-
-                    水晶框: 透明框體(型號:crystalframe): 可使用於攝影作品,素描水彩油畫,拼圖等平面作品
-
-                    水晶框LED: LED燈箱+透明框體(型號:crystalframe LED)：可使用於攝影作品燈片,書法或水墨畫透光呈現.
-
-                    了解此框的人都知道這樣的框不僅僅是非常具有實用性,且環保,因為不需要一再裱框,更是相框界的一種革命產品.
-                </p>
+                <div class="card-deck">
+  <div class="card col-4 border-light">
+    <img class="card-img-top" src="img/5.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">適配各式場景</h5>
+      <p class="card-text">不受裱框受限於搭配框體本身的材質及顏色.一個看似無框邊,亦能永遠重複利用,更換圖紙,照片及書法,達到美化及變化環境,進而達到身心愉悅</p>
+    </div>
+  </div>
+  <div class="card col-4 border-light">
+    <img class="card-img-top" src="img/6.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">忠實還原</h5>
+      <p class="card-text">突破傳統的裱框形式, 作品透過3MM厚度的光學高級塑料, 使得圖面呈現強烈之立體感。
+        </p>
+    </div>
+  </div>
+  <div class="card col-4 border-light">
+    <img class="card-img-top" src="img/5.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">不傷牆面</h5>
+      <p class="card-text">水晶框除了依舊能靠打釘子或線吊,更使用了velcro魔術氈扣去達到任意布置及承重的妙用.再加上不傷牆面的技術更大大方便使用感受.</p>
+    </div>
+  </div>
+</div>
             </div>
             <div id="difference" class="mt-5">
                 <h2 class="card-title">現代水晶框與傳統的差異</h2>
@@ -328,9 +415,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-        <script>
-                w3IncludeHTML();
-                </script>
 
 </body>
 </html>
