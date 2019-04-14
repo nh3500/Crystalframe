@@ -7,407 +7,385 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-          <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet">
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
 
     <title>crystalframe</title>
-    <style>
-        body {
-	font-family: 'Noto Sans TC', sans-serif;
-}
-        .jumbotron {
-            /* The image used */
-            background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(11).jpg");
-
-            /* Full height */
-            height: 100%;
-
-            /* Center and scale the image nicely */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        .nav-item:hover {
-            cursor: pointer;
-        }
-        .nav-link:hover {
-            font-weight: bold;
-        }
-        *[id]:before { 
-            display: block; 
-            content: " "; 
-            margin-top: -175px; 
-            height: 175px; 
-            visibility: hidden; 
-            }
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <a class="navbar-brand" href="index.html"><img src="logo.png" class="mr-2" width="100px" height="100px"></a>
-    <a class="navbar-brand" href="index.html">crystalframe</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="index.html"><img src="logo.png" class="mr-2" width="100px" height="100px"></a>
+        <a class="navbar-brand" href="index.html">crystalframe</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
             <li class="nav-item dropdown">
                 <div class="nav-link dropdown-toggle" href="index.html" role="button" data-toggle="dropdown"
-                     aria-haspopup="true" aria-expanded="false">
-                    水晶框
-                </div>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="crystalframe.html#crystalframe">水晶框</a>
-                    <a class="dropdown-item" href="crystalframe.html#crystalframeLED">水晶框LED</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <div class="nav-link dropdown-toggle" href="index.html" role="button" data-toggle="dropdown"
-                     aria-haspopup="true" aria-expanded="false">
-                    認識水晶框
-                </div>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="story.html#story">發明的故事</a>
-                    <a class="dropdown-item" href="story.html#advantage">產品優勢及應用</a>
-                    <a class="dropdown-item" href="story.html#difference">現代水晶框與傳統的差異</a>
-                    <a class="dropdown-item" href="story.html#certificate">產品證書</a>
-                    <a class="dropdown-item" href="story.html#patent">專利佈局</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <div class="nav-link dropdown-toggle" href="product.html" role="button" data-toggle="dropdown"
-                     aria-haspopup="true" aria-expanded="false">
-                    產品目錄及價格
-                </div>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="product.html#typeM">M量產型</a>
-                    <a class="dropdown-item" href="product.html#typeC">C客製型</a>
-                    <a class="dropdown-item" href="product.html#accessory">配件</a>
-                    <a class="dropdown-item" href="product.html#printing">輸圖服務</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <div class="nav-link dropdown-toggle" href="usage.html" role="button" data-toggle="dropdown"
-                     aria-haspopup="true" aria-expanded="false">
-                    水晶框使用說明
-                </div>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="usage.html#operation">水晶框操作影片</a>
-                    <a class="dropdown-item" href="usage.html#notice">水晶框注意事項</a>
-                    <a class="dropdown-item" href="usage.html#warranty">水晶框的保固</a>
-                    <a class="dropdown-item" href="usage.html#cases">水晶框實際展現</a>
-                    <a class="dropdown-item" href="usage.html#qa">客戶問答 Q&A</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <div class="nav-link dropdown-toggle" href="contact.html" role="button" data-toggle="dropdown"
-                     aria-haspopup="true" aria-expanded="false">
-                    聯絡我們
-                </div>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="contact.html#mainCompany">台灣總公司</a>
-                    <a class="dropdown-item" href="contact.html#taiwanPartner">台灣各區經銷商</a>
-                    <a class="dropdown-item" href="contact.html#internationalPartner">國際經銷商</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                    <div class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                         aria-haspopup="true" aria-expanded="false">
-                        語言
-                    </div>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">English</a>
-                        <a class="dropdown-item" href="#">日本語</a>
-                        <a class="dropdown-item" href="#">繁體中文</a>
-                        <a class="dropdown-item" href="#">簡體中文</a>
-                    </div>
-                </li>
-        </ul>
+                aria-haspopup="true" aria-expanded="false">
+                水晶框
+            </div>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="crystalframe.html#crystalframe"><img src="img/silver_logo.png" style="width: 2rem"> 水晶框</a>
+                <a class="dropdown-item" href="crystalframe.html#crystalframeLED"><img src="img/gold_logo.png" style="width: 2rem"> 水晶框LED</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <div class="nav-link dropdown-toggle" href="index.html" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            認識水晶框
+        </div>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="story.html#story">發明的故事</a>
+            <a class="dropdown-item" href="story.html#advantage">產品優勢及應用</a>
+            <a class="dropdown-item" href="story.html#difference">現代水晶框與傳統的差異</a>
+            <a class="dropdown-item" href="story.html#certificate">產品證書</a>
+            <a class="dropdown-item" href="story.html#patent">專利佈局</a>
+        </div>
+    </li>
+    <li class="nav-item dropdown">
+        <div class="nav-link dropdown-toggle" href="product.html" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        產品目錄及價格
     </div>
+    <div class="dropdown-menu">
+        <a class="dropdown-item" href="product.html#typeM">M量產型</a>
+        <a class="dropdown-item" href="product.html#typeC">C客製型</a>
+        <a class="dropdown-item" href="product.html#accessory">配件</a>
+        <a class="dropdown-item" href="product.html#printing">輸圖服務</a>
+        <a class="dropdown-item" href="product.html#sim">模擬服務</a>
+        <a class="dropdown-item" href="product.html#other">其他</a>
+    </div>
+</li>
+<li class="nav-item dropdown">
+    <div class="nav-link dropdown-toggle" href="usage.html" role="button" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false">
+    水晶框使用說明
+</div>
+<div class="dropdown-menu">
+    <a class="dropdown-item" href="usage.html#operation">水晶框操作影片</a>
+    <a class="dropdown-item" href="usage.html#notice">水晶框注意事項</a>
+    <a class="dropdown-item" href="usage.html#warranty">水晶框的保固</a>
+    <a class="dropdown-item" href="usage.html#cases">水晶框實際展現</a>
+    <a class="dropdown-item" href="usage.html#qa">客戶問答 Q&A</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+    <div class="nav-link dropdown-toggle" href="contact.html" role="button" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false">
+    聯絡我們
+</div>
+<div class="dropdown-menu">
+    <a class="dropdown-item" href="contact.html#mainCompany">台灣總公司</a>
+    <a class="dropdown-item" href="contact.html#taiwanPartner">台灣各區經銷商</a>
+    <a class="dropdown-item" href="contact.html#internationalPartner">國際經銷商</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+    <div class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false">
+    語言
+</div>
+<div class="dropdown-menu">
+    <a class="dropdown-item" href="#">English</a>
+    <a class="dropdown-item" href="#">日本語</a>
+    <a class="dropdown-item" href="#">繁體中文</a>
+    <a class="dropdown-item" href="#">簡體中文</a>
+</div>
+</li>
+<li class="navbar-brand">
+    <a target="_blank" href="https://www.facebook.com/crystalframeyuweihsu/"><i class="fab fa-facebook" style="font-size: 1.3rem"></i></a>
+    </li>
+<li class="navbar-brand">
+    <a target="_blank" href="https://line.me/sqr1930c"><i class="fab fa-line fa-5x" style="font-size: 1.3rem; color: #00b900"></i></a>
+    </li>
+</ul>
+</div>
 </nav>
 <div>
-    <div class="jumbotron" style="margin-top:126px">
-        <h1 class="display-5 mt-3">Change your mood, blow your mind.</h1>
+    <div class="jumbotron p-4" style="margin-top:126px">
+        <h1 class="display-6 text-center">Change your mood, blow your mind.</h1>
         <p class="lead"></p>
     </div>
 
     <section>
         <div class="container">
             <div id="story" class="mt-5">
-                <h2 class="card-title">發明的故事</h2>
+                <h2 class="card-title title-underline">發明的故事</h2>
                 <p class="lead">
                     2015年, 第一次到了美國, 在拉斯維加斯逛到了PETER LIK的藝廊, 店內展示許多全幅大型風景圖照片，其中以壓克力照片(ACRYLIC PRINT)形式呈現的照片的美感，讓人印象深刻，從那一刻起正式走向了crystalframe的研發之路。
                 </p>
                 <p class="lead">
-                   經歷了反覆的產品研發與迭代。2016年，我帶著初版產品參加了NEW YORK ARTEXPO, 當時的產品雖然不盡完美, 仍引起少許人的興趣, 證明了構想的可行性，有不錯的收穫。隨後經歷兩年不斷的改善產品，2018年帶著新版的crystalframe，再次前往美國推展NEW YORK ARTEXPO, 此次獲得了更多人的讚賞與認同，目前產品已經在美國台灣日本銷售, 亦有多項國際專利。
-                </p>
-                <p class="lead">
-                    水晶框的精神乃結合現代歐美之高級裱框壓克力照片風格及簡易更換照片之專利設計.最適合布置於居家,辦公室,公共場所.無論是藝術圖片或廣告皆適用.
-                    水晶框講究要點:
-                </p>
-                    <blockquote class="blockquote">
-                        1. 透過高級塑料厚度使畫面增豔及更加立體.<br>
-                        2.迫緊設計使其圖紙畫面貼平於框體增加質感.<br>
-                    3.無框邊設計,讓畫面無限延伸,不被傳統之外框限制風格,更易於相容任何畫面的創作,畫風保留原汁原味.<br>
-                    4.水晶框掛牆型態,框體本身完全平行於牆面,高尚而穩重的質感.<br>
-                    </blockquote>
-                    <p class="lead">
-                    了解此框的人都知道這樣的框不僅僅是非常具有實用性,且環保,因為不需要一再裱框,更是相框界的一種革命產品.
-                </p>
-                    
-            </div>
-            <div id="advantage" class="mt-5">
-                <h2 class="card-title">產品優勢及應用</h2>
-                <div class="card-deck">
-  <div class="card col-md-4 col-sm-12 border-light">
-    <img class="card-img-top" src="img/5.jpg" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">適配各式場景</h5>
-      <p class="card-text">不受裱框受限於搭配框體本身的材質及顏色.一個看似無框邊,亦能永遠重複利用,更換圖紙,照片及書法,達到美化及變化環境,進而達到身心愉悅</p>
-    </div>
-  </div>
-  <div class="card col-md-4 col-sm-12 border-light">
-    <img class="card-img-top" src="img/6.jpg" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">忠實還原</h5>
-      <p class="card-text">突破傳統的裱框形式, 作品透過3MM厚度的光學高級塑料, 使得圖面呈現強烈之立體感。
-        </p>
-    </div>
-  </div>
-  <div class="card col-md-4 col-sm-12 border-light">
-    <img class="card-img-top" src="img/5.jpg" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">不傷牆面</h5>
-      <p class="card-text">水晶框除了依舊能靠打釘子或線吊,更使用了velcro魔術氈扣去達到任意布置及承重的妙用.再加上不傷牆面的技術更大大方便使用感受.</p>
-    </div>
+                 經歷了反覆的產品研發與迭代。2016年，我帶著初版產品參加了NEW YORK ARTEXPO, 當時的產品雖然不盡完美, 仍引起少許人的興趣, 證明了構想的可行性，有不錯的收穫。隨後經歷兩年不斷的改善產品，2018年帶著新版的crystalframe，再次前往美國推展NEW YORK ARTEXPO, 此次獲得了更多人的讚賞與認同，目前產品已經在美國台灣日本銷售, 亦有多項國際專利。
+             </p>
+             <p class="lead">
+                水晶框的精神乃結合現代歐美之高級裱框壓克力照片風格及簡易更換照片之專利設計.最適合布置於居家,辦公室,公共場所.無論是藝術圖片或廣告皆適用.
+                水晶框講究要點:
+            </p>
+            <blockquote class="blockquote">
+                1. 透過高級塑料厚度使畫面增豔及更加立體.<br>
+                2.迫緊設計使其圖紙畫面貼平於框體增加質感.<br>
+                3.無框邊設計,讓畫面無限延伸,不被傳統之外框限制風格,更易於相容任何畫面的創作,畫風保留原汁原味.<br>
+                4.水晶框掛牆型態,框體本身完全平行於牆面,高尚而穩重的質感.<br>
+            </blockquote>
+            <p class="lead">
+                了解此框的人都知道這樣的框不僅僅是非常具有實用性,且環保,因為不需要一再裱框,更是相框界的一種革命產品.
+            </p>
+
+        </div>
+        <div id="advantage" class="mt-5">
+            <h2 class="card-title title-underline">產品優勢及應用</h2>
+            <div class="card-deck">
+              <div class="card col-md-4 col-sm-12 border-light">
+                <img class="card-img-top" src="img/5.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">適配各式場景</h5>
+                  <p class="card-text">不受裱框受限於搭配框體本身的材質及顏色.一個看似無框邊,亦能永遠重複利用,更換圖紙,照片及書法,達到美化及變化環境,進而達到身心愉悅</p>
+              </div>
+          </div>
+          <div class="card col-md-4 col-sm-12 border-light">
+            <img class="card-img-top" src="img/6.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">忠實還原</h5>
+              <p class="card-text">突破傳統的裱框形式, 作品透過3MM厚度的光學高級塑料, 使得圖面呈現強烈之立體感。
+              </p>
+          </div>
+      </div>
+      <div class="card col-md-4 col-sm-12 border-light">
+        <img class="card-img-top" src="img/5.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">不傷牆面</h5>
+          <p class="card-text">水晶框除了依舊能靠打釘子或線吊,更使用了velcro魔術氈扣去達到任意布置及承重的妙用.再加上不傷牆面的技術更大大方便使用感受.</p>
+      </div>
   </div>
 </div>
-            </div>
-            <div id="difference" class="mt-5">
-                <h2 class="card-title">現代水晶框與傳統的差異</h2>
-                <div class="table-responsive">
-                <table class="table table-hover ">
-                    <thead>
-                    <tr>
-                        <th></th>
-                        <th>傳統框</th>
-                        <th>傳統壓克力框(壓克力海報框)</th>
-                        <th>水晶框</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>樣式</td>
-                        <td>(圖樣)</td>
-                        <td>(圖樣)</td>
-                        <td>(圖樣)</td>
-                    </tr>
-                    <tr>
-                        <td>英文名稱</td>
-                        <td>frame</td>
-                        <td>Acrylic frame / acrylic poster</td>
-                        <td>crystalframe</td>
-                    </tr>
-                    <tr>
-                        <td>定義</td>
-                        <td>有框邊,緊靠牆面.分別為木框,鋁框,鐵框.不易自行更換圖片<br><br>
-                            無框邊,緊靠牆面.帆布框,無法自行更換圖片
-                        </td>
-                        <td>無框邊,但有四個銅釦,圖紙需小於框體,兩片壓克力三明治夾擊</td>
-                        <td>無框邊,浮出牆面設計,可讓圖面具立體感,可輕鬆自行更換圖片. 兩片透明板三明治夾擊</td>
-                    </tr>
-                    <tr>
-                        <td>外型</td>
-                        <td>易受外框之風格而限制作品風格</td>
-                        <td>無風格之限制,但四個銅釦影響視覺 無法滿板呈現圖面</td>
-                        <td>無風格之限制,無邊框乃藝術之無限延伸視覺</td>
-                    </tr>
-                    <tr>
-                        <td>圖形更換</td>
-                        <td>不易更換原圖 有些需要膠水貼平及固定</td>
-                        <td>不易更換原圖 圖面置中需要膠貼固定</td>
-                        <td>利用專利吸盤系統固定及推平圖紙,不需要其他膠黏</td>
-                    </tr>
-                    <tr>
-                        <td>框體透明介面厚度</td>
-                        <td>一般為不使用或使用較薄之透明板約0.5mm</td>
-                        <td>使用兩片較厚之透明板約3.0mm+2.0mm</td>
-                        <td>使用3.0mm厚度之光學透明板及1.0較薄之透明板</td>
-                    </tr>
-                    <tr>
-                        <td>掛框方式</td>
-                        <td>打釘子 吊線 較為侷限</td>
-                        <td>僅能使用牆壁鑽孔使用銅釦</td>
-                        <td>除了打釘子 吊線, 可利用魔術膠貼隨意布置,亦可不傷牆面, 不用鑽洞</td>
-                    </tr>
-                    <tr>
-                        <td>併框可能</td>
-                        <td>無法併框</td>
-                        <td>無法併框</td>
-                        <td>可併框使用,使作品無限大</td>
-                    </tr>
-                    <tr>
-                        <td>兩面使用</td>
-                        <td>無法兩面使用</td>
-                        <td>無法兩面使用</td>
-                        <td>可兩框背靠背合體懸吊使用</td>
-                    </tr>
-                    <tr>
-                        <td>圖面大小</td>
-                        <td>無法滿版,除了帆布框等</td>
-                        <td>無法滿版</td>
-                        <td>可滿版</td>
-                    </tr>
-                    <tr>
-                        <td>圖面平整</td>
-                        <td>需使用膠水黏合可使其平整</td>
-                        <td>利用三明治方式夾集使其平整,惟銅釦平衡準確性不高,很難平整</td>
-                        <td>利用三明治方式配合吸盤螺絲後推整面平板可使其盡量平整</td>
-                    </tr>
-                    <tr>
-                        <td>其他功能</td>
-                        <td>不一定適合橫直兩掛</td>
-                        <td>無法橫直兩掛</td>
-                        <td>可輕鬆橫直兩掛</td>
-                    </tr>
-                    <tr>
-                        <td>清潔</td>
-                        <td>拆下清潔不易</td>
-                        <td>拆下清潔非常不易</td>
-                        <td>拆下清潔輕鬆</td>
-                    </tr>
-                    <tr>
-                        <td>重量</td>
-                        <td>因材質而異</td>
-                        <td>3.0mm+2.0mm, 加上多於無滿板框區,若以同樣圖片而言,重量多許多.</td>
-                        <td>3.0mm+1.0mm, 若以同樣圖片比較於壓克力框而言,重量輕許多.</td>
-                    </tr>
-                    <tr>
-                        <td>安裝費用</td>
-                        <td>可DIY/視情況而定</td>
-                        <td>大多數情況若需鑽牆須請師傅現場量測施工並需要施工費用</td>
-                        <td>可DIY,貼黏容易,無須依賴師傅量測施工</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-            </div>
-            <div id="certificate" class="mt-5">
-                <h2 class="card-title">產品證書</h2>
-                <p class="card-text">
-                    TBD
-                </p>
-            </div>
-            <div id="patent" class="mt-5">
-                <h2 class="card-title">專利佈局</h2>
-                <h4>台灣專利</h4>
-                <table class="table table-hover">
-                    <thead>
-                    <tr>
-                        <th scope="col">國別</th>
-                        <th scope="col">中華民國專利號</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>中華民國</td>
-                        <td>105300644</td>
-                    </tr>
-                    <tr>
-                        <td>中華民國</td>
-                        <td>105300645</td>
-                    </tr>
-                    <tr>
-                        <td>中華民國</td>
-                        <td>105300646</td>
-                    </tr>
-                    <tr>
-                        <td>中華民國</td>
-                        <td>105300646</td>
-                    </tr>
-                    <tr>
-                        <td>中華民國</td>
-                        <td>105300647</td>
-                    </tr>
-                    <tr>
-                        <td>中華民國</td>
-                        <td>105300648</td>
-                    </tr>
-                    <tr>
-                        <td>中華民國</td>
-                        <td>105300665</td>
-                    </tr>
-                    <tr>
-                        <td>中華民國</td>
-                        <td>105200980</td>
-                    </tr>
-                    </tbody>
-                </table>
-                <h4>國際專利</h4>
-                <p>
-                    TAIWAN 台灣 中華民國智慧財產局<br>
-                    證書號數: TW M557205 U
-                </p>
-                <table class="table table-hover">
-                    <thead>
-                    <tr>
-                        <th scope="col">國別</th>
-                        <th scope="col">申請日期</th>
-                        <th scope="col">申請案號</th>
+</div>
+<div id="difference" class="mt-5">
+    <h2 class="card-title title-underline">現代水晶框與傳統的差異</h2>
+    <div class="table-responsive">
+        <table class="table table-hover ">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>傳統框</th>
+                    <th>傳統壓克力框(壓克力海報框)</th>
+                    <th>水晶框</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>樣式</td>
+                    <td>(圖樣)</td>
+                    <td>(圖樣)</td>
+                    <td>(圖樣)</td>
+                </tr>
+                <tr>
+                    <td>英文名稱</td>
+                    <td>frame</td>
+                    <td>Acrylic frame / acrylic poster</td>
+                    <td>crystalframe</td>
+                </tr>
+                <tr>
+                    <td>定義</td>
+                    <td>有框邊,緊靠牆面.分別為木框,鋁框,鐵框.不易自行更換圖片<br><br>
+                        無框邊,緊靠牆面.帆布框,無法自行更換圖片
+                    </td>
+                    <td>無框邊,但有四個銅釦,圖紙需小於框體,兩片壓克力三明治夾擊</td>
+                    <td>無框邊,浮出牆面設計,可讓圖面具立體感,可輕鬆自行更換圖片. 兩片透明板三明治夾擊</td>
+                </tr>
+                <tr>
+                    <td>外型</td>
+                    <td>易受外框之風格而限制作品風格</td>
+                    <td>無風格之限制,但四個銅釦影響視覺 無法滿板呈現圖面</td>
+                    <td>無風格之限制,無邊框乃藝術之無限延伸視覺</td>
+                </tr>
+                <tr>
+                    <td>圖形更換</td>
+                    <td>不易更換原圖 有些需要膠水貼平及固定</td>
+                    <td>不易更換原圖 圖面置中需要膠貼固定</td>
+                    <td>利用專利吸盤系統固定及推平圖紙,不需要其他膠黏</td>
+                </tr>
+                <tr>
+                    <td>框體透明介面厚度</td>
+                    <td>一般為不使用或使用較薄之透明板約0.5mm</td>
+                    <td>使用兩片較厚之透明板約3.0mm+2.0mm</td>
+                    <td>使用3.0mm厚度之光學透明板及1.0較薄之透明板</td>
+                </tr>
+                <tr>
+                    <td>掛框方式</td>
+                    <td>打釘子 吊線 較為侷限</td>
+                    <td>僅能使用牆壁鑽孔使用銅釦</td>
+                    <td>除了打釘子 吊線, 可利用魔術膠貼隨意布置,亦可不傷牆面, 不用鑽洞</td>
+                </tr>
+                <tr>
+                    <td>併框可能</td>
+                    <td>無法併框</td>
+                    <td>無法併框</td>
+                    <td>可併框使用,使作品無限大</td>
+                </tr>
+                <tr>
+                    <td>兩面使用</td>
+                    <td>無法兩面使用</td>
+                    <td>無法兩面使用</td>
+                    <td>可兩框背靠背合體懸吊使用</td>
+                </tr>
+                <tr>
+                    <td>圖面大小</td>
+                    <td>無法滿版,除了帆布框等</td>
+                    <td>無法滿版</td>
+                    <td>可滿版</td>
+                </tr>
+                <tr>
+                    <td>圖面平整</td>
+                    <td>需使用膠水黏合可使其平整</td>
+                    <td>利用三明治方式夾集使其平整,惟銅釦平衡準確性不高,很難平整</td>
+                    <td>利用三明治方式配合吸盤螺絲後推整面平板可使其盡量平整</td>
+                </tr>
+                <tr>
+                    <td>其他功能</td>
+                    <td>不一定適合橫直兩掛</td>
+                    <td>無法橫直兩掛</td>
+                    <td>可輕鬆橫直兩掛</td>
+                </tr>
+                <tr>
+                    <td>清潔</td>
+                    <td>拆下清潔不易</td>
+                    <td>拆下清潔非常不易</td>
+                    <td>拆下清潔輕鬆</td>
+                </tr>
+                <tr>
+                    <td>重量</td>
+                    <td>因材質而異</td>
+                    <td>3.0mm+2.0mm, 加上多於無滿板框區,若以同樣圖片而言,重量多許多.</td>
+                    <td>3.0mm+1.0mm, 若以同樣圖片比較於壓克力框而言,重量輕許多.</td>
+                </tr>
+                <tr>
+                    <td>安裝費用</td>
+                    <td>可DIY/視情況而定</td>
+                    <td>大多數情況若需鑽牆須請師傅現場量測施工並需要施工費用</td>
+                    <td>可DIY,貼黏容易,無須依賴師傅量測施工</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div id="certificate" class="mt-5">
+    <h2 class="card-title title-underline">產品證書</h2>
+    <p class="card-text">
+        TBD
+    </p>
+</div>
+<div id="patent" class="mt-5">
+    <h2 class="card-title title-underline">專利佈局</h2>
+    <h4>台灣專利</h4>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">國別</th>
+                <th scope="col">中華民國專利號</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>中華民國</td>
+                <td>105300644</td>
+            </tr>
+            <tr>
+                <td>中華民國</td>
+                <td>105300645</td>
+            </tr>
+            <tr>
+                <td>中華民國</td>
+                <td>105300646</td>
+            </tr>
+            <tr>
+                <td>中華民國</td>
+                <td>105300646</td>
+            </tr>
+            <tr>
+                <td>中華民國</td>
+                <td>105300647</td>
+            </tr>
+            <tr>
+                <td>中華民國</td>
+                <td>105300648</td>
+            </tr>
+            <tr>
+                <td>中華民國</td>
+                <td>105300665</td>
+            </tr>
+            <tr>
+                <td>中華民國</td>
+                <td>105200980</td>
+            </tr>
+        </tbody>
+    </table>
+    <h4>國際專利</h4>
+    <p>
+        TAIWAN 台灣 中華民國智慧財產局<br>
+        證書號數: TW M557205 U
+    </p>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">國別</th>
+                <th scope="col">申請日期</th>
+                <th scope="col">申請案號</th>
 
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row">CANADA 加拿大</th>
-                        <td>2018年10月22日</td>
-                        <td>3021718</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">JAPAN 日本</th>
-                        <td>2018年10月16日</td>
-                        <td>2018-003982</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">KOREA 南韓</th>
-                        <td>2018年10月30日</td>
-                        <td>20-2018-0004914</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">EUROPE 歐盟36國</th>
-                        <td>2018年10月29日</td>
-                        <td>18 203 163.3</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">CHINA 中國</th>
-                        <td>2018年10月18日</td>
-                        <td>201821692639.0</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">USA 美國</th>
-                        <td>2018年10月22日</td>
-                        <td>16/166522</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">AUSTRALIA 澳洲</th>
-                        <td>2018年10月22日</td>
-                        <td>2018101581</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">NEW ZEALAND 紐西蘭</th>
-                        <td>2018年10月23日</td>
-                        <td>747552</td>
-                    </tr>
-                    </tbody>
-                </table>
-                </p>
-            </div>
-        </div>
-    </section>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">CANADA 加拿大</th>
+                <td>2018年10月22日</td>
+                <td>3021718</td>
+            </tr>
+            <tr>
+                <th scope="row">JAPAN 日本</th>
+                <td>2018年10月16日</td>
+                <td>2018-003982</td>
+            </tr>
+            <tr>
+                <th scope="row">KOREA 南韓</th>
+                <td>2018年10月30日</td>
+                <td>20-2018-0004914</td>
+            </tr>
+            <tr>
+                <th scope="row">EUROPE 歐盟36國</th>
+                <td>2018年10月29日</td>
+                <td>18 203 163.3</td>
+            </tr>
+            <tr>
+                <th scope="row">CHINA 中國</th>
+                <td>2018年10月18日</td>
+                <td>201821692639.0</td>
+            </tr>
+            <tr>
+                <th scope="row">USA 美國</th>
+                <td>2018年10月22日</td>
+                <td>16/166522</td>
+            </tr>
+            <tr>
+                <th scope="row">AUSTRALIA 澳洲</th>
+                <td>2018年10月22日</td>
+                <td>2018101581</td>
+            </tr>
+            <tr>
+                <th scope="row">NEW ZEALAND 紐西蘭</th>
+                <td>2018年10月23日</td>
+                <td>747552</td>
+            </tr>
+        </tbody>
+    </table>
+</p>
+</div>
+</div>
+</section>
 </div>
 <!-- Footer -->
 <footer class="page-footer font-small blue pt-4 mt-5 bg-light">
@@ -419,14 +397,15 @@
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
+integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-
+integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+crossorigin="anonymous"></script>
+<script src="script/page.js"></script>
+</body>
 </body>
 </html>
