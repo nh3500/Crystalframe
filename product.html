@@ -35,7 +35,7 @@
                     <a class="dropdown-item" href="crystalframe.html#crystalframe"><img src="img/silver_logo.png"
                                                                                         style="width: 2rem"> 水晶框</a>
                     <a class="dropdown-item" href="crystalframeLED.html#crystalframeLED"><img src="img/gold_logo.png"
-                                                                                           style="width: 2rem">
+                                                                                              style="width: 2rem">
                         LED水晶框</a>
                 </div>
             </li>
@@ -46,11 +46,13 @@
                 </div>
                 <div class="dropdown-menu" style="min-width: 200px">
                     <a class="dropdown-item" href="crystalframeShowcase.html#crystalframe"><img class="img-fluid"
-                                                                                               src="img/silver_logo.png"
-                                                                                               style="width: 2rem"> 水晶框展現</a>
+                                                                                                src="img/silver_logo.png"
+                                                                                                style="width: 2rem">
+                        水晶框展現</a>
                     <a class="dropdown-item" href="crystalframeShowcase.html#crystalframeLED"><img class="img-fluid"
-                                                                                         src="img/gold_logo.png"
-                                                                                         style="width: 2rem"> LED水晶框展現</a>
+                                                                                                   src="img/gold_logo.png"
+                                                                                                   style="width: 2rem">
+                        LED水晶框展現</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -145,9 +147,115 @@
         <div class="container">
             <div id="price" class="mt-5">
                 <h2 class="card-title title-underline">目錄及價格</h2>
-                <p class="card-text">
-                    TBD
-                </p>
+                <form>
+                    <div class="form-group row">
+                        <label for="frameProductType" class="col-sm-2 col-form-label">生產類型</label>
+                        <select class="col-10" id="frameProductType" v-model="frameProductType">
+                            <option value="R">常貨型(R) - 常用出貨型 有庫存 可短期內出貨</option>
+                            <option value="C">客製型(C) - 無庫存 乃根據您的圖片規格需求之特製水晶框</option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <label for="frameType" class="col-sm-2 col-form-label">水晶框種類</label>
+                        <select class="col-10" id="frameType" v-model="frameType">
+                            <option value="normal">水晶框 - 高級塑料 無LED發光板 普遍使用型</option>
+                            <option value="LED">水晶框 LED - 高級塑料結合高質感LED發光板 最適合商業使用</option>
+                        </select>
+                        <small class="form-text text-muted offset-col-2" v-if="frameType == 'normal'">
+                            建議使用霧面圖紙(本公司有提供) 勿使用亮面圖紙以避免濕氣相黏現象,最後效果仍以實際材料為主
+                        </small>
+                        <small class="form-text text-muted offset-col-2" v-if="frameType == 'LED'">
+                            燈片為透明材質(本公司有提供) 使用較濃郁印刷以利透光後使得預計色彩一致
+                        </small>
+                    </div>
+                    <div class="form-group row">
+                        <label for="fastImgSize" class="col-sm-2 col-form-label">快速圖片規格</label>
+                        <select class="col-10" id="fastImgSize" v-model="fastImgSize">
+                            <option value="A1">A1 - 594 X 841 mm</option>
+                            <option value="A2">A2 - 420 X 594 mm</option>
+                            <option value="A3">A3 - 297 X 420 mm</option>
+                            <option value="A4">A4 - 210 X 297 mm</option>
+                            <option value="">其他</option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <label for="FrameSizeUnit" class="col-sm-2 col-form-label">圖片規格單位</label>
+                        <select class="col-10" id="FrameSizeUnit" v-model="FrameSizeUnit">
+                            <option value="mm">mm - 圖片公制測量</option>
+                            <option value="inch">inch - 圖片英制測量</option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <label for="frameWidth" class="col-sm-2 col-form-label">圖片規格設定</label>
+                        <input type="number" class="form-control col-5" id="frameWidth" v-model="frameWidth">
+                        <input type="number" class="form-control col-5" id="frameHeight" v-model="frameHeight">
+
+                    </div>
+                    <div class="form-group row">
+                        <label for="frameDots" class="col-sm-2 col-form-label">是否框體側面打圓孔</label>
+                        <select class="col-10" id="frameDots" v-model="frameDots">
+                            <option value="VH">Yes</option>
+                            <option value="V">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <label for="frameAmount" class="col-sm-2 col-form-label">購買數量</label>
+                        <input type="number" class="form-control col-10" id="frameAmount" value="1"
+                               v-model="frameAmount">
+                    </div>
+                </form>
+                <table class="table mt-5">
+                    <tr>
+                        <td>商品名稱</td>
+                        <td>{{ frameModelName() }}</td>
+                    </tr>
+                    <tr>
+                        <td>商品副名</td>
+                        <td>{{ frameModelNameSub }}</td>
+                    </tr>
+                </table>
+                <table class="table mt-5">
+                    <tr>
+                        <td>單價</td>
+                        <td>單價 每組 {{ unitPirce() }}  NTD</td>
+                    </tr>
+                    <tr>
+                        <td>總價</td>
+                        <td>總共 {{ totalPrice() }} NTD</td>
+                    </tr>
+                    <tr>
+                        <td>框體的規格</td>
+                        <td>{{ frameSpec() }}</td>
+                    </tr>
+                    <tr>
+                        <td>框體淨重N.W.</td>
+                        <td>{{unitWeight()}} KG</td>
+                    </tr>
+                    <tr>
+                        <td>毛重G.W.</td>
+                        <td>{{grossWeight()}} KG</td>
+                    </tr>
+                    <tr>
+                        <td>內箱 紙箱尺寸</td>
+                        <td>  {{ innerBoxWeight() }}</td>
+                    </tr>
+                    <tr>
+                        <td>外箱 紙箱尺寸</td>
+                        <td> {{ outterBoxWeight() }}</td>
+                    </tr>
+                    <tr>
+                        <td>生產週期</td>
+                        <td> {{producingPreoid()}}天</td>
+                    </tr>
+                    <tr>
+                        <td>出貨週期</td>
+                        <td> {{transportTime()}} 天</td>
+                    </tr>
+                    <tr>
+                        <td>備註</td>
+                        <td> {{ annotation() }}</td>
+                    </tr>
+                </table>
             </div>
             <div id="accessory" class="mt-5">
                 <h2 class="card-title title-underline">配件</h2>
@@ -185,20 +293,167 @@
     <div class="footer-copyright text-center py-3">© 2019 crystalframe</div>
 </footer>
 <!-- Footer -->
-
-
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-crossorigin="anonymous"></script>
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-crossorigin="anonymous"></script>
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-crossorigin="anonymous"></script>
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 <script src="script/page.js"></script>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<script>
+    var price = new Vue({
+        el: '#price',
+        data: {
+            frameProductType: 'R',
+            frameType: 'normal',
+            imageProp: 'paper',
+            fastImgSize: 'A1',
+            FrameSizeUnit: 'mm',
+            frameWidth: 594,
+            frameHeight: 841,
+            frameDots: 'V',
+            frameAmount: 1,
+        },
+        computed: {
+            frameModelNameSub: function () {
+                return ""
+            },
+            rameModelNameSub: function () {
+                return ""
+            },
+            frameThinkness: function () {
+                return 10;
+            }
+
+        },
+        watch: {
+            fastImgSize: function (val) {
+                if (val == 'A1') {
+                    this.frameWidth = 594;
+                    this.frameHeight = 841;
+                    return val
+                }
+
+                if (val == 'A2') {
+                    this.frameWidth = 420;
+                    this.frameHeight = 594;
+                    return val
+                }
+
+                if (val == 'A3') {
+                    this.frameWidth = 297;
+                    this.frameHeight = 420;
+                    return val
+                }
+
+                if (val == 'A4') {
+                    this.frameWidth = 210;
+                    this.frameHeight = 297;
+                    return val
+                }
+            }
+        },
+        methods: {
+            frameModelName: function () {
+                out = ""
+
+                out = out + this.fastImgSize + " "
+
+                if (this.frameType == 'led'){
+                    out = out + this.frameType + " "
+                }
+
+                out = out + this.frameProductType + " "
+
+                out = out + "crystalframe "
+
+                out = out + this.frameWidth + " X " + this.frameHeight + ' '
+
+                out = out + this.frameDots;
+
+                return out
+            },
+            unitPirce: function () {
+                return 100
+            },
+            totalPrice: function () {
+                return (this.unitPirce()*this.frameAmount)
+            },
+            producingPreoid:function () {
+                if (this.frameType == 'normal') {
+                    return 7
+                }
+
+                return 14
+            },
+            transportTime: function () {
+                if (this.frameType == 'normal') {
+                    return 7
+                }
+
+                return 14
+            },
+            annotation:function () {
+                if (this.frameProductType == 'C') {
+                    return "多兩個透明中板"
+                }
+
+                return ""
+            },
+            innerBoxWeight:function () {
+                if (this.frameType == 'normal') {
+                    return (this.frameWidth+30) + " X " + (this.frameHeight+25) + " X 50 mm"
+                }
+
+                return (this.frameWidth+30) + " X " + (this.frameHeight+50) + " X 50 mm"
+            },
+            outterBoxWeight:function () {
+                if (this.frameType == 'normal') {
+                    return (this.frameWidth+93) + " X " + (this.frameHeight+88) + " X 63 mm"
+                }
+
+                return (this.frameWidth+93) + " X " + (this.frameHeight+88) + " X 70 mm"
+            },
+            unitWeight:function () {
+
+                base = Math.round(((this.frameWidth+200)*this.frameHeight/100/2/1000) * 100) / 100
+
+                if (this.frameType == 'normal') {
+                    return base
+                } else {
+                    if (this.frameProductType == 'C') {
+
+                        return Math.round((base*2.6 * 100) / 100)
+                    } else {
+                        return Math.round((base*2.4 * 100) / 100)
+                    }
+                }
+            },
+
+            grossWeight:function () {
+                if (this.frameType == 'normal') {
+                    return this.unitWeight()*2
+                }
+
+                return this.unitWeight()*3
+            },
+            frameSpec:function () {
+                if (this.frameType == 'normal') {
+                    return "寬 " + (this.frameWidth+5) + " X 長 " + (this.frameHeight+88) + " X 厚 29 mm"
+                }
+
+                return "寬 " + (this.frameWidth+5) + " X 長 " + (this.frameHeight+88) + " X 厚 36 mm"
+            }
+    }
+    });
+</script>
 </body>
 </body>
 </html>
