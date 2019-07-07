@@ -161,12 +161,11 @@
                             <option value="normal">水晶框 - 高級塑料 無LED發光板 普遍使用型</option>
                             <option value="LED">水晶框 LED - 高級塑料結合高質感LED發光板 最適合商業使用</option>
                         </select>
-                        <small class="form-text text-muted offset-col-2" v-if="frameType == 'normal'">
-                            建議使用霧面圖紙(本公司有提供) 勿使用亮面圖紙以避免濕氣相黏現象,最後效果仍以實際材料為主
-                        </small>
-                        <small class="form-text text-muted offset-col-2" v-if="frameType == 'LED'">
-                            燈片為透明材質(本公司有提供) 使用較濃郁印刷以利透光後使得預計色彩一致
-                        </small>
+                    </div>
+                    <div class="form-group row">
+                        <label for="frameProductType" class="col-sm-2 col-form-label">生產類型</label>
+                        <input readonly type="text" class="form-control col-10" v-if="frameType == 'normal'" value="圖紙 - 建議使用霧面圖紙(本公司有提供) 勿使用亮面圖紙以避免濕氣相黏現象,最後效果仍以實際材料為主">
+                        <input readonly type="text" class="form-control col-10" v-if="frameType == 'LED'" value="燈片 - 燈片為透明材質(本公司有提供) 使用較濃郁印刷以利透光後使得預計色彩一致">
                     </div>
                     <div class="form-group row">
                         <label for="fastImgSize" class="col-sm-2 col-form-label">快速圖片規格</label>
@@ -194,8 +193,8 @@
                     <div class="form-group row">
                         <label for="frameDots" class="col-sm-2 col-form-label">是否框體側面打圓孔</label>
                         <select class="col-10" id="frameDots" v-model="frameDots">
-                            <option value="VH">Yes</option>
-                            <option value="V">No</option>
+                            <option value="VH">需要</option>
+                            <option value="V">不需要</option>
                         </select>
                     </div>
                     <div class="form-group row">
@@ -323,10 +322,28 @@
         },
         computed: {
             frameModelNameSub: function () {
-                return ""
-            },
-            rameModelNameSub: function () {
-                return ""
+
+                if (this.frameType == 'normal') {
+                    out =  "(1F1T)"
+                } else {
+                    out =  "(1F1L)"
+                }
+
+                out += this.frameProductType
+
+                out += this.frameWidth+ "X" + this.frameHeight
+
+
+                if (this.frameProductType == 'R') {
+                    out +=  "A33H23"
+                } else {
+                    out +=  "A90H30"
+                }
+
+                out +=  "R03"+this.frameDots
+
+
+                return out
             },
             frameThinkness: function () {
                 return 10;
@@ -381,7 +398,30 @@
                 return out
             },
             unitPirce: function () {
-                return 100
+
+
+                discount = 1
+                if (this.frameAmount >= 1000 ) {
+                    discount =  0.6
+                }
+
+                if (this.frameAmount >= 500 ) {
+                    discount =  0.7
+                }
+
+                if (this.frameAmount >= 100 ) {
+                    discount =  0.8
+                }
+
+                if (this.frameAmount >= 50 ) {
+                    discount= 0.9
+                }
+
+                square = (this.frameWidth * this.frameHeight - 499554 )/25236.78261 * 2
+
+                subtotal = (4000 * 1.0241 ^ square  )* discount
+
+                return Math.round(subtotal / 10) * 10
             },
             totalPrice: function () {
                 return (this.unitPirce()*this.frameAmount)
