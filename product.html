@@ -164,8 +164,10 @@
                     </div>
                     <div class="form-group row">
                         <label for="frameProductType" class="col-sm-2 col-form-label">圖片材質</label>
-                        <input readonly type="text" class="form-control col-10" v-if="frameType == 'normal'" value="圖紙 - 建議使用霧面圖紙(本公司有提供) 勿使用亮面圖紙以避免濕氣相黏現象,最後效果仍以實際材料為主">
-                        <input readonly type="text" class="form-control col-10" v-if="frameType == 'LED'" value="燈片 - 燈片為透明材質(本公司有提供) 使用較濃郁印刷以利透光後使得預計色彩一致">
+                        <input readonly type="text" class="form-control col-10" v-if="frameType == 'normal'"
+                               value="圖紙 - 建議使用霧面圖紙(本公司有提供) 勿使用亮面圖紙以避免濕氣相黏現象,最後效果仍以實際材料為主">
+                        <input readonly type="text" class="form-control col-10" v-if="frameType == 'LED'"
+                               value="燈片 - 燈片為透明材質(本公司有提供) 使用較濃郁印刷以利透光後使得預計色彩一致">
                     </div>
                     <div class="form-group row">
                         <label for="fastImgSize" class="col-sm-2 col-form-label">快速圖片規格</label>
@@ -203,6 +205,24 @@
                                v-model="frameAmount">
                     </div>
                 </form>
+
+                <table class="table mt-5">
+                    <tr>
+                        <td>生產類型</td>
+                        <td>
+                            {{}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>水晶框種類</td>
+                        <td>
+                            <span v-if="frameType == 'normal'">水晶框 - 高級塑料 無LED發光板 普遍使用型</span>
+                            <span v-if="frameType == 'LED'">水晶框 LED - 高級塑料結合高質感LED發光板 最適合商業使用</span>
+                        </td>
+                    </tr>
+                </table>
+
+
                 <table class="table mt-5">
                     <tr>
                         <td>生產類型</td>
@@ -258,7 +278,7 @@
                     </tr>
                     <tr>
                         <td>單價</td>
-                        <td>單價 每組 {{ unitPirce() }}  NTD</td>
+                        <td>單價 每組 {{ unitPirce() }} NTD</td>
                     </tr>
                     <tr>
                         <td>總價</td>
@@ -278,7 +298,7 @@
                     </tr>
                     <tr>
                         <td>內箱 紙箱尺寸</td>
-                        <td>  {{ innerBoxWeight() }}</td>
+                        <td> {{ innerBoxWeight() }}</td>
                     </tr>
                     <tr>
                         <td>外箱 紙箱尺寸</td>
@@ -366,58 +386,114 @@
             frameModelNameSub: function () {
 
                 if (this.frameType == 'normal') {
-                    out =  "(1F1T)"
+                    out = "(1F1T)"
                 } else {
-                    out =  "(1F1L)"
+                    out = "(1F1L)"
                 }
 
                 out += this.frameProductType
 
-                out += this.frameWidth+ "X" + this.frameHeight
+                out += this.frameWidth + "X" + this.frameHeight
 
 
                 if (this.frameProductType == 'R') {
-                    out +=  "A33H23"
+                    out += "A33H23"
                 } else {
-                    out +=  "A90H30"
+                    out += "A90H30"
                 }
 
-                out +=  "R03"+this.frameDots
-
+                out += "R03" + this.frameDots
 
                 return out
             },
             frameThinkness: function () {
-                return 10;
+
+                if (this.FrameSizeUnit == 'mm') {
+                    if (this.frameType == 'normal') {
+                        return 29
+                    }
+
+                    return 36
+                } else {
+                    if (this.frameType == 'normal') {
+                        return 1.14
+                    }
+
+                    return 1.41
+                }
             }
 
         },
         watch: {
             fastImgSize: function (val) {
                 if (val == 'A1') {
-                    this.frameWidth = 594;
-                    this.frameHeight = 841;
+                    if (this.FrameSizeUnit == 'mm') {
+                        this.frameWidth = 594
+                        this.frameHeight = 841
+                    }
+
+                    if (this.FrameSizeUnit == 'inch') {
+                        this.frameWidth = 23.39
+                        this.frameHeight = 33.11
+                    }
+
                     return val
                 }
 
                 if (val == 'A2') {
-                    this.frameWidth = 420;
-                    this.frameHeight = 594;
+                    if (this.FrameSizeUnit == 'mm') {
+                        this.frameWidth = 420
+                        this.frameHeight = 594
+                    }
+
+                    if (this.FrameSizeUnit == 'inch') {
+                        this.frameWidth = 16.54
+                        this.frameHeight = 23.39
+                    }
+
                     return val
                 }
 
                 if (val == 'A3') {
-                    this.frameWidth = 297;
-                    this.frameHeight = 420;
+                    if (this.FrameSizeUnit == 'mm') {
+                        this.frameWidth = 297
+                        this.frameHeight = 420
+                    }
+
+                    if (this.FrameSizeUnit == 'inch') {
+                        this.frameWidth = 11.69
+                        this.frameHeight = 16.54
+                    }
+
                     return val
                 }
 
                 if (val == 'A4') {
-                    this.frameWidth = 210;
-                    this.frameHeight = 297;
+                    if (this.FrameSizeUnit == 'mm') {
+                        this.frameWidth = 210
+                        this.frameHeight = 297
+                    }
+
+                    if (this.FrameSizeUnit == 'inch') {
+                        this.frameWidth = 8.27
+                        this.frameHeight = 11.69
+                    }
+
                     return val
                 }
+            },
+            FrameSizeUnit: function (val) {
+
+                if (val == 'mm') {
+                    this.frameWidth = parseFloat(Math.round(this.frameWidth * 25.4 * 10) / 10)
+                    this.frameHeight = parseFloat(Math.round(this.frameHeight * 25.4 * 10) / 10)
+                } else {
+                    console.log(111)
+                    this.frameWidth = parseFloat(Math.round(this.frameWidth / 25.4 * 10) / 10)
+                    this.frameHeight = parseFloat(Math.round(this.frameHeight / 25.4 * 10) / 10)
+                }
             }
+
         },
         methods: {
             frameModelName: function () {
@@ -425,7 +501,7 @@
 
                 out = out + this.fastImgSize + " "
 
-                if (this.frameType == 'led'){
+                if (this.frameType == 'led') {
                     out = out + this.frameType + " "
                 }
 
@@ -443,32 +519,39 @@
 
 
                 discount = 1
-                if (this.frameAmount >= 1000 ) {
-                    discount =  0.6
+                if (this.frameAmount >= 1000) {
+                    discount = 0.6
                 }
 
-                if (this.frameAmount >= 500 ) {
-                    discount =  0.7
+                if (this.frameAmount >= 500) {
+                    discount = 0.7
                 }
 
-                if (this.frameAmount >= 100 ) {
-                    discount =  0.8
+                if (this.frameAmount >= 100) {
+                    discount = 0.8
                 }
 
-                if (this.frameAmount >= 50 ) {
-                    discount= 0.9
+                if (this.frameAmount >= 50) {
+                    discount = 0.9
                 }
 
-                square = (this.frameWidth * this.frameHeight - 499554 )/25236.78261 * 2
 
-                subtotal = (4000 * 1.0241 ^ square  )* discount
+                if (this.FrameSizeUnit == 'inch') {
+                    diff = 774.31
+                } else {
+                    diff = 499554
+                }
+
+                square = (this.frameWidth * this.frameHeight - diff) / 25236.78261 * 2
+
+                subtotal = (4000 * 1.0241 ^ square) * discount
 
                 return Math.round(subtotal / 10) * 10
             },
             totalPrice: function () {
-                return (this.unitPirce()*this.frameAmount)
+                return (this.unitPirce() * this.frameAmount)
             },
-            producingPreoid:function () {
+            producingPreoid: function () {
                 if (this.frameType == 'normal') {
                     return 7
                 }
@@ -482,58 +565,83 @@
 
                 return 14
             },
-            annotation:function () {
+            annotation: function () {
                 if (this.frameProductType == 'C') {
                     return "多兩個透明中板"
                 }
 
                 return ""
             },
-            innerBoxWeight:function () {
-                if (this.frameType == 'normal') {
-                    return (this.frameWidth+30) + " X " + (this.frameHeight+25) + " X 50 mm"
+            innerBoxWeight: function () {
+                if (this.FrameSizeUnit == 'mm') {
+                    if (this.frameType == 'normal') {
+                        return parseFloat(this.frameWidth + 30) + " X " + (this.frameHeight + 25) + " X " + 50 + this.FrameSizeUnit
+                    }
+
+                    return (this.frameWidth + 30) + " X " + (this.frameHeight + 50) + " X  " + 50 + this.FrameSizeUnit
+                } else {
+                    if (this.frameType == 'normal') {
+                        return parseFloat(this.frameWidth + 1.18).toFixed(2) + " X " + parseFloat(this.frameHeight + 0.98).toFixed(2) + " X " + 1.97 + this.FrameSizeUnit
+                    }
+
+                    return parseFloat(this.frameWidth + 1.18).toFixed(2) + " X " + parseFloat(this.frameHeight + 1.97).toFixed(2) + " X  " + 1.97 + this.FrameSizeUnit
                 }
-
-                return (this.frameWidth+30) + " X " + (this.frameHeight+50) + " X 50 mm"
             },
-            outterBoxWeight:function () {
-                if (this.frameType == 'normal') {
-                    return (this.frameWidth+93) + " X " + (this.frameHeight+88) + " X 63 mm"
+            outterBoxWeight: function () {
+                if (this.FrameSizeUnit == 'mm') {
+                    if (this.frameType == 'normal') {
+                        return (this.frameWidth + 93) + " X " + (this.frameHeight + 88) + " X " + 63 + this.FrameSizeUnit
+                    }
+
+                    return (this.frameWidth + 93) + " X " + (this.frameHeight + 88) + " X " + 70 + this.FrameSizeUnit
+                } else {
+                    if (this.frameType == 'normal') {
+                        return parseFloat(this.frameWidth + 3.66).toFixed(2) + " X " + parseFloat(this.frameHeight + 3.46).toFixed(2) + " X " + 2.48 + this.FrameSizeUnit
+                    }
+
+                    return parseFloat(this.frameWidth + 3.66).toFixed(2) + " X " + parseFloat(this.frameHeight + 3.46).toFixed(2) + " X " + 2.76 + this.FrameSizeUnit
                 }
-
-                return (this.frameWidth+93) + " X " + (this.frameHeight+88) + " X 70 mm"
             },
-            unitWeight:function () {
+            unitWeight: function () {
 
-                base = Math.round(((this.frameWidth+200)*this.frameHeight/100/2/1000) * 100) / 100
+                base = Math.round(((this.frameWidth + 200) * this.frameHeight / 100 / 2 / 1000) * 100) / 100
 
                 if (this.frameType == 'normal') {
                     return base
                 } else {
                     if (this.frameProductType == 'C') {
 
-                        return Math.round((base*2.6 * 100) / 100)
+                        return Math.round((base * 2.6 * 100) / 100)
                     } else {
-                        return Math.round((base*2.4 * 100) / 100)
+                        return Math.round((base * 2.4 * 100) / 100)
                     }
                 }
             },
-
-            grossWeight:function () {
+            grossWeight: function () {
                 if (this.frameType == 'normal') {
-                    return this.unitWeight()*2
+                    return this.unitWeight() * 2
                 }
 
-                return this.unitWeight()*3
+                return this.unitWeight() * 3
             },
-            frameSpec:function () {
-                if (this.frameType == 'normal') {
-                    return "寬 " + (this.frameWidth+5) + " X 長 " + (this.frameHeight+88) + " X 厚 29 mm"
+            frameSpec: function () {
+
+                if (this.FrameSizeUnit == 'mm') {
+                    if (this.frameType == 'normal') {
+                        return "寬 " + (this.frameWidth + 5) + " X 長 " + (this.frameHeight + 88) + " X 厚 " + this.frameThinkness + " " + this.FrameSizeUnit
+                    }
+
+                    return "寬 " + (this.frameWidth + 5) + " X 長 " + (this.frameHeight + 88) + " X 厚 " + this.frameThinkness + " " + this.FrameSizeUnit
+                } else {
+                    if (this.frameType == 'normal') {
+                        return "寬 " + (this.frameWidth + 0.2) + " X 長 " + (this.frameHeight + 3.46) + " X 厚 " + this.frameThinkness + " " + this.FrameSizeUnit
+                    }
+
+                    return "寬 " + (this.frameWidth + 0.2) + " X 長 " + (this.frameHeight + 3.46) + " X 厚 " + this.frameThinkness + " " + this.FrameSizeUnit
                 }
 
-                return "寬 " + (this.frameWidth+5) + " X 長 " + (this.frameHeight+88) + " X 厚 36 mm"
             }
-    }
+        }
     });
 </script>
 </body>
