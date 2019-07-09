@@ -208,16 +208,15 @@
 
                 <table class="table mt-5">
                     <tr>
-                        <td>生產類型</td>
+                        <td>商品名稱</td>
                         <td>
-                            {{}}
+                            {{frameModelName}}
                         </td>
                     </tr>
                     <tr>
-                        <td>水晶框種類</td>
+                        <td>商品副名</td>
                         <td>
-                            <span v-if="frameType == 'normal'">水晶框 - 高級塑料 無LED發光板 普遍使用型</span>
-                            <span v-if="frameType == 'LED'">水晶框 LED - 高級塑料結合高質感LED發光板 最適合商業使用</span>
+                            {{frameModelNameSub}}
                         </td>
                     </tr>
                 </table>
@@ -383,6 +382,32 @@
             frameAmount: 1,
         },
         computed: {
+            frameModelName: function () {
+                out = ""
+
+                out = out + this.fastImgSize + " "
+
+                if (this.frameType == 'led'){
+                    out = out + this.frameType + " "
+                }
+
+                out = out + this.frameProductType + " "
+
+                out = out + "crystalframe "
+
+                out = out + this.frameWidth + " X " + this.frameHeight + ' '
+
+
+                if (this.FrameSizeUnit == 'mm') {
+                    out = out + "mm (" + parseFloat(this.frameWidth*0.04).toFixed(2) + " X " + parseFloat(this.frameHeight*0.04).toFixed(2)  + ' inch) '
+                } else {
+                    out = out + "inch (" + parseFloat(this.frameWidth*25.4).toFixed(2)  + " X " + parseFloat(this.frameHeight*25.4).toFixed(2)  + ' mm) '
+                }
+
+                out = out + this.frameDots;
+
+                return out
+            },
             frameModelNameSub: function () {
 
                 if (this.frameType == 'normal') {
@@ -488,7 +513,6 @@
                     this.frameWidth = parseFloat(Math.round(this.frameWidth * 25.4 * 10) / 10)
                     this.frameHeight = parseFloat(Math.round(this.frameHeight * 25.4 * 10) / 10)
                 } else {
-                    console.log(111)
                     this.frameWidth = parseFloat(Math.round(this.frameWidth / 25.4 * 10) / 10)
                     this.frameHeight = parseFloat(Math.round(this.frameHeight / 25.4 * 10) / 10)
                 }
@@ -496,25 +520,6 @@
 
         },
         methods: {
-            frameModelName: function () {
-                out = ""
-
-                out = out + this.fastImgSize + " "
-
-                if (this.frameType == 'led') {
-                    out = out + this.frameType + " "
-                }
-
-                out = out + this.frameProductType + " "
-
-                out = out + "crystalframe "
-
-                out = out + this.frameWidth + " X " + this.frameHeight + ' '
-
-                out = out + this.frameDots;
-
-                return out
-            },
             unitPirce: function () {
 
 
@@ -604,7 +609,15 @@
             },
             unitWeight: function () {
 
-                base = Math.round(((this.frameWidth + 200) * this.frameHeight / 100 / 2 / 1000) * 100) / 100
+                if (this.FrameSizeUnit == 'inch') {
+                    frameWidthCalc = this.frameWidth*25.4
+                    frameHeightCalc = this.frameHeight*25.4
+                } else {
+                    frameWidthCalc = this.frameWidth
+                    frameHeightCalc = this.frameHeight
+                }
+
+                base = Math.round(((frameWidthCalc + 200) * frameHeightCalc / 100 / 2 / 1000) * 100) / 100
 
                 if (this.frameType == 'normal') {
                     return base
@@ -634,10 +647,10 @@
                     return "寬 " + (this.frameWidth + 5) + " X 長 " + (this.frameHeight + 88) + " X 厚 " + this.frameThinkness + " " + this.FrameSizeUnit
                 } else {
                     if (this.frameType == 'normal') {
-                        return "寬 " + (this.frameWidth + 0.2) + " X 長 " + (this.frameHeight + 3.46) + " X 厚 " + this.frameThinkness + " " + this.FrameSizeUnit
+                        return "寬 " + parseFloat(this.frameWidth + 0.2).toFixed(2) + " X 長 " + parseFloat(this.frameHeight + 3.46).toFixed(2) + " X 厚 " + this.frameThinkness + " " + this.FrameSizeUnit
                     }
 
-                    return "寬 " + (this.frameWidth + 0.2) + " X 長 " + (this.frameHeight + 3.46) + " X 厚 " + this.frameThinkness + " " + this.FrameSizeUnit
+                    return "寬 " + parseFloat(this.frameWidth + 0.2).toFixed(2) + " X 長 " + parseFloat(this.frameHeight + 3.46).toFixed(2) + " X 厚 " + this.frameThinkness + " " + this.FrameSizeUnit
                 }
 
             }

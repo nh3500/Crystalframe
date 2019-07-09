@@ -29,8 +29,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/product.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="498">
-              <caret line="222" column="25" selection-start-line="222" selection-start-column="25" selection-end-line="222" selection-end-column="25" />
+            <state relative-caret-position="315">
+              <caret line="403" column="143" selection-start-line="403" selection-start-column="143" selection-end-line="403" selection-end-column="143" />
             </state>
           </provider>
         </entry>
@@ -145,8 +145,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>#theoretical&quot;&gt;水晶框理論展現</find>
-      <find>html#cases&quot;&gt;水晶框實際展現</find>
       <find>#cases&quot;&gt;水晶框實際展現</find>
       <find>l#theoretical&quot;&gt;水晶框理論展現</find>
       <find>crystalframeShowcase.htm#</find>
@@ -174,6 +172,8 @@
       <find>parseFloat</find>
       <find>frameWidth</find>
       <find>frameThinkness</find>
+      <find>frameModelName</find>
+      <find>frameSpec:</find>
       <find>unitTransfer</find>
     </findStrings>
     <replaceStrings>
@@ -193,6 +193,7 @@
       <replace>iframe width=&quot;100%&quot;</replace>
       <replace>crystalframeLED.html#crystalframeLED</replace>
       <replace>LED水晶框</replace>
+      <replace>this.unitTransfer</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -323,7 +324,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53325000" />
+    <option name="totallyTimeSpent" value="54300000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
@@ -533,8 +534,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/product.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="222" column="25" selection-start-line="222" selection-start-column="25" selection-end-line="222" selection-end-column="25" />
+        <state relative-caret-position="315">
+          <caret line="403" column="143" selection-start-line="403" selection-start-column="143" selection-end-line="403" selection-end-column="143" />
         </state>
       </provider>
     </entry>
