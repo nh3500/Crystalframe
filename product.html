@@ -104,6 +104,16 @@
                 </div>
             </li>
             <li class="nav-item dropdown">
+                <div class="nav-link dropdown-toggle" href="usage.html" role="button" data-toggle="dropdown"
+                     aria-haspopup="true" aria-expanded="false">
+                    經銷
+                </div>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="distribution.html#mustKnow">經銷商須知</a>
+                    <a class="dropdown-item" href="distribution.html#learn">經銷商學習</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
                 <div class="nav-link dropdown-toggle" href="contact.html" role="button" data-toggle="dropdown"
                      aria-haspopup="true" aria-expanded="false">
                     聯絡
@@ -188,8 +198,10 @@
                     </div>
                     <div class="form-group row">
                         <label for="frameWidth" class="col-sm-2 col-form-label">圖片規格設定</label>
-                        <input type="number" class="form-control col-5" id="frameWidth" v-model="frameWidth">
-                        <input type="number" class="form-control col-5" id="frameHeight" v-model="frameHeight">
+                        <input type="number" class="form-control col-5" id="frameWidth" v-model="frameWidthUser"
+                               :readonly="fastImgSize != ''">
+                        <input type="number" class="form-control col-5" id="frameHeight" v-model="frameHeightUser"
+                               :readonly="fastImgSize != ''">
 
                     </div>
                     <div class="form-group row">
@@ -259,7 +271,7 @@
                     <tr>
                         <td>圖片規格設定</td>
                         <td>
-                            {{frameWidth+"X"+frameHeight}}
+                            {{frameWidthUser + " X "+frameHeightUser}}
                         </td>
                     </tr>
                     <tr>
@@ -378,6 +390,8 @@
             FrameSizeUnit: 'mm',
             frameWidth: 594,
             frameHeight: 841,
+            frameWidthUser: 594,
+            frameHeightUser: 841,
             frameDots: 'V',
             frameAmount: 1,
         },
@@ -387,7 +401,7 @@
 
                 out = out + this.fastImgSize + " "
 
-                if (this.frameType == 'led'){
+                if (this.frameType == 'led') {
                     out = out + this.frameType + " "
                 }
 
@@ -395,13 +409,13 @@
 
                 out = out + "crystalframe "
 
-                out = out + this.frameWidth + " X " + this.frameHeight + ' '
+                out = out + this.frameWidthUser + " X " + this.frameHeightUser + ' '
 
 
                 if (this.FrameSizeUnit == 'mm') {
-                    out = out + "mm (" + parseFloat(this.frameWidth*0.04).toFixed(2) + " X " + parseFloat(this.frameHeight*0.04).toFixed(2)  + ' inch) '
+                    out = out + "mm (" + this.mmToInchForce(this.frameWidthUser) + " X " + this.mmToInchForce(this.frameHeightUser) + ' inch) '
                 } else {
-                    out = out + "inch (" + parseFloat(this.frameWidth*25.4).toFixed(2)  + " X " + parseFloat(this.frameHeight*25.4).toFixed(2)  + ' mm) '
+                    out = out + "inch (" + this.frameWidth + " X " + this.frameHeight + ' mm) '
                 }
 
                 out = out + this.frameDots;
@@ -433,89 +447,62 @@
             },
             frameThinkness: function () {
 
-                if (this.FrameSizeUnit == 'mm') {
-                    if (this.frameType == 'normal') {
-                        return 29
-                    }
-
-                    return 36
-                } else {
-                    if (this.frameType == 'normal') {
-                        return 1.14
-                    }
-
-                    return 1.41
+                if (this.frameType == 'normal') {
+                    return 29
                 }
+
+                return 36
+
             }
 
         },
         watch: {
             fastImgSize: function (val) {
                 if (val == 'A1') {
-                    if (this.FrameSizeUnit == 'mm') {
-                        this.frameWidth = 594
-                        this.frameHeight = 841
-                    }
-
-                    if (this.FrameSizeUnit == 'inch') {
-                        this.frameWidth = 23.39
-                        this.frameHeight = 33.11
-                    }
-
+                    this.frameWidthUser = this.mmToInch(594)
+                    this.frameHeightUser = this.mmToInch(841)
                     return val
                 }
 
                 if (val == 'A2') {
-                    if (this.FrameSizeUnit == 'mm') {
-                        this.frameWidth = 420
-                        this.frameHeight = 594
-                    }
-
-                    if (this.FrameSizeUnit == 'inch') {
-                        this.frameWidth = 16.54
-                        this.frameHeight = 23.39
-                    }
-
+                    this.frameWidthUser = this.mmToInch(420)
+                    this.frameHeightUser = this.mmToInch(594)
                     return val
                 }
 
                 if (val == 'A3') {
-                    if (this.FrameSizeUnit == 'mm') {
-                        this.frameWidth = 297
-                        this.frameHeight = 420
-                    }
-
-                    if (this.FrameSizeUnit == 'inch') {
-                        this.frameWidth = 11.69
-                        this.frameHeight = 16.54
-                    }
+                    this.frameWidthUser = this.mmToInch(297)
+                    this.frameHeightUser = this.mmToInch(420)
 
                     return val
                 }
 
                 if (val == 'A4') {
-                    if (this.FrameSizeUnit == 'mm') {
-                        this.frameWidth = 210
-                        this.frameHeight = 297
-                    }
-
-                    if (this.FrameSizeUnit == 'inch') {
-                        this.frameWidth = 8.27
-                        this.frameHeight = 11.69
-                    }
+                    this.frameWidthUser = this.mmToInch(210)
+                    this.frameHeightUser = this.mmToInch(297)
 
                     return val
                 }
             },
-            FrameSizeUnit: function (val) {
-
-                if (val == 'mm') {
-                    this.frameWidth = parseFloat(Math.round(this.frameWidth * 25.4 * 10) / 10)
-                    this.frameHeight = parseFloat(Math.round(this.frameHeight * 25.4 * 10) / 10)
+            frameWidthUser: function (val) {
+                if (this.FrameSizeUnit == 'inch') {
+                    this.frameWidth = Math.round(val * 25.4)
                 } else {
-                    this.frameWidth = parseFloat(Math.round(this.frameWidth / 25.4 * 10) / 10)
-                    this.frameHeight = parseFloat(Math.round(this.frameHeight / 25.4 * 10) / 10)
+                    this.frameWidth = val
                 }
+
+            },
+            frameHeightUser: function (val) {
+                if (this.FrameSizeUnit == 'inch') {
+                    this.frameHeight = Math.round(val * 25.4)
+                } else {
+                    this.frameHeight = val
+                }
+
+            },
+            FrameSizeUnit: function (val) {
+                this.fastImgSize = 'A2'
+                this.fastImgSize = 'A1'
             }
 
         },
@@ -541,15 +528,9 @@
                 }
 
 
-                if (this.FrameSizeUnit == 'inch') {
-                    diff = 774.31
-                } else {
-                    diff = 499554
-                }
+                square = ((this.frameWidth * this.frameHeight - 499554) / 25236.78261) * 2
 
-                square = (this.frameWidth * this.frameHeight - diff) / 25236.78261 * 2
-
-                subtotal = (4000 * 1.0241 ^ square) * discount
+                subtotal = (4000 * Math.pow(1.0241,square)) * discount
 
                 return Math.round(subtotal / 10) * 10
             },
@@ -578,46 +559,25 @@
                 return ""
             },
             innerBoxWeight: function () {
-                if (this.FrameSizeUnit == 'mm') {
-                    if (this.frameType == 'normal') {
-                        return parseFloat(this.frameWidth + 30) + " X " + (this.frameHeight + 25) + " X " + 50 + this.FrameSizeUnit
-                    }
-
-                    return (this.frameWidth + 30) + " X " + (this.frameHeight + 50) + " X  " + 50 + this.FrameSizeUnit
-                } else {
-                    if (this.frameType == 'normal') {
-                        return parseFloat(this.frameWidth + 1.18).toFixed(2) + " X " + parseFloat(this.frameHeight + 0.98).toFixed(2) + " X " + 1.97 + this.FrameSizeUnit
-                    }
-
-                    return parseFloat(this.frameWidth + 1.18).toFixed(2) + " X " + parseFloat(this.frameHeight + 1.97).toFixed(2) + " X  " + 1.97 + this.FrameSizeUnit
+                if (this.frameType == 'normal') {
+                    return this.mmToInch(this.frameWidth + 30) + " X " + this.mmToInch(this.frameHeight + 25) + " X " + this.mmToInch(50) + this.FrameSizeUnit
                 }
+
+                return this.mmToInch(this.frameWidth + 30) + " X " + this.mmToInch(this.frameHeight + 50) + " X  " + this.mmToInch(50) + this.FrameSizeUnit
+
             },
             outterBoxWeight: function () {
-                if (this.FrameSizeUnit == 'mm') {
-                    if (this.frameType == 'normal') {
-                        return (this.frameWidth + 93) + " X " + (this.frameHeight + 88) + " X " + 63 + this.FrameSizeUnit
-                    }
 
-                    return (this.frameWidth + 93) + " X " + (this.frameHeight + 88) + " X " + 70 + this.FrameSizeUnit
-                } else {
-                    if (this.frameType == 'normal') {
-                        return parseFloat(this.frameWidth + 3.66).toFixed(2) + " X " + parseFloat(this.frameHeight + 3.46).toFixed(2) + " X " + 2.48 + this.FrameSizeUnit
-                    }
-
-                    return parseFloat(this.frameWidth + 3.66).toFixed(2) + " X " + parseFloat(this.frameHeight + 3.46).toFixed(2) + " X " + 2.76 + this.FrameSizeUnit
+                if (this.frameType == 'normal') {
+                    return this.mmToInch(this.frameWidth + 93) + " X " + this.mmToInch(this.frameHeight + 88) + " X " + this.mmToInch(63) + this.FrameSizeUnit
                 }
+
+                return this.mmToInch(this.frameWidth + 93) + " X " + this.mmToInch(this.frameHeight + 88) + " X " + this.mmToInch(70) + this.FrameSizeUnit
+
             },
             unitWeight: function () {
 
-                if (this.FrameSizeUnit == 'inch') {
-                    frameWidthCalc = this.frameWidth*25.4
-                    frameHeightCalc = this.frameHeight*25.4
-                } else {
-                    frameWidthCalc = this.frameWidth
-                    frameHeightCalc = this.frameHeight
-                }
-
-                base = Math.round(((frameWidthCalc + 200) * frameHeightCalc / 100 / 2 / 1000) * 100) / 100
+                base = Math.round(((this.frameWidth + 200) * this.frameHeight / 100 / 2 / 1000) * 100) / 100
 
                 if (this.frameType == 'normal') {
                     return base
@@ -639,21 +599,29 @@
             },
             frameSpec: function () {
 
-                if (this.FrameSizeUnit == 'mm') {
-                    if (this.frameType == 'normal') {
-                        return "寬 " + (this.frameWidth + 5) + " X 長 " + (this.frameHeight + 88) + " X 厚 " + this.frameThinkness + " " + this.FrameSizeUnit
-                    }
 
-                    return "寬 " + (this.frameWidth + 5) + " X 長 " + (this.frameHeight + 88) + " X 厚 " + this.frameThinkness + " " + this.FrameSizeUnit
-                } else {
-                    if (this.frameType == 'normal') {
-                        return "寬 " + parseFloat(this.frameWidth + 0.2).toFixed(2) + " X 長 " + parseFloat(this.frameHeight + 3.46).toFixed(2) + " X 厚 " + this.frameThinkness + " " + this.FrameSizeUnit
-                    }
-
-                    return "寬 " + parseFloat(this.frameWidth + 0.2).toFixed(2) + " X 長 " + parseFloat(this.frameHeight + 3.46).toFixed(2) + " X 厚 " + this.frameThinkness + " " + this.FrameSizeUnit
+                if (this.frameType == 'normal') {
+                    return "寬 " + this.mmToInch(this.frameWidth + 5) + " X 長 " + this.mmToInch(this.frameHeight + 88) + " X 厚 " + this.mmToInch(this.frameThinkness) + " " + this.FrameSizeUnit
                 }
 
-            }
+                return "寬 " + this.mmToInch(this.frameWidth + 5) + " X 長 " + this.mmToInch(this.frameHeight + 88) + " X 厚 " + this.mmToInch(this.frameThinkness) + " " + this.FrameSizeUnit
+
+            },
+            mmToInch: function (val) {
+
+                if (this.FrameSizeUnit == 'inch') {
+                    return this.mmToInchForce(val)
+                }
+                return val
+
+            },
+            mmToInchForce: function (val) {
+
+
+                    return Math.round(val * 0.039 * 10) /10
+
+            },
+
         }
     });
 </script>

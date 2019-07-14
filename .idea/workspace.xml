@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14dd5bfc-606c-4d82-bce6-7bc9a30f4ab6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/distribution.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crystalframe.html" beforeDir="false" afterPath="$PROJECT_DIR$/crystalframe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crystalframeLED.html" beforeDir="false" afterPath="$PROJECT_DIR$/crystalframeLED.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crystalframeShowcase.html" beforeDir="false" afterPath="$PROJECT_DIR$/crystalframeShowcase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/picture.html" beforeDir="false" afterPath="$PROJECT_DIR$/picture.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/story.html" beforeDir="false" afterPath="$PROJECT_DIR$/story.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usage.html" beforeDir="false" afterPath="$PROJECT_DIR$/usage.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,25 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2025">
-              <caret line="135" column="13" selection-start-line="135" selection-start-column="13" selection-end-line="135" selection-end-column="13" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#li#1;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#0;n#a#0;n#li#8;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/product.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="403" column="143" selection-start-line="403" selection-start-column="143" selection-end-line="403" selection-end-column="143" />
+            <state relative-caret-position="390">
+              <caret line="532" column="58" selection-start-line="532" selection-start-column="58" selection-end-line="532" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -38,8 +34,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/Downloads/sizeCalc.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="4444" column="41" selection-start-line="4444" selection-start-column="31" selection-end-line="4444" selection-end-column="41" />
+            <state relative-caret-position="-2285">
+              <caret line="4453" column="30" lean-forward="true" selection-start-line="4453" selection-start-column="30" selection-end-line="4453" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -48,7 +44,7 @@
         <entry file="file://$PROJECT_DIR$/story.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2085">
-              <caret line="139" column="44" selection-start-line="139" selection-start-column="44" selection-end-line="139" selection-end-column="44" />
+              <caret line="148" column="44" selection-start-line="148" selection-start-column="44" selection-end-line="148" selection-end-column="44" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#li#1;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#i#0;n#a#0;n#li#8;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -60,8 +56,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/picture.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2340">
-              <caret line="156" column="18" selection-start-line="156" selection-start-column="18" selection-end-line="156" selection-end-column="18" />
+            <state relative-caret-position="525">
+              <caret line="165" column="18" selection-start-line="165" selection-start-column="18" selection-end-line="165" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -69,8 +65,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/usage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2085">
-              <caret line="139" column="44" selection-start-line="139" selection-start-column="44" selection-end-line="139" selection-end-column="44" />
+            <state relative-caret-position="525">
+              <caret line="148" column="44" selection-start-line="148" selection-start-column="44" selection-end-line="148" selection-end-column="44" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#li#1;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#i#0;n#a#0;n#li#8;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -84,7 +80,7 @@
         <entry file="file://$PROJECT_DIR$/crystalframeShowcase.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="5190">
-              <caret line="346" column="88" selection-start-line="346" selection-start-column="88" selection-end-line="346" selection-end-column="88" />
+              <caret line="355" column="88" selection-start-line="355" selection-start-column="88" selection-end-line="355" selection-end-column="88" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#li#1;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#i#0;n#a#0;n#li#8;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -122,8 +118,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crystalframeLED.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2205">
-              <caret line="147" column="31" selection-start-line="147" selection-start-column="31" selection-end-line="147" selection-end-column="31" />
+            <state relative-caret-position="300">
+              <caret line="99" column="22" lean-forward="true" selection-start-line="99" selection-start-column="22" selection-end-line="99" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -131,8 +127,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/contact.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2085">
-              <caret line="139" column="44" selection-start-line="139" selection-start-column="44" selection-end-line="139" selection-end-column="44" />
+            <state relative-caret-position="315">
+              <caret line="134" column="17" lean-forward="true" selection-start-line="134" selection-start-column="17" selection-end-line="134" selection-end-column="17" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#li#1;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#i#0;n#a#0;n#li#8;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -141,15 +137,19 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/distribution.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="157" column="26" selection-start-line="157" selection-start-column="26" selection-end-line="157" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>#cases&quot;&gt;水晶框實際展現</find>
-      <find>l#theoretical&quot;&gt;水晶框理論展現</find>
-      <find>crystalframeShowcase.htm#</find>
-      <find>font-size: 2rem</find>
-      <find>purple</find>
       <find>dynamicHangRect</find>
       <find>dynamicHangRect:</find>
       <find>frameLdynamicHangRect</find>
@@ -170,11 +170,16 @@
       <find>mm</find>
       <find>inch</find>
       <find>parseFloat</find>
-      <find>frameWidth</find>
-      <find>frameThinkness</find>
       <find>frameModelName</find>
       <find>frameSpec:</find>
       <find>unitTransfer</find>
+      <find>this.imgWidthRaw</find>
+      <find>mmToInch</find>
+      <find>frameThinkness</find>
+      <find>frameHeight</find>
+      <find>frameWidthUser</find>
+      <find>frameHeightUser</find>
+      <find>frameWidth</find>
     </findStrings>
     <replaceStrings>
       <replace>sample text</replace>
@@ -194,6 +199,7 @@
       <replace>crystalframeLED.html#crystalframeLED</replace>
       <replace>LED水晶框</replace>
       <replace>this.unitTransfer</replace>
+      <replace>this.mmToInch</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -217,6 +223,7 @@
         <option value="$PROJECT_DIR$/crystalframeShowcase.html" />
         <option value="$PROJECT_DIR$/picture.html" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/distribution.html" />
         <option value="$PROJECT_DIR$/product.html" />
       </list>
     </option>
@@ -235,6 +242,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -251,7 +259,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -324,7 +331,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54300000" />
+    <option name="totallyTimeSpent" value="61437000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
@@ -432,8 +439,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2025">
-          <caret line="135" column="13" selection-start-line="135" selection-start-column="13" selection-end-line="135" selection-end-column="13" />
+        <state relative-caret-position="410">
+          <caret line="111" column="17" selection-start-line="111" selection-start-column="17" selection-end-line="111" selection-end-column="17" />
           <folding>
             <element signature="n#style#0;n#div#1;n#li#1;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#i#0;n#a#0;n#li#8;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -445,7 +452,7 @@
     <entry file="file://$PROJECT_DIR$/story.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2085">
-          <caret line="139" column="44" selection-start-line="139" selection-start-column="44" selection-end-line="139" selection-end-column="44" />
+          <caret line="148" column="44" selection-start-line="148" selection-start-column="44" selection-end-line="148" selection-end-column="44" />
           <folding>
             <element signature="n#style#0;n#div#1;n#li#1;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#i#0;n#a#0;n#li#8;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -453,17 +460,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/picture.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2340">
-          <caret line="156" column="18" selection-start-line="156" selection-start-column="18" selection-end-line="156" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/usage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2085">
-          <caret line="139" column="44" selection-start-line="139" selection-start-column="44" selection-end-line="139" selection-end-column="44" />
+        <state relative-caret-position="525">
+          <caret line="148" column="44" selection-start-line="148" selection-start-column="44" selection-end-line="148" selection-end-column="44" />
           <folding>
             <element signature="n#style#0;n#div#1;n#li#1;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#i#0;n#a#0;n#li#8;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -475,7 +475,7 @@
     <entry file="file://$PROJECT_DIR$/crystalframeShowcase.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5190">
-          <caret line="346" column="88" selection-start-line="346" selection-start-column="88" selection-end-line="346" selection-end-column="88" />
+          <caret line="355" column="88" selection-start-line="355" selection-start-column="88" selection-end-line="355" selection-end-column="88" />
           <folding>
             <element signature="n#style#0;n#div#1;n#li#1;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#i#0;n#a#0;n#li#8;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -509,15 +509,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/crystalframeLED.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2205">
-          <caret line="147" column="31" selection-start-line="147" selection-start-column="31" selection-end-line="147" selection-end-column="31" />
+        <state relative-caret-position="300">
+          <caret line="99" column="22" lean-forward="true" selection-start-line="99" selection-start-column="22" selection-end-line="99" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/contact.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2085">
-          <caret line="139" column="44" selection-start-line="139" selection-start-column="44" selection-end-line="139" selection-end-column="44" />
+        <state relative-caret-position="315">
+          <caret line="134" column="17" lean-forward="true" selection-start-line="134" selection-start-column="17" selection-end-line="134" selection-end-column="17" />
           <folding>
             <element signature="n#style#0;n#div#1;n#li#1;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#i#0;n#a#0;n#li#8;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -525,17 +525,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/distribution.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="157" column="26" selection-start-line="157" selection-start-column="26" selection-end-line="157" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/picture.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="165" column="18" selection-start-line="165" selection-start-column="18" selection-end-line="165" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$USER_HOME$/Downloads/sizeCalc.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="4444" column="41" selection-start-line="4444" selection-start-column="31" selection-end-line="4444" selection-end-column="41" />
+        <state relative-caret-position="-2285">
+          <caret line="4453" column="30" lean-forward="true" selection-start-line="4453" selection-start-column="30" selection-end-line="4453" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/product.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="403" column="143" selection-start-line="403" selection-start-column="143" selection-end-line="403" selection-end-column="143" />
+        <state relative-caret-position="390">
+          <caret line="532" column="58" selection-start-line="532" selection-start-column="58" selection-end-line="532" selection-end-column="58" />
         </state>
       </provider>
     </entry>
