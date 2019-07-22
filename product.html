@@ -503,6 +503,13 @@
             FrameSizeUnit: function (val) {
                 this.fastImgSize = 'A2'
                 this.fastImgSize = 'A1'
+            },
+            frameProductType: function (val) {
+                if (val == 'R') {
+                    this.fastImgSize = 'A1'
+                } else {
+                    this.fastImgSize = ''
+                }
             }
 
         },
