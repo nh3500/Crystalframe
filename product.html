@@ -106,6 +106,16 @@
             <li class="nav-item dropdown">
                 <div class="nav-link dropdown-toggle" href="usage.html" role="button" data-toggle="dropdown"
                      aria-haspopup="true" aria-expanded="false">
+                    店家
+                </div>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="shop.html#distribution">台灣經銷店</a>
+                    <a class="dropdown-item" href="shop.html#showcase">台灣展示店</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <div class="nav-link dropdown-toggle" href="usage.html" role="button" data-toggle="dropdown"
+                     aria-haspopup="true" aria-expanded="false">
                     經銷
                 </div>
                 <div class="dropdown-menu">
@@ -120,7 +130,6 @@
                 </div>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="contact.html#mainCompany">台灣總公司</a>
-                    <a class="dropdown-item" href="contact.html#taiwanPartner">台灣各區經銷商</a>
                     <a class="dropdown-item" href="contact.html#internationalPartner">國際經銷商</a>
                 </div>
             </li>
@@ -186,7 +195,7 @@
                             <option value="A2">A2 - 420 X 594 mm</option>
                             <option value="A3">A3 - 297 X 420 mm</option>
                             <option value="A4">A4 - 210 X 297 mm</option>
-                            <option value="">其他</option>
+                            <option value="" v-if="frameProductType == 'C'">其他</option>
                         </select>
                     </div>
                     <div class="form-group row">
@@ -501,8 +510,10 @@
 
             },
             FrameSizeUnit: function (val) {
-                this.fastImgSize = 'A2'
-                this.fastImgSize = 'A1'
+                if (val == 'R') {
+                    this.fastImgSize = 'A2'
+                    this.fastImgSize = 'A1'
+                }
             },
             frameProductType: function (val) {
                 if (val == 'R') {
@@ -573,19 +584,19 @@
             },
             innerBoxWeight: function () {
                 if (this.frameType == 'normal') {
-                    return this.mmToInch(this.frameWidth + 30) + " X " + this.mmToInch(this.frameHeight + 25) + " X " + this.mmToInch(50) + this.FrameSizeUnit
+                    return (this.frameWidth + 30) + " X " + (this.frameHeight + 25) + " X " + (50) + ' mm'
                 }
 
-                return this.mmToInch(this.frameWidth + 30) + " X " + this.mmToInch(this.frameHeight + 50) + " X  " + this.mmToInch(50) + this.FrameSizeUnit
+                return (this.frameWidth + 30) + " X " + (this.frameHeight + 50) + " X  " + (50) + ' mm'
 
             },
             outterBoxWeight: function () {
 
                 if (this.frameType == 'normal') {
-                    return this.mmToInch(this.frameWidth + 93) + " X " + this.mmToInch(this.frameHeight + 88) + " X " + this.mmToInch(63) + this.FrameSizeUnit
+                    return (this.frameWidth + 93) + " X " + (this.frameHeight + 88) + " X " + (63) + ' mm'
                 }
 
-                return this.mmToInch(this.frameWidth + 93) + " X " + this.mmToInch(this.frameHeight + 88) + " X " + this.mmToInch(70) + this.FrameSizeUnit
+                return (this.frameWidth + 93) + " X " + (this.frameHeight + 88) + " X " + (70) + ' mm'
 
             },
             unitWeight: function () {
@@ -614,10 +625,10 @@
 
 
                 if (this.frameType == 'normal') {
-                    return "寬 " + this.mmToInch(this.frameWidth + 5) + " X 長 " + this.mmToInch(this.frameHeight + 88) + " X 厚 " + this.mmToInch(this.frameThinkness) + " " + this.FrameSizeUnit
+                    return "寬 " + (this.frameWidth + 5) + " X 長 " + (this.frameHeight + 88) + " X 厚 " + (this.frameThinkness) + " " + 'mm'
                 }
 
-                return "寬 " + this.mmToInch(this.frameWidth + 5) + " X 長 " + this.mmToInch(this.frameHeight + 88) + " X 厚 " + this.mmToInch(this.frameThinkness) + " " + this.FrameSizeUnit
+                return "寬 " + (this.frameWidth + 5) + " X 長 " + (this.frameHeight + 88) + " X 厚 " + (this.frameThinkness) + " " + 'mm'
 
             },
             mmToInch: function (val) {
