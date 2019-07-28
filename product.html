@@ -205,19 +205,35 @@
                             <option value="inch">inch - 圖片英制測量</option>
                         </select>
                     </div>
-                    <div class="form-group row">
-                        <label for="frameWidth" class="col-sm-2 col-form-label">圖片規格設定</label>
-                        <input type="number" class="form-control col-5" id="frameWidth" v-model="frameWidthUser"
-                               :readonly="fastImgSize != ''">
-                        <input type="number" class="form-control col-5" id="frameHeight" v-model="frameHeightUser"
-                               :readonly="fastImgSize != ''">
+                    <div class="form-group row" v-if="frameProductType == 'C'">
+                        <label for="frameWidth" class="col-form-label">圖片規格設定</label>
+                        <div class="input-group col-5">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">短邊(W)</span>
+                            </div>
+                            <input type="number" class="form-control" id="frameWidth" v-model="frameWidthUser"
+                                   :readonly="fastImgSize != ''">
+                            <div class="input-group-append">
+                                <span class="input-group-text">{{ FrameSizeUnit }}</span>
+                            </div>
+                        </div>
 
+                        <div class="input-group col-5">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">長邊(L)</span>
+                            </div>
+                            <input type="number" class="form-control" id="frameHeight" v-model="frameHeightUser"
+                                   :readonly="fastImgSize != ''">
+                            <div class="input-group-append">
+                                <span class="input-group-text">{{ FrameSizeUnit }}</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group row">
-                        <label for="frameDots" class="col-sm-2 col-form-label">是否框體側面打圓孔</label>
+                    <div class="form-group row" v-if="frameType == 'LED'">
+                        <label for="frameDots" class="col-sm-2 col-form-label">是否使用吊線(框邊設圓孔)</label>
                         <select class="col-10" id="frameDots" v-model="frameDots">
-                            <option value="VH">需要</option>
-                            <option value="V">不需要</option>
+                            <option value="VH">使用吊線(框邊設圓孔)</option>
+                            <option value="V">不使用吊線(框邊不設圓孔)</option>
                         </select>
                     </div>
                     <div class="form-group row">
@@ -418,12 +434,12 @@
 
                 out = out + "crystalframe "
 
-                out = out + this.frameWidthUser + " X " + this.frameHeightUser + ' '
-
 
                 if (this.FrameSizeUnit == 'mm') {
+                    out = out + this.frameWidthUser + " X " + this.frameHeightUser + ' '
                     out = out + "mm (" + this.mmToInchForce(this.frameWidthUser) + " X " + this.mmToInchForce(this.frameHeightUser) + ' inch) '
                 } else {
+                    out = out + this.mmToInchForce(this.frameWidthUser) + " X " + this.mmToInchForce(this.frameHeightUser) + ' '
                     out = out + "inch (" + this.frameWidth + " X " + this.frameHeight + ' mm) '
                 }
 
