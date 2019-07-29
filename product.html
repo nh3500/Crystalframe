@@ -206,8 +206,7 @@
                         </select>
                     </div>
                     <div class="form-group row" v-if="frameProductType == 'C'">
-                        <label for="frameWidth" class="col-form-label">圖片規格設定</label>
-                        <div class="input-group col-5">
+                        <div class="input-group col-12">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">短邊(W)</span>
                             </div>
@@ -217,8 +216,10 @@
                                 <span class="input-group-text">{{ FrameSizeUnit }}</span>
                             </div>
                         </div>
+                    </div>
+                    <div class="form-group row" v-if="frameProductType == 'C'">
 
-                        <div class="input-group col-5">
+                        <div class="input-group col-12">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">長邊(L)</span>
                             </div>
@@ -566,7 +567,7 @@
                     times = 2
                 }
 
-                subtotal = (this.frameWidth * this.frameHeight/277 + 200) * 2
+                subtotal = (this.frameWidth * this.frameHeight / 277 + 200) * 2
 
                 // square = ((this.frameWidth * this.frameHeight - 499554) / 25236.78261) * 2
                 //
@@ -658,7 +659,7 @@
             mmToInchForce: function (val) {
 
 
-                    return Math.round(val * 0.039 * 10) /10
+                return Math.round(val * 0.039 * 10) / 10
 
             },
 
