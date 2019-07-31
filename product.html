@@ -183,10 +183,12 @@
                     </div>
                     <div class="form-group row">
                         <label for="frameProductType" class="col-sm-2 col-form-label">圖片材質</label>
-                        <input readonly type="text" class="form-control col-10" v-if="frameType == 'normal'"
-                               value="圖紙 - 建議使用霧面圖紙(本公司有提供) 勿使用亮面圖紙以避免濕氣相黏現象,最後效果仍以實際材料為主">
-                        <input readonly type="text" class="form-control col-10" v-if="frameType == 'LED'"
-                               value="燈片 - 燈片為透明材質(本公司有提供) 使用較濃郁印刷以利透光後使得預計色彩一致">
+                        <div class="col-10" v-if="frameType == 'normal'">
+                            圖紙 - 建議使用霧面圖紙(本公司有提供) 勿使用亮面圖紙以避免濕氣相黏現象,最後效果仍以實際材料為主
+                        </div>
+                        <div class="col-10" v-if="frameType == 'LED'">
+                            燈片 - 燈片為透明材質(本公司有提供) 使用較濃郁印刷以利透光後使得預計色彩一致
+                        </div>
                     </div>
                     <div class="form-group row" v-if="frameProductType == 'R'">
                         <label for="fastImgSize" class="col-sm-2 col-form-label">快速圖片規格</label>
@@ -218,7 +220,6 @@
                         </div>
                     </div>
                     <div class="form-group row" v-if="frameProductType == 'C'">
-
                         <div class="input-group col-12">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">長邊(L)</span>
@@ -239,8 +240,16 @@
                     </div>
                     <div class="form-group row">
                         <label for="frameAmount" class="col-sm-2 col-form-label">購買數量</label>
-                        <input type="number" class="form-control col-10" id="frameAmount" value="1"
-                               v-model="frameAmount">
+
+                        <div class="input-group col-10">
+                            <input type="number" class="form-control col-12" id="frameAmount" value="1"
+                                   v-model="frameAmount">
+                            <div class="input-group-append">
+                                <span class="input-group-text">組</span>
+                            </div>
+                        </div>
+
+
                     </div>
                 </form>
 
@@ -370,11 +379,11 @@
             <div id="sim" class="mt-5">
                 <h2 class="card-title title-underline">模擬服務</h2>
                 <p class="card-text">
-                    <img src="img/product/sim/1.jpg">
-                    <img src="img/product/sim/2.jpg">
-                    <img src="img/product/sim/3.jpg">
-                    <img src="img/product/sim/4.jpg">
-                    <img src="img/product/sim/5.jpg">
+                    <img class="img-fluid" src="img/product/sim/1.jpg">
+                    <img class="img-fluid" src="img/product/sim/2.jpg">
+                    <img class="img-fluid" src="img/product/sim/3.jpg">
+                    <img class="img-fluid" src="img/product/sim/4.jpg">
+                    <img class="img-fluid" src="img/product/sim/5.jpg">
                 </p>
             </div>
             <div id="sim" class="mt-5">
