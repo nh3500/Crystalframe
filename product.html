@@ -197,6 +197,26 @@
                             <option value="A2">A2 - 420 X 594 mm</option>
                             <option value="A3">A3 - 297 X 420 mm</option>
                             <option value="A4">A4 - 210 X 297 mm</option>
+                            <option value="4x6">4x6 inch</option>
+                            <option value="7x9">7x9 inch</option>
+                            <option value="8x8">8x8 inch</option>
+                            <option value="8x10">8x10 inch</option>
+                            <option value="8x12">8x12 inch</option>
+                            <option value="8.5x11">8.5x11 inch</option>
+                            <option value="8.5x14">8.5x14 inch</option>
+                            <option value="10x12">10x12 inch</option>
+                            <option value="11x14">11x14 inchm</option>
+                            <option value="11x17">11x17 inch</option>
+                            <option value="12x12">12x12 inch</option>
+                            <option value="12x15">12x15 inch</option>
+                            <option value="12x18">12x18 inch</option>
+                            <option value="16x20">16x20 inch</option>
+                            <option value="18x24">18x24 inch</option>
+                            <option value="20x24">20x24 inch</option>
+                            <option value="20x30">20x30 inch</option>
+                            <option value="24x30">24x30 inch</option>
+                            <option value="24x36">24x36 inch</option>
+                            <option value="27x40">27x40 inch</option>
                             <option value="" v-if="frameProductType == 'C'">其他</option>
                         </select>
                     </div>
@@ -267,7 +287,6 @@
                         </td>
                     </tr>
                 </table>
-
 
                 <table class="table mt-5">
                     <tr>
@@ -518,6 +537,178 @@
 
                     return val
                 }
+
+                if (val == "4x6") {
+                    this.frameWidthUser = this.mmToInch(102)
+                    this.frameHeightUser = this.mmToInch(152)
+
+                    this.FrameSizeUnit = 'inch'
+
+                    return val
+                }
+
+                if (val == "7x9") {
+                    this.frameWidthUser = this.mmToInch(178)
+                    this.frameHeightUser = this.mmToInch(229)
+
+                    this.FrameSizeUnit = 'inch'
+
+                    return val
+                }
+
+                if (val == "8x8") {
+                    this.frameWidthUser = this.mmToInch(203)
+                    this.frameHeightUser = this.mmToInch(203)
+
+                    this.FrameSizeUnit = 'inch'
+
+                    return val
+                }
+
+                if (val == "8x10") {
+                    this.frameWidthUser = this.mmToInch(203)
+                    this.frameHeightUser = this.mmToInch(254)
+
+                    this.FrameSizeUnit = 'inch'
+
+                    return val
+                }
+
+                if (val == "8x12") {
+                    this.frameWidthUser = this.mmToInch(203)
+                    this.frameHeightUser = this.mmToInch(305)
+
+                    this.FrameSizeUnit = 'inch'
+
+                    return val
+                }
+
+                if (val == "8.5x11") {
+                    this.frameWidthUser = this.mmToInch(216)
+                    this.frameHeightUser = this.mmToInch(279)
+
+                    this.FrameSizeUnit = 'inch'
+
+                    return val
+                }
+
+                if (val == "8.5x14") {
+                    this.frameWidthUser = this.mmToInch(216)
+                    this.frameHeightUser = this.mmToInch(356)
+
+                    this.FrameSizeUnit = 'inch'
+
+                    return val
+                }
+
+                if (val == "10x12") {
+                    this.frameWidthUser = this.mmToInch(254)
+                    this.frameHeightUser = this.mmToInch(305)
+
+                    this.FrameSizeUnit = 'inch'
+
+                    return val
+                }
+
+                if (val == "11x14") {
+                    this.frameWidthUser = this.mmToInch(279)
+                    this.frameHeightUser = this.mmToInch(356)
+
+                    this.FrameSizeUnit = 'inch'
+
+                    return val
+                }
+
+                if (val == "11x17") {
+                    this.frameWidthUser = this.mmToInch(279)
+                    this.frameHeightUser = this.mmToInch(432)
+
+                    this.FrameSizeUnit = 'inch'
+
+                    return val
+                }
+
+                if (val == "12x12") {
+                    this.frameWidthUser = this.mmToInch(305)
+                    this.frameHeightUser = this.mmToInch(305)
+
+                    this.FrameSizeUnit = 'inch'
+
+                    return val
+                }
+
+                if (val == "12x15") {
+                    this.frameWidthUser = this.mmToInch(305)
+                    this.frameHeightUser = this.mmToInch(297)
+
+                    this.FrameSizeUnit = 'inch'
+
+                    return val
+                }
+
+                if (val == "12x18") {
+                    this.frameWidthUser = this.mmToInch(305)
+                    this.frameHeightUser = this.mmToInch(457)
+
+                    this.FrameSizeUnit = 'inch'
+
+                    return val
+                }
+
+                if (val == "16x20") {
+                    this.frameWidthUser = this.mmToInch(406)
+                    this.frameHeightUser = this.mmToInch(508)
+
+                    this.FrameSizeUnit = 'inch'
+
+                    return val
+                }
+
+                if (val == "18x24") {
+                    this.frameWidthUser = this.mmToInch(457)
+                    this.frameHeightUser = this.mmToInch(610)
+
+                    this.FrameSizeUnit = 'inch'
+
+                    return val
+                }
+
+                if (val == "20x24") {
+                    this.frameWidthUser = this.mmToInch(508)
+                    this.frameHeightUser = this.mmToInch(610)
+
+                    this.FrameSizeUnit = 'inch'
+
+                    return val
+                }
+
+                if (val == "20x30") {
+                    this.frameWidthUser = this.mmToInch(508)
+                    this.frameHeightUser = this.mmToInch(762)
+
+                    this.FrameSizeUnit = 'inch'
+
+                    return val
+                }
+
+                if (val == "24x36") {
+                    this.frameWidthUser = this.mmToInch(610)
+                    this.frameHeightUser = this.mmToInch(914)
+
+                    this.FrameSizeUnit = 'inch'
+
+                    return val
+                }
+
+                if (val == "27x40") {
+                    this.frameWidthUser = this.mmToInch(686)
+                    this.frameHeightUser = this.mmToInch(1016)
+
+                    this.FrameSizeUnit = 'inch'
+
+                    return val
+                }
+
             },
             frameWidthUser: function (val) {
                 if (this.FrameSizeUnit == 'inch') {
