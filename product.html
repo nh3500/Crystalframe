@@ -167,13 +167,13 @@
             <div id="price" class="mt-5">
                 <h2 class="card-title title-underline">目錄及價格</h2>
                 <form>
-                    <div class="form-group row">
-                        <label for="frameProductType" class="col-sm-2 col-form-label">生產類型</label>
-                        <select class="col-10" id="frameProductType" v-model="frameProductType">
-                            <option value="R">常貨型(R) - 常用出貨型 有庫存 可短期內出貨</option>
-                            <option value="C">客製型(C) - 無庫存 乃根據您的圖片規格需求之特製水晶框</option>
-                        </select>
-                    </div>
+<!--                    <div class="form-group row">-->
+<!--                        <label for="frameProductType" class="col-sm-2 col-form-label">生產類型</label>-->
+<!--                        <select class="col-10" id="frameProductType" v-model="frameProductType">-->
+<!--                            <option value="R">常貨型(R) - 常用出貨型 有庫存 可短期內出貨</option>-->
+<!--                            <option value="C">客製型(C) - 無庫存 乃根據您的圖片規格需求之特製水晶框</option>-->
+<!--                        </select>-->
+<!--                    </div>-->
                     <div class="form-group row">
                         <label for="frameType" class="col-sm-2 col-form-label">水晶框種類</label>
                         <select class="col-10" id="frameType" v-model="frameType">
@@ -190,7 +190,7 @@
                             燈片 - 燈片為透明材質(本公司有提供) 使用較濃郁印刷以利透光後使得預計色彩一致
                         </div>
                     </div>
-                    <div class="form-group row" v-if="frameProductType == 'R'">
+                    <div class="form-group row">
                         <label for="fastImgSize" class="col-sm-2 col-form-label">快速圖片規格</label>
                         <select class="col-10" id="fastImgSize" v-model="fastImgSize">
                             <option value="A1">A1 - 594 X 841 mm</option>
@@ -205,7 +205,7 @@
                             <option value="8.5x11">8.5x11 inch</option>
                             <option value="8.5x14">8.5x14 inch</option>
                             <option value="10x12">10x12 inch</option>
-                            <option value="11x14">11x14 inchm</option>
+                            <option value="11x14">11x14 inch</option>
                             <option value="11x17">11x17 inch</option>
                             <option value="12x12">12x12 inch</option>
                             <option value="12x15">12x15 inch</option>
@@ -217,7 +217,7 @@
                             <option value="24x30">24x30 inch</option>
                             <option value="24x36">24x36 inch</option>
                             <option value="27x40">27x40 inch</option>
-                            <option value="" v-if="frameProductType == 'C'">其他</option>
+                            <option value="">其他</option>
                         </select>
                     </div>
                     <div class="form-group row">
@@ -227,25 +227,23 @@
                             <option value="inch">inch - 圖片英制測量</option>
                         </select>
                     </div>
-                    <div class="form-group row" v-if="frameProductType == 'C'">
+                    <div class="form-group row">
                         <div class="input-group col-12">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">短邊(W)</span>
                             </div>
-                            <input type="number" class="form-control" id="frameWidth" v-model="frameWidthUser"
-                                   :readonly="fastImgSize != ''">
+                            <input type="number" class="form-control" id="frameWidth" v-model="frameWidthUser">
                             <div class="input-group-append">
                                 <span class="input-group-text">{{ FrameSizeUnit }}</span>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group row" v-if="frameProductType == 'C'">
+                    <div class="form-group row">
                         <div class="input-group col-12">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">長邊(L)</span>
                             </div>
-                            <input type="number" class="form-control" id="frameHeight" v-model="frameHeightUser"
-                                   :readonly="fastImgSize != ''">
+                            <input type="number" class="form-control" id="frameHeight" v-model="frameHeightUser">
                             <div class="input-group-append">
                                 <span class="input-group-text">{{ FrameSizeUnit }}</span>
                             </div>
@@ -289,13 +287,13 @@
                 </table>
 
                 <table class="table mt-5">
-                    <tr>
-                        <td>生產類型</td>
-                        <td>
-                            <span v-if="frameProductType == 'R'">常貨型(R) - 常用出貨型 有庫存 可短期內出貨</span>
-                            <span v-if="frameProductType == 'C'">客製型(C) - 無庫存 乃根據您的圖片規格需求之特製水晶框</span>
-                        </td>
-                    </tr>
+<!--                    <tr>-->
+<!--                        <td>生產類型</td>-->
+<!--                        <td>-->
+<!--                            <span v-if="frameProductType == 'R'">常貨型(R) - 常用出貨型 有庫存 可短期內出貨</span>-->
+<!--                            <span v-if="frameProductType == 'C'">客製型(C) - 無庫存 乃根據您的圖片規格需求之特製水晶框</span>-->
+<!--                        </td>-->
+<!--                    </tr>-->
                     <tr>
                         <td>水晶框種類</td>
                         <td>
@@ -453,13 +451,15 @@
             frameModelName: function () {
                 out = ""
 
-                out = out + this.fastImgSize + " "
+                if (this.fastImgSize.includes("A")) {
+                    out = out + this.fastImgSize + " "
+                }
 
                 if (this.frameType == 'LED') {
                     out = out + this.frameType + " "
                 }
 
-                out = out + this.frameProductType + " "
+                // out = out + this.frameProductType + " "
 
                 out = out + "crystalframe "
 
@@ -468,7 +468,7 @@
                     out = out + this.frameWidthUser + " X " + this.frameHeightUser + ' '
                     out = out + "mm (" + this.mmToInchForce(this.frameWidthUser) + " X " + this.mmToInchForce(this.frameHeightUser) + ' inch) '
                 } else {
-                    out = out + this.mmToInchForce(this.frameWidthUser) + " X " + this.mmToInchForce(this.frameHeightUser) + ' '
+                    out = out + (this.frameWidthUser) + " X " + (this.frameHeightUser) + ' '
                     out = out + "inch (" + this.frameWidth + " X " + this.frameHeight + ' mm) '
                 }
 
@@ -539,172 +539,158 @@
                 }
 
                 if (val == "4x6") {
-                    this.frameWidthUser = this.mmToInch(102)
-                    this.frameHeightUser = this.mmToInch(152)
-
                     this.FrameSizeUnit = 'inch'
+                    this.frameWidthUser = 4
+                    this.frameHeightUser = 6
 
                     return val
                 }
 
                 if (val == "7x9") {
-                    this.frameWidthUser = this.mmToInch(178)
-                    this.frameHeightUser = this.mmToInch(229)
-
                     this.FrameSizeUnit = 'inch'
+                    this.frameWidthUser = 7
+                    this.frameHeightUser = 9
 
                     return val
                 }
 
                 if (val == "8x8") {
-                    this.frameWidthUser = this.mmToInch(203)
-                    this.frameHeightUser = this.mmToInch(203)
-
                     this.FrameSizeUnit = 'inch'
+                    this.frameWidthUser = 8
+                    this.frameHeightUser = 8
 
                     return val
                 }
 
                 if (val == "8x10") {
-                    this.frameWidthUser = this.mmToInch(203)
-                    this.frameHeightUser = this.mmToInch(254)
-
                     this.FrameSizeUnit = 'inch'
+                    this.frameWidthUser = 8
+                    this.frameHeightUser = 10
 
                     return val
                 }
 
                 if (val == "8x12") {
-                    this.frameWidthUser = this.mmToInch(203)
-                    this.frameHeightUser = this.mmToInch(305)
-
                     this.FrameSizeUnit = 'inch'
+                    this.frameWidthUser = 8
+                    this.frameHeightUser = 12
 
                     return val
                 }
 
                 if (val == "8.5x11") {
-                    this.frameWidthUser = this.mmToInch(216)
-                    this.frameHeightUser = this.mmToInch(279)
-
                     this.FrameSizeUnit = 'inch'
+                    this.frameWidthUser = 8.5
+                    this.frameHeightUser = 11
 
                     return val
                 }
 
                 if (val == "8.5x14") {
-                    this.frameWidthUser = this.mmToInch(216)
-                    this.frameHeightUser = this.mmToInch(356)
-
                     this.FrameSizeUnit = 'inch'
+                    this.frameWidthUser = 8.5
+                    this.frameHeightUser = 14
 
                     return val
                 }
 
                 if (val == "10x12") {
-                    this.frameWidthUser = this.mmToInch(254)
-                    this.frameHeightUser = this.mmToInch(305)
-
                     this.FrameSizeUnit = 'inch'
+                    this.frameWidthUser = 10
+                    this.frameHeightUser = 12
 
                     return val
                 }
 
                 if (val == "11x14") {
-                    this.frameWidthUser = this.mmToInch(279)
-                    this.frameHeightUser = this.mmToInch(356)
-
                     this.FrameSizeUnit = 'inch'
+                    this.frameWidthUser = 11
+                    this.frameHeightUser = 14
 
                     return val
                 }
 
                 if (val == "11x17") {
-                    this.frameWidthUser = this.mmToInch(279)
-                    this.frameHeightUser = this.mmToInch(432)
-
                     this.FrameSizeUnit = 'inch'
+                    this.frameWidthUser = 11
+                    this.frameHeightUser = 17
 
                     return val
                 }
 
                 if (val == "12x12") {
-                    this.frameWidthUser = this.mmToInch(305)
-                    this.frameHeightUser = this.mmToInch(305)
-
                     this.FrameSizeUnit = 'inch'
+                    this.frameWidthUser = 12
+                    this.frameHeightUser = 12
+
 
                     return val
                 }
 
                 if (val == "12x15") {
-                    this.frameWidthUser = this.mmToInch(305)
-                    this.frameHeightUser = this.mmToInch(297)
-
                     this.FrameSizeUnit = 'inch'
+                    this.frameWidthUser = 12
+                    this.frameHeightUser = 15
+
 
                     return val
                 }
 
                 if (val == "12x18") {
-                    this.frameWidthUser = this.mmToInch(305)
-                    this.frameHeightUser = this.mmToInch(457)
-
                     this.FrameSizeUnit = 'inch'
+                    this.frameWidthUser = 12
+                    this.frameHeightUser = 18
+
 
                     return val
                 }
 
                 if (val == "16x20") {
-                    this.frameWidthUser = this.mmToInch(406)
-                    this.frameHeightUser = this.mmToInch(508)
-
                     this.FrameSizeUnit = 'inch'
+                    this.frameWidthUser = 16
+                    this.frameHeightUser = 20
 
                     return val
                 }
 
                 if (val == "18x24") {
-                    this.frameWidthUser = this.mmToInch(457)
-                    this.frameHeightUser = this.mmToInch(610)
-
                     this.FrameSizeUnit = 'inch'
+                    this.frameWidthUser = 18
+                    this.frameHeightUser = 24
+
 
                     return val
                 }
 
                 if (val == "20x24") {
-                    this.frameWidthUser = this.mmToInch(508)
-                    this.frameHeightUser = this.mmToInch(610)
-
                     this.FrameSizeUnit = 'inch'
+                    this.frameWidthUser = 20
+                    this.frameHeightUser = 24
 
                     return val
                 }
 
                 if (val == "20x30") {
-                    this.frameWidthUser = this.mmToInch(508)
-                    this.frameHeightUser = this.mmToInch(762)
-
                     this.FrameSizeUnit = 'inch'
+                    this.frameWidthUser = 20
+                    this.frameHeightUser = 30
+
 
                     return val
                 }
 
                 if (val == "24x36") {
-                    this.frameWidthUser = this.mmToInch(610)
-                    this.frameHeightUser = this.mmToInch(914)
-
                     this.FrameSizeUnit = 'inch'
+                    this.frameWidthUser = 24
+                    this.frameHeightUser = 36
 
                     return val
                 }
 
                 if (val == "27x40") {
-                    this.frameWidthUser = this.mmToInch(686)
-                    this.frameHeightUser = this.mmToInch(1016)
-
                     this.FrameSizeUnit = 'inch'
+                    this.frameWidthUser = 27
+                    this.frameHeightUser = 40
 
                     return val
                 }
@@ -793,9 +779,9 @@
                 return 14
             },
             annotation: function () {
-                if (this.frameProductType == 'C') {
-                    return "多兩個透明中板"
-                }
+                // if (this.frameProductType == 'C') {
+                //     return "多兩個透明中板"
+                // }
 
                 return ""
             },
@@ -853,6 +839,7 @@
                 if (this.FrameSizeUnit == 'inch') {
                     return this.mmToInchForce(val)
                 }
+
                 return val
 
             },
