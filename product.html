@@ -175,6 +175,13 @@
 <!--                        </select>-->
 <!--                    </div>-->
                     <div class="form-group row">
+                        <label for="service" class="col-sm-2 col-form-label">水晶框種類</label>
+                        <select class="col-10" id="service" >
+                            <option value="">水晶框系列</option>
+                            <option value="">圖紙服務</option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
                         <label for="frameType" class="col-sm-2 col-form-label">水晶框種類</label>
                         <select class="col-10" id="frameType" v-model="frameType">
                             <option value="normal">水晶框 - 高級塑料 無LED發光板 普遍使用型</option>
@@ -484,7 +491,7 @@
                     out = "(1F1L)"
                 }
 
-                out += this.frameProductType
+                // out += this.frameProductType
 
                 out += this.frameWidth + "X" + this.frameHeight
 
@@ -809,12 +816,12 @@
                 if (this.frameType == 'normal') {
                     return base
                 } else {
-                    if (this.frameProductType == 'C') {
-
-                        return Math.round((base * 2.6 * 100) / 100)
-                    } else {
+                    // if (this.frameProductType == 'C') {
+                    //
+                    //     return Math.round((base * 2.6 * 100) / 100)
+                    // } else {
                         return Math.round((base * 2.4 * 100) / 100)
-                    }
+                    // }
                 }
             },
             grossWeight: function () {
