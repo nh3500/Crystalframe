@@ -49,9 +49,9 @@
                                                                                                 src="img/silver_logo.png"
                                                                                                 style="width: 2rem">
                         水晶框展現</a>
-                    <a class="dropdown-item" href="crystalframeShowcase.html#crystalframeLED"><img class="img-fluid"
-                                                                                                   src="img/gold_logo.png"
-                                                                                                   style="width: 2rem">
+                    <a class="dropdown-item" href="crystalframeShowcaseLED.html#crystalframeLED"><img class="img-fluid"
+                                                                                         src="img/gold_logo.png"
+                                                                                         style="width: 2rem">
                         LED水晶框展現</a>
                 </div>
             </li>
@@ -175,11 +175,11 @@
 <!--                        </select>-->
 <!--                    </div>-->
                     <div class="form-group row">
-                        <label for="service" class="col-sm-2 col-form-label">水晶框種類</label>
-                        <select class="col-10" id="service" >
-                            <option value="">水晶框系列</option>
-                            <option value="">圖紙服務</option>
-                            <option value="">配件</option>
+                        <label for="service" class="col-sm-2 col-form-label">品項</label>
+                        <select class="col-10" id="service" v-model="service">
+                            <option value="crystalframe">水晶框系列</option>
+                            <option value="picturePrinting">圖紙服務 - 本選擇之圖紙服務僅以單純適用裱裝於水晶框之輸圖，其他如數量較多如海報等請另詢問</option>
+                            <option value="accessory">配件</option>
                         </select>
                     </div>
                     <div class="form-group row">
@@ -189,14 +189,13 @@
                             <option value="LED">LED 水晶框 - 高級塑料結合高質感LED發光板 最適合商業使用</option>
                         </select>
                     </div>
-                    <div class="form-group row">
-                        <label for="frameProductType" class="col-sm-2 col-form-label">圖片材質</label>
-                        <div class="col-10" v-if="frameType == 'normal'">
-                            圖紙 - 建議使用霧面圖紙(本公司有提供) 勿使用亮面圖紙以避免濕氣相黏現象,最後效果仍以實際材料為主
-                        </div>
-                        <div class="col-10" v-if="frameType == 'LED'">
-                            燈片 - 燈片為透明材質(本公司有提供) 使用較濃郁印刷以利透光後使得預計色彩一致
-                        </div>
+                    <div class="form-group row" v-if="service == 'picturePrinting'">
+                        <label for="frameType" class="col-sm-2 col-form-label">圖紙</label>
+                        <select class="col-10" id="picturePrintingType" v-model="picturePrintingType">
+                            <option value="PP" v-if="frameType == 'normal'">水性墨PP相紙 霧膜</option>
+                            <option value="SNOW" v-if="frameType == 'normal'">高階雪面銅版紙</option>
+                            <option value="LIGHT" v-if="frameType == 'LED'">乳膠霧燈片 霧膜</option>
+                        </select>
                     </div>
                     <div class="form-group row">
                         <label for="fastImgSize" class="col-sm-2 col-form-label">快速圖片規格</label>
@@ -286,7 +285,7 @@
                             {{frameModelName}}
                         </td>
                     </tr>
-                    <tr>
+                    <tr v-if="service == 'crystalframe'">
                         <td>商品副名</td>
                         <td>
                             {{frameModelNameSub}}
@@ -334,7 +333,7 @@
                             {{frameWidthUser + " X "+frameHeightUser}}
                         </td>
                     </tr>
-                    <tr>
+                    <tr v-if="service == 'crystalframe'">
                         <td>是否框體側面打圓孔</td>
                         <td>
                             <span v-if="frameDots == 'VH'">需要</span>
@@ -355,23 +354,23 @@
                         <td>總價</td>
                         <td>總共 {{ totalPrice() }} NTD</td>
                     </tr>
-                    <tr>
+                    <tr v-if="service == 'crystalframe'">
                         <td>框體的規格</td>
                         <td>{{ frameSpec() }}</td>
                     </tr>
-                    <tr>
+                    <tr v-if="service == 'crystalframe'">
                         <td>框體淨重N.W.</td>
                         <td>{{unitWeight()}} KG</td>
                     </tr>
-                    <tr>
+                    <tr v-if="service == 'crystalframe'">
                         <td>毛重G.W.</td>
                         <td>{{grossWeight()}} KG</td>
                     </tr>
-                    <tr>
+                    <tr v-if="service == 'crystalframe'">
                         <td>內箱 紙箱尺寸</td>
                         <td> {{ innerBoxWeight() }}</td>
                     </tr>
-                    <tr>
+                    <tr v-if="service == 'crystalframe'">
                         <td>外箱 紙箱尺寸</td>
                         <td> {{ outterBoxWeight() }}</td>
                     </tr>
@@ -454,6 +453,8 @@
             frameHeightUser: 841,
             frameDots: 'V',
             frameAmount: 1,
+            picturePrintingType: 'PP',
+            service:'crystalframe',
         },
         computed: {
             frameModelName: function () {
@@ -463,14 +464,23 @@
                     out = out + this.fastImgSize + " "
                 }
 
+                if (this.service == 'picturePrinting') {
+                    out = out + this.picturePrintingType +" "
+                }
+
                 if (this.frameType == 'LED') {
                     out = out + this.frameType + " "
                 }
 
                 // out = out + this.frameProductType + " "
 
-                out = out + "crystalframe "
+                if (this.service == 'crystalframe') {
+                    out = out + "crystalframe "
+                }
 
+                if (this.service == 'picturePrinting') {
+                    out = out + "print "
+                }
 
                 if (this.FrameSizeUnit == 'mm') {
                     out = out + this.frameWidthUser + " X " + this.frameHeightUser + ' '
@@ -485,6 +495,8 @@
                 return out
             },
             frameModelNameSub: function () {
+
+
 
                 if (this.frameType == 'normal') {
                     out = "(1F1T)"
@@ -732,64 +744,111 @@
                 } else {
                     this.fastImgSize = ''
                 }
-            }
-
+            },
+            frameType:function (val) {
+                if (val == 'normal') {
+                    this.picturePrintingType = 'PP'
+                } else {
+                    this.picturePrintingType = 'LIGHT'
+                }
+            },
         },
         methods: {
             unitPrice: function () {
 
+                if (this.service == 'crystalframe') {
 
-                discount = 1
-                if (this.frameAmount >= 1000) {
-                    discount = 0.6
+
+                    discount = 1
+                    if (this.frameAmount >= 1000) {
+                        discount = 0.6
+                    }
+
+                    if (this.frameAmount >= 500) {
+                        discount = 0.7
+                    }
+
+                    if (this.frameAmount >= 100) {
+                        discount = 0.8
+                    }
+
+                    if (this.frameAmount >= 50) {
+                        discount = 0.9
+                    }
+
+                    times = 1
+                    if (this.frameType == 'LED') {
+                        times = 2
+                    }
+
+                    subtotal = (this.frameWidth * this.frameHeight / 277 + 200) * 2
+
+                    // square = ((this.frameWidth * this.frameHeight - 499554) / 25236.78261) * 2
+                    //
+                    // subtotal = (4000 * Math.pow(1.044,square)) * discount
+
+                    return Math.round(subtotal / 100) * 100 * times
                 }
 
-                if (this.frameAmount >= 500) {
-                    discount = 0.7
+                if (this.service == 'picturePrinting') {
+
+                    if (this.picturePrintingType == 'PP'){
+                        variance = 25
+                    }
+
+                    if (this.picturePrintingType == 'SNOW'){
+                        variance = 150
+                    }
+
+                    if (this.picturePrintingType == 'LIGHT'){
+                        variance = 50
+                    }
+
+                    return Math.round(this.frameWidth * this.frameHeight / 90000 * variance * 4 / 10) * 10
                 }
-
-                if (this.frameAmount >= 100) {
-                    discount = 0.8
-                }
-
-                if (this.frameAmount >= 50) {
-                    discount = 0.9
-                }
-
-                times = 1
-                if (this.frameType == 'LED') {
-                    times = 2
-                }
-
-                subtotal = (this.frameWidth * this.frameHeight / 277 + 200) * 2
-
-                // square = ((this.frameWidth * this.frameHeight - 499554) / 25236.78261) * 2
-                //
-                // subtotal = (4000 * Math.pow(1.044,square)) * discount
-
-                return Math.round(subtotal / 100) * 100 * times
             },
             totalPrice: function () {
                 return (this.unitPrice() * this.frameAmount)
             },
             producingPreoid: function () {
-                if (this.frameType == 'normal') {
-                    return 7
+
+                if (this.service == 'crystalframe') {
+                    if (this.frameType == 'normal') {
+                        return 7
+                    }
+
+                    return 14
                 }
 
-                return 14
+
+                if (this.service == 'picturePrinting') {
+                    return 5
+                }
+
+
             },
             transportTime: function () {
-                if (this.frameType == 'normal') {
+                if (this.service == 'crystalframe') {
+                    if (this.frameType == 'normal') {
+                        return 7
+                    }
+
+                    return 14
+                }
+
+                if (this.service == 'picturePrinting') {
                     return 7
                 }
 
-                return 14
             },
             annotation: function () {
                 // if (this.frameProductType == 'C') {
                 //     return "多兩個透明中板"
                 // }
+
+                if (this.service == 'picturePrinting') {
+                    return "基本圖紙包裝(捲狀) 運費已含至國內指定地點"
+                }
 
                 return ""
             },
