@@ -176,15 +176,15 @@
                         <label for="service" class="col-sm-2 col-form-label">品項</label>
                         <select class="col-10" id="service" v-model="service">
                             <option value="crystalframe">水晶框系列</option>
-                            <option value="picturePrinting">圖紙服務 - 本選擇之圖紙服務僅以單純適用裱裝於水晶框之輸圖，其他如數量較多如海報等請另詢問</option>
+                            <option value="picturePrinting">圖紙服務 <span class="hint-text">- 本選擇之圖紙服務僅以單純適用裱裝於水晶框之輸圖，其他如數量較多如海報等請另詢問</span></option>
                             <option value="accessory">配件</option>
                         </select>
                     </div>
                     <div class="form-group row">
                         <label for="frameType" class="col-sm-2 col-form-label">水晶框種類</label>
                         <select class="col-10" id="frameType" v-model="frameType">
-                            <option value="normal">水晶框 - 高級塑料 無LED發光板 普遍使用型</option>
-                            <option value="LED">LED 水晶框 - 高級塑料結合高質感LED發光板 最適合商業使用</option>
+                            <option value="normal">水晶框 <span class="hint-text">- 高級塑料 無LED發光板 普遍使用型</span></option>
+                            <option value="LED">LED 水晶框 <span class="hint-text">- 高級塑料結合高質感LED發光板 最適合商業使用</span></option>
                         </select>
                     </div>
                     <div class="form-group row" v-if="service == 'picturePrinting'">
@@ -374,11 +374,11 @@
                     </tr>
                     <tr>
                         <td>生產週期</td>
-                        <td> {{producingPreoid()}}天</td>
+                        <td> {{producingPreoid()}} 個工作天</td>
                     </tr>
                     <tr>
                         <td>出貨週期</td>
-                        <td> {{transportTime()}} 天</td>
+                        <td> {{transportTime()}} 個工作天</td>
                     </tr>
                     <tr>
                         <td>備註</td>
@@ -798,10 +798,10 @@
             transportTime: function () {
                 if (this.service == 'crystalframe') {
                     if (this.frameType == 'normal') {
-                        return 7
+                        return 10
                     }
 
-                    return 14
+                    return 17
                 }
 
                 if (this.service == 'picturePrinting') {
@@ -845,18 +845,13 @@
             },
             unitWeight: function () {
 
-                base = Math.round(((this.frameWidth + 200) * this.frameHeight / 100 / 2 / 1000) * 100) / 100
-
                 if (this.frameType == 'normal') {
-                    return base
+                     factor = 1
                 } else {
-                    // if (this.frameProductType == 'C') {
-                    //
-                    //     return Math.round((base * 2.6 * 100) / 100)
-                    // } else {
-                    return Math.round((base * 2.4 * 100) / 100)
-                    // }
+                    factor = 2.4
                 }
+
+                return Math.round(((this.frameWidth + 200) * this.frameHeight / 100 / 2 / 1000 * factor) * 10) / 10
             },
             grossWeight: function () {
                 if (this.frameType == 'normal') {

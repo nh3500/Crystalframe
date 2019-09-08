@@ -71,3 +71,7 @@ html {
 .navbar-nav {
     line-height: 1.2;
 }
+
+.hint-text {
+    color: lightgray;
+}
