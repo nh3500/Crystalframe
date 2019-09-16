@@ -385,6 +385,11 @@
                         <td> {{ annotation() }}</td>
                     </tr>
                 </table>
+                <div>
+                    <img class="img-fluid col-3" src="./img/product/0909_intro_outer.png">
+                    <img class="img-fluid col-3" src="./img/product/0909_intro_frame.png">
+                    <img class="img-fluid col-3" src="./img/product/0909_intro_print.png">
+                </div>
             </div>
         </div>
     </section>
@@ -846,19 +851,18 @@
             unitWeight: function () {
 
                 if (this.frameType == 'normal') {
-                     factor = 1
+                    return Math.round(((this.frameWidth + 200) * this.frameHeight / 100 / 2 / 1000 ) * 10) / 10
                 } else {
-                    factor = 2.4
+                    return Math.round(Math.round(((this.frameWidth + 200) * this.frameHeight / 100 / 2 / 1000 ) * 10) / 10 * 2.5 * 10) / 10
                 }
 
-                return Math.round(((this.frameWidth + 200) * this.frameHeight / 100 / 2 / 1000 * factor) * 10) / 10
             },
             grossWeight: function () {
                 if (this.frameType == 'normal') {
-                    return this.unitWeight() * 2
+                    return Math.round(this.unitWeight() * 2 *10) /10
                 }
 
-                return this.unitWeight() * 3
+                return Math.round(this.unitWeight() * 3 * 10)/ 10
             },
             frameSpec: function () {
 
