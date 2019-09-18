@@ -227,14 +227,14 @@
                             <option value="">其他</option>
                         </select>
                     </div>
-                    <div class="form-group row">
+                    <div class="form-group row" v-if="fastImgSize == ''">
                         <label for="FrameSizeUnit" class="col-sm-2 col-form-label">圖片規格單位</label>
                         <select class="col-10" id="FrameSizeUnit" v-model="FrameSizeUnit">
                             <option value="mm">mm - <small>圖片公制測量</small></option>
                             <option value="inch">inch - 圖片英制測量</option>
                         </select>
                     </div>
-                    <div class="form-group row">
+                    <div class="form-group row" v-if="fastImgSize == ''">
                         <div class="input-group col-12">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">短邊(W)</span>
@@ -245,7 +245,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="form-group row" v-if="fastImgSize == ''">
                         <div class="input-group col-12">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">長邊(L)</span>
@@ -330,7 +330,7 @@
                     <tr>
                         <td>圖片規格設定 </td>
                         <td>
-                            {{ frameWidthUser + " X " + frameHeightUser}}
+                            {{ frameWidthUser + " X " + frameHeightUser + "mm"}}
                         </td>
                     </tr>
                     <tr v-if="service == 'crystalframe'">
@@ -387,6 +387,7 @@
                         <td> {{ annotation() }}</td>
                     </tr>
                 </table>
+                <h6>示意圖</h6>
                 <div class="card-deck">
                     <div class="card mt-5" style="border: none">
                         <div style="min-height: 500px">
@@ -532,18 +533,21 @@
         watch: {
             fastImgSize: function (val) {
                 if (val == 'A1') {
+                    this.FrameSizeUnit = 'mm'
                     this.frameWidthUser = this.mmToInch(594)
                     this.frameHeightUser = this.mmToInch(841)
                     return val
                 }
 
                 if (val == 'A2') {
+                    this.FrameSizeUnit = 'mm'
                     this.frameWidthUser = this.mmToInch(420)
                     this.frameHeightUser = this.mmToInch(594)
                     return val
                 }
 
                 if (val == 'A3') {
+                    this.FrameSizeUnit = 'mm'
                     this.frameWidthUser = this.mmToInch(297)
                     this.frameHeightUser = this.mmToInch(420)
 
@@ -551,6 +555,7 @@
                 }
 
                 if (val == 'A4') {
+                    this.FrameSizeUnit = 'mm'
                     this.frameWidthUser = this.mmToInch(210)
                     this.frameHeightUser = this.mmToInch(297)
 
@@ -674,7 +679,6 @@
                     this.frameWidthUser = 18
                     this.frameHeightUser = 24
 
-
                     return val
                 }
 
@@ -706,6 +710,14 @@
                     this.FrameSizeUnit = 'inch'
                     this.frameWidthUser = 27
                     this.frameHeightUser = 40
+
+                    return val
+                }
+
+                if (val == "") {
+                    this.FrameSizeUnit = 'mm'
+                    this.frameWidthUser = 0
+                    this.frameHeightUser = 0
 
                     return val
                 }

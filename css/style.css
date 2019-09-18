@@ -75,3 +75,7 @@ html {
 .hint-text {
     color: lightgray;
 }
+
+.container {
+    max-width: 1080px;
+}
