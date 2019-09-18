@@ -176,7 +176,8 @@
                         <label for="service" class="col-sm-2 col-form-label">品項</label>
                         <select class="col-10" id="service" v-model="service">
                             <option value="crystalframe">水晶框系列</option>
-                            <option value="picturePrinting">圖紙服務 <span class="hint-text">- 本選擇之圖紙服務僅以單純適用裱裝於水晶框之輸圖，其他如數量較多如海報等請另詢問</span></option>
+                            <option value="picturePrinting">圖紙服務 <span class="hint-text">- 本選擇之圖紙服務僅以單純適用裱裝於水晶框之輸圖，其他如數量較多如海報等請另詢問</span>
+                            </option>
                             <option value="accessory">配件</option>
                         </select>
                     </div>
@@ -184,7 +185,8 @@
                         <label for="frameType" class="col-sm-2 col-form-label">水晶框種類</label>
                         <select class="col-10" id="frameType" v-model="frameType">
                             <option value="normal">水晶框 <span class="hint-text">- 高級塑料 無LED發光板 普遍使用型</span></option>
-                            <option value="LED">LED 水晶框 <span class="hint-text">- 高級塑料結合高質感LED發光板 最適合商業使用</span></option>
+                            <option value="LED">LED 水晶框 <span class="hint-text">- 高級塑料結合高質感LED發光板 最適合商業使用</span>
+                            </option>
                         </select>
                     </div>
                     <div class="form-group row" v-if="service == 'picturePrinting'">
@@ -198,37 +200,37 @@
                     <div class="form-group row">
                         <label for="fastImgSize" class="col-sm-2 col-form-label">快速圖片規格</label>
                         <select class="col-10" id="fastImgSize" v-model="fastImgSize">
-                            <option value="A1">A1 - 594 X 841 mm</option>
-                            <option value="A2">A2 - 420 X 594 mm</option>
-                            <option value="A3">A3 - 297 X 420 mm</option>
-                            <option value="A4">A4 - 210 X 297 mm</option>
-                            <option value="4x6">4x6 inch</option>
-                            <option value="7x9">7x9 inch</option>
-                            <option value="8x8">8x8 inch</option>
-                            <option value="8x10">8x10 inch</option>
-                            <option value="8x12">8x12 inch</option>
-                            <option value="8.5x11">8.5x11 inch</option>
-                            <option value="8.5x14">8.5x14 inch</option>
-                            <option value="10x12">10x12 inch</option>
-                            <option value="11x14">11x14 inch</option>
-                            <option value="11x17">11x17 inch</option>
-                            <option value="12x12">12x12 inch</option>
-                            <option value="12x15">12x15 inch</option>
-                            <option value="12x18">12x18 inch</option>
-                            <option value="16x20">16x20 inch</option>
-                            <option value="18x24">18x24 inch</option>
-                            <option value="20x24">20x24 inch</option>
-                            <option value="20x30">20x30 inch</option>
-                            <option value="24x30">24x30 inch</option>
-                            <option value="24x36">24x36 inch</option>
-                            <option value="27x40">27x40 inch</option>
+                            <option value="A1">A1 - W594 * H841 mm</option>
+                            <option value="A2">A2 - W420 * H594 mm</option>
+                            <option value="A3">A3 - W297 * H420 mm</option>
+                            <option value="A4">A4 - W210 * H297 mm</option>
+                            <option value="4x6">W4 * H6 inch</option>
+                            <option value="7x9">W7 * H9 inch</option>
+                            <option value="8x8">W8 * H8 inch</option>
+                            <option value="8x10">W8 * H10 inch</option>
+                            <option value="8x12">W8 * H12 inch</option>
+                            <option value="8.5x11">W8.5 * H11 inch</option>
+                            <option value="8.5x14">W8.5 * H14 inch</option>
+                            <option value="10x12">W10 * H12 inch</option>
+                            <option value="11x14">W11 * H14 inch</option>
+                            <option value="11x17">W11 * H17 inch</option>
+                            <option value="12x12">W12 * H12 inch</option>
+                            <option value="12x15">W12 * H15 inch</option>
+                            <option value="12x18">W12 * H18 inch</option>
+                            <option value="16x20">W16 * H20 inch</option>
+                            <option value="18x24">W18 * H24 inch</option>
+                            <option value="20x24">W20 * H24 inch</option>
+                            <option value="20x30">W20 * H30 inch</option>
+                            <option value="24x30">W24 * H30 inch</option>
+                            <option value="24x36">W24 * H36 inch</option>
+                            <option value="27x40">W27 * H40 inch</option>
                             <option value="">其他</option>
                         </select>
                     </div>
                     <div class="form-group row">
                         <label for="FrameSizeUnit" class="col-sm-2 col-form-label">圖片規格單位</label>
                         <select class="col-10" id="FrameSizeUnit" v-model="FrameSizeUnit">
-                            <option value="mm">mm - 圖片公制測量</option>
+                            <option value="mm">mm - <small>圖片公制測量</small></option>
                             <option value="inch">inch - 圖片英制測量</option>
                         </select>
                     </div>
@@ -326,9 +328,9 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>圖片規格設定</td>
+                        <td>圖片規格設定 </td>
                         <td>
-                            {{frameWidthUser + " X "+frameHeightUser}}
+                            {{"W"+frameWidthUser + " * H" + frameHeightUser}}
                         </td>
                     </tr>
                     <tr v-if="service == 'crystalframe'">
@@ -385,10 +387,33 @@
                         <td> {{ annotation() }}</td>
                     </tr>
                 </table>
-                <div>
-                    <img class="img-fluid col-3" src="./img/product/0909_intro_outer.png">
-                    <img class="img-fluid col-3" src="./img/product/0909_intro_frame.png">
-                    <img class="img-fluid col-3" src="./img/product/0909_intro_print.png">
+                <div class="card-deck">
+                    <div class="card mt-5" style="border: none">
+                        <div style="min-height: 400px">
+                            <img class="w-50 mx-auto d-block" src="img/product/0909_intro_outer.png">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-center">{{ outterBoxWeight() }}</h5>
+                        </div>
+                    </div>
+
+                    <div class="card mt-5" style="border: none">
+                        <div style="min-height: 400px">
+                            <img class="w-50 mx-auto d-block" src="img/product/0909_intro_frame.png">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-center">{{ innerBoxWeight() }}</h5>
+                        </div>
+                    </div>
+
+                    <div class="card mt-5" style="border: none">
+                        <div style="min-height: 400px">
+                            <img class="w-50 mx-auto d-block" src="img/product/0909_intro_print.png">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-center">{{ 'W' +  frameWidthUser + " * " + "L" + frameHeightUser + " mm"}}</h5>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -426,10 +451,10 @@
             frameHeight: 841,
             frameWidthUser: 594,
             frameHeightUser: 841,
-            frameDots: 'V',
+            frameDots: 'VH',
             frameAmount: 1,
             picturePrintingType: 'PP',
-            service:'crystalframe',
+            service: 'crystalframe',
         },
         computed: {
             frameModelName: function () {
@@ -440,7 +465,7 @@
                 }
 
                 if (this.service == 'picturePrinting') {
-                    out = out + this.picturePrintingType +" "
+                    out = out + this.picturePrintingType + " "
                 }
 
                 if (this.frameType == 'LED') {
@@ -472,7 +497,6 @@
                 return out
             },
             frameModelNameSub: function () {
-
 
 
                 if (this.frameType == 'normal') {
@@ -718,11 +742,13 @@
                     this.fastImgSize = ''
                 }
             },
-            frameType:function (val) {
+            frameType: function (val) {
                 if (val == 'normal') {
                     this.picturePrintingType = 'PP'
+                    this.frameDots = 'VH'
                 } else {
                     this.picturePrintingType = 'LIGHT'
+                    this.frameDots = 'V'
                 }
             },
         },
@@ -765,15 +791,15 @@
 
                 if (this.service == 'picturePrinting') {
 
-                    if (this.picturePrintingType == 'PP'){
+                    if (this.picturePrintingType == 'PP') {
                         variance = 25
                     }
 
-                    if (this.picturePrintingType == 'SNOW'){
+                    if (this.picturePrintingType == 'SNOW') {
                         variance = 150
                     }
 
-                    if (this.picturePrintingType == 'LIGHT'){
+                    if (this.picturePrintingType == 'LIGHT') {
                         variance = 50
                     }
 
@@ -833,45 +859,45 @@
             },
             innerBoxWeight: function () {
                 if (this.frameType == 'normal') {
-                    return (this.frameWidth + 30) + " X " + (this.frameHeight + 25) + " X " + (50) + ' mm'
+                    return "W" + (this.frameWidth + 30) + " * L" + (this.frameHeight + 25) + " * H" + (50) + ' mm'
                 }
 
-                return (this.frameWidth + 30) + " X " + (this.frameHeight + 50) + " X  " + (50) + ' mm'
+                return "W" + (this.frameWidth + 30) + " * L" + (this.frameHeight + 50) + " * H" + (50) + ' mm'
 
             },
             outterBoxWeight: function () {
 
                 if (this.frameType == 'normal') {
-                    return (this.frameWidth + 93) + " X " + (this.frameHeight + 88) + " X " + (63) + ' mm'
+                    return "W"+(this.frameWidth + 93) + " * L" + (this.frameHeight + 88) + " * H" + (63) + ' mm'
                 }
 
-                return (this.frameWidth + 93) + " X " + (this.frameHeight + 88) + " X " + (70) + ' mm'
+                return "W"+(this.frameWidth + 93) + " * L" + (this.frameHeight + 88) + " * H" + (70) + ' mm'
 
             },
             unitWeight: function () {
 
                 if (this.frameType == 'normal') {
-                    return Math.round(((this.frameWidth + 200) * this.frameHeight / 100 / 2 / 1000 ) * 10) / 10
+                    return Math.round(((this.frameWidth + 200) * this.frameHeight / 100 / 2 / 1000) * 10) / 10
                 } else {
-                    return Math.round(Math.round(((this.frameWidth + 200) * this.frameHeight / 100 / 2 / 1000 ) * 10) / 10 * 2.5 * 10) / 10
+                    return Math.round(Math.round(((this.frameWidth + 200) * this.frameHeight / 100 / 2 / 1000) * 10) / 10 * 2.5 * 10) / 10
                 }
 
             },
             grossWeight: function () {
                 if (this.frameType == 'normal') {
-                    return Math.round(this.unitWeight() * 2 *10) /10
+                    return Math.round(this.unitWeight() * 2 * 10) / 10
                 }
 
-                return Math.round(this.unitWeight() * 3 * 10)/ 10
+                return Math.round(this.unitWeight() * 3 * 10) / 10
             },
             frameSpec: function () {
 
 
                 if (this.frameType == 'normal') {
-                    return "寬 " + (this.frameWidth + 5) + " X 長 " + (this.frameHeight) + " X 厚 " + (this.frameThinkness) + " " + 'mm'
+                    return "W" + (this.frameWidth + 5) + " * L" + (this.frameHeight) + " * H" + (this.frameThinkness) + " " + 'mm'
                 }
 
-                return "寬 " + (this.frameWidth + 5) + " X 長 " + (this.frameHeight) + " X 厚 " + (this.frameThinkness) + " " + 'mm'
+                return "W" + (this.frameWidth + 5) + " * L" + (this.frameHeight) + " * H" + (this.frameThinkness) + " " + 'mm'
 
             },
             mmToInch: function (val) {
