@@ -767,7 +767,6 @@
 
                 if (this.service == 'crystalframe') {
 
-
                     discount = 1
                     if (this.frameAmount >= 1000) {
                         discount = 0.6
@@ -869,27 +868,27 @@
             },
             innerBoxWeight: function () {
                 if (this.frameType == 'normal') {
-                    return "W" + (this.frameWidth + 30) + " * L" + (this.frameHeight + 25) + " * H" + (50) + ' mm'
+                    return "W" + (parseFloat(this.frameWidth) + 30) + " * L" + (parseFloat(this.frameHeight) + 25) + " * H" + (50) + ' mm'
                 }
 
-                return "W" + (this.frameWidth + 30) + " * L" + (this.frameHeight + 50) + " * H" + (50) + ' mm'
+                return "W" + (parseFloat(this.frameWidth) + 30) + " * L" + (parseFloat(this.frameHeight) + 50) + " * H" + (50) + ' mm'
 
             },
             outterBoxWeight: function () {
 
                 if (this.frameType == 'normal') {
-                    return "W"+(this.frameWidth + 93) + " * L" + (this.frameHeight + 88) + " * H" + (63) + ' mm'
+                    return "W"+(parseFloat(this.frameWidth) + 93) + " * L" + (parseFloat(this.frameHeight) + 88) + " * H" + (63) + ' mm'
                 }
 
-                return "W"+(this.frameWidth + 93) + " * L" + (this.frameHeight + 88) + " * H" + (70) + ' mm'
+                return "W"+(parseFloat(this.frameWidth) + 93) + " * L" + (parseFloat(this.frameHeight) + 88) + " * H" + (70) + ' mm'
 
             },
             unitWeight: function () {
 
                 if (this.frameType == 'normal') {
-                    return Math.round(((this.frameWidth + 200) * this.frameHeight / 100 / 2 / 1000) * 10) / 10
+                    return Math.round(((parseFloat(this.frameWidth) + 200) * this.frameHeight / 100 / 2 / 1000) * 10) / 10
                 } else {
-                    return Math.round(Math.round(((this.frameWidth + 200) * this.frameHeight / 100 / 2 / 1000) * 10) / 10 * 2.5 * 10) / 10
+                    return Math.round(Math.round(((parseFloat(this.frameWidth) + 200) * this.frameHeight / 100 / 2 / 1000) * 10) / 10 * 2.5 * 10) / 10
                 }
 
             },
@@ -904,10 +903,10 @@
 
 
                 if (this.frameType == 'normal') {
-                    return "W" + (this.frameWidth + 5) + " * L" + (this.frameHeight) + " * H" + (this.frameThinkness) + " " + 'mm'
+                    return "W" + (parseFloat(this.frameWidth) + 5) + " * L" + (this.frameHeight) + " * H" + (this.frameThinkness) + " " + 'mm'
                 }
 
-                return "W" + (this.frameWidth + 5) + " * L" + (this.frameHeight) + " * H" + (this.frameThinkness) + " " + 'mm'
+                return "W" + (parseFloat(this.frameWidth) + 5) + " * L" + (this.frameHeight) + " * H" + (this.frameThinkness) + " " + 'mm'
 
             },
             mmToInch: function (val) {
@@ -920,7 +919,6 @@
 
             },
             mmToInchForce: function (val) {
-
 
                 return Math.round(val * 0.039 * 10) / 10
 
