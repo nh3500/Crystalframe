@@ -200,30 +200,30 @@
                     <div class="form-group row">
                         <label for="fastImgSize" class="col-sm-2 col-form-label">快速圖片規格</label>
                         <select class="col-10" id="fastImgSize" v-model="fastImgSize">
-                            <option value="A1">A1 - W594 * H841 mm</option>
-                            <option value="A2">A2 - W420 * H594 mm</option>
-                            <option value="A3">A3 - W297 * H420 mm</option>
-                            <option value="A4">A4 - W210 * H297 mm</option>
-                            <option value="4x6">W4 * H6 inch</option>
-                            <option value="7x9">W7 * H9 inch</option>
-                            <option value="8x8">W8 * H8 inch</option>
-                            <option value="8x10">W8 * H10 inch</option>
-                            <option value="8x12">W8 * H12 inch</option>
-                            <option value="8.5x11">W8.5 * H11 inch</option>
-                            <option value="8.5x14">W8.5 * H14 inch</option>
-                            <option value="10x12">W10 * H12 inch</option>
-                            <option value="11x14">W11 * H14 inch</option>
-                            <option value="11x17">W11 * H17 inch</option>
-                            <option value="12x12">W12 * H12 inch</option>
-                            <option value="12x15">W12 * H15 inch</option>
-                            <option value="12x18">W12 * H18 inch</option>
-                            <option value="16x20">W16 * H20 inch</option>
-                            <option value="18x24">W18 * H24 inch</option>
-                            <option value="20x24">W20 * H24 inch</option>
-                            <option value="20x30">W20 * H30 inch</option>
-                            <option value="24x30">W24 * H30 inch</option>
-                            <option value="24x36">W24 * H36 inch</option>
-                            <option value="27x40">W27 * H40 inch</option>
+                            <option value="A1">A1 - 594X841 mm</option>
+                            <option value="A2">A2 - 420X594 mm</option>
+                            <option value="A3">A3 - 297X420 mm</option>
+                            <option value="A4">A4 - 210X297 mm</option>
+                            <option value="4x6">4X6 inch</option>
+                            <option value="7x9">7X9 inch</option>
+                            <option value="8x8">8X8 inch</option>
+                            <option value="8x10">8X10 inch</option>
+                            <option value="8x12">8X12 inch</option>
+                            <option value="8.5x11">8.5X11 inch</option>
+                            <option value="8.5x14">8.5X14 inch</option>
+                            <option value="10x12">10X12 inch</option>
+                            <option value="11x14">11X14 inch</option>
+                            <option value="11x17">11X17 inch</option>
+                            <option value="12x12">12X12 inch</option>
+                            <option value="12x15">12X15 inch</option>
+                            <option value="12x18">12X18 inch</option>
+                            <option value="16x20">16X20 inch</option>
+                            <option value="18x24">18X24 inch</option>
+                            <option value="20x24">20X24 inch</option>
+                            <option value="20x30">20X30 inch</option>
+                            <option value="24x30">24X30 inch</option>
+                            <option value="24x36">24X36 inch</option>
+                            <option value="27x40">27X40 inch</option>
                             <option value="">其他</option>
                         </select>
                     </div>
@@ -330,7 +330,7 @@
                     <tr>
                         <td>圖片規格設定 </td>
                         <td>
-                            {{"W"+frameWidthUser + " * H" + frameHeightUser}}
+                            {{ frameWidthUser + " X " + frameHeightUser}}
                         </td>
                     </tr>
                     <tr v-if="service == 'crystalframe'">
@@ -389,29 +389,27 @@
                 </table>
                 <div class="card-deck">
                     <div class="card mt-5" style="border: none">
-                        <div style="min-height: 400px">
-                            <img class="w-50 mx-auto d-block" src="img/product/0909_intro_outer.png">
+                        <div style="min-height: 500px">
+                            <img class="w-50 mx-auto d-block" src="img/product/0909_intro_print.png">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title text-center">{{ outterBoxWeight() }}</h5>
+                            <h5 class="card-title text-center">{{ 'W' +  frameWidthUser + " * " + "L" + frameHeightUser + " mm"}}</h5>
                         </div>
                     </div>
-
                     <div class="card mt-5" style="border: none">
-                        <div style="min-height: 400px">
+                        <div style="min-height: 500px">
                             <img class="w-50 mx-auto d-block" src="img/product/0909_intro_frame.png">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title text-center">{{ innerBoxWeight() }}</h5>
                         </div>
                     </div>
-
                     <div class="card mt-5" style="border: none">
-                        <div style="min-height: 400px">
-                            <img class="w-50 mx-auto d-block" src="img/product/0909_intro_print.png">
+                        <div style="min-height: 500px">
+                            <img class="w-50 mx-auto d-block" src="img/product/0909_intro_outer.png">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title text-center">{{ 'W' +  frameWidthUser + " * " + "L" + frameHeightUser + " mm"}}</h5>
+                            <h5 class="card-title text-center">{{ outterBoxWeight() }}</h5>
                         </div>
                     </div>
                 </div>
