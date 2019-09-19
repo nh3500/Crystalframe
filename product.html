@@ -330,7 +330,7 @@
                     <tr>
                         <td>圖片規格設定 </td>
                         <td>
-                            {{ frameWidthUser + " X " + frameHeightUser + "mm"}}
+                            {{ frameWidthUser + " X " + frameHeightUser}}
                         </td>
                     </tr>
                     <tr v-if="service == 'crystalframe'">
@@ -368,11 +368,11 @@
                     </tr>
                     <tr v-if="service == 'crystalframe'">
                         <td>內箱 紙箱尺寸</td>
-                        <td> {{ innerBoxWeight() }}</td>
+                        <td> {{ innerBoxWeight() }} (紙箱尺寸僅供參考 仍以實物為主)</td>
                     </tr>
                     <tr v-if="service == 'crystalframe'">
                         <td>外箱 紙箱尺寸</td>
-                        <td> {{ outterBoxWeight() }}</td>
+                        <td> {{ outterBoxWeight() }} (紙箱尺寸僅供參考 仍以實物為主)</td>
                     </tr>
                     <tr>
                         <td>生產週期</td>
@@ -394,7 +394,7 @@
                             <img class="w-50 mx-auto d-block" src="img/product/0909_intro_print.png">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title text-center">{{ 'W' +  frameWidthUser + " * " + "L" + frameHeightUser + " mm"}}</h5>
+                            <h5 class="card-title text-center">{{ 'W' +  frameWidthUser + " * " + "L" + frameHeightUser + " " + FrameSizeUnit}}</h5>
                         </div>
                     </div>
                     <div class="card mt-5" style="border: none">
