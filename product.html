@@ -224,7 +224,7 @@
                             <option value="24x30">24X30 inch</option>
                             <option value="24x36">24X36 inch</option>
                             <option value="27x40">27X40 inch</option>
-                            <option value="">其他</option>
+                            <option value="">其他尺寸</option>
                         </select>
                     </div>
                     <div class="form-group row" v-if="fastImgSize == ''">
@@ -390,24 +390,24 @@
                 <h6>示意圖</h6>
                 <div class="card-deck" v-if="frameWidthUser == frameHeightUser">
                     <div class="card mt-5" style="border: none">
-                        <div style="min-height: 500px">
-                            <img class="w-50 mx-auto d-block" src="img/product/a_1.png">
+                        <div>
+                            <img class="w-50 mx-auto d-block" src="img/product/a_1.png" style="height: 400px">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title text-center">{{ 'W' +  frameWidthUser + " * " + "L" + frameHeightUser + " " + FrameSizeUnit}}</h5>
                         </div>
                     </div>
                     <div class="card mt-5" style="border: none">
-                        <div style="min-height: 500px">
-                            <img class="w-50 mx-auto d-block" src="img/product/a_2.png">
+                        <div>
+                            <img class="w-50 mx-auto d-block" src="img/product/a_2.png" style="height: 400px">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title text-center">{{ innerBoxWeight() }}</h5>
                         </div>
                     </div>
                     <div class="card mt-5" style="border: none">
-                        <div style="min-height: 500px">
-                            <img class="w-50 mx-auto d-block" src="img/product/a_3.png">
+                        <div>
+                            <img class="w-50 mx-auto d-block" src="img/product/a_3.png" style="height: 400px">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title text-center">{{ outterBoxWeight() }}</h5>
@@ -416,24 +416,24 @@
                 </div>
                 <div class="card-deck" v-if=" 1 > parseFloat(frameWidthUser/frameHeightUser) && parseFloat(frameWidthUser/frameHeightUser) >= 0.5">
                     <div class="card mt-5" style="border: none">
-                        <div style="min-height: 500px">
-                            <img class="w-50 mx-auto d-block" src="img/product/b_1.png">
+                        <div>
+                            <img class="mx-auto d-block" src="img/product/b_1.png" style="height: 400px">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title text-center">{{ 'W' +  frameWidthUser + " * " + "L" + frameHeightUser + " " + FrameSizeUnit}}</h5>
                         </div>
                     </div>
                     <div class="card mt-5" style="border: none">
-                        <div style="min-height: 500px">
-                            <img class="w-50 mx-auto d-block" src="img/product/b_2.png">
+                        <div>
+                            <img class="w-50 mx-auto d-block" src="img/product/b_2.png" style="height: 400px">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title text-center">{{ innerBoxWeight() }}</h5>
                         </div>
                     </div>
                     <div class="card mt-5" style="border: none">
-                        <div style="min-height: 500px">
-                            <img class="w-50 mx-auto d-block" src="img/product/b_3.png">
+                        <div>
+                            <img class="w-50 mx-auto d-block" src="img/product/b_3.png" style="height: 400px">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title text-center">{{ outterBoxWeight() }}</h5>
@@ -442,24 +442,24 @@
                 </div>
                 <div class="card-deck" v-if=" 0.5 > parseFloat(frameWidthUser/frameHeightUser) && parseFloat(frameWidthUser/frameHeightUser) >= 0.25">
                     <div class="card mt-5" style="border: none">
-                        <div style="min-height: 500px">
-                            <img class="w-50 mx-auto d-block" src="img/product/c_1.png">
+                        <div>
+                            <img class="mx-auto d-block" src="img/product/c_1.png" style="height: 400px">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title text-center">{{ 'W' +  frameWidthUser + " * " + "L" + frameHeightUser + " " + FrameSizeUnit}}</h5>
                         </div>
                     </div>
                     <div class="card mt-5" style="border: none">
-                        <div style="min-height: 500px">
-                            <img class="w-50 mx-auto d-block" src="img/product/c_2.png">
+                        <div>
+                            <img class="mx-auto d-block" src="img/product/c_2.png" style="height: 400px">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title text-center">{{ innerBoxWeight() }}</h5>
                         </div>
                     </div>
                     <div class="card mt-5" style="border: none">
-                        <div style="min-height: 500px">
-                            <img class="w-50 mx-auto d-block" src="img/product/c_3.png">
+                        <div>
+                            <img class="w-50 mx-auto d-block" src="img/product/c_3.png" style="height: 400px">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title text-center">{{ outterBoxWeight() }}</h5>
@@ -468,24 +468,24 @@
                 </div>
                 <div class="card-deck" v-if=" 0.25 > parseFloat(frameWidthUser/frameHeightUser)">
                     <div class="card mt-5" style="border: none">
-                        <div style="min-height: 500px">
-                            <img class="w-50 mx-auto d-block" src="img/product/d_1.png">
+                        <div>
+                            <img class="mx-auto d-block" src="img/product/d_1.png" style="height: 400px">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title text-center">{{ 'W' +  frameWidthUser + " * " + "L" + frameHeightUser + " " + FrameSizeUnit}}</h5>
                         </div>
                     </div>
                     <div class="card mt-5" style="border: none">
-                        <div style="min-height: 500px">
-                            <img class="w-50 mx-auto d-block" src="img/product/d_2.png">
+                        <div style="max-height: 400px">
+                            <img class="mx-auto d-block" src="img/product/d_2.png" style="height: 400px">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title text-center">{{ innerBoxWeight() }}</h5>
                         </div>
                     </div>
                     <div class="card mt-5" style="border: none">
-                        <div style="min-height: 500px">
-                            <img class="w-50 mx-auto d-block" src="img/product/d_3.png">
+                        <div>
+                            <img class="w-50 mx-auto d-block" src="img/product/d_3.png" style="height: 400px">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title text-center">{{ outterBoxWeight() }}</h5>
