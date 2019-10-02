@@ -79,3 +79,12 @@ html {
 .container {
     max-width: 1080px;
 }
+
+.carousel-control-next-icon {
+    width: 3rem;
+    height: 5rem;
+}
+.carousel-control-prev-icon {
+    width: 3rem;
+    height: 5rem;
+}
