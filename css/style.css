@@ -70,6 +70,7 @@ html {
 
 .navbar-nav {
     line-height: 1.2;
+    height: ;
 }
 
 .hint-text {
@@ -84,10 +85,17 @@ html {
     width: 3rem;
     height: 5rem;
 }
+
 .carousel-control-prev-icon {
     width: 3rem;
     height: 5rem;
 }
-.navbarNavDropdown{
-    overflow: auto;
+
+.navbar-collapse{
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.navbar{
+    position: absolute;
 }
