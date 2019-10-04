@@ -70,7 +70,6 @@ html {
 
 .navbar-nav {
     line-height: 1.2;
-    height: ;
 }
 
 .hint-text {
@@ -91,11 +90,11 @@ html {
     height: 5rem;
 }
 
-.navbar-collapse{
-    margin: 1rem;
-    padding: 1rem;
-}
-
 .navbar{
     position: absolute;
+}
+
+.navbar-collapse{
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }
