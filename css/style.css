@@ -116,3 +116,7 @@ html {
 .storyDifference-title{
     text-align: center;
 }
+
+.card{
+    border-style: none;
+}    
