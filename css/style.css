@@ -98,3 +98,12 @@ html {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
 }
+.storyDifference_img{
+    display: inline-block;
+    height: 250px;
+    width: 100px;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
