@@ -200,7 +200,7 @@
                     </div>
                     <div class="form-group row">
                         <label for="fastImgSize" class="col-sm-2 col-form-label">快速圖片規格</label>
-                        <select class="col-10" id="fastImgSize" v-model="fastImgSize">
+                        <select class="col-10_product" id="fastImgSize" v-model="fastImgSize">
                             <option value="A1">A1 - 594X841 mm</option>
                             <option value="A2">A2 - 420X594 mm</option>
                             <option value="A3">A3 - 297X420 mm</option>
@@ -230,7 +230,7 @@
                     </div>
                     <div class="form-group row" v-if="fastImgSize == ''">
                         <label for="FrameSizeUnit" class="col-sm-2 col-form-label">圖片規格單位</label>
-                        <select class="col-10" id="FrameSizeUnit" v-model="FrameSizeUnit">
+                        <select class="col-10_product" id="FrameSizeUnit" v-model="FrameSizeUnit">
                             <option value="mm">mm - <small>圖片公制測量</small></option>
                             <option value="inch">inch - 圖片英制測量</option>
                         </select>

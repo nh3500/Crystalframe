@@ -102,8 +102,8 @@ html {
     display: inline-block;
     height: 250px;
     width: 150px;
-    margin-left: 2rem;
-    margin-right: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -120,3 +120,7 @@ html {
 .card{
     border-style: none;
 }    
+.mt-5_story{
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
