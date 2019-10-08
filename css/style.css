@@ -1,4 +1,4 @@
-
+ 
 body {
     font-family: 'Noto Sans TC', sans-serif;
 }
@@ -117,10 +117,11 @@ html {
     text-align: center;
 }
 
-.card{
-    border-style: none;
-}    
 .mt-5_story{
     margin-left: 2rem;
     margin-right: 2rem;
+}
+.table{
+    margin-left: auto; 
+    margin-right: auto;
 }
