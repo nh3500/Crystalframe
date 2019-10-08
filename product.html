@@ -337,8 +337,8 @@
                     <tr v-if="service == 'crystalframe'">
                         <td>是否框體側面打圓孔</td>
                         <td>
-                            <span v-if="frameDots == 'VH'">需要</span>
-                            <span v-if="frameDots == 'V'">不需要</span>
+                            <span v-if="frameDots == 'VH'">有</span>
+                            <span v-if="frameDots == 'V'">沒有</span>
                         </td>
                     </tr>
                     <tr>
@@ -352,8 +352,12 @@
                         <td>單價 每{{ service=='picturePrinting'?'張':'組' }} {{ unitPrice() }} NTD</td>
                     </tr>
                     <tr>
+                        <td>裁切</td>
+                        <td>200 NTD</td>
+                    </tr>
+                    <tr>
                         <td>總價</td>
-                        <td>總共 {{ totalPrice() }} NTD</td>
+                        <td>總共 {{ totalPrice()+200 }} NTD</td>
                     </tr>
                     <tr v-if="service == 'crystalframe'">
                         <td>框體的規格</td>
