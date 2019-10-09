@@ -100,7 +100,6 @@ html {
     padding-right: 0.5rem;
 }
 .storyDifference_img{
-    box-align: center;
     display: inline-block;
     height: 100%;
     margin-left: 1rem;
@@ -130,4 +129,17 @@ html {
 }
 .storyDifference-item{
     width: 10%;
+}
+.storyTitle{
+    font-size: 4em;
+    padding-left: 4%;
+}
+.lead{
+    padding-left: 5%;
+    font-size: 120%;
+    min-width: 100%;
+}
+.storybold{
+    font-size: 1.2em;
+    font-weight: bold;
 }
