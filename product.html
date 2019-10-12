@@ -351,13 +351,13 @@
                         <td>單價</td>
                         <td>單價 每{{ service=='picturePrinting'?'張':'組' }} {{ unitPrice() }} NTD</td>
                     </tr>
-                    <tr>
+                    <tr v-if="service == 'picturePrinting'">
                         <td>裁切</td>
                         <td>200 NTD</td>
                     </tr>
                     <tr>
                         <td>總價</td>
-                        <td>總共 {{ totalPrice()+200 }} NTD</td>
+                        <td>總共 {{ totalPrice() }} NTD</td>
                     </tr>
                     <tr v-if="service == 'crystalframe'">
                         <td>框體的規格</td>
@@ -900,7 +900,13 @@
                 }
             },
             totalPrice: function () {
-                return (this.unitPrice() * this.frameAmount)
+
+                extra = 0
+                if (this.service == 'picturePrinting') {
+                    extra = 200
+                }
+
+                return (this.unitPrice() * this.frameAmount) + extra
             },
             producingPreoid: function () {
 
