@@ -161,9 +161,11 @@ html {
 }
 
 .storySim_contain{
-    text-align: center;
+    color:#2c58a0;
+    text-align: left;
     font-weight: bold;
     font-size: 1.5rem;
+    padding-left: 10vw;
 }
 
 .index_title{
