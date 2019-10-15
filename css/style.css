@@ -79,6 +79,16 @@ html {
 .container {
     max-width: 1080px;
     min-width: 325px;
+    padding-right: 3rem;
+    padding-left: 3rem;
+}
+
+.storyDifference_container {
+    max-width: 1080px;
+    min-width: 325px;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    margin:0px auto;
 }
 
 .carousel-control-next-icon {
@@ -142,4 +152,16 @@ html {
 .storybold{
     font-size: 1.2em;
     font-weight: bold;
+}
+
+.storySim_text{
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 2em;
+}
+
+.storySim_contain{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
 }
