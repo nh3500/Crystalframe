@@ -144,6 +144,10 @@
                     <a class="dropdown-item" href="#">簡體中文</a>
                 </div>
             </li>
+<!--            <li class="nav-item">-->
+<!--                <script async src="https://cse.google.com/cse.js?cx=004724470799413952171:nwnjezpkeq9"></script>-->
+<!--                <div class="gcse-search"></div>-->
+<!--            </li>-->
             <li class="navbar-brand">
                 <a target="_blank" href="https://www.facebook.com/crystalframeyuweihsu/"><i class="fab fa-facebook"
                                                                                             style="font-size: 2rem"></i></a>
@@ -497,7 +501,9 @@
                         </div>
                     </div>
                 </div>
-
+                <div class="text-center">
+                    <a class="btn btn-primary btn-block" target="_blank" :href="mailToProducer()" >訂購</a>
+                </div>
             </div>
         </div>
     </section>
@@ -1016,6 +1022,9 @@
                 return Math.round(val * 0.039 * 10) / 10
 
             },
+            mailToProducer: function () {
+                return "mailto:sale@crystalframe.com?subject=訂購&body=ModelName:" + this.frameModelName +  "%0AQuantity:" + this.frameAmount
+            }
 
         }
     });
