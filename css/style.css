@@ -183,3 +183,7 @@ html {
     font-weight: bold;
     font-size: 1rem;
 }
+
+.usageNotice_pd{
+    padding-left: 40px;
+}
