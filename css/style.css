@@ -187,6 +187,11 @@ html {
 .usageNotice_pd{
     padding-left: 40px;
 }
+
 .shopDistribution_tilte{
     font-weight: bold;
+}
+
+.conact_tilte{
+    width: 100%;
 }
