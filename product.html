@@ -504,7 +504,7 @@
                     </div>
                 </div>
                 <div class="text-center">
-                    <a class="btn btn-primary btn-block" target="_blank" :href="mailToProducer()" >訂購</a>
+                    <a class="btn btn-primary btn-block" target="_blank" :href="mailToProducer()" >詢問 & 訂購</a>
                 </div>
             </div>
         </div>
@@ -1025,7 +1025,7 @@
 
             },
             mailToProducer: function () {
-                return "mailto:sale@crystalframe.com?subject=訂購&body=ModelName:" + this.frameModelName +  "%0AQuantity:" + this.frameAmount
+                return "mailto:sale@crystalframe.com?subject=訂購&body=Thank you for the request.%0APlease send below information to us, and we will contact you asap and confirm the order details!%0A%0A感謝您的訂購 請將以下資訊給我們 我們會盡快向您回覆並確認訂單!%0A%0A~~~~~~~~~~~~~~~~~~~~~~~~~~%0A%0AModelName 型號:%0A" + this.frameModelName +  "%0A%0AUnit Price 單價:%0A"+this.unitPrice()+" NTD 台幣%0A%0AQuantity 數量:%0A"+this.frameAmount+" SET 組%0A%0ATotal Price 總價:%0A"+this.totalPrice()+" NTD 台幣%0A%0A~~~~~~~~~~~~~~~~~~~~~~~~~~%0A%0ABuyer Information 購買者資訊%0A%0AName 姓名:%0ACompany 公司:%0AMobile 手機:%0ATel 電話:%0AEmail 電郵:%0A%0A~~~~~~~~~~~~~~~~~~~~~~~~~~%0A%0AYou can contact us thru%0A您可以透過以下聯絡我們%0A%0AEmail: sales@crystalframe.com.tw%0ALine@: sqr1930c%0AFacebook: @crystalframeyuweihsu%0AFacebook:七色水晶框有限公司%0ASales Mobile: +886 922576813 (Taiwan)"
             }
 
         }
