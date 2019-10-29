@@ -240,3 +240,9 @@ html {
 .explainWord{
     color:#1562e0;
 }
+
+.medal{
+    width: 15%;
+    margin: 0 auto;
+    display: block;
+}
