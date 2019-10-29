@@ -71,6 +71,12 @@ html {
 .navbar-nav {
     line-height: 1.2;
 }
+@media(max-width: 990px;){
+    .navbar-nav{
+        line-height: 1.2;
+        background:rgba(255,255,255,0.6);
+    }
+}
 
 .hint-text {
     color: lightgray;
@@ -101,14 +107,28 @@ html {
     height: 5rem;
 }
 
+.carousel-inner{
+    width: 100%;
+}
+@media(min-width: 1300px){
+    .carousel-inner{
+        width: 80%;
+        margin: 0 auto;
+        box-shadow:4px 4px 8px rgba(20%,20%,40%,0.5);
+    }
+}
+
 .navbar{
-    position: absolute;
+    position: fixed;
+    background-color: rgba(255,255,255,0.7);
 }
 
 .navbar-collapse{
-    padding-left: 0.5rem;
+    background:rgba(255,255,255,0.9);
+    padding-left: 2rem;
     padding-right: 0.5rem;
 }
+
 .storyDifference_img{
     display: inline-block;
     height: 100%;
