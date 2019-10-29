@@ -71,7 +71,7 @@ html {
 .navbar-nav {
     line-height: 1.2;
 }
-@media(max-width:990px;){
+@media(max-width:990px){
     .navbar-nav {
         padding-left: 0.5rem;
         padding-right: 2rem;
@@ -133,7 +133,7 @@ html {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
 }
-@media(max-width: 990px;){
+@media(max-width: 990px){
     .navbar-collapse{
         padding-left: 0.5rem;
         padding-right: 2rem;
