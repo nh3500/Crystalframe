@@ -246,3 +246,12 @@ html {
     margin: 0 auto;
     display: block;
 }
+
+.shopDistribution_button{
+    width: 30%;
+    white-space: nowrap;
+}
+
+.refer{
+    color: black;
+}
