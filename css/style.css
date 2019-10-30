@@ -71,13 +71,13 @@ html {
 .navbar-nav {
     line-height: 1.2;
 }
-@media(max-width:990px){
+/* @media(max-width:990px){
     .navbar-nav {
         padding-left: 0.5rem;
         padding-right: 2rem;
-        background-color:rgba(255,255,255,0.9);
+        background-color:rgba(255,255,255,0.5);
     }
-}
+} */
 
 .hint-text {
     color: lightgray;
@@ -143,7 +143,7 @@ html {
     .navbar-collapse{
         padding-left: 0.5rem;
         padding-right: 0.5rem;
-        background-color:rgba(255,255,255,0.9);
+        background-color:rgba(255,255,255,0.7);
     }
 }
 
@@ -260,4 +260,16 @@ html {
 
 .refer{
     color: black;
+}
+
+.postIcon{
+    width: 30%;
+    margin: auto;
+    display: block;
+}
+
+.blue-text{
+    color:  #0080FF;
+    font-size: 150%;
+    text-align:center
 }
