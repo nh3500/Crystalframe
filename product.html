@@ -193,7 +193,10 @@
                             <option value="accessory">配件</option>
                         </select>
                     </div>
-                    <div class="form-group row">
+                    <div class="form-group row" v-if="service == 'accessory'">
+                        <p class="lead text-center" >暫無開放</p>
+                    </div>
+                    <div class="form-group row" v-if="service != 'accessory'">
                         <label for="frameType" class="col-sm-2 col-form-label">水晶框種類</label>
                         <select class="col-10" id="frameType" v-model="frameType">
                             <option value="normal">水晶框 <span class="hint-text">- 高級塑料 無LED發光板 普遍使用型</span></option>
@@ -209,7 +212,7 @@
                             <option value="LIGHT" v-if="frameType == 'LED'">乳膠霧燈片 霧膜</option>
                         </select>
                     </div>
-                    <div class="form-group row">
+                    <div class="form-group row" v-if="service != 'accessory'">
                         <label for="fastImgSize" class="col-sm-2 col-form-label">快速圖片規格</label>
                         <select class="col-10_product" id="fastImgSize" v-model="fastImgSize">
                             <option value="A1">A1 - 594X841 mm</option>
@@ -239,14 +242,14 @@
                             <option value="">其他尺寸</option>
                         </select>
                     </div>
-                    <div class="form-group row" v-if="fastImgSize == ''">
+                    <div class="form-group row" v-if="fastImgSize == '' && service != 'accessory'">
                         <label for="FrameSizeUnit" class="col-sm-2 col-form-label">圖片規格單位</label>
                         <select class="col-10_product" id="FrameSizeUnit" v-model="FrameSizeUnit">
                             <option value="mm">mm - <small>圖片公制測量</small></option>
                             <option value="inch">inch - 圖片英制測量</option>
                         </select>
                     </div>
-                    <div class="form-group row" v-if="fastImgSize == ''">
+                    <div class="form-group row" v-if="fastImgSize == '' && service != 'accessory'">
                         <div class="input-group col-12">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">短邊(W)</span>
@@ -257,7 +260,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group row" v-if="fastImgSize == ''">
+                    <div class="form-group row" v-if="fastImgSize == '' && service != 'accessory'">
                         <div class="input-group col-12">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">長邊(L)</span>
@@ -275,7 +278,7 @@
                             <option value="V">不使用吊線(框邊不設圓孔)</option>
                         </select>
                     </div>
-                    <div class="form-group row">
+                    <div class="form-group row" v-if="service != 'accessory'">
                         <label for="frameAmount" class="col-sm-2 col-form-label">購買數量</label>
 
                         <div class="input-group col-10">
@@ -290,7 +293,7 @@
                     </div>
                 </form>
 
-                <table class="table mt-5">
+                <table class="table mt-5" v-if="service != 'accessory'">
                     <tr>
                         <td>商品名稱</td>
                         <td>
@@ -305,7 +308,7 @@
                     </tr>
                 </table>
 
-                <table class="table mt-5">
+                <table class="table mt-5" v-if="service != 'accessory'">
                     <!--                    <tr>-->
                     <!--                        <td>生產類型</td>-->
                     <!--                        <td>-->
@@ -403,8 +406,8 @@
                         <td> {{ annotation() }}</td>
                     </tr>
                 </table>
-                <h6>示意圖</h6>
-                <div class="card-deck" v-if="frameWidthUser == frameHeightUser">
+                <h6 v-if="service != 'accessory'">示意圖</h6>
+                <div class="card-deck" v-if="frameWidthUser == frameHeightUser && service != 'accessory'">
                     <div class="card mt-5" style="border: none">
                         <div>
                             <img class="w-50 mx-auto d-block" src="img/product/a_1.png" style="height: 400px">
@@ -413,7 +416,7 @@
                             <h5 class="card-title text-center">{{ 'W' +  frameWidthUser + " * " + "L" + frameHeightUser + " " + FrameSizeUnit}}</h5>
                         </div>
                     </div>
-                    <div class="card mt-5" style="border: none">
+                    <div class="card mt-5" style="border: none" v-if="service != 'picturePrinting'">
                         <div>
                             <img class="w-50 mx-auto d-block" src="img/product/a_2.png" style="height: 400px">
                         </div>
@@ -421,7 +424,7 @@
                             <h5 class="card-title text-center">{{ innerBoxWeight() }}</h5>
                         </div>
                     </div>
-                    <div class="card mt-5" style="border: none">
+                    <div class="card mt-5" style="border: none" v-if="service != 'picturePrinting'">
                         <div>
                             <img class="w-50 mx-auto d-block" src="img/product/a_3.png" style="height: 400px">
                         </div>
@@ -430,7 +433,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-deck" v-if=" 1 > parseFloat(frameWidthUser/frameHeightUser) && parseFloat(frameWidthUser/frameHeightUser) >= 0.5">
+                <div class="card-deck" v-if=" 1 > parseFloat(frameWidthUser/frameHeightUser) && parseFloat(frameWidthUser/frameHeightUser) >= 0.5 && service != 'accessory'">
                     <div class="card mt-5" style="border: none">
                         <div>
                             <img class="mx-auto d-block" src="img/product/b_1.png" style="height: 400px">
@@ -439,7 +442,7 @@
                             <h5 class="card-title text-center">{{ 'W' +  frameWidthUser + " * " + "L" + frameHeightUser + " " + FrameSizeUnit}}</h5>
                         </div>
                     </div>
-                    <div class="card mt-5" style="border: none">
+                    <div class="card mt-5" style="border: none" v-if="service != 'picturePrinting'">
                         <div>
                             <img class="w-50 mx-auto d-block" src="img/product/b_2.png" style="height: 400px">
                         </div>
@@ -447,7 +450,7 @@
                             <h5 class="card-title text-center">{{ innerBoxWeight() }}</h5>
                         </div>
                     </div>
-                    <div class="card mt-5" style="border: none">
+                    <div class="card mt-5" style="border: none" v-if="service != 'picturePrinting'">
                         <div>
                             <img class="w-50 mx-auto d-block" src="img/product/b_3.png" style="height: 400px">
                         </div>
@@ -456,7 +459,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-deck" v-if=" 0.5 > parseFloat(frameWidthUser/frameHeightUser) && parseFloat(frameWidthUser/frameHeightUser) >= 0.25">
+                <div class="card-deck" v-if=" 0.5 > parseFloat(frameWidthUser/frameHeightUser) && parseFloat(frameWidthUser/frameHeightUser) >= 0.25 && service != 'accessory'">
                     <div class="card mt-5" style="border: none">
                         <div>
                             <img class="mx-auto d-block" src="img/product/c_1.png" style="height: 400px">
@@ -465,7 +468,7 @@
                             <h5 class="card-title text-center">{{ 'W' +  frameWidthUser + " * " + "L" + frameHeightUser + " " + FrameSizeUnit}}</h5>
                         </div>
                     </div>
-                    <div class="card mt-5" style="border: none">
+                    <div class="card mt-5" style="border: none" v-if="service != 'picturePrinting'">
                         <div>
                             <img class="mx-auto d-block" src="img/product/c_2.png" style="height: 400px">
                         </div>
@@ -473,7 +476,7 @@
                             <h5 class="card-title text-center">{{ innerBoxWeight() }}</h5>
                         </div>
                     </div>
-                    <div class="card mt-5" style="border: none">
+                    <div class="card mt-5" style="border: none" v-if="service != 'picturePrinting'">
                         <div>
                             <img class="w-50 mx-auto d-block" src="img/product/c_3.png" style="height: 400px">
                         </div>
@@ -482,7 +485,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-deck" v-if=" 0.25 > parseFloat(frameWidthUser/frameHeightUser)">
+                <div class="card-deck" v-if=" 0.25 > parseFloat(frameWidthUser/frameHeightUser) && service != 'accessory'">
                     <div class="card mt-5" style="border: none">
                         <div>
                             <img class="mx-auto d-block" src="img/product/d_1.png" style="height: 400px">
@@ -491,7 +494,7 @@
                             <h5 class="card-title text-center">{{ 'W' +  frameWidthUser + " * " + "L" + frameHeightUser + " " + FrameSizeUnit}}</h5>
                         </div>
                     </div>
-                    <div class="card mt-5" style="border: none">
+                    <div class="card mt-5" style="border: none" v-if="service != 'picturePrinting'">
                         <div style="max-height: 400px">
                             <img class="mx-auto d-block" src="img/product/d_2.png" style="height: 400px">
                         </div>
@@ -499,7 +502,7 @@
                             <h5 class="card-title text-center">{{ innerBoxWeight() }}</h5>
                         </div>
                     </div>
-                    <div class="card mt-5" style="border: none">
+                    <div class="card mt-5" style="border: none" v-if="service != 'picturePrinting'">
                         <div>
                             <img class="mx-auto d-block" src="img/product/d_3.png" style="height: 400px">
                         </div>
@@ -508,7 +511,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-center">
+                <div class="text-center" v-if="service != 'accessory'">
                     <a class="btn btn-primary btn-block" target="_blank" :href="mailToProducer()" >詢問 & 訂購</a>
                 </div>
             </div>
@@ -962,7 +965,7 @@
                 //     return "多兩個透明中板"
                 // }
 
-                if (this.service == 'picturePrinting') {
+                if (this.service == 'crystalframe') {
                     if (this.frameType == 'normal') {
                         return "水晶框包裝: 外紙箱+內紙箱+主框+中板+配件組+廣告圖+模板圖"
                     }
