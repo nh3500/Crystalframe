@@ -413,6 +413,8 @@
                         <td> {{ annotation() }}</td>
                     </tr>
                 </table>
+                <br>
+                <br>
                 <h6 v-if="service != 'accessory'">示意圖</h6>
                 <div class="card-deck" v-if="frameWidthUser == frameHeightUser && service != 'accessory'">
                     <div class="card mt-5" style="border: none">
@@ -518,9 +520,15 @@
                         </div>
                     </div>
                 </div>
+                <br>
+                <br>
                 <div class="text-center" v-if="service != 'accessory'">
                     <a class="btn btn-primary btn-block" target="_blank" :href="mailToProducer()" >詢問 & 訂購</a>
                 </div>
+                <br>
+                <br>
+                <br>
+                <br>
             </div>
         </div>
     </section>
