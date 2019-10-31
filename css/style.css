@@ -127,11 +127,11 @@ html {
     background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0.5) 66%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
 }
-@media(max-width: 990px){
+/* @media(max-width: 990px){
     .navbar{
         position: absolute;
     }
-}
+} */
 
 
 .navbar-collapse{
@@ -299,6 +299,16 @@ html {
 }
 @media(max-width: 990px){
     .nav_icon_item{
-        margin-bottom: 80rem;
+        margin-bottom: 100rem;
     }
+}
+
+.fotter_icon{
+    width: 2rem;
+}
+
+.footer_icon_center{
+    display: block;
+    margin: auto;
+    padding-left: 42.5vw;
 }
