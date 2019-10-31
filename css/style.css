@@ -274,6 +274,14 @@ html {
     display: block;
 }
 
+.navbar_Icon{
+    width: 1.5rem;
+}
+
+.navbar_Icon2{
+    width: 1.75rem;
+}
+
 .blue-text{
     color:  #0080FF;
     font-size: 150%;
@@ -283,4 +291,15 @@ html {
 .red-text{
     font-size: 150%;
     text-align:center
+}
+
+.nav_icon_item{
+    display: block;
+    margin: auto;
+}
+@media(max-width: 990px){
+    .nav_icon_item{
+        margin-bottom: 80rem;
+        background-color:rgba(255,255,255,0.9);
+    }
 }
