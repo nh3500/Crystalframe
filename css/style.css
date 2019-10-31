@@ -304,13 +304,9 @@ html {
 }
 
 .fotter_icon{
+    margin-left: 1rem;
     width: 2rem;
-}
-
-.footer_icon_center{
-    display: block;
-    margin: auto;
-    padding-left: 32.5vw;
+    opacity: 0.7;
 }
 
 .contactDistributionTaiwan_item{
