@@ -312,3 +312,12 @@ html {
     margin: auto;
     padding-left: 32.5vw;
 }
+
+.contactDistributionTaiwan_item{
+    display: block;
+    margin: auto;
+}
+
+.contactDistributionTaiwan_icon{
+    width: 3rem;
+}
