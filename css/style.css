@@ -268,8 +268,19 @@ html {
     display: block;
 }
 
+.postIcon2{
+    width: 40%;
+    margin: auto;
+    display: block;
+}
+
 .blue-text{
     color:  #0080FF;
+    font-size: 150%;
+    text-align:center
+}
+
+.red-text{
     font-size: 150%;
     text-align:center
 }
