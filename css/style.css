@@ -300,6 +300,5 @@ html {
 @media(max-width: 990px){
     .nav_icon_item{
         margin-bottom: 80rem;
-        background-color:rgba(255,255,255,0.9);
     }
 }
