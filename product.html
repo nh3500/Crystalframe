@@ -266,16 +266,22 @@
                                 <span class="input-group-text">{{ FrameSizeUnit }}</span>
                             </div>
                         </div>
+                        <div class="invalid-feedback d-block" v-if=" frameWidthUser > mmToInch(1000) || frameWidthUser < mmToInch(200)">
+                            <p class="lead text-center">超出允許範圍</p>
+                        </div>
                     </div>
                     <div class="form-group row" v-if="fastImgSize == '' && service != 'accessory'">
                         <div class="input-group col-12">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">長邊(L)</span>
                             </div>
-                            <input type="number" class="form-control" id="frameHeight" v-model="frameHeightUser" max="{{ mmToInch(2400) }}" min="{{ mmToInch(200) }}">
+                            <input type="number" class="form-control" id="frameHeight" v-model="frameHeightUser" :max="mmToInch(2400)" :min="mmToInch(200)">
                             <div class="input-group-append">
                                 <span class="input-group-text">{{ FrameSizeUnit }}</span>
                             </div>
+                        </div>
+                        <div class="invalid-feedback d-block" v-if=" frameHeightUser > mmToInch(2400) || frameHeightUser < mmToInch(200)">
+                            <p class="lead text-center">超出允許範圍</p>
                         </div>
                     </div>
                     <div class="form-group row" v-if="service == 'crystalframe' && frameType == 'LED'">
@@ -1078,13 +1084,13 @@
                     case "NTD":
                         return value
                     case "CNY":
-                        return value/5
+                        return  Math.round(value/4 * 10) / 10
                     case "USD":
-                        return value/32
+                        return Math.round(value/30 * 10) / 10
                     case "JPY":
-                        return value/0.3
+                        return Math.round(value/0.25 * 10) / 10
                     case "EUR":
-                        return value/33
+                        return Math.round(value/33 * 10) / 10
                 }
             }
 
