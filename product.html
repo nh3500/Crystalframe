@@ -1010,12 +1010,16 @@
 
                 if (this.service == 'crystalframe') {
                     if (this.frameType == 'normal') {
-                        return "水晶框包裝: 外紙箱+內紙箱+主框+中板+配件組+廣告圖+模板圖"
+                        return "水晶框包裝: 外紙箱+內紙箱+主框+中板+配件組+廣告圖+模板圖 (以上報價皆為台灣島內含稅價)"
                     }
 
                     if (this.frameType == 'LED') {
-                        return "LED水晶框包裝: 外紙箱+內紙箱+主框+導光板+配件組+廣告圖+模板圖"
+                        return "LED水晶框包裝: 外紙箱+內紙箱+主框+導光板+配件組+廣告圖+模板圖 (以上報價皆為台灣島內含稅價)"
                     }
+                }
+
+                if (this.service == 'picturePrinting') {
+                    return "(以上報價皆為台灣島內含稅價)"
                 }
 
                 return ""
@@ -1084,13 +1088,13 @@
                     case "NTD":
                         return value
                     case "CNY":
-                        return  Math.round(value/4 * 10) / 10
+                        return  Math.round(value/4)
                     case "USD":
-                        return Math.round(value/30 * 10) / 10
+                        return Math.round(value/30)
                     case "JPY":
-                        return Math.round(value/0.25 * 10) / 10
+                        return Math.round(value/0.25)
                     case "EUR":
-                        return Math.round(value/33 * 10) / 10
+                        return Math.round(value/33)
                 }
             }
 
