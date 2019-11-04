@@ -326,3 +326,17 @@ html {
     text-align: center;
 }
 }
+
+.member-title{
+    width: 80%;
+    margin:0 auto;
+}
+
+.member-contain{
+    width: 80%;
+    margin: auto;
+}
+@media(max-width: 990px){
+    .member-contain{
+        font-size: 3rem;
+    }
