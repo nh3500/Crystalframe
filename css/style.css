@@ -172,9 +172,11 @@ html {
     margin-right: 2rem;
 }
 .table{
+    position: flex;
     margin-left: auto; 
     margin-right: auto;
 }
+
 .storyDifference-item{
     width: 10%;
 }
