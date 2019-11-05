@@ -190,6 +190,23 @@ html {
     font-size: 120%;
     min-width: 100%;
 }
+.En_lead{
+    word-wrap: break-word;
+    font-size: 20px;
+}
+@media(max-width: 600px){
+    .En_lead{
+        font-size: 0.5px;
+    }
+}
+
+.En_story{
+    max-width: 800px;
+    padding-left: 3vw;
+    width: 60vw;
+    word-wrap: break-word;
+}
+
 .storybold{
     font-size: 1.2em;
     font-weight: bold;
