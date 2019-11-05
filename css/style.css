@@ -369,3 +369,9 @@ html {
 .Construction_pic{
     text-align : center;
 }
+
+@media(max-width: 990px){
+.logo_text{
+    display: none;
+}
+}
