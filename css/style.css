@@ -371,10 +371,16 @@ html {
 }
 
 @media(min-width: 992px){
-.logo_text{
+    .logo_text{
     display: none;
-}
-}
+    }
+    }
+
+@media(min-width: 1290px){
+    .logo_text{
+        display: inline-block;
+    }
+    }
 
 @media(min-width: 992px){
     .en_icon{
