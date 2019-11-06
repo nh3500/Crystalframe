@@ -91,12 +91,19 @@ html {
     padding-left: 3rem;
 }
 
-.storyDifference_container {
-    max-width: 1080px;
-    min-width: 325px;
-    padding-right: 1rem;
-    padding-left: 1rem;
+/* .storyDifference_container {
+    width: 80%;
+    padding-right: .5rem;
+    padding-left: .5rem;
     margin:0px auto;
+} */
+
+.table-responsive{
+    width: 80%;
+    padding-right: .5rem;
+    padding-left: .5rem;
+    margin:0px auto;
+    position: flex;
 }
 
 .carousel-control-next-icon {
@@ -164,7 +171,7 @@ html {
 }
 
 .storyDifference-title{
-    width: 20%;
+    width: 18%;
     text-align: center;
 }
 
@@ -398,3 +405,4 @@ html {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
 }
+
