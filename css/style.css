@@ -163,6 +163,11 @@ html {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+.storyDifference-BG{
+    background: #F0F7FC;
+}
+
 .card-title{
     width: 100%;
     text-align: center;
