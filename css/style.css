@@ -381,3 +381,9 @@ html {
         display: none;
     }
     }
+
+@media(min-width: 1155px){
+    .en_icon{
+        display: inline-block
+    }
+    }
