@@ -254,6 +254,14 @@ html {
     padding-left: 10vw;
 }
 
+.En_storySim_contain{
+    color:#2c58a0;
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.25vw;
+    padding-left: 5vw;
+}
+
 .index_title{
     text-align: center;
     font-weight: bold;
