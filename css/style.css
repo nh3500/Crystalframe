@@ -471,3 +471,31 @@ html {
         padding-top: .5rem;
     }
     }
+
+.warranty_rwd{
+    display: block;
+}
+@media(min-width: 600px){
+    .warranty_rwd{
+    display: none;
+    overflow: hidden;
+    }
+    }
+
+.warranty_rwd2{
+    display: none;
+    overflow: hidden;
+}
+@media(min-width: 600px){
+    .warranty_rwd2{
+    display: block;
+    }
+    }
+
+.warranty_logo{
+    width: 12vw; 
+    max-width: 60px;
+    display: block; 
+    margin: auto;
+    margin-bottom: .5rem;
+}
