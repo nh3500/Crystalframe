@@ -158,6 +158,19 @@ html {
     }
 }
 
+.En_navbar-expand-lg{
+    background-color:rgba(255,255,255,0);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+@media(max-width: 1080px){
+    .En_navbar-expand-lg{
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        background-color:rgba(255,255,255,0.9);
+    }
+}
+
 .storyDifference_img{
     display: inline-block;
     height: 100%;
@@ -391,7 +404,7 @@ html {
     }
     }
 
-@media(min-width: 1290px){
+@media(min-width: 1365px){
     .logo_text{
         display: inline-block;
     }
@@ -403,7 +416,7 @@ html {
     }
     }
 
-@media(min-width: 1155px){
+@media(min-width: 1230px){
     .en_icon{
         display: inline-block
     }
