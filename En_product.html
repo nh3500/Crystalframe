@@ -177,7 +177,7 @@
                         </select>
                     </div>
                     <div class="form-group row" v-if="service == 'accessory'">
-                        <p class="lead text-center" >coming soon</p>
+                        <p class="lead text-center" >SORRY, NOT OPEN YET.</p>
                     </div>
                     <div class="form-group row" v-if="service != 'accessory'">
                         <label for="frameType" class="col-sm-2 col-form-label">TYPE</label>
@@ -235,7 +235,7 @@
                     <div class="form-group row" v-if="fastImgSize == '' && service != 'accessory'">
                         <div class="input-group col-12">
                             <div class="input-group-prepend">
-                                <span class="input-group-text">短邊(W)</span>
+                                <span class="input-group-text">WIDTH</span>
                             </div>
                             <input type="number" class="form-control" id="frameWidth" v-model="frameWidthUser" :max="mmToInch(1000)" :min="mmToInch(200)">
                             <div class="input-group-append">
@@ -243,13 +243,13 @@
                             </div>
                         </div>
                         <div class="invalid-feedback d-block" v-if=" frameWidthUser > mmToInch(1000) || frameWidthUser < mmToInch(200)">
-                            <p class="lead text-center">超出允許範圍</p>
+                            <p class="lead text-center">NOT AVAILABLE</p>
                         </div>
                     </div>
                     <div class="form-group row" v-if="fastImgSize == '' && service != 'accessory'">
                         <div class="input-group col-12">
                             <div class="input-group-prepend">
-                                <span class="input-group-text">長邊(L)</span>
+                                <span class="input-group-text">LENGTH</span>
                             </div>
                             <input type="number" class="form-control" id="frameHeight" v-model="frameHeightUser" :max="mmToInch(2400)" :min="mmToInch(200)">
                             <div class="input-group-append">
@@ -257,7 +257,7 @@
                             </div>
                         </div>
                         <div class="invalid-feedback d-block" v-if=" frameHeightUser > mmToInch(2400) || frameHeightUser < mmToInch(200)">
-                            <p class="lead text-center">超出允許範圍</p>
+                            <p class="lead text-center">NOT AVAILABLE</p>
                         </div>
                     </div>
                     <div class="form-group row" v-if="service == 'crystalframe' && frameType == 'LED'">
@@ -274,7 +274,7 @@
                             <input type="number" class="form-control col-12" id="frameAmount" value="1"
                                    v-model="frameAmount">
                             <div class="input-group-append">
-                                <span class="input-group-text">組</span>
+                                <span class="input-group-text">SET</span>
                             </div>
                         </div>
                     </div>
@@ -323,8 +323,8 @@
                     <tr>
                         <td>PRINT MATERIAL</td>
                         <td>
-                            <span v-if="frameType == 'normal'">圖紙 - 建議使用霧面圖紙(本公司有提供) 勿使用亮面圖紙以避免濕氣相黏現象,最後效果仍以實際材料為主</span>
-                            <span v-if="frameType == 'LED'">燈片 - 燈片為透明材質(本公司有提供) 使用較濃郁印刷以利透光後使得預計色彩一致</span>
+                            <span v-if="frameType == 'normal'">PRINT-Matte is recommended for crystalframe. Gossy print may cause the effect of stickiness.</span>
+                            <span v-if="frameType == 'LED'">BACK LIGHT FILM – transparent film (from our company), with deeper color to meet the same picture quality.</span>
                         </td>
                     </tr>
                     <tr>
@@ -360,15 +360,15 @@
                     </tr>
                     <tr>
                         <td>UNIT PRICE</td>
-                        <td>Per{{ service=='picturePrinting'?'張':'組' }} {{ unitPrice() }} {{ currency }}</td>
+                        <td>Per{{ service=='picturePrinting'?'PC':'SET' }} {{ unitPrice() }} {{ currency }}</td>
                     </tr>
                     <tr v-if="service == 'picturePrinting'">
-                        <td>裁切</td>
+                        <td>PRINT CUT</td>
                         <td>{{ currencyTo(200) }} {{ currency }}</td>
                     </tr>
                     <tr>
                         <td>TOTAL PRICE</td>
-                        <td>總共 {{ totalPrice() }} {{ currency }}</td>
+                        <td>TOTAL {{ totalPrice() }} {{ currency }}</td>
                     </tr>
                     <tr v-if="service == 'crystalframe'">
                         <td>FRAME DIMENTION</td>
@@ -513,7 +513,7 @@
                 <br>
                 <br>
                 <div class="text-center" v-if="service != 'accessory'">
-                    <a class="btn btn-primary btn-block" target="_blank" :href="mailToProducer()" >詢問 & 訂購</a>
+                    <a class="btn btn-primary btn-block" target="_blank" :href="mailToProducer()" >INQUIRY ORDER</a>
                 </div>
                 <br>
                 <br>
@@ -995,7 +995,7 @@
                 }
 
                 if (this.service == 'picturePrinting') {
-                    return "(以上報價皆為台灣島內含稅價)"
+                    return "(ABOVE QUOTATION ALL BASED IN TAIWAN ISLAND)"
                 }
 
                 return ""
