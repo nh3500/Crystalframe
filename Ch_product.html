@@ -13,7 +13,6 @@
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
-
     <title>crystalframe</title>
 </head>
 <body>
@@ -54,7 +53,7 @@
                                                                                       style="width: 2rem"> LED水晶框展现</a>
                     <a class="dropdown-item navdrop_center" href="Ch_showcaseVideo.html">&nbsp;&nbsp;参考影片</a>
                     <a class="dropdown-item navdrop_center" href="Ch_showcasePost.html">&nbsp;&nbsp;参考图文</a>
-                    <!-- <a class="dropdown-item" href="showcaseBusinessAd.html">&nbsp;&nbsp;商業廣告</a> -->
+                    <!-- <a class="dropdown-item" href="showcaseBusinessAd.html">&nbsp;&nbsp;商业广告</a> -->
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -92,7 +91,7 @@
                     <a class="dropdown-item navdrop_center" href="Ch_usageOperation.html">水晶框操作影片</a>
                     <a class="dropdown-item navdrop_center" href="Ch_usageConstruction.html">水晶框结构图</a>
                     <a class="dropdown-item navdrop_center" href="Ch_usageNotice.html">水晶框注意事项</a>
-                    <!-- <a class="dropdown-item" href="usageQA.html">客戶問答 Q&A</a> -->
+                    <!-- <a class="dropdown-item" href="usageQA.html">客户问答 Q&A</a> -->
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -120,11 +119,11 @@
                 <div class="nav-link dropdown-toggle" href="distributionMustKnow.html" role="button"
                      data-toggle="dropdown"
                      aria-haspopup="true" aria-expanded="false">
-                    經銷
+                    经销
                 </div>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="distributionMustKnow.html">經銷商須知</a>
-                    <a class="dropdown-item" href="distributionLearn.html">經銷商學習</a>
+                    <a class="dropdown-item" href="distributionMustKnow.html">经销商须知</a>
+                    <a class="dropdown-item" href="distributionLearn.html">经销商学习</a>
                 </div> -->
             </li>
             <li class="nav-item dropdown">
@@ -133,7 +132,7 @@
                      联络
                 </div>
                 <div class="dropdown-menu">
-                    <!-- <a class="dropdown-item" href="contactMainCompany.html">台灣總公司</a> -->
+                    <!-- <a class="dropdown-item" href="contactMainCompany.html">台湾总公司</a> -->
                     <a class="dropdown-item navdrop_center" href="Ch_contactDistributionTaiwan.html">台湾总经销</a>
                     <a class="dropdown-item navdrop_center" href="Ch_contactInternationalPartner.html">日本总经销</a>
                 </div>
@@ -141,10 +140,10 @@
             <!-- <li class="nav-item dropdown">
                 <div class="nav-link dropdown-toggle" href="aboutVideo.html" role="button" data-toggle="dropdown"
                      aria-haspopup="true" aria-expanded="false">
-                    參考
+                    参考
                 </div>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="aboutVideo.html">關於影片</a>
+                    <a class="dropdown-item" href="aboutVideo.html">关于影片</a>
                 </div>
             </li>   -->
             <li class="nav-item dropdown">
@@ -183,45 +182,45 @@
     <section>
         <div class="container">
             <div id="price" class="mt-5">
-                <h2 class="card-title title-underline">目錄及價格</h2>
+                <h2 class="card-title title-underline">目录及价格</h2>
                 <form>
                     <!--                    <div class="form-group row">-->
-                    <!--                        <label for="frameProductType" class="col-sm-2 col-form-label">生產類型</label>-->
+                    <!--                        <label for="frameProductType" class="col-sm-2 col-form-label">生产类型</label>-->
                     <!--                        <select class="col-10" id="frameProductType" v-model="frameProductType">-->
-                    <!--                            <option value="R">常貨型(R) - 常用出貨型 有庫存 可短期內出貨</option>-->
-                    <!--                            <option value="C">客製型(C) - 無庫存 乃根據您的圖片規格需求之特製水晶框</option>-->
+                    <!--                            <option value="R">常货型(R) - 常用出货型 有库存 可短期内出货</option>-->
+                    <!--                            <option value="C">客制型(C) - 无库存 乃根据您的图片规格需求之特制水晶框</option>-->
                     <!--                        </select>-->
                     <!--                    </div>-->
                     <div class="form-group row">
-                        <label for="service" class="col-sm-2 col-form-label">品項</label>
+                        <label for="service" class="col-sm-2 col-form-label">品项</label>
                         <select class="col-10" id="service" v-model="service">
                             <option value="crystalframe">水晶框系列</option>
-                            <option value="picturePrinting">圖紙服務 <span class="hint-text">- 本選擇之圖紙服務僅以單純適用裱裝於水晶框之輸圖，其他如數量較多如海報等請另詢問</span>
+                            <option value="picturePrinting">图纸服务 <span class="hint-text">- 本选择之图纸服务仅以单纯适用裱装于水晶框之输图，其他如数量较多如海报等请另询问</span>
                             </option>
                             <option value="accessory">配件</option>
                         </select>
                     </div>
                     <div class="form-group row" v-if="service == 'accessory'">
-                        <p class="lead text-center" >暫無開放</p>
+                        <p class="lead text-center" >暂无开放</p>
                     </div>
                     <div class="form-group row" v-if="service != 'accessory'">
-                        <label for="frameType" class="col-sm-2 col-form-label">水晶框種類</label>
+                        <label for="frameType" class="col-sm-2 col-form-label">水晶框种类</label>
                         <select class="col-10" id="frameType" v-model="frameType">
-                            <option value="normal">水晶框 <span class="hint-text">- 高級塑料 無LED發光板 普遍使用型</span></option>
-                            <option value="LED">LED 水晶框 <span class="hint-text">- 藝術級薄型浮出燈箱 高級塑料結合高質感LED發光板 最適合商業使用</span>
+                            <option value="normal">水晶框 <span class="hint-text">- 高级塑料 无LED发光板 普遍使用型</span></option>
+                            <option value="LED">LED 水晶框 <span class="hint-text">- 艺术级薄型浮出灯箱 高级塑料结合高质感LED发光板 最适合商业使用</span>
                             </option>
                         </select>
                     </div>
                     <div class="form-group row" v-if="service == 'picturePrinting'">
-                        <label for="frameType" class="col-sm-2 col-form-label">圖紙</label>
+                        <label for="frameType" class="col-sm-2 col-form-label">图纸</label>
                         <select class="col-10" id="picturePrintingType" v-model="picturePrintingType">
-                            <option value="PP" v-if="frameType == 'normal'">水性墨PP相紙 霧膜</option>
-                            <option value="SNOW" v-if="frameType == 'normal'">高階雪面銅版紙</option>
-                            <option value="LIGHT" v-if="frameType == 'LED'">乳膠霧燈片 霧膜</option>
+                            <option value="PP" v-if="frameType == 'normal'">水性墨PP相纸 雾膜</option>
+                            <option value="SNOW" v-if="frameType == 'normal'">高阶雪面铜版纸</option>
+                            <option value="LIGHT" v-if="frameType == 'LED'">乳胶雾灯片 雾膜</option>
                         </select>
                     </div>
                     <div class="form-group row" v-if="service != 'accessory'">
-                        <label for="fastImgSize" class="col-sm-2 col-form-label">快速圖片規格</label>
+                        <label for="fastImgSize" class="col-sm-2 col-form-label">快速图片规格</label>
                         <select class="col-10_product" id="fastImgSize" v-model="fastImgSize">
                             <option value="A1">A1 - 594X841 mm</option>
                             <option value="A2">A2 - 420X594 mm</option>
@@ -251,16 +250,16 @@
                         </select>
                     </div>
                     <div class="form-group row" v-if="fastImgSize == '' && service != 'accessory'">
-                        <label for="FrameSizeUnit" class="col-sm-2 col-form-label">圖片規格單位</label>
+                        <label for="FrameSizeUnit" class="col-sm-2 col-form-label">图片规格单位</label>
                         <select class="col-10_product" id="FrameSizeUnit" v-model="FrameSizeUnit">
-                            <option value="mm">mm - <small>圖片公制測量</small></option>
-                            <option value="inch">inch - 圖片英制測量</option>
+                            <option value="mm">mm - <small>图片公制测量</small></option>
+                            <option value="inch">inch - 图片英制测量</option>
                         </select>
                     </div>
                     <div class="form-group row" v-if="fastImgSize == '' && service != 'accessory'">
                         <div class="input-group col-12">
                             <div class="input-group-prepend">
-                                <span class="input-group-text">短邊(W)</span>
+                                <span class="input-group-text">短边(W)</span>
                             </div>
                             <input type="number" class="form-control" id="frameWidth" v-model="frameWidthUser" :max="mmToInch(1000)" :min="mmToInch(200)">
                             <div class="input-group-append">
@@ -268,13 +267,13 @@
                             </div>
                         </div>
                         <div class="invalid-feedback d-block" v-if=" frameWidthUser > mmToInch(1000) || frameWidthUser < mmToInch(200)">
-                            <p class="lead text-center">超出允許範圍</p>
+                            <p class="lead text-center">超出允许范围</p>
                         </div>
                     </div>
                     <div class="form-group row" v-if="fastImgSize == '' && service != 'accessory'">
                         <div class="input-group col-12">
                             <div class="input-group-prepend">
-                                <span class="input-group-text">長邊(L)</span>
+                                <span class="input-group-text">长边(L)</span>
                             </div>
                             <input type="number" class="form-control" id="frameHeight" v-model="frameHeightUser" :max="mmToInch(2400)" :min="mmToInch(200)">
                             <div class="input-group-append">
@@ -282,29 +281,29 @@
                             </div>
                         </div>
                         <div class="invalid-feedback d-block" v-if=" frameHeightUser > mmToInch(2400) || frameHeightUser < mmToInch(200)">
-                            <p class="lead text-center">超出允許範圍</p>
+                            <p class="lead text-center">超出允许范围</p>
                         </div>
                     </div>
                     <div class="form-group row" v-if="service == 'crystalframe' && frameType == 'LED'">
-                        <label for="frameDots" class="col-sm-2 col-form-label">是否使用吊線(框邊設圓孔)</label>
+                        <label for="frameDots" class="col-sm-2 col-form-label">是否使用吊线(框边设圆孔)</label>
                         <select class="col-10" id="frameDots" v-model="frameDots">
-                            <option value="VH">使用吊線(框邊設圓孔)</option>
-                            <option value="V">不使用吊線(框邊不設圓孔)</option>
+                            <option value="VH">使用吊线(框边设圆孔)</option>
+                            <option value="V">不使用吊线(框边不设圆孔)</option>
                         </select>
                     </div>
                     <div class="form-group row" v-if="service != 'accessory'">
-                        <label for="frameAmount" class="col-sm-2 col-form-label">購買數量</label>
+                        <label for="frameAmount" class="col-sm-2 col-form-label">购买数量</label>
 
                         <div class="input-group col-10">
                             <input type="number" class="form-control col-12" id="frameAmount" value="1"
                                    v-model="frameAmount">
                             <div class="input-group-append">
-                                <span class="input-group-text">組</span>
+                                <span class="input-group-text">组</span>
                             </div>
                         </div>
                     </div>
                     <div class="form-group row" v-if="service != 'accessory'">
-                        <label for="currency" class="col-sm-2 col-form-label">幣別</label>
+                        <label for="currency" class="col-sm-2 col-form-label">币别</label>
                         <select class="col-10" id="currency" v-model="currency">
                             <option value="NTD">NTD</option>
                             <option value="CNY">CNY</option>
@@ -317,7 +316,7 @@
 
                 <table class="table mt-5" v-if="service != 'accessory'">
                     <tr>
-                        <td>商品名稱</td>
+                        <td>商品名称</td>
                         <td>
                             {{frameModelName}}
                         </td>
@@ -332,75 +331,75 @@
 
                 <table class="table mt-5" v-if="service != 'accessory'">
                     <!--                    <tr>-->
-                    <!--                        <td>生產類型</td>-->
+                    <!--                        <td>生产类型</td>-->
                     <!--                        <td>-->
-                    <!--                            <span v-if="frameProductType == 'R'">常貨型(R) - 常用出貨型 有庫存 可短期內出貨</span>-->
-                    <!--                            <span v-if="frameProductType == 'C'">客製型(C) - 無庫存 乃根據您的圖片規格需求之特製水晶框</span>-->
+                    <!--                            <span v-if="frameProductType == 'R'">常货型(R) - 常用出货型 有库存 可短期内出货</span>-->
+                    <!--                            <span v-if="frameProductType == 'C'">客制型(C) - 无库存 乃根据您的图片规格需求之特制水晶框</span>-->
                     <!--                        </td>-->
                     <!--                    </tr>-->
                     <tr>
-                        <td>水晶框種類</td>
+                        <td>水晶框种类</td>
                         <td>
-                            <span v-if="frameType == 'normal'">水晶框 - 高級塑料 無LED發光板 普遍使用型</span>
-                            <span v-if="frameType == 'LED'">水晶框 LED - 藝術級薄型浮出燈箱 高級塑料結合高質感LED發光板 最適合商業使用</span>
+                            <span v-if="frameType == 'normal'">水晶框 - 高级塑料 无LED发光板 普遍使用型</span>
+                            <span v-if="frameType == 'LED'">水晶框 LED - 艺术级薄型浮出灯箱 高级塑料结合高质感LED发光板 最适合商业使用</span>
                         </td>
                     </tr>
                     <tr>
-                        <td>圖片材質</td>
+                        <td>图片材质</td>
                         <td>
-                            <span v-if="frameType == 'normal'">圖紙 - 建議使用霧面圖紙(本公司有提供) 勿使用亮面圖紙以避免濕氣相黏現象,最後效果仍以實際材料為主</span>
-                            <span v-if="frameType == 'LED'">燈片 - 燈片為透明材質(本公司有提供) 使用較濃郁印刷以利透光後使得預計色彩一致</span>
+                            <span v-if="frameType == 'normal'">图纸 - 建议使用雾面图纸(本公司有提供) 勿使用亮面图纸以避免湿气相粘现象,最后效果仍以实际材料为主</span>
+                            <span v-if="frameType == 'LED'">灯片 - 灯片为透明材质(本公司有提供) 使用较浓郁印刷以利透光后使得预计色彩一致</span>
                         </td>
                     </tr>
                     <tr>
-                        <td>快速圖片規格</td>
+                        <td>快速图片规格</td>
                         <td>
                             {{fastImgSize}}
                         </td>
                     </tr>
                     <tr>
-                        <td>圖片規格單位</td>
+                        <td>图片规格单位</td>
                         <td>
                             {{FrameSizeUnit}}
                         </td>
                     </tr>
                     <tr>
-                        <td>圖片規格設定 </td>
+                        <td>图片规格设定 </td>
                         <td>
                             {{ frameWidthUser + " X " + frameHeightUser}}
                         </td>
                     </tr>
                     <tr v-if="service == 'crystalframe'">
-                        <td>是否框體側面打圓孔</td>
+                        <td>是否框体侧面打圆孔</td>
                         <td>
                             <span v-if="frameDots == 'VH'">有</span>
-                            <span v-if="frameDots == 'V'">沒有</span>
+                            <span v-if="frameDots == 'V'">没有</span>
                         </td>
                     </tr>
                     <tr>
-                        <td>購買數量</td>
+                        <td>购买数量</td>
                         <td>
                             {{ frameAmount }}
                         </td>
                     </tr>
                     <tr>
-                        <td>單價</td>
-                        <td>每{{ service=='picturePrinting'?'張':'組' }} {{ unitPrice() }} {{ currency }}</td>
+                        <td>单价</td>
+                        <td>每{{ service=='picturePrinting'?'张':'组' }} {{ unitPrice() }} {{ currency }}</td>
                     </tr>
                     <tr v-if="service == 'picturePrinting'">
                         <td>裁切</td>
                         <td>{{ currencyTo(200) }} {{ currency }}</td>
                     </tr>
                     <tr>
-                        <td>總價</td>
-                        <td>總共 {{ totalPrice() }} {{ currency }}</td>
+                        <td>总价</td>
+                        <td>总共 {{ totalPrice() }} {{ currency }}</td>
                     </tr>
                     <tr v-if="service == 'crystalframe'">
-                        <td>框體的規格</td>
+                        <td>框体的规格</td>
                         <td>{{ frameSpec() }}</td>
                     </tr>
                     <tr v-if="service == 'crystalframe'">
-                        <td>框體淨重N.W.</td>
+                        <td>框体净重N.W.</td>
                         <td>{{unitWeight()}} KG</td>
                     </tr>
                     <tr v-if="service == 'crystalframe'">
@@ -408,29 +407,29 @@
                         <td>{{grossWeight()}} KG</td>
                     </tr>
                     <tr v-if="service == 'crystalframe'">
-                        <td>內箱 紙箱尺寸</td>
-                        <td> {{ innerBoxWeight() }} (紙箱尺寸僅供參考 仍以實物為主)</td>
+                        <td>内箱 纸箱尺寸</td>
+                        <td> {{ innerBoxWeight() }} (纸箱尺寸仅供参考 仍以实物为主)</td>
                     </tr>
                     <tr v-if="service == 'crystalframe'">
-                        <td>外箱 紙箱尺寸</td>
-                        <td> {{ outterBoxWeight() }} (紙箱尺寸僅供參考 仍以實物為主)</td>
+                        <td>外箱 纸箱尺寸</td>
+                        <td> {{ outterBoxWeight() }} (纸箱尺寸仅供参考 仍以实物为主)</td>
                     </tr>
                     <tr>
-                        <td>生產週期</td>
-                        <td> {{producingPreoid()}} 個工作天</td>
+                        <td>生产周期</td>
+                        <td> {{producingPreoid()}} 个工作天</td>
                     </tr>
                     <tr>
-                        <td>出貨週期</td>
-                        <td> {{transportTime()}} 個工作天</td>
+                        <td>出货周期</td>
+                        <td> {{transportTime()}} 个工作天</td>
                     </tr>
                     <tr>
-                        <td>備註</td>
+                        <td>备注</td>
                         <td> {{ annotation() }}</td>
                     </tr>
                 </table>
                 <br>
                 <br>
-                <h6 v-if="service != 'accessory'">示意圖</h6>
+                <h6 v-if="service != 'accessory'">示意图</h6>
                 <div class="card-deck" v-if="frameWidthUser == frameHeightUser && service != 'accessory'">
                     <div class="card mt-5" style="border: none">
                         <div>
@@ -538,7 +537,7 @@
                 <br>
                 <br>
                 <div class="text-center" v-if="service != 'accessory'">
-                    <a class="btn btn-primary btn-block" target="_blank" :href="mailToProducer()" >詢問 & 訂購</a>
+                    <a class="btn btn-primary btn-block" target="_blank" :href="mailToProducer()" >询问 & 订购</a>
                 </div>
                 <br>
                 <br>
@@ -646,7 +645,6 @@
             },
             frameModelNameSub: function () {
 
-
                 if (this.frameType == 'normal') {
                     out = "(1F1T)"
                 } else {
@@ -656,7 +654,6 @@
                 // out += this.frameProductType
 
                 out += this.frameWidth + "X" + this.frameHeight
-
 
                 if (this.frameType == 'normal') {
                     out += "A33H23"
@@ -983,11 +980,9 @@
                     return 14
                 }
 
-
                 if (this.service == 'picturePrinting') {
                     return 5
                 }
-
 
             },
             transportTime: function () {
@@ -1006,21 +1001,21 @@
             },
             annotation: function () {
                 // if (this.frameProductType == 'C') {
-                //     return "多兩個透明中板"
+                //     return "多两个透明中板"
                 // }
 
                 if (this.service == 'crystalframe') {
                     if (this.frameType == 'normal') {
-                        return "水晶框包裝: 外紙箱+內紙箱+主框+中板+配件組+廣告圖+模板圖 (以上報價皆為台灣島內含稅價)"
+                        return "水晶框包装: 外纸箱+内纸箱+主框+中板+配件组+广告图+模板图 (以上报价皆为台湾岛内含税价)"
                     }
 
                     if (this.frameType == 'LED') {
-                        return "LED水晶框包裝: 外紙箱+內紙箱+主框+導光板+配件組+廣告圖+模板圖 (以上報價皆為台灣島內含稅價)"
+                        return "LED水晶框包装: 外纸箱+内纸箱+主框+导光板+配件组+广告图+模板图 (以上报价皆为台湾岛内含税价)"
                     }
                 }
 
                 if (this.service == 'picturePrinting') {
-                    return "(以上報價皆為台灣島內含稅價)"
+                    return "(以上报价皆为台湾岛内含税价)"
                 }
 
                 return ""
@@ -1060,7 +1055,6 @@
             },
             frameSpec: function () {
 
-
                 if (this.frameType == 'normal') {
                     return "W" + (parseFloat(this.frameWidth) + 5) + " * L" + (this.frameHeight) + " * H" + (this.frameThinkness) + " " + 'mm'
                 }
@@ -1082,7 +1076,7 @@
 
             },
             mailToProducer: function () {
-                return "mailto:sale@crystalframe.com?subject=訂購&body=Thank you for the request.%0APlease send below information to us, and we will contact you asap and confirm the order details!%0A%0A感謝您的詢問 請將以下資訊給我們 我們會盡快向您回覆並確認訂單!%0A%0A~~~~~~~~~~~~~~~~~~~~~~~~~~%0A%0AModelName 型號:%0A" + this.frameModelName +  "%0A%0AUnit Price 單價:%0A"+this.unitPrice()+" "+this.currency+" %0A%0A裁切:%0A "+ this.currencyTo(200) +" "+this.currency+"%0A%0AQuantity 數量:%0A"+this.frameAmount+" SET 組%0A%0ATotal Price 總價:%0A"+this.totalPrice()+" "+this.currency+" %0A%0A~~~~~~~~~~~~~~~~~~~~~~~~~~%0A%0ABuyer Information 購買者資訊%0A%0AName 姓名:%0ACompany 公司:%0AMobile 手機:%0ATel 電話:%0AEmail 電郵:%0AOther Comment 其他意見:%0A%0A~~~~~~~~~~~~~~~~~~~~~~~~~~%0A%0AYou can contact us thru%0A您可以透過以下聯絡我們%0A%0AEmail: sales@crystalframe.com.tw%0ALine@: sqr1930c%0AFacebook: @crystalframeyuweihsu%0AFacebook:七色水晶框有限公司%0ASales Mobile: +886 922576813 (Taiwan)"
+                return "mailto:sale@crystalframe.com?subject=订购&body=Thank you for the request.%0APlease send below information to us, and we will contact you asap and confirm the order details!%0A%0A感谢您的询问 请将以下资讯给我们 我们会尽快向您回复并确认订单!%0A%0A~~~~~~~~~~~~~~~~~~~~~~~~~~%0A%0AModelName 型号:%0A" + this.frameModelName +  "%0A%0AUnit Price 单价:%0A"+this.unitPrice()+" "+this.currency+" %0A%0A裁切:%0A "+ this.currencyTo(200) +" "+this.currency+"%0A%0AQuantity 数量:%0A"+this.frameAmount+" SET 组%0A%0ATotal Price 总价:%0A"+this.totalPrice()+" "+this.currency+" %0A%0A~~~~~~~~~~~~~~~~~~~~~~~~~~%0A%0ABuyer Information 购买者资讯%0A%0AName 姓名:%0ACompany 公司:%0AMobile 手机:%0ATel 电话:%0AEmail 电邮:%0AOther Comment 其他意见:%0A%0A~~~~~~~~~~~~~~~~~~~~~~~~~~%0A%0AYou can contact us thru%0A您可以透过以下联络我们%0A%0AEmail: sales@crystalframe.com.tw%0ALine@: sqr1930c%0AFacebook: @crystalframeyuweihsu%0AFacebook:七色水晶框有限公司%0ASales Mobile: +886 922576813 (Taiwan)"
             },
             currencyTo : function(value) {
                 switch (this.currency) {
@@ -1105,3 +1099,5 @@
 </body>
 </body>
 </html>
+
+
