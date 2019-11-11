@@ -499,3 +499,7 @@ html {
     margin: auto;
     margin-bottom: .5rem;
 }
+
+.card-custom {
+    min-width: 33%;
+}
