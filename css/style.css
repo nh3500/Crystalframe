@@ -503,3 +503,14 @@ html {
 .card-custom {
     min-width: 33%;
 }
+
+.certificates_img{
+    margin-right: .5rem;
+    margin-left: .5rem;
+    width: 20%;
+    box-shadow:4px 4px 8px rgba(20%,20%,40%,0.5);
+}
+
+.certificates_item{
+    width:22%;
+}
