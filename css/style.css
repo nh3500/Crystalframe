@@ -526,10 +526,11 @@ html {
 background-color:black;
 width: 30%;
 font-size: 5vw;
-margin: 3vh;
+margin: 2.5vw;
 display: inline-block;
 height: 25%;
 text-align: center;
+border-radius: 15px;
 }
 
 .index_link{
