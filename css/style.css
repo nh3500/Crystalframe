@@ -555,11 +555,17 @@ background-color: white;
     margin-bottom: 3.25vw;
     height: 10%;
 }
+.index_link:hover{
+    transform: scale(1.25);
+}
 
 .index_link2{
     display: block;
     margin: 2.5vw;
     height: 10%;
+}
+.index_link2:hover{
+    transform: scale(1.25);
 }
 
 .En_index_item1{
@@ -591,6 +597,9 @@ background-color: white;
     margin: 2.5vw;
     height: 10%;
 }
+.En_index_link:hover{
+    transform: scale(1.25);
+}
 
 .En_index_link2{
     display: block;
@@ -599,4 +608,7 @@ background-color: white;
     margin-top: 3vw;
     margin-bottom: 3vw;
     height: 10%;
+}
+.En_index_link2:hover{
+    transform: scale(1.25);
 }
