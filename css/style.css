@@ -80,6 +80,18 @@ html {
     }
 } */
 
+.UP{
+    transition: margin-top .9s ease;
+}
+
+.navbar{
+    z-index: 50000;
+    position:fixed;
+    width:100%;
+    top:0;
+    text-align:center;
+    }
+
 .hint-text {
     color: lightgray;
     font-size: 2vw;
