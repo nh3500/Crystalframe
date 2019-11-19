@@ -532,9 +532,19 @@ html {
     box-shadow:4px 4px 8px rgba(20%,20%,40%,0.5);
 }
 
+.hid_certificates{
+    visibility: hidden;
+}
+@media(max-width: 575px){
+    .hid_certificates{
+    display: none;
+    }
+    }
+
 .US_certificate{
     display: inline-block;
 }
+
 
 .index_item{
     display: flex;
