@@ -323,6 +323,12 @@ html {
     color:#1562e0;
 }
 
+.explain_img{
+    display: block;
+    margin: auto;
+    width: 70%;
+}
+
 .medal{
     width: 15%;
     margin: 0 auto;
