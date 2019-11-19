@@ -177,10 +177,10 @@
         </ul>
     </div>
 </nav>
-<div class="pop-up"> 
+<div class="pop-up" id="close_pop"> 
         <iframe class="pop-up-video" width="960px" height="540px" src="https://www.youtube.com/embed/buoA-2lT1TU" frameborder="0px" allow="accelerometer; 
         autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <div class="close_btn"><img src="img/close.png" class="skip"></div>
+        <div class="close_btn"><img src="img/close.png" class="skip" onclick="myFunction()"></div>
 </div>
 <div>
     <div class="jumbotron" style="margin-top:126px">
@@ -320,6 +320,13 @@
         crossorigin="anonymous"></script>
 <script src="script/page.js"></script>
 <script src="script/UP.js"></script>
+<script>
+        function myFunction() {
+          var element = document.getElementById("close_pop");
+          element.classList.remove("pop-up");
+          element.classList.add("pop-up2");
+        }
+        </script>
 </body>
 </body>
 </html>
