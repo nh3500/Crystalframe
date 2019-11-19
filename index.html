@@ -181,7 +181,7 @@
 <div class="pop-up" id="close_pop"> 
         <iframe class="pop-up-video" width="960px" height="540px" src="https://www.youtube.com/embed/buoA-2lT1TU" 
         frameborder="0px" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <div class="close_btn"><img src="img/close.png" class="skip" onclick="myFunction()"></div>
+        <div class="close_btn"><img src="img/close.png" class="skip" id="click_close"></div>
 </div>
 <div>
     <div class="jumbotron" style="margin-top:126px">
@@ -322,9 +322,10 @@
 <script src="script/page.js"></script>
 <script src="script/UP.js"></script>
 <script>
-        function myFunction() {
-          var element = document.getElementById("close_pop");
-          element.remove("pop-up");
+        var closeBtn = document.getElementById("click_close");
+        var all = document.getElementById("close_pop");
+        closeBtn.onclick = function() {
+        all.parentElement.removeChild(all);
         }
 </script>
 </body>
