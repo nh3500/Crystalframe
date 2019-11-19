@@ -179,8 +179,8 @@
     </div>
 </nav>
 <div class="pop-up" id="close_pop"> 
-        <iframe class="pop-up-video" width="960px" height="540px" src="https://www.youtube.com/embed/buoA-2lT1TU" frameborder="0px" allow="accelerometer; 
-        autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe  id="close_video" class="pop-up-video" width="960px" height="540px" src="https://www.youtube.com/embed/buoA-2lT1TU" 
+        frameborder="0px" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <div class="close_btn"><img src="img/close.png" class="skip" onclick="myFunction()"></div>
 </div>
 <div>
@@ -324,10 +324,9 @@
 <script>
         function myFunction() {
           var element = document.getElementById("close_pop");
-          element.classList.remove("pop-up");
-          element.classList.add("pop-up2");
+          element.remove("pop-up");
         }
-        </script>
+</script>
 </body>
 </body>
 </html>
