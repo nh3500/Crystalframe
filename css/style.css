@@ -696,3 +696,8 @@ background-color: white;
     border-radius: 50px;
     transition: 0.5s;
 }
+
+.hot{
+    display: inline-block;
+    
+}
