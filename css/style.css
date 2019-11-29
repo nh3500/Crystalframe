@@ -319,6 +319,24 @@ html {
     width: 75%;
 }
 
+.IntroPhoto{
+    display: flex;
+}
+
+.IntroPhotoIn{
+    width:20%;
+    text-align-last:center;
+}
+
+.rounded-circle{
+    width: 60%;
+    display: inline-block;
+
+}
+.IntroPhotoIn p{
+    text-align : left;
+}
+
 .explainWord{
     color:#1562e0;
 }
