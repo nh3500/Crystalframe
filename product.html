@@ -307,11 +307,11 @@
                     <div class="form-group row" v-if="service != 'accessory'">
                         <label for="currency" class="col-sm-2 col-form-label">幣別</label>
                         <select class="col-10" id="currency" v-model="currency">
-                            <option value="NTD">NTD</option>
-                            <option value="CNY">CNY</option>
-                            <option value="USD">USD</option>
-                            <option value="JPY">JPY</option>
-                            <option value="EUR">EUR</option>
+                            <option value="NTD">台幣</option>
+                            <option value="CNY">人民幣</option>
+                            <option value="USD">美金</option>
+                            <option value="JPY">日圓</option>
+                            <option value="EUR">歐元</option>
                         </select>
                     </div>
                 </form>
@@ -548,10 +548,175 @@
                 </div>
                 <br>
                 <br>
-                <div class="text-center" v-if="service != 'accessory'">
+                <!-- <div class="text-center" v-if="service != 'accessory'">
                     <a class="btn btn-primary btn-block" target="_blank" :href="mailToProducer()">詢問 & 訂購</a>
-                </div>
-                <br>
+                </div> -->
+               
+
+<!-- Modal -->
+  <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    填寫訂購
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    <div class="row">
+        <div class="col"><hr /></div>
+        <div class="col-auto"><h2>訂購前請填妥以下</h2></div>
+        <div class="col"><hr /></div>
+      </div>
+      <br />
+
+      <!--LOGO -->
+      <form>
+        <div class="form-row">
+          <div class="col">
+            <label>DATE 日期:</label
+            ><input type="text" placeholder="2020/01/01" class="form-control" />
+            <label>電話:</label>
+            <input type="text" placeholder="091234567" class="form-control" />
+            <label>DOWN PAYMENT 訂金:</label
+            ><input type="text" placeholder="500NT" class="form-control" />
+            <label>尾款(貨品完成後給照片,出貨前到帳):</label>
+            <input type="text" placeholder="200NT" class="form-control" />
+            <label>交期:</label
+            ><input type="text" placeholder="2020/01/07" class="form-control" />
+          </div>
+          <div class="col">
+            <label>公司全名(同發票): </label
+            ><input type="text" placeholder="七色水晶框" class="form-control" />
+            <label>訂購人:</label
+            ><input type="text" placeholder="徐先生" class="form-control" />
+            <label>寄送地址：</label
+            ><input
+              type="text"
+              placeholder="高雄市鳳山區文衡路100號1F"
+              class="form-control"
+            />
+            <label>手機:</label
+            ><input type="text" placeholder="0987654321" class="form-control" />
+            <label>統編:</label
+            ><input type="text" placeholder="220041123" class="form-control" />
+            <label>EMAIL:</label
+            ><input
+              type="text"
+              placeholder="XXx@gmail.com"
+              class="form-control"
+            />
+            <label>LINE:</label
+            ><input type="text" placeholder="@123456" class="form-control" />
+          </div>
+        </div>
+      </form>
+      <br />
+      <!--客戶-->
+      <div class="col">
+        <label for="exampleFormControlTextarea1">備註:</label>
+        <textarea
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          rows="3"
+          placeholder="**請問是否願意讓您此次購買的攝影作品水晶框讓我們供其他人欣賞或參考? 是/否
+**如果是,請問是否願意讓我們推薦您攝影師的資訊,如FB/IG? 是/否/下,如是,請提供:(       )"
+        ></textarea>
+      </div>
+
+      <!--Form-->
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">英文產品尺寸名稱</th>
+            <th scope="col">中文產品名稱</th>
+            <th scope="col">特色區別</th>
+            <th scope="col">交期</th>
+            <th scope="col">價格(含稅含運)NTD</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">A</th>
+            <td>crystalframe 200x500mm POSTER</td>
+            <td>水晶框海報</td>
+            <td>可換圖片 不含海報 海報另購</td>
+            <td>10天工作日</td>
+            <td>123</td>
+          </tr>
+          <tr>
+            <th scope="row">B</th>
+            <td>crystalframe 200x500mm ART</td>
+            <td>水晶框藝術</td>
+            <td>藝術噴墨 雙蓋</td>
+            <td>10天工作日</td>
+            <td>123</td>
+          </tr>
+          <tr>
+            <th scope="row">C</th>
+            <td>crystalframe 200x500mm ART GLAZE</td>
+            <td>水晶框藝術琉璃</td>
+            <td>藝術噴墨 琉璃型式 雙蓋</td>
+            <td>10天工作日</td>
+            <td>123</td>
+          </tr>
+          <tr>
+            <th scope="row">D</th>
+            <td>crystalframe 200x500mm ART FOR EXB</td>
+            <td>水晶框藝術展覽級</td>
+            <td>藝術噴墨 畫面細緻 拋光切割 雙蓋 展覽級</td>
+            <td>14天工作日</td>
+            <td>123</td>
+          </tr>
+          <tr>
+            <th scope="row">E</th>
+            <td>crystalframe 200x500mm ART GLAZE FOR EXB</td>
+            <td>水晶框藝術琉璃展覽級</td>
+            <td>藝術噴墨 畫面細緻 琉璃型式 拋光切割 雙蓋包覆 展覽級</td>
+            <td>14天工作日</td>
+            <td>123</td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Total: Price</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="form-row">
+        <p class="text-justify">
+          *如果您選擇琉璃框型,請理解我們會將圖面周邊小比例出血將邊圖折彎.出圖製作前會先與您再次確認最終圖稿.
+        </p>
+        <p class="text-justify">
+          *交期工作日僅為工廠生產週期,需另加入水晶框設計部門與購買方之校稿確認後,方始計算日期.
+        </p>
+        <p class="text-justify">
+          *設計週期為在收到您的圖後(透過雲端),會與您確認各種其他細項,如背框作者,簽名,短語.在您確認後才進行製作.
+        </p>
+        <p class="text-justify">
+          *以上價格除了A不含圖像,其他皆已含噴墨圖像,也歡迎您至官網挑選並使用我們的授權開放的美圖.(美圖下載此功能目前未開放)
+        </p>
+        <p class="text-justify">*價格已含稅含運台灣島內.</p>
+        <p class="text-justify">
+          *訂金為價格的50%.匯出後請告知我們.訂金收到後,將與您進行設計及圖面的尺寸校稿.
+        </p>
+        <p class="text-justify">
+          *完成水晶框後,將給您照片確認產品已經製作完成.屆時再請您於商品寄出前付尾款並確認寄出.
+        </p>
+        <p class="text-justify">
+          *為便於聯絡溝通順利完成作品,請加LINE: yuwei660204
+        </p>
+        <p class="text-justify">*以下為七色水晶框有限公司台灣匯款帳號.</p>
+      </div>
+      <div class="col">
+        <a class="btn btn-primary btn-block" target="_blank">詢問 & 訂購</a>
+      </div>
+    </div>
+  </div>
+</div>
+                
+                
                 <br>
                 <br>
                 <br>
