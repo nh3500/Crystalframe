@@ -321,7 +321,13 @@
                         <th colspan="2">您查詢的產品及價格如下</th>
                     </tr>
                     <tr>
-                        <td>商品名稱</td>
+                        <td>商品中文名稱</td>
+                        <td>
+                            {{frameModelNameCH}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>商品英文名稱</td>
                         <td>
                             {{frameModelName}}
                         </td>
@@ -333,54 +339,27 @@
                         <td>特色區別</td>
                         <td>
                             <span v-if="frameType == 'A'">
-                                *方便更換圖片一框萬裱<br>
-*此為空框 非直噴 可另購本公司霧面圖紙	<br>
-*1:1圖面置入(非琉璃型)	<br>
-*雙長邊順勢轉彎框邊為透明色 	<br>
-*雙短邊無上下蓋	<br>
-*雷射切割邊緣亮麗 孔洞多功能配置<br>
-*空間裝置變換最方便的框	可重複使用<br>
+                                
 *可換圖片 不含海報 海報另購<br>
                             </span>
                             <span v-if="frameType == 'B'">
-                                *不可更換圖片永久保留不失真<br>
-*直噴成色豐富<br>
-*1:1圖面置入(非琉璃型)<br>
-*雙長邊順勢轉彎框邊為透明色 <br>
-*雙短邊無上下蓋/ 可加購雙短邊有上下蓋 透明色<br>
-*CNC切割造型<br>
-*藝術級別<br>
+                                
+
 *藝術噴墨 雙蓋<br>
                             </span>
                             <span v-if="frameType == 'C'">
-                                *不可更換圖片永久保留不失真<br>
-*直噴成色豐富<br>
-*圖面由我司設計調整後置入 將作品圖面及壓克力長邊順勢轉彎成琉璃型更優美立體<br>
-*雙長邊順勢轉彎框邊為圖面延伸彩色<br>
-*雙短邊無上下蓋/ 可加購雙短邊有上下蓋 黑色 或 白色<br>
-*CNC切割造型<br>
-*藝術級別<br>
+                                
+
 *藝術噴墨 琉璃型式 雙蓋<br>
                             </span>
                             <span v-if="frameType == 'D'">
-                                *不可更換圖片永久保留不失真<br>
-*慢速直噴成色豐富畫面更細膩<br>
-*1:1圖面置入(非琉璃型)<br>
-*雙長邊順勢轉彎框邊為黑色 或 白色<br>
-*雙短邊有上下蓋黑色 或 白色<br>
-*光學級壓克力雷射切割邊緣亮麗<br>
-*藝術展覽級<br>
+                               
+
 *藝術噴墨 畫面細緻 拋光切割 雙蓋 展覽級<br>
 
                             </span>
                             <span v-if="frameType == 'E'">
-                                *不可更換圖片永久保留不失真<br>
-*慢速直噴成色豐富畫面更細膩<br>
-*圖面由我司設計調整後置入 將作品圖面及壓克力長邊順勢轉彎成琉璃型更優美立體<br>
-*雙長邊順勢轉彎框邊為圖面延伸彩色<br>
-*雙短邊有上下蓋為圖面延伸彩色<br>
-*光學級壓克力雷射切割邊緣亮麗<br>
-*藝術展覽級別將水晶裱轉彎的美感被認為是造型上最美的框<br>
+                               
 *藝術噴墨 畫面細緻 琉璃型式 拋光切割 雙蓋包覆 展覽級<br>
                             </span>
                         </td>
@@ -693,6 +672,65 @@
                             break
                         case 'E':
                             out = out + 'ART GLAZE FOR EXB ';
+                            break
+                    }
+                }
+
+                return out
+            },
+            frameModelNameCH:function(){
+                out = ""
+
+                if (this.fastImgSize.includes("A")) {
+                    out = out + this.fastImgSize + " "
+                }
+
+                if (this.service == 'picturePrinting') {
+                    out = out + this.picturePrintingType + " "
+                }
+
+                if (this.frameType == 'LED') {
+                    out = out + this.frameType + " "
+                }
+
+                // out = out + this.frameProductType + " "
+
+                if (this.service == 'crystalframe') {
+                    out = out + "crystalframe "
+                }
+
+                if (this.service == 'picturePrinting') {
+                    out = out + "print "
+                }
+
+                if (this.FrameSizeUnit == 'mm') {
+                    out = out + this.frameWidthUser + " X " + this.frameHeightUser + ' '
+                    out = out + "mm (" + this.mmToInchForce(this.frameWidthUser) + " X " + this.mmToInchForce(this.frameHeightUser) + ' inch) '
+                } else {
+                    out = out + (this.frameWidthUser) + " X " + (this.frameHeightUser) + ' '
+                    out = out + "inch (" + this.frameWidth + " X " + this.frameHeight + ' mm) '
+                }
+
+                // if (this.service == 'crystalframe') {
+                //     out = out + this.frameDots;
+                // }
+
+                if (this.service == 'crystalframe') {
+                    switch (this.frameType ) {
+                        case 'A':
+                            out = out + '水晶框海報	';
+                            break
+                        case 'B':
+                            out = out + '水晶框藝術	';
+                            break
+                        case 'C':
+                            out = out + '水晶框藝術琉璃	';
+                            break
+                        case 'D':
+                            out = out + '水晶框藝術展覽級	';
+                            break
+                        case 'E':
+                            out = out + '水晶框藝術琉璃展覽級';
                             break
                     }
                 }
