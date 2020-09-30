@@ -553,8 +553,8 @@
                 </div> -->
                
 
-<!-- Modal -->
-  <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+<!-- btn order -->
+  <button class="btn btn-success btn-block" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
     填寫訂購
   </button>
 </p>
@@ -709,9 +709,9 @@
         </p>
         <p class="text-justify">*以下為七色水晶框有限公司台灣匯款帳號.</p>
       </div>
-      <div class="col">
-        <a class="btn btn-primary btn-block" target="_blank">詢問 & 訂購</a>
-      </div>
+      <div class="text-center" v-if="service != 'accessory'">
+                    <a class="btn btn-primary btn-block" target="_blank" :href="mailToProducer()">詢問 & 訂購</a>
+                </div>
     </div>
   </div>
 </div>
