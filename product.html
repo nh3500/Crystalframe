@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <水晶框攝影板5MM - 圖紙已裱背板厚度5mm並已組裝入框體 圖框同買享圖紙8折價!-- Bootstrap CSS -->
+    <!--水晶框攝影板5MM - 圖紙已裱背板厚度5mm並已組裝入框體 圖框同買享圖紙8折價!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
               crossorigin="anonymous">
@@ -57,7 +57,7 @@
                                                                                       style="width: 2rem"> LED水晶框展現</a>
                     <a class="dropdown-item navdrop_center" href="showcaseVideo.html">&nbsp;&nbsp;參考影片</a>
                     <a class="dropdown-item navdrop_center" href="showcasePost.html">&nbsp;&nbsp;參考圖文</a>
-                    <!-- <a class="dropdown-item" href="showcaseBusinessAd.html">&nbsp;&nbsp;商業廣告</a> -->
+                     <a class="dropdown-item" href="showcaseBusinessAd.html">&nbsp;&nbsp;商業廣告</a> -->
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -551,14 +551,16 @@
                 <!-- <div class="text-center" v-if="service != 'accessory'">
                     <a class="btn btn-primary btn-block" target="_blank" :href="mailToProducer()">詢問 & 訂購</a>
                 </div> -->
+
                
 
 <!-- btn order -->
-  <button class="btn btn-success btn-block" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+
+<button class="btn btn-success btn-block" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" >
     填寫訂購
   </button>
-</p>
-<div class="collapse" id="collapseExample">
+
+<div class="collapse" id="collapseExample" v-if="service != 'accessory'">
   <div class="card card-body">
     <div class="row">
         <div class="col"><hr /></div>
@@ -715,11 +717,6 @@
     </div>
   </div>
 </div>
-                
-                
-                <br>
-                <br>
-                <br>
             </div>
         </div>
     </section>
