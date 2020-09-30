@@ -197,7 +197,7 @@
                 <h2 class="card-title title-underline">目錄及價格</h2>
                 <form>
                     <div class="form-group row">
-                        <label for="service" class="col-sm-2 col-form-label">類別</label>
+                        <label for="service" class="col-sm-2 col-form-label">主類</label>
                         <select class="col-10" id="service" v-model="service">
                             <option value="crystalframe">水晶框</option>
                             <option value="accessory">零件</option>
@@ -207,18 +207,19 @@
                         <p class="lead text-center">暫無開放</p>
                     </div>
                     <div class="form-group row" v-if="service != 'accessory'">
-                        <label for="frameType" class="col-sm-2 col-form-label">細項</label>
+                        <label for="frameType" class="col-sm-2 col-form-label">次類</label>
                         <select class="col-10" id="frameType" v-model="frameType">
-                            <option value="A">POSTER</option>
-                            <option value="B">ART</option>
-                            <option value="C">ART GLAZE</option>
-                            <option value="D">ART FOR EXB</option>
-                            <option value="E">ART GLAZE FOR EXB</option>
+                            <option value="A">水晶框海報</option>
+                            <option value="B">水晶框藝術</option>
+                            <option value="C">水晶框藝術琉璃</option>
+                            <option value="D">水晶框藝術展覽級</option>
+                            <option value="E">水晶框藝術琉璃展覽級</option>
                         </select>
                     </div>
                     <div class="form-group row" v-if="service != 'accessory'">
                         <label for="fastImgSize" class="col-sm-2 col-form-label">快速圖片規格</label>
                         <select class="col-10" id="fastImgSize" v-model="fastImgSize">
+                            <option value="">其他尺寸</option>
                             <option value="A1">A1 - 594X841 mm</option>
                             <option value="A2">A2 - 420X594 mm</option>
                             <option value="A3">A3 - 297X420 mm</option>
@@ -243,7 +244,7 @@
                             <option value="24x30">24X30 inch</option>
                             <option value="24x36">24X36 inch</option>
                             <option value="27x40">27X40 inch</option>
-                            <option value="">其他尺寸</option>
+                            
                         </select>
                     </div>
                     <div class="form-group row" v-if="fastImgSize == '' && service != 'accessory'">
@@ -329,7 +330,7 @@
 
                 <table class="table mt-5" v-if="service != 'accessory'">
                     <tr>
-                        <td>定義</td>
+                        <td>特色區別</td>
                         <td>
                             <span v-if="frameType == 'A'">
                                 *方便更換圖片一框萬裱<br>
@@ -339,6 +340,7 @@
 *雙短邊無上下蓋	<br>
 *雷射切割邊緣亮麗 孔洞多功能配置<br>
 *空間裝置變換最方便的框	可重複使用<br>
+*可換圖片 不含海報 海報另購<br>
                             </span>
                             <span v-if="frameType == 'B'">
                                 *不可更換圖片永久保留不失真<br>
@@ -348,6 +350,7 @@
 *雙短邊無上下蓋/ 可加購雙短邊有上下蓋 透明色<br>
 *CNC切割造型<br>
 *藝術級別<br>
+*藝術噴墨 雙蓋<br>
                             </span>
                             <span v-if="frameType == 'C'">
                                 *不可更換圖片永久保留不失真<br>
@@ -357,8 +360,9 @@
 *雙短邊無上下蓋/ 可加購雙短邊有上下蓋 黑色 或 白色<br>
 *CNC切割造型<br>
 *藝術級別<br>
+*藝術噴墨 琉璃型式 雙蓋<br>
                             </span>
-                            <span v-if="frameType == 'C'">
+                            <span v-if="frameType == 'D'">
                                 *不可更換圖片永久保留不失真<br>
 *慢速直噴成色豐富畫面更細膩<br>
 *1:1圖面置入(非琉璃型)<br>
@@ -366,6 +370,8 @@
 *雙短邊有上下蓋黑色 或 白色<br>
 *光學級壓克力雷射切割邊緣亮麗<br>
 *藝術展覽級<br>
+*藝術噴墨 畫面細緻 拋光切割 雙蓋 展覽級<br>
+
                             </span>
                             <span v-if="frameType == 'E'">
                                 *不可更換圖片永久保留不失真<br>
@@ -375,6 +381,7 @@
 *雙短邊有上下蓋為圖面延伸彩色<br>
 *光學級壓克力雷射切割邊緣亮麗<br>
 *藝術展覽級別將水晶裱轉彎的美感被認為是造型上最美的框<br>
+*藝術噴墨 畫面細緻 琉璃型式 拋光切割 雙蓋包覆 展覽級<br>
                             </span>
                         </td>
                     </tr>
