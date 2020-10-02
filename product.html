@@ -206,16 +206,7 @@
                     <div class="form-group row" v-if="service == 'accessory'">
                         <p class="lead text-center">暫無開放</p>
                     </div>
-                    <div class="form-group row" v-if="service != 'accessory'">
-                        <label for="frameType" class="col-sm-2 col-form-label">次類</label>
-                        <select class="col-10" id="frameType" v-model="frameType">
-                            <option value="A">水晶框海報</option>
-                            <option value="B">水晶框藝術</option>
-                            <option value="C">水晶框藝術琉璃</option>
-                            <option value="D">水晶框藝術展覽級</option>
-                            <option value="E">水晶框藝術琉璃展覽級</option>
-                        </select>
-                    </div>
+                    
                     <div class="form-group row" v-if="service != 'accessory'">
                         <label for="fastImgSize" class="col-sm-2 col-form-label">快速圖片規格</label>
                         <select class="col-10" id="fastImgSize" v-model="fastImgSize">
@@ -314,7 +305,105 @@
                             <option value="EUR">歐元</option>
                         </select>
                     </div>
+                    <div class="form-group row" v-if="service != 'accessory'">
+                        <label for="frameType" class="col-sm-2 col-form-label">次類</label>
+                        <select class="col-10" id="frameType" v-model="frameType">
+                            <option value="A">水晶框海報</option>
+                            <option value="B">水晶框藝術</option>
+                            <option value="C">水晶框藝術琉璃</option>
+                            <option value="D">水晶框藝術展覽級</option>
+                            <option value="E">水晶框藝術琉璃展覽級</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-success btn-block" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" >
+    按我操考五種水晶框分類比較
+  </button>
+  <div class="collapse" id="collapseExample" v-if="service != 'accessory'">
+  <div class="card card-body">
+    <div class="row">
+        
+        <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">英文產品尺寸名稱</th>
+            <th scope="col">中文產品名稱</th>
+            <th scope="col">特色區別</th>
+            <th scope="col">交期</th>
+            <th scope="col">單價</th>
+            <th scope="col">總價</th>
+            <th scope="col">價格(含稅含運)NTD</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">A</th>
+            <td>crystalframe 200x500mm POSTER</td>
+            <td>水晶框海報</td>
+            <td>可換圖片 不含海報 海報另購</td>
+            <td>10天工作日</td>
+            <td></td>
+            <td></td>
+            <td>123</td>
+          </tr>
+          <tr>
+            <th scope="row">B</th>
+            <td>crystalframe 200x500mm ART</td>
+            <td>水晶框藝術</td>
+            <td>藝術噴墨 雙蓋</td>
+            <td>10天工作日</td>
+            <td></td>
+            <td></td>
+            <td>123</td>
+          </tr>
+          <tr>
+            <th scope="row">C</th>
+            <td>crystalframe 200x500mm ART GLAZE</td>
+            <td>水晶框藝術琉璃</td>
+            <td>藝術噴墨 琉璃型式 雙蓋</td>
+            <td>10天工作日</td>
+            <td></td>
+            <td></td>
+            <td>123</td>
+          </tr>
+          <tr>
+            <th scope="row">D</th>
+            <td>crystalframe 200x500mm ART FOR EXB</td>
+            <td>水晶框藝術展覽級</td>
+            <td>藝術噴墨 畫面細緻 拋光切割 雙蓋 展覽級</td>
+            <td>14天工作日</td>
+            <td></td>
+            <td></td>
+            <td>123</td>
+          </tr>
+          <tr>
+            <th scope="row">E</th>
+            <td>crystalframe 200x500mm ART GLAZE FOR EXB</td>
+            <td>水晶框藝術琉璃展覽級</td>
+            <td>藝術噴墨 畫面細緻 琉璃型式 拋光切割 雙蓋包覆 展覽級</td>
+            <td>14天工作日</td>
+            <td></td>
+            <td></td>
+            <td>123</td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Total: Price</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      </div>
+      </div>
+  <!--填寫訂購-->
                 </form>
+                
 
                 <table class="table mt-5" v-if="service != 'accessory'">
                     <tr>
@@ -380,6 +469,14 @@
                         <td>圖片規格設定</td>
                         <td>
                             {{ frameWidthUser + " X " + frameHeightUser}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>圖片切割實際尺寸</td>
+                        <td>     
+                            <!-- <span v-if="frameType == 'A'"> {{ frameWidthUser + " X " + frameHeightUser}}</span>
+                            <span v-else-if="frameType == 'B'"> {{ frameWidthUser + " X " + frameHeightUser}}</span>   
+                            <span v-else> {{ frameWidthUser+(33) + " X " + (frameHeightUser+4)}}</span> -->
                         </td>
                     </tr>
                     <td>購買數量</td>
@@ -556,21 +653,21 @@
 
 <!-- btn order -->
 
-<button class="btn btn-success btn-block" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" >
+<!-- <button class="btn btn-success btn-block" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" >
     填寫訂購
-  </button>
+  </button> -->
 
-<div class="collapse" id="collapseExample" v-if="service != 'accessory'">
+<!-- <div class="collapse" id="collapseExample" v-if="service != 'accessory'">
   <div class="card card-body">
     <div class="row">
         <div class="col"><hr /></div>
         <div class="col-auto"><h2>訂購前請填妥以下</h2></div>
         <div class="col"><hr /></div>
       </div>
-      <br />
+      <br /> -->
 
       <!--LOGO -->
-      <form>
+      <!-- <form>
         <div class="form-row">
           <div class="col">
             <label>DATE 日期:</label
@@ -610,9 +707,9 @@
           </div>
         </div>
       </form>
-      <br />
+      <br /> -->
       <!--客戶-->
-      <div class="col">
+      <!-- <div class="col">
         <label for="exampleFormControlTextarea1">備註:</label>
         <textarea
           class="form-control"
@@ -621,71 +718,11 @@
           placeholder="**請問是否願意讓您此次購買的攝影作品水晶框讓我們供其他人欣賞或參考? 是/否
 **如果是,請問是否願意讓我們推薦您攝影師的資訊,如FB/IG? 是/否/下,如是,請提供:(       )"
         ></textarea>
-      </div>
+      </div> -->
 
       <!--Form-->
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">英文產品尺寸名稱</th>
-            <th scope="col">中文產品名稱</th>
-            <th scope="col">特色區別</th>
-            <th scope="col">交期</th>
-            <th scope="col">價格(含稅含運)NTD</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">A</th>
-            <td>crystalframe 200x500mm POSTER</td>
-            <td>水晶框海報</td>
-            <td>可換圖片 不含海報 海報另購</td>
-            <td>10天工作日</td>
-            <td>123</td>
-          </tr>
-          <tr>
-            <th scope="row">B</th>
-            <td>crystalframe 200x500mm ART</td>
-            <td>水晶框藝術</td>
-            <td>藝術噴墨 雙蓋</td>
-            <td>10天工作日</td>
-            <td>123</td>
-          </tr>
-          <tr>
-            <th scope="row">C</th>
-            <td>crystalframe 200x500mm ART GLAZE</td>
-            <td>水晶框藝術琉璃</td>
-            <td>藝術噴墨 琉璃型式 雙蓋</td>
-            <td>10天工作日</td>
-            <td>123</td>
-          </tr>
-          <tr>
-            <th scope="row">D</th>
-            <td>crystalframe 200x500mm ART FOR EXB</td>
-            <td>水晶框藝術展覽級</td>
-            <td>藝術噴墨 畫面細緻 拋光切割 雙蓋 展覽級</td>
-            <td>14天工作日</td>
-            <td>123</td>
-          </tr>
-          <tr>
-            <th scope="row">E</th>
-            <td>crystalframe 200x500mm ART GLAZE FOR EXB</td>
-            <td>水晶框藝術琉璃展覽級</td>
-            <td>藝術噴墨 畫面細緻 琉璃型式 拋光切割 雙蓋包覆 展覽級</td>
-            <td>14天工作日</td>
-            <td>123</td>
-          </tr>
-          <tr>
-            <th scope="row"></th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Total: Price</td>
-          </tr>
-        </tbody>
-      </table>
+      
+      <!-- </table>
       <div class="form-row">
         <p class="text-justify">
           *如果您選擇琉璃框型,請理解我們會將圖面周邊小比例出血將邊圖折彎.出圖製作前會先與您再次確認最終圖稿.
@@ -718,7 +755,7 @@
   </div>
 </div>
             </div>
-        </div>
+        </div> -->
     </section>
 </div>
 <!-- Footer -->
