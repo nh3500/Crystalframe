@@ -316,7 +316,7 @@
                         </select>
                     </div>
                     <button class="btn btn-success btn-block" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" >
-    按我操考五種水晶框分類比較
+    按我參考五種水晶框分類比較
   </button>
   <div class="collapse" id="collapseExample" v-if="service != 'accessory'">
   <div class="card card-body">
@@ -338,51 +338,51 @@
         <tbody>
           <tr>
             <th scope="row">A</th>
-            <td>crystalframe 200x500mm POSTER</td>
-            <td>水晶框海報</td>
+            <td>crystalframe {{ frameWidthUser + " X " + frameHeightUser}} POSTER</td>
+            <td>水晶框{{ frameWidthUser + " X " + frameHeightUser}}海報</td>
             <td>可換圖片 不含海報 海報另購</td>
             <td>10天工作日</td>
-            <td></td>
+            <td> {{ currency }}</td>
             <td></td>
             <td>123</td>
           </tr>
           <tr>
             <th scope="row">B</th>
-            <td>crystalframe 200x500mm ART</td>
-            <td>水晶框藝術</td>
+            <td>crystalframe {{ frameWidthUser + " X " + frameHeightUser}} ART</td>
+            <td>水晶框{{ frameWidthUser + " X " + frameHeightUser}}藝術</td>
             <td>藝術噴墨 雙蓋</td>
             <td>10天工作日</td>
-            <td></td>
+            <td> {{ currency }}</td>
             <td></td>
             <td>123</td>
           </tr>
           <tr>
             <th scope="row">C</th>
-            <td>crystalframe 200x500mm ART GLAZE</td>
-            <td>水晶框藝術琉璃</td>
+            <td>crystalframe {{ frameWidthUser + " X " + frameHeightUser}} ART GLAZE</td>
+            <td>水晶框{{ frameWidthUser + " X " + frameHeightUser}}藝術琉璃</td>
             <td>藝術噴墨 琉璃型式 雙蓋</td>
             <td>10天工作日</td>
-            <td></td>
+            <td> {{ currency }}</td>
             <td></td>
             <td>123</td>
           </tr>
           <tr>
             <th scope="row">D</th>
-            <td>crystalframe 200x500mm ART FOR EXB</td>
-            <td>水晶框藝術展覽級</td>
+            <td>crystalframe {{ frameWidthUser + " X " + frameHeightUser}} ART FOR EXB</td>
+            <td>水晶框{{ frameWidthUser + " X " + frameHeightUser}}藝術展覽級</td>
             <td>藝術噴墨 畫面細緻 拋光切割 雙蓋 展覽級</td>
             <td>14天工作日</td>
-            <td></td>
+            <td>{{ currency }}</td>
             <td></td>
             <td>123</td>
           </tr>
           <tr>
             <th scope="row">E</th>
             <td>crystalframe 200x500mm ART GLAZE FOR EXB</td>
-            <td>水晶框藝術琉璃展覽級</td>
+            <td>水晶框{{ frameWidthUser + " X " + frameHeightUser}}藝術琉璃展覽級</td>
             <td>藝術噴墨 畫面細緻 琉璃型式 拋光切割 雙蓋包覆 展覽級</td>
             <td>14天工作日</td>
-            <td></td>
+            <td>{{ currency }}</td>
             <td></td>
             <td>123</td>
           </tr>
@@ -667,7 +667,7 @@
       <br /> -->
 
       <!--LOGO -->
-      <!-- <form>
+      <form>
         <div class="form-row">
           <div class="col">
             <label>DATE 日期:</label
@@ -680,8 +680,7 @@
             <input type="text" placeholder="200NT" class="form-control" />
             <label>交期:</label
             ><input type="text" placeholder="2020/01/07" class="form-control" />
-          </div>
-          <div class="col">
+          
             <label>公司全名(同發票): </label
             ><input type="text" placeholder="七色水晶框" class="form-control" />
             <label>訂購人:</label
@@ -707,9 +706,9 @@
           </div>
         </div>
       </form>
-      <br /> -->
+      <br /> 
       <!--客戶-->
-      <!-- <div class="col">
+      <div class="col">
         <label for="exampleFormControlTextarea1">備註:</label>
         <textarea
           class="form-control"
@@ -718,11 +717,11 @@
           placeholder="**請問是否願意讓您此次購買的攝影作品水晶框讓我們供其他人欣賞或參考? 是/否
 **如果是,請問是否願意讓我們推薦您攝影師的資訊,如FB/IG? 是/否/下,如是,請提供:(       )"
         ></textarea>
-      </div> -->
+      </div>
 
       <!--Form-->
       
-      <!-- </table>
+    
       <div class="form-row">
         <p class="text-justify">
           *如果您選擇琉璃框型,請理解我們會將圖面周邊小比例出血將邊圖折彎.出圖製作前會先與您再次確認最終圖稿.
@@ -755,7 +754,7 @@
   </div>
 </div>
             </div>
-        </div> -->
+        </div> 
     </section>
 </div>
 <!-- Footer -->
