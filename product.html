@@ -355,7 +355,7 @@
             <td>10天工作日</td>
             <td> {{ currency }}</td>
             <td></td>
-            <td>{{ unitPrice() *2 }}</td>
+            <td>{{ Math.ceil(((300*this.frameHeight/841)+(2400*this.frameWidth*this.frameHeight/499554))/ 100) * 100 *2 }}</td>
           </tr>
           <tr>
             <th>C</th>
@@ -365,7 +365,7 @@
             <td>10天工作日</td>
             <td> {{ currency }}</td>
             <td></td>
-            <td>{{ unitPrice() *2*1.25 }}</td>
+            <td>{{ Math.ceil(((300*this.frameHeight/841)+(2400*this.frameWidth*this.frameHeight/499554))/ 100) * 100 *2*1.25 }}</td>
           </tr>
           <tr>
             <th>D</th>
@@ -375,7 +375,7 @@
             <td>14天工作日</td>
             <td>{{ currency }}</td>
             <td></td>
-            <td>{{ unitPrice() *2*1.25*1.6 }}</td>
+            <td>{{  Math.ceil(((300*this.frameHeight/841)+(2400*this.frameWidth*this.frameHeight/499554))/ 100) * 100 *2*1.25*1.6 }}</td>
           </tr>
           <tr>
             <th>E</th>
@@ -385,7 +385,7 @@
             <td>14天工作日</td>
             <td>{{ currency }}</td>
             <td></td>
-            <td>{{ unitPrice() *2*1.25*1.6*1.25 }}</td>
+            <td>{{ Math.ceil(((300*this.frameHeight/841)+(2400*this.frameWidth*this.frameHeight/499554))/ 100) * 100 *2*1.25*1.6*1.25 }}</td>
           </tr>
           <tr>
             <th ></th>
@@ -806,7 +806,7 @@
         el: '#price',
         data: {
             frameProductType: 'R',
-            frameType: 'A',
+            frameType: 'B',
             imageProp: 'paper',
             fastImgSize: 'A1',
             FrameSizeUnit: 'mm',
