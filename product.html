@@ -235,6 +235,7 @@
                             <option value="24x30">24X30 inch</option>
                             <option value="24x36">24X36 inch</option>
                             <option value="27x40">27X40 inch</option>
+                            <option value="">其他尺寸</option>
                             
                         </select>
                     </div>
@@ -308,7 +309,7 @@
                     <div class="form-group row" v-if="service != 'accessory'">
                         <label for="frameType" class="col-sm-2 col-form-label">次類</label>
                         <select class="col-10" id="frameType" v-model="frameType">
-                            <option value="A">水晶框海報</option>
+                            <!-- <option value="A">水晶框海報</option> -->
                             <option value="B">水晶框藝術</option>
                             <option value="C">水晶框藝術琉璃</option>
                             <option value="D">水晶框藝術展覽級</option>
@@ -336,7 +337,7 @@
           </tr>
         
         
-          <tr>
+          <!-- <tr>
             <th>A</th>            
             <td>crystalframe {{ frameWidthUser + " X " + frameHeightUser}} POSTER</td>
             <td>水晶框{{ frameWidthUser + " X " + frameHeightUser}}海報</td>
@@ -344,8 +345,8 @@
             <td>10天工作日</td>
             <td> {{ currency }}</td>
             <td></td>
-            <td>123</td>
-          </tr>
+            <td>{{ unitPrice() }}</td>
+          </tr> -->
           <tr>
             <th >B</th>
             <td>crystalframe {{ frameWidthUser + " X " + frameHeightUser}} ART</td>
@@ -354,7 +355,7 @@
             <td>10天工作日</td>
             <td> {{ currency }}</td>
             <td></td>
-            <td>123</td>
+            <td>{{ unitPrice() *2 }}</td>
           </tr>
           <tr>
             <th>C</th>
@@ -364,7 +365,7 @@
             <td>10天工作日</td>
             <td> {{ currency }}</td>
             <td></td>
-            <td>123</td>
+            <td>{{ unitPrice() *2*1.25 }}</td>
           </tr>
           <tr>
             <th>D</th>
@@ -374,7 +375,7 @@
             <td>14天工作日</td>
             <td>{{ currency }}</td>
             <td></td>
-            <td>123</td>
+            <td>{{ unitPrice() *2*1.25*1.6 }}</td>
           </tr>
           <tr>
             <th>E</th>
@@ -384,7 +385,7 @@
             <td>14天工作日</td>
             <td>{{ currency }}</td>
             <td></td>
-            <td>123</td>
+            <td>{{ unitPrice() *2*1.25*1.6*1.25 }}</td>
           </tr>
           <tr>
             <th ></th>
