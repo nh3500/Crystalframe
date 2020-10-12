@@ -365,9 +365,9 @@
             <td>水晶框{{ frameWidthUser + " X " + frameHeightUser}}藝術</td>
             <td>藝術噴墨 雙蓋</td>
             <td>10天工作日</td>
-            <td> {{ currency }}</td>
+            <td> </td>
             <td></td>
-            <td>{{ Math.ceil(((300*this.frameHeight/841)+(2400*this.frameWidth*this.frameHeight/499554))/ 100) * 100 *2 }}</td>
+            <td>{{ currencyTo(Math.ceil(((300*this.frameHeight/841)+(2400*this.frameWidth*this.frameHeight/499554))/ 100) * 100 *2) }}{{ currency }}</td>
           </tr>
           <tr>
             <th>C</th>
@@ -375,9 +375,9 @@
             <td>水晶框{{ frameWidthUser + " X " + frameHeightUser}}藝術琉璃</td>
             <td>藝術噴墨 琉璃型式 雙蓋</td>
             <td>10天工作日</td>
-            <td> {{ currency }}</td>
             <td></td>
-            <td>{{ Math.ceil(((300*this.frameHeight/841)+(2400*this.frameWidth*this.frameHeight/499554))/ 100) * 100 *2*1.25 }}</td>
+            <td></td>
+            <td>{{currencyTo(Math.ceil(((300*this.frameHeight/841)+(2400*this.frameWidth*this.frameHeight/499554))/ 100) * 100 *2*1.25)  }}{{ currency }}</td>
           </tr>
           <tr>
             <th>D</th>
@@ -385,9 +385,9 @@
             <td>水晶框{{ frameWidthUser + " X " + frameHeightUser}}藝術展覽級</td>
             <td>藝術噴墨 畫面細緻 拋光切割 雙蓋 展覽級</td>
             <td>14天工作日</td>
-            <td>{{ currency }}</td>
             <td></td>
-            <td>{{  Math.ceil(((300*this.frameHeight/841)+(2400*this.frameWidth*this.frameHeight/499554))/ 100) * 100 *2*1.25*1.6 }}</td>
+            <td></td>
+            <td>{{  currencyTo(Math.ceil(((300*this.frameHeight/841)+(2400*this.frameWidth*this.frameHeight/499554))/ 100) * 100 *2*1.25*1.6) }}{{ currency }}</td>
           </tr>
           <tr>
             <th>E</th>
@@ -395,9 +395,9 @@
             <td>水晶框{{ frameWidthUser + " X " + frameHeightUser}}藝術琉璃展覽級</td>
             <td>藝術噴墨 畫面細緻 琉璃型式 拋光切割 雙蓋包覆 展覽級</td>
             <td>14天工作日</td>
-            <td>{{ currency }}</td>
             <td></td>
-            <td>{{ Math.ceil(((300*this.frameHeight/841)+(2400*this.frameWidth*this.frameHeight/499554))/ 100) * 100 *2*1.25*1.6*1.25 }}</td>
+            <td></td>
+            <td>{{ currencyTo(Math.ceil(((300*this.frameHeight/841)+(2400*this.frameWidth*this.frameHeight/499554))/ 100) * 100 *2*1.25*1.6*1.25) }}{{ currency }}</td>
           </tr>
           <tr>
             <th ></th>
