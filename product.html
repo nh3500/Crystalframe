@@ -310,14 +310,14 @@
                         <label for="frameType" class="col-sm-2 col-form-label">次類</label>
                         <select class="col-10" id="frameType" v-model="frameType">
                             <!-- <option value="A">水晶框海報</option> -->
-                            <option value="B">水晶框藝術</option>
-                            <option value="C">水晶框藝術琉璃</option>
-                            <option value="D">水晶框藝術展覽級</option>
-                            <option value="E">水晶框藝術琉璃展覽級</option>
+                            <option value="B">水晶框</option>
+                            <option value="C">水晶框琉璃</option>
+                            <option value="D">水晶框優能</option>
+                            <option value="E">水晶框優能琉璃</option>
                         </select>
                     </div>
                     <div class="form-group row" v-if="service != 'accessory'">
-                        <label for="" class="col-sm-2 col-form-label">此次購買是否需要盒子</label>
+                        <label for="" class="col-sm-2 col-form-label">此次購買是否需要專屬精品盒</label>
                         <div class="form-check form-check-inline">
   <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
   <label class="form-check-label" for="inlineRadio1">需要</label>
@@ -362,7 +362,7 @@
           <tr>
             <th >B</th>
             <td>crystalframe {{ frameWidthUser + " X " + frameHeightUser}} ART</td>
-            <td>水晶框{{ frameWidthUser + " X " + frameHeightUser}}藝術</td>
+            <td>水晶框{{ frameWidthUser + " X " + frameHeightUser}}水晶框</td>
             <td>藝術噴墨 雙蓋</td>
             <td>10天工作日</td>
             <td> </td>
@@ -372,7 +372,7 @@
           <tr>
             <th>C</th>
             <td>crystalframe {{ frameWidthUser + " X " + frameHeightUser}} ART GLAZE</td>
-            <td>水晶框{{ frameWidthUser + " X " + frameHeightUser}}藝術琉璃</td>
+            <td>水晶框{{ frameWidthUser + " X " + frameHeightUser}}水晶框琉璃</td>
             <td>藝術噴墨 琉璃型式 雙蓋</td>
             <td>10天工作日</td>
             <td></td>
@@ -382,7 +382,7 @@
           <tr>
             <th>D</th>
             <td>crystalframe {{ frameWidthUser + " X " + frameHeightUser}} ART FOR EXB</td>
-            <td>水晶框{{ frameWidthUser + " X " + frameHeightUser}}藝術展覽級</td>
+            <td>水晶框{{ frameWidthUser + " X " + frameHeightUser}}水晶框優能</td>
             <td>藝術噴墨 畫面細緻 拋光切割 雙蓋 展覽級</td>
             <td>14天工作日</td>
             <td></td>
@@ -392,7 +392,7 @@
           <tr>
             <th>E</th>
             <td>crystalframe 200x500mm ART GLAZE FOR EXB</td>
-            <td>水晶框{{ frameWidthUser + " X " + frameHeightUser}}藝術琉璃展覽級</td>
+            <td>水晶框{{ frameWidthUser + " X " + frameHeightUser}}水晶框優能琉璃</td>
             <td>藝術噴墨 畫面細緻 琉璃型式 拋光切割 雙蓋包覆 展覽級</td>
             <td>14天工作日</td>
             <td></td>
@@ -473,22 +473,22 @@
                             <span v-if="frameType == 'B'">
                                 
 
-*藝術噴墨 雙蓋<br>
+1:1原圖<br>
                             </span>
                             <span v-if="frameType == 'C'">
                                 
 
-*藝術噴墨 琉璃型式 雙蓋<br>
+雙邊琉璃<br>
                             </span>
                             <span v-if="frameType == 'D'">
                                
 
-*藝術噴墨 畫面細緻 拋光切割 雙蓋 展覽級<br>
+1:1原圖 / 5H防刮 / 防靜電<br>
 
                             </span>
                             <span v-if="frameType == 'E'">
                                
-*藝術噴墨 畫面細緻 琉璃型式 拋光切割 雙蓋包覆 展覽級<br>
+雙邊琉璃 / 5H防刮 / 防靜電<br>
                             </span>
                         </td>
                     </tr>
@@ -932,19 +932,19 @@
                 if (this.service == 'crystalframe') {
                     switch (this.frameType ) {
                         case 'A':
-                            out = out + '海報	';
+                            out = out + '水晶框	';
                             break
                         case 'B':
-                            out = out + '藝術	';
+                            out = out + '水晶框	';
                             break
                         case 'C':
-                            out = out + '藝術琉璃	';
+                            out = out + '水晶框琉璃	';
                             break
                         case 'D':
-                            out = out + '藝術展覽級	';
+                            out = out + '水晶框優能	';
                             break
                         case 'E':
-                            out = out + '藝術琉璃展覽級';
+                            out = out + '水晶框優能琉璃';
                             break
                     }
                 }
