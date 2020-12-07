@@ -904,7 +904,7 @@ html {
 }
 
 .footer {
-  /* background-image: url(.././img/story_inventor/inventor2.png); */
+  /* background-image: url(. ././img/story_inventor/inventor2.png); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top right;
