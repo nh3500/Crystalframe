@@ -13,6 +13,13 @@ header {
   text-align: center;
   color: #fff;
 }
+@media (min-width: 320px) {
+  header {
+    /* padding-top: 300px; */
+    padding-bottom: 200px;
+    
+  }
+}
 
 header .intro-text {
   padding-top: 100px;
@@ -22,6 +29,7 @@ header .intro-text {
   header .intro-text {
     padding-top: 300px;
     padding-bottom: 200px;
+    
   }
 }
 
