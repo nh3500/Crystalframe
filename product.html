@@ -365,8 +365,8 @@
           </tr> -->
           <tr>
             <th >B</th>
-            <td>crystalframe {{ frameWidthUser + " X " + frameHeightUser}} ART</td>
-            <td>水晶框{{ frameWidthUser + " X " + frameHeightUser}}水晶框</td>
+            <td>crystalframe {{ frameWidthUser + " X " + frameHeightUser}}</td>
+            <td>水晶框{{ frameWidthUser + " X " + frameHeightUser}}</td>
             <td>藝術噴墨 雙蓋</td>
             <td>10天工作日</td>
             <td> </td>
@@ -375,8 +375,8 @@
           </tr>
           <tr>
             <th>C</th>
-            <td>crystalframe {{ frameWidthUser + " X " + frameHeightUser}} ART GLAZE</td>
-            <td>水晶框{{ frameWidthUser + " X " + frameHeightUser}}水晶框琉璃</td>
+            <td>crystalframe {{ frameWidthUser + " X " + frameHeightUser}} GLAZE</td>
+            <td>水晶框{{ frameWidthUser + " X " + frameHeightUser}} 琉璃</td>
             <td>藝術噴墨 琉璃型式 雙蓋</td>
             <td>10天工作日</td>
             <td></td>
@@ -385,8 +385,8 @@
           </tr>
           <tr>
             <th>D</th>
-            <td>crystalframe {{ frameWidthUser + " X " + frameHeightUser}} ART FOR EXB</td>
-            <td>水晶框{{ frameWidthUser + " X " + frameHeightUser}}水晶框優能</td>
+            <td>crystalframe {{ frameWidthUser + " X " + frameHeightUser}} SUPERIOR</td>
+            <td>水晶框{{ frameWidthUser + " X " + frameHeightUser}}優能</td>
             <td>藝術噴墨 畫面細緻 拋光切割 雙蓋 展覽級</td>
             <td>14天工作日</td>
             <td></td>
@@ -395,8 +395,8 @@
           </tr>
           <tr>
             <th>E</th>
-            <td>crystalframe 200x500mm ART GLAZE FOR EXB</td>
-            <td>水晶框{{ frameWidthUser + " X " + frameHeightUser}}水晶框優能琉璃</td>
+            <td>crystalframe {{ frameWidthUser + " X " + frameHeightUser}} SUPERIOR GLAZE</td>
+            <td>水晶框{{ frameWidthUser + " X " + frameHeightUser}}優能琉璃</td>
             <td>藝術噴墨 畫面細緻 琉璃型式 拋光切割 雙蓋包覆 展覽級</td>
             <td>14天工作日</td>
             <td></td>
@@ -511,15 +511,15 @@
                     <tr>
                         <td>圖片規格設定</td>
                         <td>
-                            {{ frameWidthUser + " X " + frameHeightUser}}
+                            {{ frameWidthUser + " * " + frameHeightUser}}
                         </td>
                     </tr>
                     <tr>
                         <td>圖片切割實際尺寸</td>
                         <td>     
-                            <!-- <span v-if="frameType == 'A'"> {{ frameWidthUser + " X " + frameHeightUser}}</span>
-                            <span v-else-if="frameType == 'B'"> {{ frameWidthUser + " X " + frameHeightUser}}</span>   
-                            <span v-else> {{ frameWidthUser+(33) + " X " + (frameHeightUser+4)}}</span> -->
+                            <span v-if="frameType == 'A'"> {{ frameWidthUser + " * " + frameHeightUser}}</span>
+                            <span v-else-if="frameType == 'B'"> {{ frameWidthUser + " * " + frameHeightUser}}</span>   
+                            <span v-else> {{ frameWidthUser+(33) + " * " + (frameHeightUser+4)}}</span>
                         </td>
                     </tr>
                     <td>購買數量</td>
@@ -1029,16 +1029,16 @@
                             out = out + 'POSTER';
                             break
                         case 'B':
-                            out = out + 'ART';
+                            out = out + '';
                             break
                         case 'C':
-                            out = out + 'ART GLAZE';
+                            out = out + 'GLAZE';
                             break
                         case 'D':
-                            out = out + 'ART FOR EXB';
+                            out = out + 'SUPERIOR';
                             break
                         case 'E':
-                            out = out + 'ART GLAZE FOR EXB ';
+                            out = out + 'SUPERIOR GLAZE ';
                             break
                     }
                 }
