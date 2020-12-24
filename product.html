@@ -517,9 +517,10 @@
                     <tr>
                         <td>圖片切割實際尺寸</td>
                         <td>     
-                            <span v-if="frameType == 'A'"> {{ frameWidthUser + " * " + frameHeightUser}}</span>
-                            <span v-else-if="frameType == 'B'"> {{ frameWidthUser + " * " + frameHeightUser}}</span>   
-                            <span v-else> {{ frameWidthUser+(33) + " * " + (frameHeightUser+4)}}</span>
+                            
+                            <span v-if="frameType != 'B' && FrameSizeUnit == 'mm'">{{frameWidthUser + (33) + " * " + (frameHeightUser+4)}}</span>   
+                            <span v-if="frameType != 'B' && FrameSizeUnit == 'inch'">{{ Math.ceil((frameWidthUser+(1.299))*10)/10 + " * " + Math.ceil((frameHeightUser+(0.157))*10)/10}}</span> 
+                            <span v-if="frameType == 'B'">{{ frameWidthUser + " * " + frameHeightUser}}</span>                           
                         </td>
                     </tr>
                     <td>購買數量</td>
