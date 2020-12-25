@@ -518,10 +518,8 @@
                         <td>圖片切割實際尺寸</td>
                         <td>     
                             
-                            <span v-if="frameType != 'B' && FrameSizeUnit == 'mm'">{{frameWidthBoundary()}} X {{frameHeightBoundary()}}</span>   
-                            <!-- <span v-if="frameType != 'B' && FrameSizeUnit == 'inch'">{{ Math.ceil((frameWidthUser+(1.299))*10)/10 + " * " + Math.ceil((frameHeightUser+(0.157))*10)/10}}</span>-->
-                            <span v-else-if="frameType != 'B' && FrameSizeUnit == 'inch'">{{ Math.round((mmToInch(this.frameWidth)+(1.3))*10)/10}} X {{ Math.round((mmToInch(this.frameHeight)+(0.157))*10)/10}}</span> 
-                            <span v-else="frameType == 'B'">{{ frameWidthUser + " * " + frameHeightUser}}</span>
+                            <span>{{frameWidthBoundary()}} </span>   
+                            
                             
                             
                         </td>
@@ -1546,26 +1544,30 @@
             },
             // Start Picture Standard
             frameWidthBoundary: function () {
-                if (this.FrameSizeUnit == 'mm') {
-                    BoundaryWidth = parseInt(this.frameWidth )+33
-                    return BoundaryWidth                       
-                }else{
-                    return BoundaryWidth - 33
-                }                 
-              
+                switch (this.FrameSizeUnit) {
+                    case "mm":
+                        boundaryWidth = parseInt(this.frameWidth)+33
+                        boundaryHeight = parseInt(this.frameHeight)+4
+                        
+                        if(this.frameType == 'B'){
+                            return this.frameWidth + ' X ' + this.frameHeight
+                        }else{
+                            return boundaryWidth + ' X ' + boundaryHeight
+                        }                       
+                        
+                    case "inch":
+                        // boundaryWidth = Math.round((this.mmToInch(this.frameWidth)+(1.299))*100)/100
+                        boundaryWidth = Math.round((this.mmToInch(this.frameWidth)+(1.3))*100)/100
+                        boundaryHeight = Math.round(this.mmToInch(this.frameHeight))+0.2
+                        if(this.frameType == 'B'){                            
+                            return this.frameWidthUser + " X " + this.frameHeightUser
+                        }else{
+                            return boundaryWidth + " X " + (boundaryHeight*100)/100
+                        } 
+                       
+                }       
+           
             },
-            frameHeightBoundary: function () {
-                if (this.FrameSizeUnit == 'mm') {
-                    BoundaryHeight = parseInt(this.frameHeight )+4
-                    return BoundaryHeight                       
-                }else{
-                    return BoundaryHeight - 4
-                }    
-            },
-
-
-            // End of Picture Standard
-            
 
 
         }
