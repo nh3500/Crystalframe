@@ -6,3 +6,8 @@ $(function () {
     navMain.collapse("hide");
   });
 });
+
+
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
