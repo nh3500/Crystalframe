@@ -208,7 +208,7 @@
                         <div class="form-group row">
                             <label for="service" class="col-sm-2 col-form-label">主類</label>
                             <select class="col-10" id="service" v-model="service">
-                                <option value="crystalframe">水晶框</option>
+                                <option value="crystalframe">水晶裱</option>
                                 <option value="accessory">零件</option>
                             </select>
                         </div>
@@ -319,13 +319,13 @@
                             <label for="frameType" class="col-sm-2 col-form-label">次類</label>
                             <select class="col-10" id="frameType" v-model="frameType">
                                 <!-- <option value="A">水晶框海報</option> -->
-                                <option value="B">水晶框</option>
-                                <option value="C">水晶框琉璃</option>
-                                <option value="D">水晶框優能</option>
-                                <option value="E">水晶框優能琉璃</option>
+                                <option value="B">水晶裱</option>
+                                <option value="C">水晶裱琉璃</option>
+                                <option value="D">水晶裱藝術</option>
+                                <option value="E">水晶裱藝術琉璃</option>
                             </select>
                         </div>
-                        <div class="form-group row" v-if="service != 'accessory'">
+                        <!-- <div class="form-group row" v-if="service != 'accessory'">
                             <label for="" class="col-sm-2 col-form-label">此次購買是否需要專屬精品盒</label>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
@@ -337,7 +337,7 @@
                                     value="option2">
                                 <label class="form-check-label" for="inlineRadio2">不需要</label>
                             </div>
-                        </div>
+                        </div> -->
 
                         <button class="btn btn-secondary btn-block" type="button" data-toggle="collapse"
                             data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
@@ -378,10 +378,10 @@
             <td>{{ unitPrice() }}</td>
           </tr> -->
                                         <tr>
-                                            <th>B</th>
+                                            <th>A</th>
                                             <td>crystalframe {{ frameWidthUser + " X " + frameHeightUser}}</td>
-                                            <td>水晶框{{ frameWidthUser + " X " + frameHeightUser}}</td>
-                                            <td>藝術噴墨 雙蓋</td>
+                                            <td>水晶裱{{ frameWidthUser + " X " + frameHeightUser}}</td>
+                                            <td>圖形1:1原比例</td>
                                             <td>10天工作日</td>
                                             <td> </td>
                                             <td></td>
@@ -389,10 +389,10 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th>C</th>
+                                            <th>B</th>
                                             <td>crystalframe {{ frameWidthUser + " X " + frameHeightUser}} GLAZE</td>
-                                            <td>水晶框{{ frameWidthUser + " X " + frameHeightUser}} 琉璃</td>
-                                            <td>藝術噴墨 琉璃型式 雙蓋</td>
+                                            <td>水晶裱{{ frameWidthUser + " X " + frameHeightUser}} 琉璃</td>
+                                            <td>圖形長邊琉璃雙折彎</td>
                                             <td>10天工作日</td>
                                             <td></td>
                                             <td></td>
@@ -400,10 +400,10 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th>D</th>
-                                            <td>crystalframe {{ frameWidthUser + " X " + frameHeightUser}} SUPERIOR</td>
-                                            <td>水晶框{{ frameWidthUser + " X " + frameHeightUser}}優能</td>
-                                            <td>藝術噴墨 畫面細緻 拋光切割 雙蓋 展覽級</td>
+                                            <th>C</th>
+                                            <td>crystalframe {{ frameWidthUser + " X " + frameHeightUser}} ART</td>
+                                            <td>水晶裱{{ frameWidthUser + " X " + frameHeightUser}}藝術</td>
+                                            <td>高質微噴 雷射拋光 圖形1:1原比例</td>
                                             <td>14天工作日</td>
                                             <td></td>
                                             <td></td>
@@ -411,11 +411,11 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th>E</th>
-                                            <td>crystalframe {{ frameWidthUser + " X " + frameHeightUser}} SUPERIOR
+                                            <th>D</th>
+                                            <td>crystalframe {{ frameWidthUser + " X " + frameHeightUser}} ART
                                                 GLAZE</td>
-                                            <td>水晶框{{ frameWidthUser + " X " + frameHeightUser}}優能琉璃</td>
-                                            <td>藝術噴墨 畫面細緻 琉璃型式 拋光切割 雙蓋包覆 展覽級</td>
+                                            <td>水晶裱{{ frameWidthUser + " X " + frameHeightUser}}藝術琉璃</td>
+                                            <td>高質微噴 雷射拋光 圖形長邊琉璃雙折彎</td>
                                             <td>14天工作日</td>
                                             <td></td>
                                             <td></td>
@@ -436,16 +436,16 @@
                                     </table>
                                     <div class="form-row">
                                         <p class="text-justify">
-                                            *如果您選擇琉璃框型,請理解我們會將圖面周邊小比例出血將邊圖折彎.出圖製作前會先與您再次確認最終圖稿.
+                                            *如果您選擇琉璃型,請理解我們會將圖面周邊小比例出血將邊圖折彎.出圖製作前會先與您再次確認最終圖稿.
                                         </p>
                                         <p class="text-justify">
                                             *交期工作日僅為工廠生產週期,需另加入水晶框設計部門與購買方之校稿確認後,方始計算日期.
                                         </p>
                                         <p class="text-justify">
-                                            *設計週期為在收到您的圖後(透過雲端),會與您確認各種其他細項,如背框作者,簽名,短語.在您確認後才進行製作.
+                                            *設計週期為在收到您的圖後(透過雲端或LINE等),會與您確認各種其他細項,如背框作者,簽名,短語.在您確認後才進行製作.
                                         </p>
                                         <p class="text-justify">
-                                            *以上價格除了A不含圖像,其他皆已含噴墨圖像,也歡迎您至官網挑選並使用我們的授權開放的美圖.(美圖下載此功能目前未開放)
+                                            *以上價格皆已含圖像噴墨,也歡迎您至官網挑選並使用我們的授權免費開放的美圖.(美圖下載此功能目前未開放)
                                         </p>
                                         <p class="text-justify">*價格已含稅含運台灣島內.</p>
                                         <p class="text-justify">
@@ -456,8 +456,8 @@
                                         </p>
                                         <p class="text-justify">
                                             *為便於聯絡溝通順利完成作品,請加LINE: yuwei660204
-                                        </p>
-                                        <p class="text-justify">*以下為七色水晶框有限公司台灣匯款帳號.</p>
+                                        <!-- </p>
+                                        <p class="text-justify">*以下為七色水晶框有限公司台灣匯款帳號.</p> -->
                                     </div>
 
                                 </div>
@@ -496,7 +496,7 @@
                                 <span v-if="frameType == 'B'">
 
 
-                                    1:1原圖<br>
+                                    按照上選內容(已修改)<br>
                                 </span>
                                 <span v-if="frameType == 'C'">
 
