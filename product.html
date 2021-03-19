@@ -210,13 +210,19 @@
                             <select class="col-10" id="service" v-model="service">
                                 <option value="crystalframe">水晶裱</option>
                                 <option value="accessory">零件</option>
+                                <option value="scanning">複製畫掃描服務</option>
                             </select>
                         </div>
                         <div class="form-group row" v-if="service == 'accessory'">
                             <p class="lead text-center">暫無開放</p>
                         </div>
+                        <div class="form-group row" v-if="service == 'scanning' ">
+                            <p class="lead text-center">關於複製畫掃描可選擇400DPI或600DPI,乃根據尺寸報價,請點選以下聯絡我們</p>
+                            <a href="#"><p class="">台灣總經銷</p></a>
+                        </div>
+                        
 
-                        <div class="form-group row" v-if="service != 'accessory'">
+                        <div class="form-group row" v-if="service == 'crystalframe'">
                             <label for="fastImgSize" class="col-sm-2 col-form-label">快速圖片規格</label>
                             <select class="col-10" id="fastImgSize" v-model="fastImgSize">
                                 <option value="">其他尺寸</option>
@@ -248,14 +254,14 @@
 
                             </select>
                         </div>
-                        <div class="form-group row" v-if="fastImgSize == '' && service != 'accessory'">
+                        <div class="form-group row" v-if="fastImgSize == '' && service == 'crystalframe'">
                             <label for="FrameSizeUnit" class="col-sm-2 col-form-label">圖片規格單位</label>
                             <select class="col-10" id="FrameSizeUnit" v-model="FrameSizeUnit">
                                 <option value="mm">mm - <small>圖片公制測量</small></option>
                                 <option value="inch">inch - 圖片英制測量</option>
                             </select>
                         </div>
-                        <div class="form-group row" v-if="fastImgSize == '' && service != 'accessory'">
+                        <div class="form-group row" v-if="fastImgSize == '' && service == 'crystalframe'">
                             <div class="input-group col-12">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">短邊(W)</span>
@@ -271,7 +277,7 @@
                                 <p class="lead text-center">超出允許範圍</p>
                             </div>
                         </div>
-                        <div class="form-group row" v-if="fastImgSize == '' && service != 'accessory'">
+                        <div class="form-group row" v-if="fastImgSize == '' && service == 'crystalframe'">
                             <div class="input-group col-12">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">長邊(L)</span>
@@ -294,7 +300,7 @@
                                 <option value="V">不使用吊線(框邊不設圓孔)</option>
                             </select>
                         </div>
-                        <div class="form-group row" v-if="service != 'accessory'">
+                        <div class="form-group row" v-if="service == 'crystalframe'">
                             <label for="frameAmount" class="col-sm-2 col-form-label">購買數量</label>
 
                             <div class="input-group col-10">
@@ -305,7 +311,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group row" v-if="service != 'accessory'">
+                        <div class="form-group row" v-if="service == 'crystalframe'">
                             <label for="currency" class="col-sm-2 col-form-label">幣別</label>
                             <select class="col-10" id="currency" v-model="currency">
                                 <option value="NTD">台幣</option>
@@ -315,7 +321,7 @@
                                 <option value="EUR">歐元</option>
                             </select>
                         </div>
-                        <div class="form-group row" v-if="service != 'accessory'">
+                        <div class="form-group row" v-if="service == 'crystalframe'">
                             <label for="frameType" class="col-sm-2 col-form-label">次類</label>
                             <select class="col-10" id="frameType" v-model="frameType">
                                 <!-- <option value="A">水晶框海報</option> -->
@@ -349,7 +355,7 @@
                             data-content="And here's some amazing content. It's very engaging. Right?">Dismissible
                             popover</a> -->
                         <!-- dddd -->
-                        <div class="collapse" id="collapseExample" v-if="service != 'accessory'">
+                        <div class="collapse" id="collapseExample" v-if="service == 'crystalframe'">
                             <div class="card card-body">
                                 <div class="row">
 
@@ -467,7 +473,7 @@
                     </form>
 
 
-                    <table class="table mt-5" v-if="service != 'accessory'">
+                    <table class="table mt-5" v-if="service == 'crystalframe'">
                         <tr>
                             <th colspan="2">您查詢的產品及價格如下</th>
                         </tr>
@@ -485,7 +491,7 @@
                         </tr>
                     </table>
 
-                    <table class="table mt-5" v-if="service != 'accessory'">
+                    <table class="table mt-5" v-if="service == 'crystalframe'">
                         <tr>
                             <td>特色區別</td>
                             <td>
@@ -496,7 +502,7 @@
                                 <span v-if="frameType == 'B'">
 
 
-                                    按照上選內容(已修改)<br>
+                                    <br>
                                 </span>
                                 <span v-if="frameType == 'C'">
 
@@ -595,8 +601,8 @@
                     </table>
                     <br>
                     <br>
-                    <h6 v-if="service != 'accessory'">示意圖</h6>
-                    <div class="card-deck" v-if="frameWidthUser == frameHeightUser && service != 'accessory'">
+                    <h6 v-if="service == 'crystalframe'">示意圖</h6>
+                    <div class="card-deck" v-if="frameWidthUser == frameHeightUser && service == 'crystalframe'">
                         <div class="card mt-5" style="border: none">
                             <div>
                                 <img class="w-50 mx-auto d-block" src="img/product/a_1.png" style="height: 400px">
@@ -624,7 +630,7 @@
                         </div>
                     </div>
                     <div class="card-deck"
-                        v-if=" 1 > parseFloat(frameWidthUser/frameHeightUser) && parseFloat(frameWidthUser/frameHeightUser) >= 0.5 && service != 'accessory'">
+                        v-if=" 1 > parseFloat(frameWidthUser/frameHeightUser) && parseFloat(frameWidthUser/frameHeightUser) >= 0.5 && service == 'crystalframe'">
                         <div class="card mt-5" style="border: none">
                             <div>
                                 <img class="mx-auto d-block" src="img/product/b_1.png" style="height: 400px">
@@ -652,7 +658,7 @@
                         </div>
                     </div>
                     <div class="card-deck"
-                        v-if=" 0.5 > parseFloat(frameWidthUser/frameHeightUser) && parseFloat(frameWidthUser/frameHeightUser) >= 0.25 && service != 'accessory'">
+                        v-if=" 0.5 > parseFloat(frameWidthUser/frameHeightUser) && parseFloat(frameWidthUser/frameHeightUser) >= 0.25 && service == 'crystalframe'">
                         <div class="card mt-5" style="border: none">
                             <div>
                                 <img class="mx-auto d-block" src="img/product/c_1.png" style="height: 400px">
@@ -680,7 +686,7 @@
                         </div>
                     </div>
                     <div class="card-deck"
-                        v-if=" 0.25 > parseFloat(frameWidthUser/frameHeightUser) && service != 'accessory'">
+                        v-if=" 0.25 > parseFloat(frameWidthUser/frameHeightUser) && service == 'crystalframe'">
                         <div class="card mt-5" style="border: none">
                             <div>
                                 <img class="mx-auto d-block" src="img/product/d_1.png" style="height: 400px">
@@ -722,7 +728,7 @@
                         確認訂購水晶框內容填寫資料
                     </button>
 
-                    <div class="collapse" id="btn-order" v-if="service != 'accessory'">
+                    <div class="collapse" id="btn-order" v-if="service == 'crystalframe'">
                         <div class="card card-body">
                             <div class="row">
                                 <div class="col">
@@ -776,7 +782,7 @@
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="**請問是否願意讓您此次購買的攝影作品水晶框讓我們供其他人欣賞或參考? 是/否
 **如果是,請問是否願意讓我們推薦您攝影師的資訊,如FB/IG? 是/否/下,如是,請提供:(       )"></textarea>
                             </div><br>
-                            <div class="text-center" v-if="service != 'accessory'">
+                            <div class="text-center" v-if="service == 'crystalframe'">
                                 <a class="btn btn-primary btn-block" target="_blank" :href="mailToProducer()">確認出貨內容
                                     發出訂購E-mail</a>
                             </div>
