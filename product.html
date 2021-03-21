@@ -273,7 +273,7 @@
                                 </div>
                             </div>
                             <div class="invalid-feedback d-block"
-                                v-if=" frameWidthUser > mmToInch(1000) || frameWidthUser < mmToInch(200)">
+                                v-if=" frameWidthUser > mmToInch(1800) || frameWidthUser < mmToInch(200)">
                                 <p class="lead text-center">超出允許範圍</p>
                             </div>
                         </div>
@@ -540,7 +540,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>圖片切割實際尺寸</td>
+                            <td>圖片切割實際尺寸比例</td>
                             <td>
 
                                 <span>{{frameWidthBoundary()}} </span>
