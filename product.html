@@ -1503,10 +1503,10 @@
 
                     if (this.frameType == 'normal') {
                         return Math.round(((parseFloat(this.frameWidth) + 200) * this.frameHeight / 100 /
-                            2 / 1000) * 10) / 10
+                            2 / 1000) * 10) / 10 
                     } else {
                         return Math.round(Math.round(((parseFloat(this.frameWidth) + 200) * this
-                            .frameHeight / 100 / 2 / 1000) * 10) / 10 * 2.5 * 10) / 10
+                            .frameHeight / 100 / 2 / 1000) * 10) / 10 * 2.5 * 10) / 10 *0.5
                     }
 
                 },
@@ -1515,7 +1515,7 @@
                         return Math.round(this.unitWeight() * 2 * 10) / 10
                     }
 
-                    return Math.round(this.unitWeight() * 3 * 10) / 10
+                    return Math.round(this.unitWeight() * 3 * 10) / 10 *0.5
                 },
                 frameSpec: function () {
 
