@@ -1620,8 +1620,8 @@
                 frameWidthBoundary: function () {
                     switch (this.FrameSizeUnit) {
                         case "mm":
-                            boundaryWidth = parseInt(this.frameWidth) + 30
-                            boundaryHeight = parseInt(this.frameHeight) + 4
+                            boundaryWidth = parseInt(this.frameWidth) //+ 30
+                            boundaryHeight = parseInt(this.frameHeight) //+ 4
 
                             if (this.frameType == 'B') {
                                 return this.frameWidth + ' X ' + this.frameHeight 
