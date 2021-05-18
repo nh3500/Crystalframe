@@ -249,14 +249,14 @@
                         </div>
 
                         <div class="form-group row" v-if="service == 'crystalframe'">
-                            <label for="fastImgSize" class="col-sm-2 col-form-label">製作順序</label>
+                            <label for="ProductMethoud" class="col-sm-2 col-form-label">製作順序</label>
                             <select class="col-10" id="ProductMethoud" v-model="ProductMethoud">
-                                <option value="frame">以框體圖尺寸製作成對應作品尺寸</option>
-                                <option value="pic">以作品圖尺寸製作成對應框體尺寸</option>
+                                <option value="typeA">以框體圖尺寸製作成對應作品尺寸</option>
+                                <option value="typeB">以作品圖尺寸製作成對應框體尺寸</option>
                             </select>
                         </div>
 
-                        <div class="form-group row" v-if="ProductMethoud == 'frame' && service == 'crystalframe'">
+                        <div class="form-group row" v-if="ProductMethoud == 'typeA' && service == 'crystalframe'">
                             <label for="fastImgSize" class="col-sm-2 col-form-label">快速框體規格</label>
                             <select class="col-10" id="fastImgSize" v-model="fastImgSize">
                                 <option value="">其他尺寸</option>
@@ -288,14 +288,70 @@
 
                             </select>
                         </div>
-                        <div class="form-group row" v-if="fastImgSize == '' && service == 'crystalframe'">
+
+                        <div class="form-group row" v-if="ProductMethoud == 'typeB' && service == 'crystalframe'">
+                            <label for="PicSizeUnit" class="col-sm-2 col-form-label">作品規格單位</label>
+                            <select class="col-10" id="PicSizeUnit" v-model="PicSizeUnit">
+                                <option value="mm">mm - <small>作品公制測量</small></option>
+                                <option value="inch">inch - 作品英制測量</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group row" v-if="ProductMethoud == 'typeB' && service == 'crystalframe'">
+                            <div class="input-group col-12">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">短邊(W)</span>
+                                </div>
+                                <input type="number" class="form-control" id="frameWidth" v-model="frameWidthUser"
+                                    :max="mmToInch(1000)" :min="mmToInch(200)">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">{{ PicSizeUnit }}</span>
+                                </div>
+                            </div>
+                            <div class="invalid-feedback d-block"
+                                v-if=" frameWidthUser > mmToInch(1800) || frameWidthUser < mmToInch(200)">
+                                <p class="lead text-center">超出允許範圍</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group row" v-if="ProductMethoud == 'typeB' && service == 'crystalframe'">
+                            <div class="input-group col-12">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">長邊 (L)</span>
+                                </div>
+                                <input type="number" class="form-control" id="frameHeight" v-model="frameHeightUser"
+                                    :max="mmToInch(2400)" :min="mmToInch(200)">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">{{ PicSizeUnit }}</span>
+                                </div>
+                            </div>
+                            <div class="invalid-feedback d-block"
+                                v-if=" frameHeightUser > mmToInch(2400) || frameHeightUser < mmToInch(200)">
+                                <p class="lead text-center">超出允許範圍</p>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row" v-if="ProductMethoud == 'typeB' && service == 'crystalframe'">
+                            <div class="input-group col-12">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">實際框體</span>
+                                </div>
+                                
+                                <input type="text" class="form-control" v-model="picToFrameSize(frameWidthUser,frameHeightUser)"  disabled>
+
+                              </div>
+                            
+                        </div>
+
+                        <div class="form-group row" v-if="ProductMethoud == 'typeA'&& fastImgSize == '' && service == 'crystalframe'">
                             <label for="FrameSizeUnit" class="col-sm-2 col-form-label">圖片規格單位</label>
                             <select class="col-10" id="FrameSizeUnit" v-model="FrameSizeUnit">
                                 <option value="mm">mm - <small>圖片公制測量</small></option>
                                 <option value="inch">inch - 圖片英制測量</option>
                             </select>
                         </div>
-                        <div class="form-group row" v-if="fastImgSize == '' && service == 'crystalframe'">
+
+                        <div class="form-group row" v-if="ProductMethoud == 'typeA'&&fastImgSize == '' && service == 'crystalframe'">
                             <div class="input-group col-12">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">短邊(W)</span>
@@ -311,7 +367,7 @@
                                 <p class="lead text-center">超出允許範圍</p>
                             </div>
                         </div>
-                        <div class="form-group row" v-if="fastImgSize == '' && service == 'crystalframe'">
+                        <div class="form-group row" v-if="ProductMethoud == 'typeA'&&fastImgSize == '' && service == 'crystalframe'">
                             <div class="input-group col-12">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">長邊(L)</span>
@@ -327,13 +383,13 @@
                                 <p class="lead text-center">超出允許範圍</p>
                             </div>
                         </div>
-                        <div class="form-group row" v-if="service == 'crystalframe' && frameType == 'LED'">
+                        <!-- <div class="form-group row" v-if="service == 'crystalframe' && frameType == 'LED'">
                             <label for="frameDots" class="col-sm-2 col-form-label">是否使用吊線(框邊設圓孔)</label>
                             <select class="col-10" id="frameDots" v-model="frameDots">
                                 <option value="VH">使用吊線(框邊設圓孔)</option>
                                 <option value="V">不使用吊線(框邊不設圓孔)</option>
                             </select>
-                        </div>
+                        </div> -->
                         <div class="form-group row" v-if="service == 'crystalframe'">
                             <label for="frameAmount" class="col-sm-2 col-form-label">購買數量</label>
 
@@ -450,7 +506,7 @@
                                             <th>C</th>
                                             <td>crystalframe {{ frameWidthUser + " X " + frameHeightUser}} SUPERIOR</td>
                                             <td>鑽石裱{{ frameWidthUser + " X " + frameHeightUser}}</td>
-                                            <td>圖形雙長邊90度曲彎  6H防刮  短邊雙鑽石倒角切面</td>
+                                            <td>圖形雙長邊90度曲彎 6H防刮 短邊雙鑽石倒角切面</td>
                                             <td>21天工作日</td>
                                             <td></td>
                                             <!--<td></td>-->
@@ -464,7 +520,7 @@
                                             <td>crystalframe {{ frameWidthUser + " X " + frameHeightUser}} SUPERIOR
                                                 GLAZE</td>
                                             <td>鑽石裱{{ frameWidthUser + " X " + frameHeightUser}} 琉璃</td>
-                                            <td>圖形雙長邊180度曲彎  6H防刮  短邊雙鑽石倒角切面</td>
+                                            <td>圖形雙長邊180度曲彎 6H防刮 短邊雙鑽石倒角切面</td>
                                             <td>21天工作日</td>
                                             <td></td>
                                             <!--<td></td>-->
@@ -1056,10 +1112,14 @@
                 frameProductType: 'R',
                 frameType: 'B',
                 imageProp: 'paper',
+                ProductMethoud: 'typeA',//新增
                 fastImgSize: 'A1',
+                PicSizeUnit: 'mm',      //新增
                 FrameSizeUnit: 'mm',
                 frameWidth: 594,
                 frameHeight: 841,
+                PicframeHeight: 841,    //新增
+                PicframeWidth: 594,     //新增
                 frameWidthUser: 594,
                 frameHeightUser: 841,
                 frameDots: 'VH',
@@ -1069,6 +1129,7 @@
                 currency: 'NTD',
             },
             computed: {
+                
                 frameModelName: function () {
                     out = ""
 
@@ -1201,6 +1262,7 @@
 
             },
             watch: {
+                
                 fastImgSize: function (val) {
                     if (val == 'A1') {
                         this.FrameSizeUnit = 'mm'
@@ -1433,6 +1495,11 @@
                 },
             },
             methods: {
+                picToFrameSize: function (x,y){         //新增
+                    var totalX = Math.ceil(x-(6));
+
+                    return totalX + 'x' +y
+                },
                 unitPrice: function () {
 
                     if (this.service == 'crystalframe') {
@@ -1667,7 +1734,7 @@
                     }
 
                 },
-
+                
 
             }
         });
