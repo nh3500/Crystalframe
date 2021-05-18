@@ -195,6 +195,7 @@
                                 <option value="scanning">複製畫掃描服務</option>
                             </select>
                         </div>
+
                         <div class="form-group row" v-if="service == 'accessory'">
                             <table class="table mt-5">
                                 <tr>
@@ -241,14 +242,22 @@
 
 
                         </div>
+
                         <div class="form-group row" v-if="service == 'scanning' ">
                             <p class="lead text-center">關於複製畫掃描可選擇400DPI或600DPI,乃根據尺寸報價,請點選以下聯絡我們</p>
                             <p class="lead text-center"><a href="contactDistributionTaiwan.html">台灣總經銷</a></p>
                         </div>
 
-
                         <div class="form-group row" v-if="service == 'crystalframe'">
-                            <label for="fastImgSize" class="col-sm-2 col-form-label">快速圖片規格</label>
+                            <label for="fastImgSize" class="col-sm-2 col-form-label">製作順序</label>
+                            <select class="col-10" id="ProductMethoud" v-model="ProductMethoud">
+                                <option value="frame">以框體圖尺寸製作成對應作品尺寸</option>
+                                <option value="pic">以作品圖尺寸製作成對應框體尺寸</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group row" v-if="ProductMethoud == 'frame' && service == 'crystalframe'">
+                            <label for="fastImgSize" class="col-sm-2 col-form-label">快速框體規格</label>
                             <select class="col-10" id="fastImgSize" v-model="fastImgSize">
                                 <option value="">其他尺寸</option>
                                 <option value="A1">A1 - 594X841 mm</option>
