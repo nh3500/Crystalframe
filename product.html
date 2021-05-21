@@ -502,7 +502,7 @@
                                         </tr>
                                         <tr>
                                             <th>C</th>
-                                            <td>crystalframe {{ frameWidthUser + " X " + frameHeightUser}} SUPERIOR</td>
+                                            <td>crystalframe {{ frameWidthUser + " X " + frameHeightUser}} DIAMOND</td>
                                             <td>鑽石裱{{ frameWidthUser + " X " + frameHeightUser}}</td>
                                             <td>圖形雙長邊90度曲彎 6H防刮 短邊雙鑽石倒角切面</td>
                                             <td>21天工作日</td>
@@ -515,7 +515,7 @@
                                         </tr>
                                         <tr>
                                             <th>D</th>
-                                            <td>crystalframe {{ frameWidthUser + " X " + frameHeightUser}} SUPERIOR
+                                            <td>crystalframe {{ frameWidthUser + " X " + frameHeightUser}} DIAMOND
                                                 GLAZE</td>
                                             <td>鑽石裱{{ frameWidthUser + " X " + frameHeightUser}} 琉璃</td>
                                             <td>圖形雙長邊180度曲彎 6H防刮 短邊雙鑽石倒角切面</td>
@@ -603,22 +603,22 @@
                                 <span v-if="frameType == 'B'">
 
 
-                                    <br>
+                                    圖形雙長邊90度曲彎<br>
                                 </span>
                                 <span v-if="frameType == 'C'">
 
 
-                                    雙邊琉璃<br>
+                                    圖形雙長邊180度曲彎<br>
                                 </span>
                                 <span v-if="frameType == 'D'">
 
 
-                                    1:1原圖 / 5H防刮 / 防靜電<br>
+                                    圖形雙長邊90度曲彎 6H防刮 短邊雙鑽石倒角切面<br>
 
                                 </span>
                                 <span v-if="frameType == 'E'">
 
-                                    雙邊琉璃 / 5H防刮 / 防靜電<br>
+                                    圖形雙長邊180度曲彎 6H防刮 短邊雙鑽石倒角切面<br>
                                 </span>
                             </td>
                         </tr>
@@ -1178,10 +1178,10 @@
                                 out = out + 'GLAZE';
                                 break
                             case 'D':
-                                out = out + 'SUPERIOR';
+                                out = out + 'DIAMOND';
                                 break
                             case 'E':
-                                out = out + 'SUPERIOR GLAZE ';
+                                out = out + 'DIAMOND GLAZE ';
                                 break
                         }
                     }
@@ -1238,10 +1238,10 @@
                                 out = out + '琉璃	';
                                 break
                             case 'D':
-                                out = out + '優能	';
+                                out = out + '鑽石	';
                                 break
                             case 'E':
-                                out = out + '優能琉璃';
+                                out = out + '鑽石琉璃';
                                 break
                         }
                     }
