@@ -261,7 +261,7 @@
                                 <option value="A1">A1 - 594X841 mm</option>
                                 <option value="A2">A2 - 420X594 mm</option>
                                 <option value="A3">A3 - 297X420 mm</option>
-                                <option value="A4" selected>A4 - 210X297 mm</option>
+                                <option value="A4">A4 - 210X297 mm</option>
                                 <option value="5x7">5X7 inch</option>
                                 <option value="7x9">7X9 inch</option>
                                 <option value="8x8">8X8 inch</option>
@@ -1111,7 +1111,7 @@
                 frameType: 'B',
                 imageProp: 'paper',
                 ProductMethoud: 'typeA',//新增
-                fastImgSize: 'A1',
+                fastImgSize: 'A4',
                 PicSizeUnit: 'mm',      //新增
                 FrameSizeUnit: 'mm',
                 frameWidth: 594,
@@ -1472,12 +1472,12 @@
                 FrameSizeUnit: function (val) {
                     if (val == 'R') {
                         this.fastImgSize = 'A2'
-                        this.fastImgSize = 'A1'
+                        this.fastImgSize = 'A4'
                     }
                 },
                 frameProductType: function (val) {
                     if (val == 'R') {
-                        this.fastImgSize = 'A1'
+                        this.fastImgSize = 'A4'
                     } else {
                         this.fastImgSize = ''
                     }
