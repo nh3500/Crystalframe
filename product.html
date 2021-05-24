@@ -1652,7 +1652,7 @@
                             boundaryHeight = parseInt(this.frameHeight) + 4
 
                             if (this.frameType == 'B') {
-                                return (this.frameWidth.value + 16) + ' X ' + this.frameHeight
+                                return parseInt(this.frameWidth)+ 16 + ' X ' + this.frameHeight //0525修正
                             } else {
                                 return boundaryWidth + ' X ' + boundaryHeight
                             }
