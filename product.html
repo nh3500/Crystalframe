@@ -1434,8 +1434,8 @@
             methods: {
                 picToFrameSize: function (x, y) {         //新增
                     var totalX = Math.ceil(x - (16));
-
-                    return totalX + 'x' + y
+                    var totaly = Math.ceil(y - (4));
+                    return totalX + 'x' + totaly
                 },
                 unitPrice: function () {
 
