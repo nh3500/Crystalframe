@@ -1651,7 +1651,7 @@
                             boundaryWidth = parseInt(this.frameWidth) + 30
                             boundaryHeight = parseInt(this.frameHeight) + 4
 
-                            if (this.frameType == 'B') {
+                            if (this.frameType == 'B'||this.frameType == 'D') {
                                 return parseInt(this.frameWidth) + 16 + ' X ' + (parseInt(this.frameHeight) + 4) //0525修正
                             } else {
                                 return boundaryWidth + ' X ' + boundaryHeight
