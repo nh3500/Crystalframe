@@ -509,7 +509,7 @@
                                         </tr>
                                         <tr>
                                             <th>C</th>
-                                            <td>crystalframe {{ frameWidthUser + " X " + frameHeightUser}} DIAMOND</td>
+                                            <td>diamondframe {{ frameWidthUser + " X " + frameHeightUser}}</td>
                                             <td>鑽石裱{{ frameWidthUser + " X " + frameHeightUser}}</td>
                                             <td>圖形雙長邊90度曲彎 6H防刮 短邊雙鑽石倒角切面</td>
                                             <td>21天工作日</td>
@@ -522,8 +522,7 @@
                                         </tr>
                                         <tr>
                                             <th>D</th>
-                                            <td>crystalframe {{ frameWidthUser + " X " + frameHeightUser}} DIAMOND
-                                                GLAZE</td>
+                                            <td>diamondframe {{ frameWidthUser + " X " + frameHeightUser}} GLAZE</td>
                                             <td>鑽石裱{{ frameWidthUser + " X " + frameHeightUser}} 琉璃</td>
                                             <td>圖形雙長邊180度曲彎 6H防刮 短邊雙鑽石倒角切面</td>
                                             <td>21天工作日</td>
@@ -1104,9 +1103,9 @@
                     }
                     if (this.ProductMethoud == 'typeB') {
                         if (this.FrameSizeUnit == 'mm') {
-                            out = out + (parseInt(this.frameWidthUser) -16) + " X " + (parseInt(this.frameHeightUser) -4) + ' '
-                            out = out + "mm (" + this.mmToInchForce(parseInt(this.frameWidthUser) -16) + " X " + this
-                                .mmToInchForce(parseInt(this.frameHeightUser) -4) + ' inch) '
+                            out = out + (parseInt(this.frameWidthUser) - 16) + " X " + (parseInt(this.frameHeightUser) - 4) + ' '
+                            out = out + "mm (" + this.mmToInchForce(parseInt(this.frameWidthUser) - 16) + " X " + this
+                                .mmToInchForce(parseInt(this.frameHeightUser) - 4) + ' inch) '
                         } else {
                             out = out + (this.frameWidthUser) + " X " + (this.frameHeightUser) + ' '
                             out = out + "inch (" + this.frameWidth + " X " + this.frameHeight + ' mm) '
@@ -1175,9 +1174,9 @@
                     }
                     if (this.ProductMethoud == 'typeB') {
                         if (this.FrameSizeUnit == 'mm') {
-                            out = out + (parseInt(this.frameWidthUser) -16) + " X " + (parseInt(this.frameHeightUser) -4) + ' '
-                            out = out + "mm (" + this.mmToInchForce(parseInt(this.frameWidthUser) -16) + " X " + this
-                                .mmToInchForce(parseInt(this.frameWidthUser) -16) + ' inch) '
+                            out = out + (parseInt(this.frameWidthUser) - 16) + " X " + (parseInt(this.frameHeightUser) - 4) + ' '
+                            out = out + "mm (" + this.mmToInchForce(parseInt(this.frameWidthUser) - 16) + " X " + this
+                                .mmToInchForce(parseInt(this.frameWidthUser) - 16) + ' inch) '
                         } else {
                             out = out + (this.frameWidthUser) + " X " + (this.frameHeightUser) + ' '
                             out = out + "inch (" + this.frameWidth + " X " + this.frameHeight + ' mm) '
