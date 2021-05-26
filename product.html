@@ -1083,10 +1083,13 @@
 
                     // out = out + this.frameProductType + " "
 
-                    if (this.service == 'crystalframe') {
+                    if (this.service == 'crystalframe'&& (this.frameType =='B'||this.frameType =='C')) {
                         out = out + "crystalframe "
                     }
 
+                    if (this.service == 'crystalframe'&& (this.frameType =='D'||this.frameType =='E')) {
+                        out = out + "diamondframe "
+                    }
                     if (this.service == 'picturePrinting') {
                         out = out + "print "
                     }
@@ -1128,10 +1131,10 @@
                                 out = out + 'GLAZE';
                                 break
                             case 'D':
-                                out = out + 'DIAMOND';
+                                out = out + '';
                                 break
                             case 'E':
-                                out = out + 'DIAMOND GLAZE ';
+                                out = out + ' GLAZE ';
                                 break
                         }
                     }
@@ -1155,8 +1158,12 @@
 
                     // out = out + this.frameProductType + " "
 
-                    if (this.service == 'crystalframe') {
+                    if (this.service == 'crystalframe' && (this.frameType =='B'||this.frameType =='C')) {
                         out = out + "水晶裱 "
+                    }
+
+                    if (this.service == 'crystalframe' && (this.frameType =='D'||this.frameType =='E')) {
+                        out = out + "鑽石裱 "
                     }
 
                     if (this.service == 'picturePrinting') {
@@ -1198,10 +1205,10 @@
                                 out = out + '琉璃	';
                                 break
                             case 'D':
-                                out = out + '鑽石	';
+                                out = out + '	';
                                 break
                             case 'E':
-                                out = out + '鑽石琉璃';
+                                out = out + '琉璃   ';
                                 break
                         }
                     }
