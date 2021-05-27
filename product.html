@@ -1691,7 +1691,7 @@
                             //     100
                             // boundaryHeight = Math.round(this.mmToInch(this.frameHeight)) + 0.2
                             boundaryWidth = this.mmToInch( parseInt(this.frameWidth) + 30)
-                            boundaryHeight = this.mmToInch((this.frameHeight) + 4)
+                            boundaryHeight = this.mmToInch(parseInt(this.frameHeight) + 4)
                             if (this.frameType == 'B' || this.frameType == 'D') {
                                 return this.mmToInch(parseInt(this.frameWidth )+ 16) + ' X ' + this.mmToInch(parseInt(this.frameHeight) + 4)
                             } else {
