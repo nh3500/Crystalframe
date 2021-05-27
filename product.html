@@ -1687,11 +1687,13 @@
 
                         case "inch":
                             // boundaryWidth = Math.round((this.mmToInch(this.frameWidth)+(1.299))*100)/100
-                            boundaryWidth = Math.round((this.mmToInch(this.frameWidth) + (1.3)) * 100) /
-                                100
-                            boundaryHeight = Math.round(this.mmToInch(this.frameHeight)) + 0.2
-                            if (this.frameType == 'B') {
-                                return this.frameWidthUser + " X " + this.frameHeightUser
+                            // boundaryWidth = Math.round((this.mmToInch(this.frameWidth) + (1.3)) * 100) /
+                            //     100
+                            // boundaryHeight = Math.round(this.mmToInch(this.frameHeight)) + 0.2
+                            boundaryWidth = this.mmToInch( parseInt(this.frameWidth) + 30)
+                            boundaryHeight = this.mmToInch((this.frameHeight) + 4)
+                            if (this.frameType == 'B' || this.frameType == 'D') {
+                                return this.mmToInch(parseInt(this.frameWidth )+ 16) + ' X ' + this.mmToInch(parseInt(this.frameHeight) + 4)
                             } else {
                                 return boundaryWidth + " X " + (boundaryHeight * 100) / 100
                             }
