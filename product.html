@@ -484,8 +484,10 @@
           </tr> -->
                                         <tr>
                                             <th>A</th>
-                                            <td>crystalframe <br>{{ frameWidthUser + " X " + frameHeightUser}}{{FrameSizeUnit}}</td>
-                                            <td>水晶裱<br>{{ frameWidthUser + " X " + frameHeightUser}}{{FrameSizeUnit}}</td>
+                                            <td>crystalframe <br>{{ frameWidthUser + " X " +
+                                                frameHeightUser}}{{FrameSizeUnit}}</td>
+                                            <td>水晶裱<br>{{ frameWidthUser + " X " + frameHeightUser}}{{FrameSizeUnit}}
+                                            </td>
                                             <td>圖形雙長邊90度曲彎</td>
                                             <td>14天工作日</td>
                                             <td> </td>
@@ -497,8 +499,10 @@
                                         </tr>
                                         <tr>
                                             <th>B</th>
-                                            <td>crystalframe <br>{{ frameWidthUser + " X " + frameHeightUser}}{{FrameSizeUnit}} GLAZE</td>
-                                            <td>水晶裱<br>{{ frameWidthUser + " X " + frameHeightUser}}{{FrameSizeUnit}} 琉璃</td>
+                                            <td>crystalframe <br>{{ frameWidthUser + " X " +
+                                                frameHeightUser}}{{FrameSizeUnit}} GLAZE</td>
+                                            <td>水晶裱<br>{{ frameWidthUser + " X " + frameHeightUser}}{{FrameSizeUnit}} 琉璃
+                                            </td>
                                             <td>圖形雙長邊180度曲彎</td>
                                             <td>14天工作日</td>
                                             <td></td>
@@ -509,8 +513,10 @@
                                         </tr>
                                         <tr>
                                             <th>C</th>
-                                            <td>diamondframe <br>{{ frameWidthUser + " X " + frameHeightUser}}{{FrameSizeUnit}}</td>
-                                            <td>鑽石裱<br>{{ frameWidthUser + " X " + frameHeightUser}}{{FrameSizeUnit}}</td>
+                                            <td>diamondframe <br>{{ frameWidthUser + " X " +
+                                                frameHeightUser}}{{FrameSizeUnit}}</td>
+                                            <td>鑽石裱<br>{{ frameWidthUser + " X " + frameHeightUser}}{{FrameSizeUnit}}
+                                            </td>
                                             <td>圖形雙長邊90度曲彎 6H防刮<br>短邊雙鑽石倒角切面</td>
                                             <td>21天工作日</td>
                                             <td></td>
@@ -522,8 +528,10 @@
                                         </tr>
                                         <tr>
                                             <th>D</th>
-                                            <td>diamondframe <br>{{ frameWidthUser + " X " + frameHeightUser}}{{FrameSizeUnit}} GLAZE</td>
-                                            <td>鑽石裱<br>{{ frameWidthUser + " X " + frameHeightUser}}{{FrameSizeUnit}} 琉璃</td>
+                                            <td>diamondframe <br>{{ frameWidthUser + " X " +
+                                                frameHeightUser}}{{FrameSizeUnit}} GLAZE</td>
+                                            <td>鑽石裱<br>{{ frameWidthUser + " X " + frameHeightUser}}{{FrameSizeUnit}} 琉璃
+                                            </td>
                                             <td>圖形雙長邊180度曲彎 6H防刮<br>短邊雙鑽石倒角切面</td>
                                             <td>21天工作日</td>
                                             <td></td>
@@ -1083,11 +1091,11 @@
 
                     // out = out + this.frameProductType + " "
 
-                    if (this.service == 'crystalframe'&& (this.frameType =='B'||this.frameType =='C')) {
+                    if (this.service == 'crystalframe' && (this.frameType == 'B' || this.frameType == 'C')) {
                         out = out + "crystalframe "
                     }
 
-                    if (this.service == 'crystalframe'&& (this.frameType =='D'||this.frameType =='E')) {
+                    if (this.service == 'crystalframe' && (this.frameType == 'D' || this.frameType == 'E')) {
                         out = out + "diamondframe "
                     }
                     if (this.service == 'picturePrinting') {
@@ -1158,11 +1166,11 @@
 
                     // out = out + this.frameProductType + " "
 
-                    if (this.service == 'crystalframe' && (this.frameType =='B'||this.frameType =='C')) {
+                    if (this.service == 'crystalframe' && (this.frameType == 'B' || this.frameType == 'C')) {
                         out = out + "水晶裱 "
                     }
 
-                    if (this.service == 'crystalframe' && (this.frameType =='D'||this.frameType =='E')) {
+                    if (this.service == 'crystalframe' && (this.frameType == 'D' || this.frameType == 'E')) {
                         out = out + "鑽石裱 "
                     }
 
@@ -1690,10 +1698,10 @@
                             // boundaryWidth = Math.round((this.mmToInch(this.frameWidth) + (1.3)) * 100) /
                             //     100
                             // boundaryHeight = Math.round(this.mmToInch(this.frameHeight)) + 0.2
-                            boundaryWidth = this.mmToInch( parseInt(this.frameWidth) + 30)
+                            boundaryWidth = this.mmToInch(parseInt(this.frameWidth) + 30)
                             boundaryHeight = this.mmToInch(parseInt(this.frameHeight) + 4)
                             if (this.frameType == 'B' || this.frameType == 'D') {
-                                return this.mmToInch(parseInt(this.frameWidth )+ 16) + ' X ' + this.mmToInch(parseInt(this.frameHeight) + 4)
+                                return mmToInch(parseInt(this.frameWidth) + 16) + ' X ' + mmToInch(parseInt(this.frameHeight) + 4)
                             } else {
                                 return boundaryWidth + " X " + (boundaryHeight * 100) / 100
                             }
