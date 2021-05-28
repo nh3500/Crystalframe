@@ -1509,15 +1509,23 @@
                                 break
                             case "B":
                                 subtotal = subtotal * 2
+                                if (subtotal < 2000)
+                                    subtotal = 2000;
                                 break
                             case "C":
                                 subtotal = subtotal * 2 * 1.25
+                                if (subtotal < 2000)
+                                    subtotal = 2000;
                                 break
                             case "D":
                                 subtotal = subtotal * 2 * 2
+                                if (subtotal < 2000)
+                                    subtotal = 2000;
                                 break
                             case "E":
                                 subtotal = subtotal * 2 * 2 * 1.25
+                                if (subtotal < 2000)
+                                    subtotal = 2000;
                                 break
                         }
 
