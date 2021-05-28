@@ -492,9 +492,7 @@
                                             <td>14天工作日</td>
                                             <td> </td>
                                             <!--<td></td>-->
-                                            <td>{{
-                                                currencyTo(Math.ceil(((300*this.frameHeight/841)+(2400*this.frameWidth*this.frameHeight/499554))/
-                                                100) * 100 *4) }} {{ currency }}
+                                            <td>{{sheetPrice("B")}} {{ currency }}
                                             </td>
                                         </tr>
                                         <tr>
@@ -507,8 +505,7 @@
                                             <td>14天工作日</td>
                                             <td></td>
                                             <!--<td></td>-->
-                                            <td>{{currencyTo(Math.ceil(((300*this.frameHeight/841)+(2400*this.frameWidth*this.frameHeight/499554))/
-                                                100) * 100 *5) }} {{ currency }}
+                                            <td>{{sheetPrice("C")}} {{ currency }}
                                             </td>
                                         </tr>
                                         <tr>
@@ -521,9 +518,7 @@
                                             <td>21天工作日</td>
                                             <td></td>
                                             <!--<td></td>-->
-                                            <td>{{
-                                                currencyTo(Math.ceil(((300*this.frameHeight/841)+(2400*this.frameWidth*this.frameHeight/499554))/
-                                                100) * 100 *8) }} {{ currency }}
+                                            <td>{{sheetPrice("D")}} {{ currency }}
                                             </td>
                                         </tr>
                                         <tr>
@@ -536,9 +531,7 @@
                                             <td>21天工作日</td>
                                             <td></td>
                                             <!--<td></td>-->
-                                            <td>{{
-                                                currencyTo(Math.ceil(((300*this.frameHeight/841)+(2400*this.frameWidth*this.frameHeight/499554))/
-                                                100) * 100 *10) }} {{ currency }}
+                                            <td>{{sheetPrice("E")}} {{ currency }}
                                             </td>
                                         </tr>
                                         <tr>
@@ -1480,6 +1473,35 @@
                     var totalX = Math.ceil(x - (16));
                     var totaly = Math.ceil(y - (4));
                     return totalX + 'x' + totaly
+                },
+                sheetPrice: function (x) {
+                    subtotal = Math.ceil(((300 * this.frameHeight / 841) + (2400 * this.frameWidth *
+                        this.frameHeight / 499554)) / 100) * 100 * 2
+                    switch (x) {
+                        case "A":
+                            break
+                        case "B":
+                            subtotal = subtotal * 2
+                            if (subtotal < 2000)
+                                subtotal = 2000;
+                            break
+                        case "C":
+                            subtotal = subtotal * 2 * 1.25
+                            if (subtotal < 2000)
+                                subtotal = 2000;
+                            break
+                        case "D":
+                            subtotal = subtotal * 2 * 2
+                            if (subtotal < 2000)
+                                subtotal = 2000;
+                            break
+                        case "E":
+                            subtotal = subtotal * 2 * 2 * 1.25
+                            if (subtotal < 2000)
+                                subtotal = 2000;
+                            break
+                    }
+                    return this.currencyTo(subtotal)
                 },
                 unitPrice: function () {
 
