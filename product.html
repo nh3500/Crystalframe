@@ -292,7 +292,7 @@
 
                         <div class="form-group row" v-if="ProductMethoud == 'typeB' && service == 'crystalframe'">
                             <label for="PicSizeUnit" class="col-sm-2 col-form-label">作品規格單位</label>
-                            <select class="col-10" id="PicSizeUnit" v-model="PicSizeUnit">
+                            <select class="col-10" id="PicSizeUnit" v-model="FrameSizeUnit">
                                 <option value="mm">mm - <small>作品公制測量</small></option>
                                 <option value="inch">inch - 作品英制測量</option>
                             </select>
@@ -306,7 +306,7 @@
                                 <input type="number" class="form-control" id="frameWidth" v-model="frameWidthUser"
                                     :max="mmToInch(1000)" :min="mmToInch(200)">
                                 <div class="input-group-append">
-                                    <span class="input-group-text">{{ PicSizeUnit }}</span>
+                                    <span class="input-group-text">{{ FrameSizeUnit }}</span>
                                 </div>
                             </div>
                             <div class="invalid-feedback d-block"
@@ -323,7 +323,7 @@
                                 <input type="number" class="form-control" id="frameHeight" v-model="frameHeightUser"
                                     :max="mmToInch(2400)" :min="mmToInch(200)">
                                 <div class="input-group-append">
-                                    <span class="input-group-text">{{ PicSizeUnit }}</span>
+                                    <span class="input-group-text">{{ FrameSizeUnit }}</span>
                                 </div>
                             </div>
                             <div class="invalid-feedback d-block"
