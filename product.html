@@ -289,7 +289,7 @@
 
                             </select>
                         </div>
-
+                        <!-- v-model更改成frameSizeUnit -->
                         <div class="form-group row" v-if="ProductMethoud == 'typeB' && service == 'crystalframe'">
                             <label for="PicSizeUnit" class="col-sm-2 col-form-label">作品規格單位</label>
                             <select class="col-10" id="PicSizeUnit" v-model="FrameSizeUnit">
@@ -1469,10 +1469,18 @@
                 },
             },
             methods: {
-                picToFrameSize: function (x, y) {         //新增
-                    var totalX = Math.ceil(x - (16));
-                    var totaly = Math.ceil(y - (4));
-                    return totalX + 'x' + totaly
+                picToFrameSize: function (x, y) {
+                    if (this.PicSizeUnit == 'inch') {
+                        var totalX = mmToInch(x - (16));
+                        var totaly = mmToInch(y - (4));
+                        
+                    }       //新增
+                    else {
+                        var totalX = Math.ceil(x - (16));
+                        var totaly = Math.ceil(y - (4));
+                        
+                    }return totalX + 'x' + totaly
+
                 },
                 sheetPrice: function (x) {
                     subtotal = Math.ceil(((300 * this.frameHeight / 841) + (2400 * this.frameWidth *
