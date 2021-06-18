@@ -293,9 +293,9 @@
                         <div class="form-group row" v-if="ProductMethoud == 'typeB' && service == 'crystalframe'">
                             <label for="PicSizeUnit" class="col-sm-2 col-form-label">作品規格單位</label>
                             <select class="col-10" id="PicSizeUnit" v-model="FrameSizeUnit">
-                                
-                                <option value="inch">inch - 作品英制測量</option>
                                 <option value="mm">mm - <small>作品公制測量</small></option>
+                                <option value="inch">inch - 作品英制測量</option>
+                                
                             </select>
                         </div>
 
@@ -1054,7 +1054,7 @@
                 imageProp: 'paper',
                 ProductMethoud: 'typeA',//新增
                 fastImgSize: 'A4',
-                PicSizeUnit: 'inch',      //新增
+                PicSizeUnit: 'mm',      //新增
                 FrameSizeUnit: 'mm',
                 frameWidth: 210,        //修改成A4
                 frameHeight: 297,       //修改成A4
