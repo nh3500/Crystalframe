@@ -1427,7 +1427,10 @@
                         this.FrameSizeUnit = 'mm'
                         this.frameWidthUser = 200
                         this.frameHeightUser = 200
-
+                        if(this.FrameSizeUnit == 'inch'){
+                            this.frameWidthUser = 5
+                            this.frameHeightUser = 7
+                        }
                         return val
                     }
 
