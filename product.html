@@ -1452,6 +1452,18 @@
                     }
 
                 },
+                ChangeUnit: function (val) {
+                    if (val == 'inch') {
+                        this.FrameSizeUnit = 'inch'
+                        this.frameWidthUser = 8
+                        this.frameHeightUser = 8
+                    }
+                    if (val == 'mm') {
+                        this.FrameSizeUnit = 'mm'
+                        this.frameWidthUser = 200
+                        this.frameHeightUser = 200
+                    }
+                },
                 FrameSizeUnit: function (val) {
                     if (val == 'R') {
                         // this.fastImgSize = 'A2'
@@ -1465,18 +1477,6 @@
                     //     this.frameWidthUser = 200
                     //     this.frameHeightUser = 200
                     // }
-                },
-                ChangeUnit: function (val) {
-                    if (val == 'inch') {
-                        this.FrameSizeUnit = 'inch'
-                        this.frameWidthUser = 8
-                        this.frameHeightUser = 8
-                    }
-                    if (val == 'mm') {
-                        this.FrameSizeUnit = 'mm'
-                        this.frameWidthUser = 200
-                        this.frameHeightUser = 200
-                    }
                 },
                 frameProductType: function (val) {
                     if (val == 'R') {
