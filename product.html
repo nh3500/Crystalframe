@@ -1237,34 +1237,38 @@
             watch: {
 
                 fastImgSize: function (val) {
-                    if (val == 'A1') {
+                    if (val == 'A1' || val == 'A2' || val == 'A3' || val == 'A4') {
                         this.FrameSizeUnit = 'mm'
-                        this.frameWidthUser = this.mmToInch(594)
-                        this.frameHeightUser = this.mmToInch(841)
-                        return val
-                    }
 
-                    if (val == 'A2') {
-                        this.FrameSizeUnit = 'mm'
-                        this.frameWidthUser = this.mmToInch(420)
-                        this.frameHeightUser = this.mmToInch(594)
-                        return val
-                    }
+                        if (val == 'A1') {
+                            // this.FrameSizeUnit = 'mm'
+                            this.frameWidthUser = this.mmToInch(594)
+                            this.frameHeightUser = this.mmToInch(841)
+                            return val
+                        }
 
-                    if (val == 'A3') {
-                        this.FrameSizeUnit = 'mm'
-                        this.frameWidthUser = this.mmToInch(297)
-                        this.frameHeightUser = this.mmToInch(420)
+                        if (val == 'A2') {
+                            // this.FrameSizeUnit = 'mm'
+                            this.frameWidthUser = this.mmToInch(420)
+                            this.frameHeightUser = this.mmToInch(594)
+                            return val
+                        }
 
-                        return val
-                    }
+                        if (val == 'A3') {
+                            // this.FrameSizeUnit = 'mm'
+                            this.frameWidthUser = this.mmToInch(297)
+                            this.frameHeightUser = this.mmToInch(420)
 
-                    if (val == 'A4') {
-                        this.FrameSizeUnit = 'mm'
-                        this.frameWidthUser = this.mmToInch(210)
-                        this.frameHeightUser = this.mmToInch(297)
+                            return val
+                        }
 
-                        return val
+                        if (val == 'A4') {
+                            // this.FrameSizeUnit = 'mm'
+                            this.frameWidthUser = this.mmToInch(210)
+                            this.frameHeightUser = this.mmToInch(297)
+
+                            return val
+                        }
                     }
 
                     if (val == "5x7") {
