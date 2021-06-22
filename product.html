@@ -693,13 +693,13 @@
                             <td>{{grossWeight()}} KG</td>
                         </tr>
                         <tr v-if="service == 'crystalframe'">
-                            <td>內箱 紙箱尺寸</td>
+                            <td>紙箱規格</td>
                             <td> {{ innerBoxWeight() }} (紙箱尺寸僅供參考 仍以實物為主)</td>
                         </tr>
-                        <tr v-if="service == 'crystalframe'">
+                        <!-- <tr v-if="service == 'crystalframe'">
                             <td>外箱 紙箱尺寸</td>
                             <td> {{ outterBoxWeight() }} (紙箱尺寸僅供參考 仍以實物為主)</td>
-                        </tr>
+                        </tr> -->
                         <tr>
                             <td>生產週期</td>
                             <td> {{producingPreoid()}} 個工作天</td>
@@ -1229,7 +1229,7 @@
                         return 29
                     }
 
-                    return 36
+                    return 12
 
                 }
 
@@ -1682,12 +1682,12 @@
                 },
                 innerBoxWeight: function () {
                     if (this.frameType == 'normal') {
-                        return "W" + (parseFloat(this.frameWidth) + 30) + " * L" + (parseFloat(this
-                            .frameHeight) + 25) + " * H" + (50) + ' mm'
+                        return "W" + (parseFloat(this.frameWidth) + 119) + " * L" + (parseFloat(this
+                            .frameHeight) + 112) + " * H" + (43) + ' mm'
                     }
 
-                    return "W" + (parseFloat(this.frameWidth) + 30) + " * L" + (parseFloat(this
-                        .frameHeight) + 50) + " * H" + (50) + ' mm'
+                    return "W" + (parseFloat(this.frameWidth) + 119) + " * L" + (parseFloat(this
+                        .frameHeight) + 112) + " * H" + (43) + ' mm'
 
                 },
                 outterBoxWeight: function () {
@@ -1723,11 +1723,11 @@
 
 
                     if (this.frameType == 'normal') {
-                        return "W" + (parseFloat(this.frameWidth) + 5) + " * L" + (this.frameHeight) +
+                        return "W" + (parseFloat(this.frameWidth) + 14) + " * L" + (this.frameHeight) +
                             " * H" + (this.frameThinkness) + " " + 'mm'
                     }
 
-                    return "W" + (parseFloat(this.frameWidth) + 5) + " * L" + (this.frameHeight) + " * H" +
+                    return "W" + (parseFloat(this.frameWidth) + 14) + " * L" + (this.frameHeight) + " * H" +
                         (this.frameThinkness) + " " + 'mm'
 
                 },
