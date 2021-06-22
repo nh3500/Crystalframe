@@ -199,7 +199,16 @@
                                 <option value="scanning">複製畫掃描服務</option>
                             </select>
                         </div>
-
+                        <div class="form-group row" v-if="service == 'crystalframe'">
+                            <label for="frameType" class="col-sm-2 col-form-label">次類</label>
+                            <select class="col-10" id="frameType" v-model="frameType">
+                                <!-- <option value="A">水晶框海報</option> -->
+                                <option value="B">水晶裱</option>
+                                <option value="C">水晶裱琉璃</option>
+                                <option value="D">鑽石裱</option>
+                                <option value="E">鑽石裱琉璃</option>
+                            </select>
+                        </div>
                         <div class="form-group row" v-if="service == 'accessory'">
                             <table class="table mt-5">
                                 <tr>
@@ -419,24 +428,14 @@
                                 <option value="JPY">日圓</option>
                                 <option value="EUR">歐元</option>
                             </select>
-                        </div>
-                        <div class="form-group row" v-if="service == 'crystalframe'">
-                            <label for="frameType" class="col-sm-2 col-form-label">次類</label>
-                            <select class="col-10" id="frameType" v-model="frameType">
-                                <!-- <option value="A">水晶框海報</option> -->
-                                <option value="B">水晶裱</option>
-                                <option value="C">水晶裱琉璃</option>
-                                <option value="D">鑽石裱</option>
-                                <option value="E">鑽石裱琉璃</option>
-                            </select>
 
                             <button class="btn btn-secondary btn-block" type="button" data-toggle="collapse"
                                 data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"
                                 style="margin: 20px;">
                                 按我參考四種水晶裱分類比較
                             </button>
-
                         </div>
+                        
                         <!-- <div class="form-group row" v-if="service != 'accessory'">
                             <label for="" class="col-sm-2 col-form-label">此次購買是否需要專屬精品盒</label>
                             <div class="form-check form-check-inline">
