@@ -295,7 +295,7 @@
                         <!-- v-model更改成frameSizeUnit -->
                         <div class="form-group row" v-if="ProductMethoud == 'typeB' && service == 'crystalframe'">
                             <label for="PicSizeUnit" class="col-sm-2 col-form-label">作品規格單位</label>
-                            <select class="col-10" id="PicSizeUnit" v-model="FrameSizeUnit">
+                            <select class="col-10" id="PicSizeUnit" v-model="ChangeUnit">
                                 <option value="mm">mm - <small>作品公制測量</small></option>
                                 <option value="inch">inch - 作品英制測量</option>
 
@@ -352,7 +352,7 @@
                         <div class="form-group row"
                             v-if="ProductMethoud == 'typeA'&& fastImgSize == '' && service == 'crystalframe'">
                             <label for="FrameSizeUnit" class="col-sm-2 col-form-label">框體規格單位</label>
-                            <select class="col-10" id="FrameSizeUnit" v-model="FrameSizeUnit">
+                            <select class="col-10" id="FrameSizeUnit" v-model="ChangeUnit">
                                 <option value="mm">mm - <small>框體公制測量</small></option>
                                 <option value="inch">inch - 框體英制測量</option>
                             </select>
@@ -1457,11 +1457,23 @@
                         // this.fastImgSize = 'A2'
                         this.fastImgSize = 'A4'
                     }
+                    // if (val == 'inch') {
+                    //     this.frameWidthUser = 8
+                    //     this.frameHeightUser = 8
+                    // }
+                    // if (val == 'mm') {
+                    //     this.frameWidthUser = 200
+                    //     this.frameHeightUser = 200
+                    // }
+                },
+                ChangeUnit: function (val) {
                     if (val == 'inch') {
+                        this.FrameSizeUnit = 'inch'
                         this.frameWidthUser = 8
                         this.frameHeightUser = 8
                     }
                     if (val == 'mm') {
+                        this.FrameSizeUnit = 'mm'
                         this.frameWidthUser = 200
                         this.frameHeightUser = 200
                     }
