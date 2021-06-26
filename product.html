@@ -1707,8 +1707,13 @@
                         return Math.round(((parseFloat(this.frameWidth) + 200) * this.frameHeight / 100 /
                             2 / 1000) * 10) / 10
                     } else {
-                        return Math.round(Math.round(((parseFloat(this.frameWidth) + 200) * this
-                            .frameHeight / 100 / 2 / 1000) * 10) / 10 * 2.5 * 10) / 10 * 0.5*0.5
+                        // return Math.round(Math.round(((parseFloat(this.frameWidth) + 200) * this
+                        //     .frameHeight / 100 / 2 / 1000) * 10) / 10 * 2.5 * 10) / 10 * 0.5*0.5
+                            WL_area = (parseFloat(this.frameWidth)/10+1.4)*(parseFloat(this.frameHeight)/10+0.8)
+                            Acrylic =   WL_area*0.4*1.19
+                            WhitePanel = WL_area*(33/((30.3)*(30.3)))
+                            unitTotal = (Acrylic+WhitePanel)*1.1
+                            return Math.round(unitTotal/100)/10
                     }
 
                 },
