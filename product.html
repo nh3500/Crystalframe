@@ -1705,7 +1705,7 @@
                             Acrylic =   WL_area*0.4*1.19
                             WhitePanel = WL_area*(33/((30.3)*(30.3)))
                             unitTotal = Math.ceil(((Acrylic+WhitePanel)*1.1)/100)/10
-                            return unitTotal
+                            return Math.ceil(unitTotal*10)/10
                     }
 
                 },
@@ -1718,7 +1718,7 @@
                         box_Weight = temp_Weight+12.8*((parseFloat(this.frameWidth)/122)+(parseFloat(this.frameHeight)/10))*2*WhitePanel_unit
                         boxTotal =Math.ceil((temp_Weight+box_Weight) /100)/10
                         grossTotal = unitTotal+boxTotal
-                        return grossTotal
+                        return Math.ceil(grossTotal*10)/10
                     }
 
                     
