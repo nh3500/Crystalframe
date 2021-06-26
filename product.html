@@ -1713,16 +1713,23 @@
                             Acrylic =   WL_area*0.4*1.19
                             WhitePanel = WL_area*(33/((30.3)*(30.3)))
                             unitTotal = (Acrylic+WhitePanel)*1.1
-                            return Math.round(unitTotal/100)/10
+                            return Math.ceil(unitTotal/100)/10
                     }
 
                 },
                 grossWeight: function () {
                     if (this.frameType == 'normal') {
                         return Math.round(this.unitWeight() * 2 * 10) / 10
+                    }else{
+                        WhitePanel_unit =(33/((30.3)*(30.3)))
+                        temp_Weight = ((parseFloat(this.frameWidth)+114)*(parseFloat(this.frameHeight)+100))/100*2*WhitePanel_unit*1.1
+                        box_Weight = temp_Weight+12.8*((parseFloat(this.frameWidth)/122)+(parseFloat(this.frameHeight)/10))*2*WhitePanel_unit
+                        boxTotal = temp_Weight+box_Weight
+                        grossTotal = unitTotal+boxTotal
+                        return Math.ceil(grossTotal/100)/10
                     }
 
-                    return Math.round(this.unitWeight() * 3 * 10) / 10 /1.5*0.9
+                    
                 },
                 frameSpec: function () {
 
