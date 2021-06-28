@@ -1232,358 +1232,408 @@
                         }
 
                         return out
-                    },
-                    frameThinkness: function () {
+                    }
+                },
+                frameThinkness: function () {
 
-                        if (this.frameType == 'normal') {
-                            return 29
-                        }
+                    if (this.frameType == 'normal') {
+                        return 29
+                    }
 
-                        return 12
+                    return 12
 
+                }
+
+            },
+            watch: {
+
+                fastImgSize: function (val) {
+
+
+                    if (val == 'A1') {
+                        this.FrameSizeUnit = 'mm'
+                        this.frameWidthUser = this.mmToInch(594)
+                        this.frameHeightUser = this.mmToInch(841)
+                        return val
+                    }
+
+                    if (val == 'A2') {
+                        this.FrameSizeUnit = 'mm'
+                        this.frameWidthUser = this.mmToInch(420)
+                        this.frameHeightUser = this.mmToInch(594)
+                        return val
+                    }
+
+                    if (val == 'A3') {
+                        this.FrameSizeUnit = 'mm'
+                        this.frameWidthUser = this.mmToInch(297)
+                        this.frameHeightUser = this.mmToInch(420)
+
+                        return val
+                    }
+
+                    if (val == 'A4') {
+                        this.FrameSizeUnit = 'mm'
+                        this.frameWidthUser = this.mmToInch(210)
+                        this.frameHeightUser = this.mmToInch(297)
+
+                        return val
+                    }
+
+
+                    if (val == "5x7") {
+                        this.FrameSizeUnit = 'inch'
+                        this.frameWidthUser = 5
+                        this.frameHeightUser = 7
+
+                        return val
+                    }
+
+                    if (val == "7x9") {
+                        this.FrameSizeUnit = 'inch'
+                        this.frameWidthUser = 7
+                        this.frameHeightUser = 9
+
+                        return val
+                    }
+
+                    if (val == "8x8") {
+                        this.FrameSizeUnit = 'inch'
+                        this.frameWidthUser = 8
+                        this.frameHeightUser = 8
+
+                        return val
+                    }
+
+                    if (val == "8x10") {
+                        this.FrameSizeUnit = 'inch'
+                        this.frameWidthUser = 8
+                        this.frameHeightUser = 10
+
+                        return val
+                    }
+
+                    if (val == "8x12") {
+                        this.FrameSizeUnit = 'inch'
+                        this.frameWidthUser = 8
+                        this.frameHeightUser = 12
+
+                        return val
+                    }
+
+                    if (val == "8.5x11") {
+                        this.FrameSizeUnit = 'inch'
+                        this.frameWidthUser = 8.5
+                        this.frameHeightUser = 11
+
+                        return val
+                    }
+
+                    if (val == "8.5x14") {
+                        this.FrameSizeUnit = 'inch'
+                        this.frameWidthUser = 8.5
+                        this.frameHeightUser = 14
+
+                        return val
+                    }
+
+                    if (val == "10x12") {
+                        this.FrameSizeUnit = 'inch'
+                        this.frameWidthUser = 10
+                        this.frameHeightUser = 12
+
+                        return val
+                    }
+
+                    if (val == "11x14") {
+                        this.FrameSizeUnit = 'inch'
+                        this.frameWidthUser = 11
+                        this.frameHeightUser = 14
+
+                        return val
+                    }
+
+                    if (val == "11x17") {
+                        this.FrameSizeUnit = 'inch'
+                        this.frameWidthUser = 11
+                        this.frameHeightUser = 17
+
+                        return val
+                    }
+
+                    if (val == "12x12") {
+                        this.FrameSizeUnit = 'inch'
+                        this.frameWidthUser = 12
+                        this.frameHeightUser = 12
+
+                        return val
+                    }
+
+                    if (val == "12x15") {
+                        this.FrameSizeUnit = 'inch'
+                        this.frameWidthUser = 12
+                        this.frameHeightUser = 15
+
+                        return val
+                    }
+
+                    if (val == "12x18") {
+                        this.FrameSizeUnit = 'inch'
+                        this.frameWidthUser = 12
+                        this.frameHeightUser = 18
+
+                        return val
+                    }
+
+                    if (val == "16x20") {
+                        this.FrameSizeUnit = 'inch'
+                        this.frameWidthUser = 16
+                        this.frameHeightUser = 20
+
+                        return val
+                    }
+
+                    if (val == "18x24") {
+                        this.FrameSizeUnit = 'inch'
+                        this.frameWidthUser = 18
+                        this.frameHeightUser = 24
+
+                        return val
+                    }
+
+                    if (val == "20x24") {
+                        this.FrameSizeUnit = 'inch'
+                        this.frameWidthUser = 20
+                        this.frameHeightUser = 24
+
+                        return val
+                    }
+
+                    if (val == "20x30") {
+                        this.FrameSizeUnit = 'inch'
+                        this.frameWidthUser = 20
+                        this.frameHeightUser = 30
+
+                        return val
+                    }
+
+                    if (val == "24x30") {
+                        this.FrameSizeUnit = 'inch'
+                        this.frameWidthUser = 24
+                        this.frameHeightUser = 30
+
+                        return val
+                    }
+
+                    if (val == "24x36") {
+                        this.FrameSizeUnit = 'inch'
+                        this.frameWidthUser = 24
+                        this.frameHeightUser = 36
+
+                        return val
+                    }
+
+                    if (val == "27x40") {
+                        this.FrameSizeUnit = 'inch'
+                        this.frameWidthUser = 27
+                        this.frameHeightUser = 40
+
+                        return val
+                    }
+
+                    if (val == "") {
+                        this.FrameSizeUnit = 'mm'
+                        this.frameWidthUser = 200
+                        this.frameHeightUser = 200
+
+                        return val
                     }
 
                 },
-                watch: {
+                frameWidthUser: function (val) {
+                    if (this.FrameSizeUnit == 'inch') {
+                        this.frameWidth = Math.round(val * 25.4)
+                    } else {
+                        this.frameWidth = val
+                    }
 
-                    fastImgSize: function (val) {
-
-
-                        if (val == 'A1') {
-                            this.FrameSizeUnit = 'mm'
-                            this.frameWidthUser = this.mmToInch(594)
-                            this.frameHeightUser = this.mmToInch(841)
-                            return val
-                        }
-
-                        if (val == 'A2') {
-                            this.FrameSizeUnit = 'mm'
-                            this.frameWidthUser = this.mmToInch(420)
-                            this.frameHeightUser = this.mmToInch(594)
-                            return val
-                        }
-
-                        if (val == 'A3') {
-                            this.FrameSizeUnit = 'mm'
-                            this.frameWidthUser = this.mmToInch(297)
-                            this.frameHeightUser = this.mmToInch(420)
-
-                            return val
-                        }
-
-                        if (val == 'A4') {
-                            this.FrameSizeUnit = 'mm'
-                            this.frameWidthUser = this.mmToInch(210)
-                            this.frameHeightUser = this.mmToInch(297)
-
-                            return val
-                        }
-
-
-                        if (val == "5x7") {
-                            this.FrameSizeUnit = 'inch'
-                            this.frameWidthUser = 5
-                            this.frameHeightUser = 7
-
-                            return val
-                        }
-
-                        if (val == "7x9") {
-                            this.FrameSizeUnit = 'inch'
-                            this.frameWidthUser = 7
-                            this.frameHeightUser = 9
-
-                            return val
-                        }
-
-                        if (val == "8x8") {
-                            this.FrameSizeUnit = 'inch'
-                            this.frameWidthUser = 8
-                            this.frameHeightUser = 8
-
-                            return val
-                        }
-
-                        if (val == "8x10") {
-                            this.FrameSizeUnit = 'inch'
-                            this.frameWidthUser = 8
-                            this.frameHeightUser = 10
-
-                            return val
-                        }
-
-                        if (val == "8x12") {
-                            this.FrameSizeUnit = 'inch'
-                            this.frameWidthUser = 8
-                            this.frameHeightUser = 12
-
-                            return val
-                        }
-
-                        if (val == "8.5x11") {
-                            this.FrameSizeUnit = 'inch'
-                            this.frameWidthUser = 8.5
-                            this.frameHeightUser = 11
-
-                            return val
-                        }
-
-                        if (val == "8.5x14") {
-                            this.FrameSizeUnit = 'inch'
-                            this.frameWidthUser = 8.5
-                            this.frameHeightUser = 14
-
-                            return val
-                        }
-
-                        if (val == "10x12") {
-                            this.FrameSizeUnit = 'inch'
-                            this.frameWidthUser = 10
-                            this.frameHeightUser = 12
-
-                            return val
-                        }
-
-                        if (val == "11x14") {
-                            this.FrameSizeUnit = 'inch'
-                            this.frameWidthUser = 11
-                            this.frameHeightUser = 14
-
-                            return val
-                        }
-
-                        if (val == "11x17") {
-                            this.FrameSizeUnit = 'inch'
-                            this.frameWidthUser = 11
-                            this.frameHeightUser = 17
-
-                            return val
-                        }
-
-                        if (val == "12x12") {
-                            this.FrameSizeUnit = 'inch'
-                            this.frameWidthUser = 12
-                            this.frameHeightUser = 12
-
-                            return val
-                        }
-
-                        if (val == "12x15") {
-                            this.FrameSizeUnit = 'inch'
-                            this.frameWidthUser = 12
-                            this.frameHeightUser = 15
-
-                            return val
-                        }
-
-                        if (val == "12x18") {
-                            this.FrameSizeUnit = 'inch'
-                            this.frameWidthUser = 12
-                            this.frameHeightUser = 18
-
-                            return val
-                        }
-
-                        if (val == "16x20") {
-                            this.FrameSizeUnit = 'inch'
-                            this.frameWidthUser = 16
-                            this.frameHeightUser = 20
-
-                            return val
-                        }
-
-                        if (val == "18x24") {
-                            this.FrameSizeUnit = 'inch'
-                            this.frameWidthUser = 18
-                            this.frameHeightUser = 24
-
-                            return val
-                        }
-
-                        if (val == "20x24") {
-                            this.FrameSizeUnit = 'inch'
-                            this.frameWidthUser = 20
-                            this.frameHeightUser = 24
-
-                            return val
-                        }
-
-                        if (val == "20x30") {
-                            this.FrameSizeUnit = 'inch'
-                            this.frameWidthUser = 20
-                            this.frameHeightUser = 30
-
-                            return val
-                        }
-
-                        if (val == "24x30") {
-                            this.FrameSizeUnit = 'inch'
-                            this.frameWidthUser = 24
-                            this.frameHeightUser = 30
-
-                            return val
-                        }
-
-                        if (val == "24x36") {
-                            this.FrameSizeUnit = 'inch'
-                            this.frameWidthUser = 24
-                            this.frameHeightUser = 36
-
-                            return val
-                        }
-
-                        if (val == "27x40") {
-                            this.FrameSizeUnit = 'inch'
-                            this.frameWidthUser = 27
-                            this.frameHeightUser = 40
-
-                            return val
-                        }
-
-                        if (val == "") {
-                            this.FrameSizeUnit = 'mm'
-                            this.frameWidthUser = 200
-                            this.frameHeightUser = 200
-
-                            return val
-                        }
-
-                    },
-                    frameWidthUser: function (val) {
-                        if (this.FrameSizeUnit == 'inch') {
-                            this.frameWidth = Math.round(val * 25.4)
-                        } else {
-                            this.frameWidth = val
-                        }
-
-                    },
-                    frameHeightUser: function (val) {
-                        if (this.FrameSizeUnit == 'inch') {
-                            this.frameHeight = Math.round(val * 25.4)
-                        } else {
-                            this.frameHeight = val
-                        }
-
-                    },
-                    FrameSizeUnit: function (val) {
-                        if (val == 'R') {
-                            // this.fastImgSize = 'A2'
-                            this.fastImgSize = 'A4'
-                        }
-                    },
-                    ChangeUnit: function (val) {
-                        if (val == 'inch') {
-                            this.FrameSizeUnit = 'inch'
-                            this.frameWidthUser = 8
-                            this.frameHeightUser = 8
-                        }
-                        if (val == 'mm') {
-                            this.FrameSizeUnit = 'mm'
-                            this.frameWidthUser = 200
-                            this.frameHeightUser = 200
-                        }
-                    },
-                    frameProductType: function (val) {
-                        if (val == 'R') {
-                            this.fastImgSize = 'A4'
-                        } else {
-                            this.fastImgSize = ''
-                        }
-                    },
-                    frameType: function (val) {
-                        if (val == 'normal') {
-                            this.picturePrintingType = 'PP'
-                            this.frameDots = 'VH'
-                        } else {
-                            this.picturePrintingType = 'LIGHT'
-                            this.frameDots = 'V'
-                        }
-                    },
                 },
-                methods: {
-                    picToFrameSize: function (x, y) {
-                        //新增
-                        if (this.frameType == 'B' || this.frameType == 'D') {
-                            if (this.FrameSizeUnit == 'mm') {
-                                var totalX = Math.ceil(x - (16));
-                                var totaly = Math.ceil(y - (4));
-                            }
-                            else {
-                                var totalX = x - (0.6);
-                                var totaly = y - (0.1);
-                            }
-                            return totalX + ' x ' + totaly
+                frameHeightUser: function (val) {
+                    if (this.FrameSizeUnit == 'inch') {
+                        this.frameHeight = Math.round(val * 25.4)
+                    } else {
+                        this.frameHeight = val
+                    }
+
+                },
+                FrameSizeUnit: function (val) {
+                    if (val == 'R') {
+                        // this.fastImgSize = 'A2'
+                        this.fastImgSize = 'A4'
+                    }
+                },
+                ChangeUnit: function (val) {
+                    if (val == 'inch') {
+                        this.FrameSizeUnit = 'inch'
+                        this.frameWidthUser = 8
+                        this.frameHeightUser = 8
+                    }
+                    if (val == 'mm') {
+                        this.FrameSizeUnit = 'mm'
+                        this.frameWidthUser = 200
+                        this.frameHeightUser = 200
+                    }
+                },
+                frameProductType: function (val) {
+                    if (val == 'R') {
+                        this.fastImgSize = 'A4'
+                    } else {
+                        this.fastImgSize = ''
+                    }
+                },
+                frameType: function (val) {
+                    if (val == 'normal') {
+                        this.picturePrintingType = 'PP'
+                        this.frameDots = 'VH'
+                    } else {
+                        this.picturePrintingType = 'LIGHT'
+                        this.frameDots = 'V'
+                    }
+                },
+            },
+            methods: {
+                picToFrameSize: function (x, y) {
+                    //新增
+                    if (this.frameType == 'B' || this.frameType == 'D') {
+                        if (this.FrameSizeUnit == 'mm') {
+                            var totalX = Math.ceil(x - (16));
+                            var totaly = Math.ceil(y - (4));
                         }
-                        if (this.frameType == 'C' || this.frameType == 'E') {
-                            if (this.FrameSizeUnit == 'mm') {
-                                var totalX = Math.ceil(x - (30));
-                                var totaly = Math.ceil(y - (4));
-                            }
-                            else {
-                                var totalX = x - (1.1);
-                                var totaly = y - (0.1);
-                            }
-                            return totalX + ' x ' + totaly
-                        }
-                    },
-                    sheetUser: function (z) {
-                        if (ProductMethoud == 'typeB') {
-                            X = this.frameWidthUser
-                            y = this.frameHeightUser
-                            switch (z) {
-                                case "A":
-                                    break
-                                case "B":
-                                    if (this.FrameSizeUnit == 'mm') {
-                                        var totalX = Math.ceil(x - (16));
-                                        var totaly = Math.ceil(y - (4));
-                                    }
-                                    else {
-                                        var totalX = x - (0.6);
-                                        var totaly = y - (0.1);
-                                    }
-                                    break
-                                case "C":
-                                    if (this.FrameSizeUnit == 'mm') {
-                                        var totalX = Math.ceil(x - (30));
-                                        var totaly = Math.ceil(y - (4));
-                                    }
-                                    else {
-                                        var totalX = x - (1.1);
-                                        var totaly = y - (0.1);
-                                    }
-                                    break
-                                case "D":
-                                    if (this.FrameSizeUnit == 'mm') {
-                                        var totalX = Math.ceil(x - (16));
-                                        var totaly = Math.ceil(y - (4));
-                                    }
-                                    else {
-                                        var totalX = x - (0.6);
-                                        var totaly = y - (0.1);
-                                    }
-                                    break
-                                case "E":
-                                    if (this.FrameSizeUnit == 'mm') {
-                                        var totalX = Math.ceil(x - (30));
-                                        var totaly = Math.ceil(y - (4));
-                                    }
-                                    else {
-                                        var totalX = x - (1.1);
-                                        var totaly = y - (0.1);
-                                    }
-                                    break
-                            }
-                        } else {
-                            totalX = this.frameWidthUser
-                            totaly = this.frameHeightUser
+                        else {
+                            var totalX = x - (0.6);
+                            var totaly = y - (0.1);
                         }
                         return totalX + ' x ' + totaly
-                    },
-                    sheetPrice: function (x) {
+                    }
+                    if (this.frameType == 'C' || this.frameType == 'E') {
+                        if (this.FrameSizeUnit == 'mm') {
+                            var totalX = Math.ceil(x - (30));
+                            var totaly = Math.ceil(y - (4));
+                        }
+                        else {
+                            var totalX = x - (1.1);
+                            var totaly = y - (0.1);
+                        }
+                        return totalX + ' x ' + totaly
+                    }
+                },
+                sheetUser: function (z) {
+                    if (ProductMethoud == 'typeB') {
+                        X = this.frameWidthUser
+                        y = this.frameHeightUser
+                        switch (z) {
+                            case "A":
+                                break
+                            case "B":
+                                if (this.FrameSizeUnit == 'mm') {
+                                    var totalX = Math.ceil(x - (16));
+                                    var totaly = Math.ceil(y - (4));
+                                }
+                                else {
+                                    var totalX = x - (0.6);
+                                    var totaly = y - (0.1);
+                                }
+                                break
+                            case "C":
+                                if (this.FrameSizeUnit == 'mm') {
+                                    var totalX = Math.ceil(x - (30));
+                                    var totaly = Math.ceil(y - (4));
+                                }
+                                else {
+                                    var totalX = x - (1.1);
+                                    var totaly = y - (0.1);
+                                }
+                                break
+                            case "D":
+                                if (this.FrameSizeUnit == 'mm') {
+                                    var totalX = Math.ceil(x - (16));
+                                    var totaly = Math.ceil(y - (4));
+                                }
+                                else {
+                                    var totalX = x - (0.6);
+                                    var totaly = y - (0.1);
+                                }
+                                break
+                            case "E":
+                                if (this.FrameSizeUnit == 'mm') {
+                                    var totalX = Math.ceil(x - (30));
+                                    var totaly = Math.ceil(y - (4));
+                                }
+                                else {
+                                    var totalX = x - (1.1);
+                                    var totaly = y - (0.1);
+                                }
+                                break
+                        }
+                    } else {
+                        totalX = this.frameWidthUser
+                        totaly = this.frameHeightUser
+                    }
+                    return totalX + ' x ' + totaly
+                },
+                sheetPrice: function (x) {
+                    subtotal = Math.ceil(((300 * this.frameHeight / 841) + (2400 * this.frameWidth *
+                        this.frameHeight / 499554)) / 100) * 100 * 2
+                    switch (x) {
+                        case "A":
+                            break
+                        case "B":
+                            subtotal = subtotal * 2
+                            if (subtotal < 2000)
+                                subtotal = 2000;
+                            break
+                        case "C":
+                            subtotal = subtotal * 2 * 1.25
+                            if (subtotal < 2000)
+                                subtotal = 2000;
+                            break
+                        case "D":
+                            subtotal = subtotal * 2 * 2
+                            if (subtotal < 2000)
+                                subtotal = 2000;
+                            break
+                        case "E":
+                            subtotal = subtotal * 2 * 2 * 1.25
+                            if (subtotal < 2000)
+                                subtotal = 2000;
+                            break
+                    }
+                    return this.currencyTo(subtotal)
+                },
+                unitPrice: function () {
+
+                    if (this.service == 'crystalframe') {
+
+                        discount = 1
+                        if (this.frameAmount >= 1000) {
+                            discount = 0.6
+                        }
+
+                        if (this.frameAmount >= 500) {
+                            discount = 0.7
+                        }
+
+                        if (this.frameAmount >= 100) {
+                            discount = 0.8
+                        }
+
+                        if (this.frameAmount >= 50) {
+                            discount = 0.9
+                        }
+
                         subtotal = Math.ceil(((300 * this.frameHeight / 841) + (2400 * this.frameWidth *
                             this.frameHeight / 499554)) / 100) * 100 * 2
-                        switch (x) {
+                        switch (this.frameType) {
                             case "A":
                                 break
                             case "B":
@@ -1607,268 +1657,219 @@
                                     subtotal = 2000;
                                 break
                         }
+
                         return this.currencyTo(subtotal)
-                    },
-                    unitPrice: function () {
+                    }
 
-                        if (this.service == 'crystalframe') {
+                    if (this.service == 'picturePrinting') {
 
-                            discount = 1
-                            if (this.frameAmount >= 1000) {
-                                discount = 0.6
-                            }
-
-                            if (this.frameAmount >= 500) {
-                                discount = 0.7
-                            }
-
-                            if (this.frameAmount >= 100) {
-                                discount = 0.8
-                            }
-
-                            if (this.frameAmount >= 50) {
-                                discount = 0.9
-                            }
-
-                            subtotal = Math.ceil(((300 * this.frameHeight / 841) + (2400 * this.frameWidth *
-                                this.frameHeight / 499554)) / 100) * 100 * 2
-                            switch (this.frameType) {
-                                case "A":
-                                    break
-                                case "B":
-                                    subtotal = subtotal * 2
-                                    if (subtotal < 2000)
-                                        subtotal = 2000;
-                                    break
-                                case "C":
-                                    subtotal = subtotal * 2 * 1.25
-                                    if (subtotal < 2000)
-                                        subtotal = 2000;
-                                    break
-                                case "D":
-                                    subtotal = subtotal * 2 * 2
-                                    if (subtotal < 2000)
-                                        subtotal = 2000;
-                                    break
-                                case "E":
-                                    subtotal = subtotal * 2 * 2 * 1.25
-                                    if (subtotal < 2000)
-                                        subtotal = 2000;
-                                    break
-                            }
-
-                            return this.currencyTo(subtotal)
+                        if (this.picturePrintingType == 'PP') {
+                            variance = 25
                         }
 
-                        if (this.service == 'picturePrinting') {
-
-                            if (this.picturePrintingType == 'PP') {
-                                variance = 25
-                            }
-
-                            if (this.picturePrintingType == 'SNOW') {
-                                variance = 150
-                            }
-
-                            if (this.picturePrintingType == 'LIGHT') {
-                                variance = 50
-                            }
-
-                            return this.currencyTo(Math.round(this.frameWidth * this.frameHeight / 90000 *
-                                variance * 4 / 10) * 10)
-                        }
-                    },
-                    totalPrice: function () {
-
-                        extra = 0
-                        if (this.service == 'picturePrinting') {
-                            extra = 200
+                        if (this.picturePrintingType == 'SNOW') {
+                            variance = 150
                         }
 
-                        return (this.unitPrice() * this.frameAmount) + extra
-                    },
-                    producingPreoid: function () {
-
-                        if (this.service == 'crystalframe') {
-                            if (this.frameType == 'normal') {
-                                return 7
-                            }
-
-                            return 14
+                        if (this.picturePrintingType == 'LIGHT') {
+                            variance = 50
                         }
 
+                        return this.currencyTo(Math.round(this.frameWidth * this.frameHeight / 90000 *
+                            variance * 4 / 10) * 10)
+                    }
+                },
+                totalPrice: function () {
 
-                        if (this.service == 'picturePrinting') {
-                            return 5
-                        }
+                    extra = 0
+                    if (this.service == 'picturePrinting') {
+                        extra = 200
+                    }
 
+                    return (this.unitPrice() * this.frameAmount) + extra
+                },
+                producingPreoid: function () {
 
-                    },
-                    transportTime: function () {
-                        if (this.service == 'crystalframe') {
-                            if (this.frameType == 'normal') {
-                                return 10
-                            }
-
-                            return 17
-                        }
-
-                        if (this.service == 'picturePrinting') {
+                    if (this.service == 'crystalframe') {
+                        if (this.frameType == 'normal') {
                             return 7
                         }
 
-                    },
-                    annotation: function () {
+                        return 14
+                    }
 
-                        if (this.service == 'crystalframe') {
-                            if (this.frameType == 'normal') {
-                                return "水晶裱包裝: 外紙箱+內紙箱+主框+中板+配件組+廣告圖+模板圖 (以上報價皆為台灣島內含稅價)"
-                            }
 
-                            if (this.frameType == 'LED') {
-                                return "LED水晶框包裝: 外紙箱+內紙箱+主框+導光板+配件組+廣告圖+模板圖 (以上報價皆為台灣島內含稅價)"
-                            }
-                        }
+                    if (this.service == 'picturePrinting') {
+                        return 5
+                    }
 
-                        if (this.service == 'picturePrinting') {
-                            return "(以上報價皆為台灣島內含稅價)"
-                        }
 
-                        return ""
-                    },
-                    innerBoxWeight: function () {
+                },
+                transportTime: function () {
+                    if (this.service == 'crystalframe') {
                         if (this.frameType == 'normal') {
-                            return "W" + (parseFloat(this.frameWidth) + 119) + " * L" + (parseFloat(this
-                                .frameHeight) + 112) + " * H" + (43) + ' mm'
+                            return 10
                         }
 
+                        return 17
+                    }
+
+                    if (this.service == 'picturePrinting') {
+                        return 7
+                    }
+
+                },
+                annotation: function () {
+
+                    if (this.service == 'crystalframe') {
+                        if (this.frameType == 'normal') {
+                            return "水晶裱包裝: 外紙箱+內紙箱+主框+中板+配件組+廣告圖+模板圖 (以上報價皆為台灣島內含稅價)"
+                        }
+
+                        if (this.frameType == 'LED') {
+                            return "LED水晶框包裝: 外紙箱+內紙箱+主框+導光板+配件組+廣告圖+模板圖 (以上報價皆為台灣島內含稅價)"
+                        }
+                    }
+
+                    if (this.service == 'picturePrinting') {
+                        return "(以上報價皆為台灣島內含稅價)"
+                    }
+
+                    return ""
+                },
+                innerBoxWeight: function () {
+                    if (this.frameType == 'normal') {
                         return "W" + (parseFloat(this.frameWidth) + 119) + " * L" + (parseFloat(this
                             .frameHeight) + 112) + " * H" + (43) + ' mm'
+                    }
 
-                    },
-                    outterBoxWeight: function () {
+                    return "W" + (parseFloat(this.frameWidth) + 119) + " * L" + (parseFloat(this
+                        .frameHeight) + 112) + " * H" + (43) + ' mm'
 
-                        if (this.frameType == 'normal') {
-                            return "W" + (parseFloat(this.frameWidth) + 93) + " * L" + (parseFloat(this
-                                .frameHeight) + 88) + " * H" + (63) + ' mm'
-                        }
+                },
+                outterBoxWeight: function () {
 
+                    if (this.frameType == 'normal') {
                         return "W" + (parseFloat(this.frameWidth) + 93) + " * L" + (parseFloat(this
-                            .frameHeight) + 88) + " * H" + (70) + ' mm'
+                            .frameHeight) + 88) + " * H" + (63) + ' mm'
+                    }
 
-                    },
-                    unitWeight: function () {
+                    return "W" + (parseFloat(this.frameWidth) + 93) + " * L" + (parseFloat(this
+                        .frameHeight) + 88) + " * H" + (70) + ' mm'
 
-                        if (this.frameType == 'normal') {
-                            return Math.round(((parseFloat(this.frameWidth) + 200) * this.frameHeight / 100 /
-                                2 / 1000) * 10) / 10
-                        } else {
-                            // return Math.round(Math.round(((parseFloat(this.frameWidth) + 200) * this
-                            //     .frameHeight / 100 / 2 / 1000) * 10) / 10 * 2.5 * 10) / 10 * 0.5*0.5
-                            WL_area = (parseFloat(this.frameWidth) / 10 + 1.4) * (parseFloat(this.frameHeight) / 10 + 0.8)
-                            Acrylic = WL_area * 0.4 * 1.19
-                            WhitePanel = WL_area * (33 / ((30.3) * (30.3)))
-                            unitTotal = Math.ceil(((Acrylic + WhitePanel) * 1.1) / 100) / 10
-                            return Math.ceil(unitTotal * 10) / 10
-                        }
+                },
+                unitWeight: function () {
 
-                    },
-                    grossWeight: function () {
-                        if (this.frameType == 'normal') {
-                            return Math.round(this.unitWeight() * 2 * 10) / 10
-                        } else {
-                            WhitePanel_unit = (33 / ((30.3) * (30.3)))
-                            temp_Weight = ((parseFloat(this.frameWidth) + 114) * (parseFloat(this.frameHeight) + 100)) / 100 * 2 * WhitePanel_unit * 1.1
-                            box_Weight = temp_Weight + 12.8 * ((parseFloat(this.frameWidth) / 122) + (parseFloat(this.frameHeight) / 10)) * 2 * WhitePanel_unit
-                            boxTotal = Math.ceil((temp_Weight + box_Weight) / 100) / 10
-                            grossTotal = unitTotal + boxTotal
-                            return Math.ceil(grossTotal * 10) / 10
-                        }
+                    if (this.frameType == 'normal') {
+                        return Math.round(((parseFloat(this.frameWidth) + 200) * this.frameHeight / 100 /
+                            2 / 1000) * 10) / 10
+                    } else {
+                        // return Math.round(Math.round(((parseFloat(this.frameWidth) + 200) * this
+                        //     .frameHeight / 100 / 2 / 1000) * 10) / 10 * 2.5 * 10) / 10 * 0.5*0.5
+                        WL_area = (parseFloat(this.frameWidth) / 10 + 1.4) * (parseFloat(this.frameHeight) / 10 + 0.8)
+                        Acrylic = WL_area * 0.4 * 1.19
+                        WhitePanel = WL_area * (33 / ((30.3) * (30.3)))
+                        unitTotal = Math.ceil(((Acrylic + WhitePanel) * 1.1) / 100) / 10
+                        return Math.ceil(unitTotal * 10) / 10
+                    }
 
-
-                    },
-                    frameSpec: function () {
-
-
-                        if (this.frameType == 'normal') {
-                            return "W" + (parseFloat(this.frameWidth) + 14) + " * L" + (this.frameHeight) +
-                                " * H" + (this.frameThinkness) + " " + 'mm'
-                        }
-
-                        return "W" + (parseFloat(this.frameWidth) + 14) + " * L" + (this.frameHeight) + " * H" +
-                            (this.frameThinkness) + " " + 'mm'
-
-                    },
-                    mmToInch: function (val) {
-
-                        if (this.FrameSizeUnit == 'inch') {
-                            return this.mmToInchForce(val)
-                        }
-
-                        return val
-                    },
-                    mmToInchForce: function (val) {
-
-                        return Math.round((val / 25.4) * 10) / 10
-
-                    },
-                    mailToProducer: function () {
-                        return "mailto:sales@crystalframe.com?subject=訂購&body=Thank you for the request.%0APlease send below information to us, and we will contact you asap and confirm the order details!%0A%0A感謝您的詢問 請將以下資訊給我們 我們會盡快向您回覆並確認訂單!%0A%0A~~~~~~~~~~~~~~~~~~~~~~~~~~%0A%0AModelName 型號:%0A" +
-                            this.frameModelName + "%0A%0AUnit Price 單價:%0A" + this.unitPrice() + " " + this
-                                .currency + " %0A%0A裁切:%0A " + this.currencyTo(200) + " " + this.currency +
-                            "%0A%0AQuantity 數量:%0A" + this.frameAmount + " SET 組%0A%0ATotal Price 總價:%0A" + this
-                                .totalPrice() + " " + this.currency + " %0A%0A備註: " + this.annotation() +
-                            "%0A%0A~~~~~~~~~~~~~~~~~~~~~~~~~~%0A%0ABuyer Information 購買者資訊%0A%0AName 姓名:%0ACompany 公司:%0AMobile 手機:%0ATel 電話:%0AEmail 電郵:%0AOther Comment 其他意見:%0A%0A~~~~~~~~~~~~~~~~~~~~~~~~~~%0A%0AYou can contact us thru%0A您可以透過以下聯絡我們%0A%0AEmail: sales@crystalframe.com.tw%0ALine@: sqr1930c%0AFacebook: @crystalframeyuweihsu%0AFacebook:七色水晶裱有限公司%0ASales Mobile: +886 922576813 (Taiwan)"
-                    },
+                },
+                grossWeight: function () {
+                    if (this.frameType == 'normal') {
+                        return Math.round(this.unitWeight() * 2 * 10) / 10
+                    } else {
+                        WhitePanel_unit = (33 / ((30.3) * (30.3)))
+                        temp_Weight = ((parseFloat(this.frameWidth) + 114) * (parseFloat(this.frameHeight) + 100)) / 100 * 2 * WhitePanel_unit * 1.1
+                        box_Weight = temp_Weight + 12.8 * ((parseFloat(this.frameWidth) / 122) + (parseFloat(this.frameHeight) / 10)) * 2 * WhitePanel_unit
+                        boxTotal = Math.ceil((temp_Weight + box_Weight) / 100) / 10
+                        grossTotal = unitTotal + boxTotal
+                        return Math.ceil(grossTotal * 10) / 10
+                    }
 
 
-                    currencyTo: function (value) {
-                        switch (this.currency) {
-                            case "NTD":
-                                return value
-                            case "CNY":
-                                return Math.round(value / 4)
-                            case "USD":
-                                return Math.round(value / 30)
-                            case "JPY":
-                                return Math.round(value / 0.25)
-                            case "EUR":
-                                return Math.round(value / 33)
-                        }
-                    },
-                    // Start Picture Standard
-                    frameWidthBoundary: function () {
-                        switch (this.FrameSizeUnit) {
-                            case "mm":
-                                boundaryWidth = parseInt(this.frameWidth) + 30
-                                boundaryHeight = parseInt(this.frameHeight) + 4
-
-                                if (this.frameType == 'B' || this.frameType == 'D') {
-                                    return parseInt(this.frameWidth) + 16 + ' X ' + (parseInt(this.frameHeight) + 4) //0525修正
-                                } else {
-                                    return boundaryWidth + ' X ' + boundaryHeight
-                                }
-
-                            case "inch":
-                                // boundaryWidth = Math.round((this.mmToInch(this.frameWidth)+(1.299))*100)/100
-                                // boundaryWidth = Math.round((this.mmToInch(this.frameWidth) + (1.3)) * 100) /
-                                //     100
-                                // boundaryHeight = Math.round(this.mmToInch(this.frameHeight)) + 0.2
-                                boundaryWidth = this.mmToInch(this.frameWidth + (30))
-                                boundaryHeight = (this.mmToInch(this.frameHeight + (4)))
-                                if (this.frameType == 'B' || this.frameType == 'D') {
-                                    return (this.mmToInch(this.frameWidth + (16))) + ' X ' + (this.mmToInch(this.frameHeight + (4)))
-                                } else {
-                                    return boundaryWidth + " X " + boundaryHeight
-                                }
-
-                        }
-
-                    },
+                },
+                frameSpec: function () {
 
 
-                }
-            });
+                    if (this.frameType == 'normal') {
+                        return "W" + (parseFloat(this.frameWidth) + 14) + " * L" + (this.frameHeight) +
+                            " * H" + (this.frameThinkness) + " " + 'mm'
+                    }
+
+                    return "W" + (parseFloat(this.frameWidth) + 14) + " * L" + (this.frameHeight) + " * H" +
+                        (this.frameThinkness) + " " + 'mm'
+
+                },
+                mmToInch: function (val) {
+
+                    if (this.FrameSizeUnit == 'inch') {
+                        return this.mmToInchForce(val)
+                    }
+
+                    return val
+                },
+                mmToInchForce: function (val) {
+
+                    return Math.round((val / 25.4) * 10) / 10
+
+                },
+                mailToProducer: function () {
+                    return "mailto:sales@crystalframe.com?subject=訂購&body=Thank you for the request.%0APlease send below information to us, and we will contact you asap and confirm the order details!%0A%0A感謝您的詢問 請將以下資訊給我們 我們會盡快向您回覆並確認訂單!%0A%0A~~~~~~~~~~~~~~~~~~~~~~~~~~%0A%0AModelName 型號:%0A" +
+                        this.frameModelName + "%0A%0AUnit Price 單價:%0A" + this.unitPrice() + " " + this
+                            .currency + " %0A%0A裁切:%0A " + this.currencyTo(200) + " " + this.currency +
+                        "%0A%0AQuantity 數量:%0A" + this.frameAmount + " SET 組%0A%0ATotal Price 總價:%0A" + this
+                            .totalPrice() + " " + this.currency + " %0A%0A備註: " + this.annotation() +
+                        "%0A%0A~~~~~~~~~~~~~~~~~~~~~~~~~~%0A%0ABuyer Information 購買者資訊%0A%0AName 姓名:%0ACompany 公司:%0AMobile 手機:%0ATel 電話:%0AEmail 電郵:%0AOther Comment 其他意見:%0A%0A~~~~~~~~~~~~~~~~~~~~~~~~~~%0A%0AYou can contact us thru%0A您可以透過以下聯絡我們%0A%0AEmail: sales@crystalframe.com.tw%0ALine@: sqr1930c%0AFacebook: @crystalframeyuweihsu%0AFacebook:七色水晶裱有限公司%0ASales Mobile: +886 922576813 (Taiwan)"
+                },
+
+
+                currencyTo: function (value) {
+                    switch (this.currency) {
+                        case "NTD":
+                            return value
+                        case "CNY":
+                            return Math.round(value / 4)
+                        case "USD":
+                            return Math.round(value / 30)
+                        case "JPY":
+                            return Math.round(value / 0.25)
+                        case "EUR":
+                            return Math.round(value / 33)
+                    }
+                },
+                // Start Picture Standard
+                frameWidthBoundary: function () {
+                    switch (this.FrameSizeUnit) {
+                        case "mm":
+                            boundaryWidth = parseInt(this.frameWidth) + 30
+                            boundaryHeight = parseInt(this.frameHeight) + 4
+
+                            if (this.frameType == 'B' || this.frameType == 'D') {
+                                return parseInt(this.frameWidth) + 16 + ' X ' + (parseInt(this.frameHeight) + 4) //0525修正
+                            } else {
+                                return boundaryWidth + ' X ' + boundaryHeight
+                            }
+
+                        case "inch":
+                            // boundaryWidth = Math.round((this.mmToInch(this.frameWidth)+(1.299))*100)/100
+                            // boundaryWidth = Math.round((this.mmToInch(this.frameWidth) + (1.3)) * 100) /
+                            //     100
+                            // boundaryHeight = Math.round(this.mmToInch(this.frameHeight)) + 0.2
+                            boundaryWidth = this.mmToInch(this.frameWidth + (30))
+                            boundaryHeight = (this.mmToInch(this.frameHeight + (4)))
+                            if (this.frameType == 'B' || this.frameType == 'D') {
+                                return (this.mmToInch(this.frameWidth + (16))) + ' X ' + (this.mmToInch(this.frameHeight + (4)))
+                            } else {
+                                return boundaryWidth + " X " + boundaryHeight
+                            }
+
+                    }
+
+                },
+
+
+            }
+        });
     </script>
 </body>
 </body>
