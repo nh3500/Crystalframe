@@ -1440,10 +1440,12 @@
                 },
                 sheetUser: function (val) {
                     if (ProductMethoud == 'typeB') {
-                        return picToFrameSize(frameWidthUser,frameHeightUser)
+                        val = picToFrameSize(frameWidthUser,frameHeightUser)
+                        return val
                     }
                     else {
-                        return frameWidthUser + " X " + frameHeightUser
+                        val = frameWidthUser + " X " + frameHeightUser
+                        return val
                     }
 
                 },
