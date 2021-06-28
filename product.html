@@ -1438,17 +1438,17 @@
                     }
 
                 },
-                // sheetUser: function (val) {
-                //     if (ProductMethoud == 'typeB') {
-                //         val = picToFrameSize(frameWidthUser,frameHeightUser)
-                //         return val
-                //     }
-                //     else {
-                //         val = frameWidthUser + " X " + frameHeightUser
-                //         return val
-                //     }
+                sheetUser: function (val) {
+                    if (ProductMethoud == 'typeB') {
+                        val = picToFrameSize(frameWidthUser,frameHeightUser)
+                        return val
+                    }
+                    else {
+                        val = frameWidthUser + " X " + frameHeightUser
+                        return val
+                    }
 
-                // },
+                },
                 frameWidthUser: function (val) {
                     if (this.FrameSizeUnit == 'inch') {
                         this.frameWidth = Math.round(val * 25.4)
