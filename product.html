@@ -435,7 +435,7 @@
                                 按我參考四種水晶裱分類比較
                             </button>
                         </div>
-                        
+
                         <!-- <div class="form-group row" v-if="service != 'accessory'">
                             <label for="" class="col-sm-2 col-form-label">此次購買是否需要專屬精品盒</label>
                             <div class="form-check form-check-inline">
@@ -1070,7 +1070,7 @@
                 picturePrintingType: 'PP',
                 service: 'crystalframe',
                 currency: 'NTD',
-                ChangeUnit:'mm',
+                ChangeUnit: 'mm',
             },
             computed: {
 
@@ -1189,9 +1189,12 @@
                     }
                     if (this.ProductMethoud == 'typeB') {
                         if (this.FrameSizeUnit == 'mm') {
-                            out = out + (parseInt(this.frameWidthUser) - 16) + " X " + (parseInt(this.frameHeightUser) - 4) + ' '
-                            out = out + "mm (" + this.mmToInchForce(parseInt(this.frameWidthUser) - 16) + " X " + this
-                                .mmToInchForce(parseInt(this.frameWidthUser) - 16) + ' inch) '
+                            // out = out + (parseInt(this.frameWidthUser) - 16) + " X " + (parseInt(this.frameHeightUser) - 4) + ' '
+                            // out = out + "mm (" + this.mmToInchForce(parseInt(this.frameWidthUser) - 16) + " X " + this
+                            //     .mmToInchForce(parseInt(this.frameWidthUser) - 16) + ' inch) '
+                            out = out + this.frameWidthUser + " X " + this.frameHeightUser + ' '
+                            out = out + "mm (" + this.mmToInchForce(this.frameWidthUser) + " X " + this
+                                .mmToInchForce(this.frameHeightUser) + ' inch) '
                         } else {
                             out = out + (this.frameWidthUser) + " X " + (this.frameHeightUser) + ' '
                             out = out + "inch (" + this.frameWidth + " X " + this.frameHeight + ' mm) '
@@ -1440,7 +1443,7 @@
 
                 },
                 frameWidthUser: function (val) {
-                    if (this.FrameSizeUnit == 'inch' ) {
+                    if (this.FrameSizeUnit == 'inch') {
                         this.frameWidth = Math.round(val * 25.4)
                     } else {
                         this.frameWidth = val
@@ -1448,7 +1451,7 @@
 
                 },
                 frameHeightUser: function (val) {
-                    if (this.FrameSizeUnit == 'inch' ) {
+                    if (this.FrameSizeUnit == 'inch') {
                         this.frameHeight = Math.round(val * 25.4)
                     } else {
                         this.frameHeight = val
@@ -1701,27 +1704,27 @@
                     } else {
                         // return Math.round(Math.round(((parseFloat(this.frameWidth) + 200) * this
                         //     .frameHeight / 100 / 2 / 1000) * 10) / 10 * 2.5 * 10) / 10 * 0.5*0.5
-                            WL_area = (parseFloat(this.frameWidth)/10+1.4)*(parseFloat(this.frameHeight)/10+0.8)
-                            Acrylic =   WL_area*0.4*1.19
-                            WhitePanel = WL_area*(33/((30.3)*(30.3)))
-                            unitTotal = Math.ceil(((Acrylic+WhitePanel)*1.1)/100)/10
-                            return Math.ceil(unitTotal*10)/10
+                        WL_area = (parseFloat(this.frameWidth) / 10 + 1.4) * (parseFloat(this.frameHeight) / 10 + 0.8)
+                        Acrylic = WL_area * 0.4 * 1.19
+                        WhitePanel = WL_area * (33 / ((30.3) * (30.3)))
+                        unitTotal = Math.ceil(((Acrylic + WhitePanel) * 1.1) / 100) / 10
+                        return Math.ceil(unitTotal * 10) / 10
                     }
 
                 },
                 grossWeight: function () {
                     if (this.frameType == 'normal') {
                         return Math.round(this.unitWeight() * 2 * 10) / 10
-                    }else{
-                        WhitePanel_unit =(33/((30.3)*(30.3)))
-                        temp_Weight = ((parseFloat(this.frameWidth)+114)*(parseFloat(this.frameHeight)+100))/100*2*WhitePanel_unit*1.1
-                        box_Weight = temp_Weight+12.8*((parseFloat(this.frameWidth)/122)+(parseFloat(this.frameHeight)/10))*2*WhitePanel_unit
-                        boxTotal =Math.ceil((temp_Weight+box_Weight) /100)/10
-                        grossTotal = unitTotal+boxTotal
-                        return Math.ceil(grossTotal*10)/10
+                    } else {
+                        WhitePanel_unit = (33 / ((30.3) * (30.3)))
+                        temp_Weight = ((parseFloat(this.frameWidth) + 114) * (parseFloat(this.frameHeight) + 100)) / 100 * 2 * WhitePanel_unit * 1.1
+                        box_Weight = temp_Weight + 12.8 * ((parseFloat(this.frameWidth) / 122) + (parseFloat(this.frameHeight) / 10)) * 2 * WhitePanel_unit
+                        boxTotal = Math.ceil((temp_Weight + box_Weight) / 100) / 10
+                        grossTotal = unitTotal + boxTotal
+                        return Math.ceil(grossTotal * 10) / 10
                     }
 
-                    
+
                 },
                 frameSpec: function () {
 
