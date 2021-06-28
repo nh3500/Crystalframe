@@ -1189,12 +1189,9 @@
                     }
                     if (this.ProductMethoud == 'typeB') {
                         if (this.FrameSizeUnit == 'mm') {
-                            // out = out + (parseInt(this.frameWidthUser) - 16) + " X " + (parseInt(this.frameHeightUser) - 4) + ' '
-                            // out = out + "mm (" + this.mmToInchForce(parseInt(this.frameWidthUser) - 16) + " X " + this
-                            //     .mmToInchForce(parseInt(this.frameWidthUser) - 16) + ' inch) '
-                            out = out + this.frameWidthUser + " X " + this.frameHeightUser + ' '
-                            out = out + "mm (" + this.mmToInchForce(this.frameWidthUser) + " X " + this
-                                .mmToInchForce(this.frameHeightUser) + ' inch) '
+                            out = out + (parseInt(this.frameWidthUser) - 16) + " X " + (parseInt(this.frameHeightUser) - 4) + ' '
+                            out = out + "mm (" + this.mmToInchForce(parseInt(this.frameWidthUser) - 16) + " X " + this
+                                .mmToInchForce(parseInt(this.frameHeightUser) - 4) + ' inch) '
                         } else {
                             out = out + (this.frameWidthUser) + " X " + (this.frameHeightUser) + ' '
                             out = out + "inch (" + this.frameWidth + " X " + this.frameHeight + ' mm) '
