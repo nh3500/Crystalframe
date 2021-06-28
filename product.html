@@ -1516,19 +1516,20 @@
                 },
                 sheetUser: function (z) {
                     if (ProductMethoud == 'typeB') {
-                        X = this.frameWidthUser 
+                        X = this.frameWidthUser
                         y = this.frameHeightUser
                         switch (z) {
                             case "A":
                                 break
-                            case "B": if (this.FrameSizeUnit == 'mm') {
-                                var totalX = Math.ceil(x - (16));
-                                var totaly = Math.ceil(y - (4));
-                            }
-                            else {
-                                var totalX = x - (0.6);
-                                var totaly = y - (0.1);
-                            }
+                            case "B":
+                                if (this.FrameSizeUnit == 'mm') {
+                                    var totalX = Math.ceil(x - (16));
+                                    var totaly = Math.ceil(y - (4));
+                                }
+                                else {
+                                    var totalX = x - (0.6);
+                                    var totaly = y - (0.1);
+                                }
                                 break
                             case "C":
                                 if (this.FrameSizeUnit == 'mm') {
@@ -1540,14 +1541,15 @@
                                     var totaly = y - (0.1);
                                 }
                                 break
-                            case "D": if (this.FrameSizeUnit == 'mm') {
-                                var totalX = Math.ceil(x - (16));
-                                var totaly = Math.ceil(y - (4));
-                            }
-                            else {
-                                var totalX = x - (0.6);
-                                var totaly = y - (0.1);
-                            }
+                            case "D":
+                                if (this.FrameSizeUnit == 'mm') {
+                                    var totalX = Math.ceil(x - (16));
+                                    var totaly = Math.ceil(y - (4));
+                                }
+                                else {
+                                    var totalX = x - (0.6);
+                                    var totaly = y - (0.1);
+                                }
                                 break
                             case "E":
                                 if (this.FrameSizeUnit == 'mm') {
@@ -1560,8 +1562,8 @@
                                 }
                                 break
                         }
-                    }else{
-                        totalX = this.frameWidthUser 
+                    } else {
+                        totalX = this.frameWidthUser
                         totaly = this.frameHeightUser
                     }
                     return totalX + ' x ' + totaly
