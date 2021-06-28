@@ -487,7 +487,7 @@
           </tr> -->
                                         <tr>
                                             <th>A</th>
-                                            <td>crystalframe <br>{{sheetUser}}{{FrameSizeUnit}}</td>
+                                            <td>crystalframe <br>{{sheetUser("A")}}{{FrameSizeUnit}}</td>
                                             <td>水晶裱<br>{{ frameWidthUser + " X " + frameHeightUser}}{{FrameSizeUnit}}
                                             </td>
                                             <td>圖形雙長邊90度曲彎</td>
@@ -499,8 +499,7 @@
                                         </tr>
                                         <tr>
                                             <th>B</th>
-                                            <td>crystalframe <br>{{ frameWidthUser + " X " +
-                                                frameHeightUser}}{{FrameSizeUnit}} GLAZE</td>
+                                            <td>crystalframe <br>{{sheetUser("B")}}{{FrameSizeUnit}} GLAZE</td>
                                             <td>水晶裱<br>{{ frameWidthUser + " X " + frameHeightUser}}{{FrameSizeUnit}} 琉璃
                                             </td>
                                             <td>圖形雙長邊180度曲彎</td>
@@ -1438,15 +1437,6 @@
                     }
 
                 },
-                sheetUser: function (val) {
-                    if (ProductMethoud == 'typeB') {
-                        val = picToFrameSize(frameWidthUser,frameHeightUser)
-                    }
-                    else {
-                        val = frameWidthUser + " X " + frameHeightUser
-                    }
-
-                },
                 frameWidthUser: function (val) {
                     if (this.FrameSizeUnit == 'inch') {
                         this.frameWidth = Math.round(val * 25.4)
@@ -1523,6 +1513,58 @@
                         }
                         return totalX + ' x ' + totaly
                     }
+                },
+                sheetUser: function (y) {
+                    if (ProductMethoud == 'typeB') {
+                        X = this.frameWidthUser 
+                        y = this.frameHeightUser
+                        switch (y) {
+                            case "A":
+                                break
+                            case "B": if (this.FrameSizeUnit == 'mm') {
+                                var totalX = Math.ceil(x - (16));
+                                var totaly = Math.ceil(y - (4));
+                            }
+                            else {
+                                var totalX = x - (0.6);
+                                var totaly = y - (0.1);
+                            }
+                                break
+                            case "C":
+                                if (this.FrameSizeUnit == 'mm') {
+                                    var totalX = Math.ceil(x - (30));
+                                    var totaly = Math.ceil(y - (4));
+                                }
+                                else {
+                                    var totalX = x - (1.1);
+                                    var totaly = y - (0.1);
+                                }
+                                break
+                            case "D": if (this.FrameSizeUnit == 'mm') {
+                                var totalX = Math.ceil(x - (16));
+                                var totaly = Math.ceil(y - (4));
+                            }
+                            else {
+                                var totalX = x - (0.6);
+                                var totaly = y - (0.1);
+                            }
+                                break
+                            case "E":
+                                if (this.FrameSizeUnit == 'mm') {
+                                    var totalX = Math.ceil(x - (30));
+                                    var totaly = Math.ceil(y - (4));
+                                }
+                                else {
+                                    var totalX = x - (1.1);
+                                    var totaly = y - (0.1);
+                                }
+                                break
+                        }
+                    }else{
+                        totalX = this.frameWidthUser 
+                        totaly = this.frameHeightUser
+                    }
+                    return totalX + ' x ' + totaly
                 },
                 sheetPrice: function (x) {
                     subtotal = Math.ceil(((300 * this.frameHeight / 841) + (2400 * this.frameWidth *
