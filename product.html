@@ -644,18 +644,13 @@
                         <tr>
                             <td>框體尺寸設定</td>
                             <td>
-                                <span v-if="ProductMethoud == 'typeA'">{{ frameWidthUser + " X " +
-                                    frameHeightUser}}</span>
+                                {{sheetUser(frameType)}}
                             </td>
                         </tr>
                         <tr>
                             <td>圖片切割尺寸比例</td>
                             <td>
-
-                                <span v-if="ProductMethoud == 'typeA'">{{frameWidthBoundary()}} </span>
-
-
-
+                                {{frameWidthBoundary()}}
                             </td>
                         </tr>
 
@@ -1538,21 +1533,21 @@
                 sheetUser: function (z) {
                     out = ''
                     if (this.ProductMethoud == 'typeA') {
-                        
-                            out = out + this.frameWidthUser + " X " + this.frameHeightUser
+
+                        out = out + this.frameWidthUser + " X " + this.frameHeightUser
 
                     }
                     if (this.ProductMethoud == 'typeB') {
                         if (z == 'B' || z == 'D') {
                             if (this.FrameSizeUnit == 'mm') {
-                                out = out + (parseInt(this.frameWidthUser) - 16) + " X " + (parseInt(this.frameHeightUser) - 4) 
+                                out = out + (parseInt(this.frameWidthUser) - 16) + " X " + (parseInt(this.frameHeightUser) - 4)
                             } else {
                                 out = out + (this.frameWidthUser) + " X " + (this.frameHeightUser)
                             }
                         }
-                        if (z == 'C' || z == 'E'){
+                        if (z == 'C' || z == 'E') {
                             if (this.FrameSizeUnit == 'mm') {
-                                out = out + (parseInt(this.frameWidthUser) - 30) + " X " + (parseInt(this.frameHeightUser) - 4) 
+                                out = out + (parseInt(this.frameWidthUser) - 30) + " X " + (parseInt(this.frameHeightUser) - 4)
                             } else {
                                 out = out + (this.frameWidthUser) + " X " + (this.frameHeightUser)
                             }
@@ -1818,30 +1813,35 @@
                 },
                 // Start Picture Standard
                 frameWidthBoundary: function () {
-                    switch (this.FrameSizeUnit) {
-                        case "mm":
-                            boundaryWidth = parseInt(this.frameWidth) + 30
-                            boundaryHeight = parseInt(this.frameHeight) + 4
+                    if (this.ProductMethoud == 'typeA') {
+                        switch (this.FrameSizeUnit) {
+                            case "mm":
+                                boundaryWidth = parseInt(this.frameWidth) + 30
+                                boundaryHeight = parseInt(this.frameHeight) + 4
 
-                            if (this.frameType == 'B' || this.frameType == 'D') {
-                                return parseInt(this.frameWidth) + 16 + ' X ' + (parseInt(this.frameHeight) + 4) //0525修正
-                            } else {
-                                return boundaryWidth + ' X ' + boundaryHeight
-                            }
+                                if (this.frameType == 'B' || this.frameType == 'D') {
+                                    return parseInt(this.frameWidth) + 16 + ' X ' + (parseInt(this.frameHeight) + 4) //0525修正
+                                } else {
+                                    return boundaryWidth + ' X ' + boundaryHeight
+                                }
 
-                        case "inch":
-                            // boundaryWidth = Math.round((this.mmToInch(this.frameWidth)+(1.299))*100)/100
-                            // boundaryWidth = Math.round((this.mmToInch(this.frameWidth) + (1.3)) * 100) /
-                            //     100
-                            // boundaryHeight = Math.round(this.mmToInch(this.frameHeight)) + 0.2
-                            boundaryWidth = this.mmToInch(this.frameWidth + (30))
-                            boundaryHeight = (this.mmToInch(this.frameHeight + (4)))
-                            if (this.frameType == 'B' || this.frameType == 'D') {
-                                return (this.mmToInch(this.frameWidth + (16))) + ' X ' + (this.mmToInch(this.frameHeight + (4)))
-                            } else {
-                                return boundaryWidth + " X " + boundaryHeight
-                            }
+                            case "inch":
+                                // boundaryWidth = Math.round((this.mmToInch(this.frameWidth)+(1.299))*100)/100
+                                // boundaryWidth = Math.round((this.mmToInch(this.frameWidth) + (1.3)) * 100) /
+                                //     100
+                                // boundaryHeight = Math.round(this.mmToInch(this.frameHeight)) + 0.2
+                                boundaryWidth = this.mmToInch(this.frameWidth + (30))
+                                boundaryHeight = (this.mmToInch(this.frameHeight + (4)))
+                                if (this.frameType == 'B' || this.frameType == 'D') {
+                                    return (this.mmToInch(this.frameWidth + (16))) + ' X ' + (this.mmToInch(this.frameHeight + (4)))
+                                } else {
+                                    return boundaryWidth + " X " + boundaryHeight
+                                }
 
+                        }
+                    }
+                    if (this.ProductMethoud == 'typeB'){
+                        return this.frameWidthUser + " X " + this.frameHeightUser
                     }
 
                 },
