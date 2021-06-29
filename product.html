@@ -1117,7 +1117,7 @@
                                 out = out + "inch (" + Math.round(width_inch * 25.4) + " X " + Math.round(height_inch * 25.4) + ' mm) '
                             }
                         } else {
-                            width_mm = (this.frameWidthUser) - 30
+                            width_mm = (this.frameWidthUser) - 16
                             height_mm = (this.frameHeightUser) - 4
                             width_inch = (this.frameWidthUser) - (1.1)
                             height_inch = (this.frameHeightUser) - (0.1)
@@ -1197,10 +1197,10 @@
                     }
                     if (this.ProductMethoud == 'typeB') {
                         if (this.frameType == 'B' || this.frameType == 'D') {
-                            width_mm = parseInt(this.frameWidthUser) - 16
-                            height_mm = parseInt(this.frameHeightUser) - 4
-                            width_inch = parseInt(this.frameWidthUser) - (0.6)
-                            height_inch = parseInt(this.frameHeightUser) - (0.1)
+                            width_mm = (this.frameWidthUser) - 30
+                            height_mm = (this.frameHeightUser) - 4
+                            width_inch = (this.frameWidthUser) - (1.1)
+                            height_inch = (this.frameHeightUser) - (0.1)
                             if (this.FrameSizeUnit == 'mm') {
                                 out = out + (width_mm) + " X " + (height_mm) + ' '
                                 out = out + "mm (" + this.mmToInchForce(width_mm) + " X " + this.mmToInchForce(height_mm) + ' inch) '
@@ -1209,10 +1209,10 @@
                                 out = out + "inch (" + Math.round(width_inch * 25.4) + " X " + Math.round(height_inch * 25.4) + ' mm) '
                             }
                         } else {
-                            width_mm = parseInt(this.frameWidthUser) - 30
-                            height_mm = parseInt(this.frameHeightUser) - 4
-                            width_inch = parseInt(this.frameWidthUser) - (1.1)
-                            height_inch = parseInt(this.frameHeightUser) - (0.1)
+                            width_mm = (this.frameWidthUser) - 16
+                            height_mm = (this.frameHeightUser) - 4
+                            width_inch = (this.frameWidthUser) - (1.1)
+                            height_inch = (this.frameHeightUser) - (0.1)
                             if (this.FrameSizeUnit == 'mm') {
                                 out = out + (width_mm) + " X " + (height_mm) + ' '
                                 out = out + "mm (" + this.mmToInchForce(width_mm) + " X " + this.mmToInchForce(height_mm) + ' inch) '
@@ -1555,14 +1555,14 @@
                             if (this.FrameSizeUnit == 'mm') {
                                 out = out + (parseInt(this.frameWidthUser) - 16) + " X " + (parseInt(this.frameHeightUser) - 4)
                             } else {
-                                out = out + (this.frameWidthUser-(0.6)) + " X " + (this.frameHeightUser-(0.1))
+                                out = out + (this.frameWidthUser - (0.6)) + " X " + (this.frameHeightUser - (0.1))
                             }
                         }
                         if (z == 'C' || z == 'E') {
                             if (this.FrameSizeUnit == 'mm') {
                                 out = out + (parseInt(this.frameWidthUser) - 30) + " X " + (parseInt(this.frameHeightUser) - 4)
                             } else {
-                                out = out + (this.frameWidthUser-(1.1)) + " X " + (this.frameHeightUser-(0.1))
+                                out = out + (this.frameWidthUser - (1.1)) + " X " + (this.frameHeightUser - (0.1))
                             }
                         }
                     }
