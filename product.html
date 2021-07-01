@@ -1197,9 +1197,9 @@
                     }
                     if (this.ProductMethoud == 'typeB') {
                         if (this.frameType == 'B' || this.frameType == 'D') {
-                            width_mm = (this.frameWidthUser) - 30
+                            width_mm = (this.frameWidthUser) - 16
                             height_mm = (this.frameHeightUser) - 4
-                            width_inch = (this.frameWidthUser) - (1.1)
+                            width_inch = (this.frameWidthUser) - (0.6)
                             height_inch = (this.frameHeightUser) - (0.1)
                             if (this.FrameSizeUnit == 'mm') {
                                 out = out + (width_mm) + " X " + (height_mm) + ' '
@@ -1209,9 +1209,9 @@
                                 out = out + "inch (" + Math.round(width_inch * 25.4) + " X " + Math.round(height_inch * 25.4) + ' mm) '
                             }
                         } else {
-                            width_mm = (this.frameWidthUser) - 16
+                            width_mm = (this.frameWidthUser) - 30
                             height_mm = (this.frameHeightUser) - 4
-                            width_inch = (this.frameWidthUser) - (0.6)
+                            width_inch = (this.frameWidthUser) - (1.1)
                             height_inch = (this.frameHeightUser) - (0.1)
                             if (this.FrameSizeUnit == 'mm') {
                                 out = out + (width_mm) + " X " + (height_mm) + ' '
