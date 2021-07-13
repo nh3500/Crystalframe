@@ -4,7 +4,8 @@ const NavTop = Vue.createApp({
 
     }
   },
-  template: `<nav class="UP navbar navbar-expand-lg navbar-light">
+  template: `
+  <nav class="UP navbar navbar-expand-lg navbar-light">
   <a class="navbar-brand" href="index.html"><img src="logo.png" class="mr-2 logo_rwd"></a>
   <a class="navbar-brand" href="index.html">crystalframe</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
