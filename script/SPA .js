@@ -169,15 +169,15 @@ const NavTop = Vue.createApp({
 NavTop.mount('#NavTop')
 
 
-const Footer = Vue.createApp({
-  data() {
-    return {
+// const Footer = Vue.createApp({
+//   data() {
+//     return {
 
-    }
-  },
-  template: ` `,
+//     }
+//   },
+//   template: ` `,
 
 
-})
+// })
 
-Footer.mount('#Footer')
+// Footer.mount('#Footer')
