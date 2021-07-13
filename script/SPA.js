@@ -4,8 +4,7 @@ const NavTop = Vue.createApp({
 
     }
   },
-  template: `
-  <nav class="UP navbar navbar-expand-lg navbar-light">
+  template: `<nav class="UP navbar navbar-expand-lg navbar-light">
   <a class="navbar-brand" href="index.html"><img src="logo.png" class="mr-2 logo_rwd"></a>
   <a class="navbar-brand" href="index.html">crystalframe</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -20,7 +19,9 @@ const NavTop = Vue.createApp({
           3D
         </div>
         <div class="dropdown-menu">
-          <a class="dropdown-item navdrop_center" href="crystalframe.html"><!--<img src="img/silver_logo.png"style="width: 2rem">--> 水晶裱</a>
+          <a class="dropdown-item navdrop_center" href="crystalframe.html">
+            <!--<img src="img/silver_logo.png"style="width: 2rem">--> 水晶裱
+          </a>
           <a class="dropdown-item navdrop_center" href="crystalframeGLAZE.html">水晶裱琉璃</a>
           <!-- <a class="dropdown-item navdrop_center" href="crystalframeIntro.html">&nbsp;&nbsp;3D&nbsp;教學</a> -->
         </div>
@@ -140,7 +141,7 @@ const NavTop = Vue.createApp({
         <div class="dropdown-menu">
           <a class="dropdown-item navdrop_center" href="index.html">繁體中文</a>
           <!-- <a class="dropdown-item navdrop_center" href="Ch_index.html">简体中文</a>
-          <a class="dropdown-item navdrop_center" href="En_index.html">English</a> -->  
+          <a class="dropdown-item navdrop_center" href="En_index.html">English</a> -->
           <a class="dropdown-item navdrop_center" href="index.html">简体中文</a>
           <a class="dropdown-item navdrop_center" href="index.html">English</a>
           <a class="dropdown-item navdrop_center" href="#">日本語</a>
@@ -170,15 +171,15 @@ const NavTop = Vue.createApp({
 NavTop.mount('#NavTop')
 
 
-// const Footer = Vue.createApp({
-//   data() {
-//     return {
+const Footer = Vue.createApp({
+  data() {
+    return {
 
-//     }
-//   },
-//   template: ` `,
+    }
+  },
+  template: ``,
 
 
-// })
+})
 
-// Footer.mount('#Footer')
+Footer.mount('#Footer')
