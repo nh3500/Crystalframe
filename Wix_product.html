@@ -561,8 +561,10 @@
                     <br>
                     <br>
                     <h6 v-if="service == 'crystalframe'">示意圖</h6>
+
+                    <!-- 正方形 -->
                     <div class="card-deck" v-if="frameWidthUser == frameHeightUser && service == 'crystalframe'">
-                        <div class="card mt-5" style="border: none">
+                        <!-- <div class="card mt-5" style="border: none">
                             <div>
                                 <img class="w-50 mx-auto d-block" src="img/product/a_1.png" style="height: 400px">
                             </div>
@@ -571,10 +573,10 @@
                                     frameHeightUser +
                                     " " + FrameSizeUnit}}</h5>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="card mt-5" style="border: none" v-if="service != 'picturePrinting'">
                             <div>
-                                <img class="w-50 mx-auto d-block" src="img/product/a_2.png" style="height: 400px">
+                                <img class="w-50 mx-auto d-block" src="img/product/FRAME 1TO1 PPNG.png" style="height: 400px">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title text-center">{{ innerBoxWeight() }}</h5>
@@ -582,16 +584,18 @@
                         </div>
                         <div class="card mt-5" style="border: none" v-if="service != 'picturePrinting'">
                             <div>
-                                <img class="w-50 mx-auto d-block" src="img/product/a_3.png" style="height: 400px">
+                                <img class="w-50 mx-auto d-block" src="img/product/CARTON 1TO1 PPNG.png" style="height: 400px">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title text-center">{{ outterBoxWeight() }}</h5>
                             </div>
                         </div>
                     </div>
+
+                    <!-- 長型 -->
                     <div class="card-deck"
                         v-if=" 1 > parseFloat(frameWidthUser/frameHeightUser) && parseFloat(frameWidthUser/frameHeightUser) >= 0.5 && service == 'crystalframe'">
-                        <div class="card mt-5" style="border: none">
+                        <!-- <div class="card mt-5" style="border: none">
                             <div>
                                 <img class="mx-auto d-block" src="img/product/b_1.png" style="height: 400px">
                             </div>
@@ -600,10 +604,10 @@
                                     frameHeightUser +
                                     " " + FrameSizeUnit}}</h5>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="card mt-5" style="border: none" v-if="service != 'picturePrinting'">
                             <div>
-                                <img class="w-50 mx-auto d-block" src="img/product/b_2.png" style="height: 400px">
+                                <img class="w-50 mx-auto d-block" src="img/product/FRAME 1TO2 PPNG.png" style="height: 400px">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title text-center">{{ innerBoxWeight() }}</h5>
@@ -611,16 +615,18 @@
                         </div>
                         <div class="card mt-5" style="border: none" v-if="service != 'picturePrinting'">
                             <div>
-                                <img class="w-50 mx-auto d-block" src="img/product/b_3.png" style="height: 400px">
+                                <img class="w-50 mx-auto d-block" src="img/product/CARTON 1TO2 PPNG.png" style="height: 400px">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title text-center">{{ outterBoxWeight() }}</h5>
                             </div>
                         </div>
                     </div>
+
+                    <!-- 細長型 -->
                     <div class="card-deck"
                         v-if=" 0.5 > parseFloat(frameWidthUser/frameHeightUser) && parseFloat(frameWidthUser/frameHeightUser) >= 0.25 && service == 'crystalframe'">
-                        <div class="card mt-5" style="border: none">
+                        <!-- <div class="card mt-5" style="border: none">
                             <div>
                                 <img class="mx-auto d-block" src="img/product/c_1.png" style="height: 400px">
                             </div>
@@ -629,10 +635,10 @@
                                     frameHeightUser +
                                     " " + FrameSizeUnit}}</h5>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="card mt-5" style="border: none" v-if="service != 'picturePrinting'">
                             <div>
-                                <img class="mx-auto d-block" src="img/product/c_2.png" style="height: 400px">
+                                <img class="mx-auto d-block" src="img/product/FRAME 1TO3 PPNG.png" style="height: 400px">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title text-center">{{ innerBoxWeight() }}</h5>
@@ -640,42 +646,14 @@
                         </div>
                         <div class="card mt-5" style="border: none" v-if="service != 'picturePrinting'">
                             <div>
-                                <img class="w-50 mx-auto d-block" src="img/product/c_3.png" style="height: 400px">
+                                <img class="w-50 mx-auto d-block" src="img/product/CARTON 1TO3 PPNG.png" style="height: 400px">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title text-center">{{ outterBoxWeight() }}</h5>
                             </div>
                         </div>
                     </div>
-                    <div class="card-deck"
-                        v-if=" 0.25 > parseFloat(frameWidthUser/frameHeightUser) && service == 'crystalframe'">
-                        <div class="card mt-5" style="border: none">
-                            <div>
-                                <img class="mx-auto d-block" src="img/product/d_1.png" style="height: 400px">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title text-center">{{ 'W' + frameWidthUser + " * " + "L" +
-                                    frameHeightUser +
-                                    " " + FrameSizeUnit}}</h5>
-                            </div>
-                        </div>
-                        <div class="card mt-5" style="border: none" v-if="service != 'picturePrinting'">
-                            <div style="max-height: 400px">
-                                <img class="mx-auto d-block" src="img/product/d_2.png" style="height: 400px">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title text-center">{{ innerBoxWeight() }}</h5>
-                            </div>
-                        </div>
-                        <div class="card mt-5" style="border: none" v-if="service != 'picturePrinting'">
-                            <div>
-                                <img class="mx-auto d-block" src="img/product/d_3.png" style="height: 400px">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title text-center">{{ outterBoxWeight() }}</h5>
-                            </div>
-                        </div>
-                    </div>
+
                     <br>
                     <br>
                     <!-- <div class="text-center" v-if="service != 'accessory'">
