@@ -1,5 +1,9 @@
 body {
   font-family: "Noto Sans TC", sans-serif;
+  background-image: url("/img/bg_test.png");
+  background-repeat: no-repeat;
+  background-size: 100%,100%;
+  background-attachment: fixed;
 }
 /*------header Start------ */
 header {
@@ -939,13 +943,4 @@ html {
 .Info a:hover {
   color: #a38b58;
   transition: color 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-#bg {
-  position: fixed; 
-  top: 0; 
-  left: 0; 
-	
-  /* Preserve aspet ratio */
-  min-width: 100%;
-  min-height: 100%;
 }
