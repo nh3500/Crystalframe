@@ -41,7 +41,7 @@
         <section>
             <div class="container">
                 <div id="price" class="mt-5">
-                    <h2 class="card-title title-underline">目錄及價格</h2>
+                    <h2 class="card-title title-underline">客製訂作選單</h2>
                     <form>
                         <div class="form-group row">
                             <label for="service" class="col-sm-2 col-form-label">主類</label>
@@ -55,9 +55,9 @@
                             <label for="frameType" class="col-sm-2 col-form-label">次類</label>
                             <select class="col-10" id="frameType" v-model="frameType">
                                 <!-- <option value="A">水晶框海報</option> -->
-                                <option value="B">水晶裱 CF</option>
+                                <option value="B">水晶裱平面 CF</option>
                                 <option value="C">水晶裱琉璃 CG</option>
-                                <option value="D">鑽石裱 DF</option>
+                                <option value="D">鑽石裱平面 DF</option>
                                 <option value="E">鑽石裱琉璃 DG</option>
                             </select>
                         </div>
@@ -341,8 +341,8 @@
           </tr> -->
                                         <tr>
                                             <th>CF</th>
-                                            <td>crystalframe <br>{{sheetUser("B")}}{{FrameSizeUnit}}</td>
-                                            <td>水晶裱<br>{{ sheetUser("B")}}{{FrameSizeUnit}}
+                                            <td>crystalframe <br>{{sheetUser("B")}}{{FrameSizeUnit}} FLAT</td>
+                                            <td>水晶裱<br>{{ sheetUser("B")}}{{FrameSizeUnit}} 平面
                                             </td>
                                             <td>圖形雙長邊90度曲彎</td>
                                             <td>14天工作日</td>
@@ -365,8 +365,8 @@
                                         </tr>
                                         <tr>
                                             <th>DF</th>
-                                            <td>diamondframe <br>{{ sheetUser("D")}}{{FrameSizeUnit}}</td>
-                                            <td>鑽石裱<br>{{ sheetUser("D")}}{{FrameSizeUnit}}
+                                            <td>diamondframe <br>{{ sheetUser("D")}}{{FrameSizeUnit}} FLAT</td>
+                                            <td>鑽石裱<br>{{ sheetUser("D")}}{{FrameSizeUnit}} 平面
                                             </td>
                                             <td>圖形雙長邊90度曲彎 6H防刮<br>雙短邊鑽石倒角切面</td>
                                             <td>21天工作日</td>
@@ -974,13 +974,13 @@
                                 out = out + 'POSTER';
                                 break
                             case 'B':
-                                out = out + '';
+                                out = out + ' FLAT ';
                                 break
                             case 'C':
-                                out = out + 'GLAZE';
+                                out = out + ' GLAZE ';
                                 break
                             case 'D':
-                                out = out + '';
+                                out = out + ' FLAT ';
                                 break
                             case 'E':
                                 out = out + ' GLAZE ';
@@ -1066,13 +1066,13 @@
                                 out = out + '水晶裱	';
                                 break
                             case 'B':
-                                out = out + '	';
+                                out = out + '平面   ';
                                 break
                             case 'C':
                                 out = out + '琉璃	';
                                 break
                             case 'D':
-                                out = out + '	';
+                                out = out + '平面	';
                                 break
                             case 'E':
                                 out = out + '琉璃   ';
