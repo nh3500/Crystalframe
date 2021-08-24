@@ -1515,13 +1515,14 @@
                 },
                 innerBoxWeight: function () {
                     if (this.frameType == 'normal') {
-                        return "W" + (parseFloat(this.frameWidth) + 119) + " * L" + (parseFloat(this
-                            .frameHeight) + 112) + " * H" + (43) + ' mm'
+                        return "W" + (parseFloat(this.frameWidth) + 119) + " * L" + (parseFloat(this.frameHeight) + 112) + " * H" + (43) + ' mm'
                     }
-
-                    return "W" + (parseFloat(this.frameWidth) + 119) + " * L" + (parseFloat(this
-                        .frameHeight) + 112) + " * H" + (43) + ' mm'
-
+                    if (this.ProductMethoud == 'typeA') {
+                        return "W" + (parseFloat(this.frameWidth) + 119) + " * L" + (parseFloat(this.frameHeight) + 112) + " * H" + (43) + ' mm'
+                    }
+                    if (this.ProductMethoud == 'typeB') {
+                        return "W" + (parseFloat(this.frameWidth - 16) + 119) + " * L" + (parseFloat(this.frameHeight - 4) + 112) + " * H" + (43) + ' mm'
+                    }
                 },
                 outterBoxWeight: function () {
 
@@ -1576,7 +1577,7 @@
                             (this.frameThinkness) + " " + 'mm'
                     }
                     if (this.ProductMethoud == 'typeB') {
-                        return "W" + (parseFloat(this.frameWidth) - 16) + " * L" + (this.frameHeight-4) + " * H" +
+                        return "W" + (parseFloat(this.frameWidth) - 16) + " * L" + (this.frameHeight - 4) + " * H" +
                             (this.frameThinkness) + " " + 'mm'
                     }
 
