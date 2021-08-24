@@ -953,8 +953,33 @@
                         }
                     }
                     if (this.ProductMethoud == 'typeB') {
-                        if (this.frameType == 'B' || this.frameType == 'D') {
-                            width_mm = (this.frameWidthUser) - 16
+                        // if (this.frameType == 'B' || this.frameType == 'D') {
+                        //     width_mm = (this.frameWidthUser) - 16
+                        //     height_mm = (this.frameHeightUser) - 4
+                        //     width_inch = (this.frameWidthUser) - (0.6)
+                        //     height_inch = (this.frameHeightUser) - (0.1)
+                        //     if (this.FrameSizeUnit == 'mm') {
+                        //         out = out + (width_mm) + " X " + (height_mm) + ' '
+                        //         out = out + "mm (" + this.mmToInchForce(width_mm) + " X " + this.mmToInchForce(height_mm) + ' inch) '
+                        //     } else {
+                        //         out = out + (width_inch) + " X " + (height_inch) + ' '
+                        //         out = out + "inch (" + Math.round(width_inch * 25.4) + " X " + Math.round(height_inch * 25.4) + ' mm) '
+                        //     }
+                        // }
+                        // if (this.frameType == 'C' || this.frameType == 'E') {
+                        //     width_mm = (this.frameWidthUser) - 30
+                        //     height_mm = (this.frameHeightUser) - 4
+                        //     width_inch = (this.frameWidthUser) - (1.1)
+                        //     height_inch = (this.frameHeightUser) - (0.1)
+                        //     if (this.FrameSizeUnit == 'mm') {
+                        //         out = out + (width_mm) + " X " + (height_mm) + ' '
+                        //         out = out + "mm (" + this.mmToInchForce(width_mm) + " X " + this.mmToInchForce(height_mm) + ' inch) '
+                        //     } else {
+                        //         out = out + (width_inch) + " X " + (height_inch) + ' '
+                        //         out = out + "inch (" + Math.round(width_inch * 25.4) + " X " + Math.round(height_inch * 25.4) + ' mm) '
+                        //     }
+                        // }
+                        width_mm = (this.frameWidthUser) - 16
                             height_mm = (this.frameHeightUser) - 4
                             width_inch = (this.frameWidthUser) - (0.6)
                             height_inch = (this.frameHeightUser) - (0.1)
@@ -965,20 +990,6 @@
                                 out = out + (width_inch) + " X " + (height_inch) + ' '
                                 out = out + "inch (" + Math.round(width_inch * 25.4) + " X " + Math.round(height_inch * 25.4) + ' mm) '
                             }
-                        }
-                        if (this.frameType == 'C' || this.frameType == 'E') {
-                            width_mm = (this.frameWidthUser) - 30
-                            height_mm = (this.frameHeightUser) - 4
-                            width_inch = (this.frameWidthUser) - (1.1)
-                            height_inch = (this.frameHeightUser) - (0.1)
-                            if (this.FrameSizeUnit == 'mm') {
-                                out = out + (width_mm) + " X " + (height_mm) + ' '
-                                out = out + "mm (" + this.mmToInchForce(width_mm) + " X " + this.mmToInchForce(height_mm) + ' inch) '
-                            } else {
-                                out = out + (width_inch) + " X " + (height_inch) + ' '
-                                out = out + "inch (" + Math.round(width_inch * 25.4) + " X " + Math.round(height_inch * 25.4) + ' mm) '
-                            }
-                        }
                     }
                     // if (this.service == 'crystalframe') {
                     //     out = out + this.frameDots;
