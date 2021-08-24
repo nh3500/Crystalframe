@@ -1277,29 +1277,38 @@
             methods: {
                 picToFrameSize: function (x, y) {
                     //新增
-                    if (this.frameType == 'B' || this.frameType == 'D') {
-                        if (this.FrameSizeUnit == 'mm') {
-                            var totalX = Math.ceil(x - (16));
-                            var totaly = Math.ceil(y - (4));
-                        }
-                        else {
-                            var totalX = x - (0.6);
-                            var totaly = y - (0.1);
-                        }
-                        // return math.round(totalX*10)/10  + ' x ' + math.round(totaly*10)/10
-                        return totalX + ' x ' + totaly
+                    // if (this.frameType == 'B' || this.frameType == 'D') {
+                    //     if (this.FrameSizeUnit == 'mm') {
+                    //         var totalX = Math.ceil(x - (16));
+                    //         var totaly = Math.ceil(y - (4));
+                    //     }
+                    //     else {
+                    //         var totalX = x - (0.6);
+                    //         var totaly = y - (0.1);
+                    //     }
+                    //     // return math.round(totalX*10)/10  + ' x ' + math.round(totaly*10)/10
+                    //     return totalX + ' x ' + totaly
+                    // }
+                    // if (this.frameType == 'C' || this.frameType == 'E') {
+                    //     if (this.FrameSizeUnit == 'mm') {
+                    //         var totalX = Math.ceil(x - (30));
+                    //         var totaly = Math.ceil(y - (4));
+                    //     }
+                    //     else {
+                    //         var totalX = x - (1.1);
+                    //         var totaly = y - (0.1);
+                    //     }
+                    //     return totalX + ' x ' + totaly
+                    // }
+                    if (this.FrameSizeUnit == 'mm') {
+                        var totalX = Math.ceil(x - (16));
+                        var totaly = Math.ceil(y - (4));
                     }
-                    if (this.frameType == 'C' || this.frameType == 'E') {
-                        if (this.FrameSizeUnit == 'mm') {
-                            var totalX = Math.ceil(x - (30));
-                            var totaly = Math.ceil(y - (4));
-                        }
-                        else {
-                            var totalX = x - (1.1);
-                            var totaly = y - (0.1);
-                        }
-                        return totalX + ' x ' + totaly
+                    else {
+                        var totalX = x - (0.6);
+                        var totaly = y - (0.1);
                     }
+                    return totalX + ' x ' + totaly
                 },
                 sheetUser: function (z) {
                     out = ''
