@@ -495,6 +495,12 @@
                             </td>
                         </tr>
                         <tr>
+                            <td>cad圖面尺寸比例為</td>
+                            <td>
+                                {{cadScale}}}
+                            </td>
+                        </tr>
+                        <tr>
                             <td>基礎cad圖矩形</td>
                             <td>
                                 {{sheetUser(frameType)}}
@@ -1355,10 +1361,30 @@
                         //     }
                         // }
                         if (this.FrameSizeUnit == 'mm') {
-                                out = out + (parseInt(this.frameWidthUser) - 30) + " X " + (parseInt(this.frameHeightUser) - 4)
+                            out = out + (parseInt(this.frameWidthUser) - 30) + " X " + (parseInt(this.frameHeightUser) - 4)
+                        } else {
+                            out = out + (this.frameWidthUser - (1.1)) + " X " + (this.frameHeightUser - (0.1))
+                        }
+                    }
+                    return out
+                },
+                cadScale: function () {
+                    out = ''
+                    if (this.ProductMethoud == 'typeB') {
+                        if (this.frameType == 'B' || this.frameType == 'D') {
+                            if (this.FrameSizeUnit == 'mm') {
+                                out = out + (parseInt(this.frameWidthUser) - 14) + " X " + (parseInt(this.frameHeightUser))
                             } else {
-                                out = out + (this.frameWidthUser - (1.1)) + " X " + (this.frameHeightUser - (0.1))
+                                out = out + (this.frameWidthUser - (0.6)) + " X " + (this.frameHeightUser )
                             }
+                        }
+                        if (this.frameType == 'C' || this.frameType == 'E') {
+                            if (this.FrameSizeUnit == 'mm') {
+                                out = out + (parseInt(this.frameWidthUser) ) + " X " + (parseInt(this.frameHeightUser) )
+                            } else {
+                                out = out + (this.frameWidthUser ) + " X " + (this.frameHeightUser )
+                            }
+                        }
                     }
                     return out
                 },
