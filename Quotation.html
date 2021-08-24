@@ -1340,20 +1340,25 @@
 
                     }
                     if (this.ProductMethoud == 'typeB') {
-                        if (z == 'B' || z == 'D') {
-                            if (this.FrameSizeUnit == 'mm') {
-                                out = out + (parseInt(this.frameWidthUser) - 16) + " X " + (parseInt(this.frameHeightUser) - 4)
-                            } else {
-                                out = out + (this.frameWidthUser - (0.6)) + " X " + (this.frameHeightUser - (0.1))
-                            }
-                        }
-                        if (z == 'C' || z == 'E') {
-                            if (this.FrameSizeUnit == 'mm') {
+                        // if (z == 'B' || z == 'D') {
+                        //     if (this.FrameSizeUnit == 'mm') {
+                        //         out = out + (parseInt(this.frameWidthUser) - 16) + " X " + (parseInt(this.frameHeightUser) - 4)
+                        //     } else {
+                        //         out = out + (this.frameWidthUser - (0.6)) + " X " + (this.frameHeightUser - (0.1))
+                        //     }
+                        // }
+                        // if (z == 'C' || z == 'E') {
+                        //     if (this.FrameSizeUnit == 'mm') {
+                        //         out = out + (parseInt(this.frameWidthUser) - 30) + " X " + (parseInt(this.frameHeightUser) - 4)
+                        //     } else {
+                        //         out = out + (this.frameWidthUser - (1.1)) + " X " + (this.frameHeightUser - (0.1))
+                        //     }
+                        // }
+                        if (this.FrameSizeUnit == 'mm') {
                                 out = out + (parseInt(this.frameWidthUser) - 30) + " X " + (parseInt(this.frameHeightUser) - 4)
                             } else {
                                 out = out + (this.frameWidthUser - (1.1)) + " X " + (this.frameHeightUser - (0.1))
                             }
-                        }
                     }
                     return out
                 },
