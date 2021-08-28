@@ -506,12 +506,12 @@
                                 {{sheetUser(frameType)}}
                             </td>
                         </tr>
-                        <tr>
+                        <!-- <tr>
                             <td>圖片切割尺寸比例</td>
                             <td>
                                 {{frameWidthBoundary()}}
                             </td>
-                        </tr>
+                        </tr> -->
 
                         <td>購買數量</td>
                         <td>
@@ -1342,7 +1342,11 @@
                     out = ''
                     if (this.ProductMethoud == 'typeA') {
 
-                        out = out + this.frameWidthUser + " X " + this.frameHeightUser
+                        if (this.FrameSizeUnit == 'mm') {
+                            out = out + (parseInt(this.frameWidthUser) - 14) + " X " + (parseInt(this.frameHeightUser) )
+                        } else {
+                            out = out + (this.frameWidthUser - (0.5)) + " X " + (this.frameHeightUser)
+                        }
 
                     }
                     if (this.ProductMethoud == 'typeB') {
